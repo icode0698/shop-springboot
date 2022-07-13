@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newboot.shop.dao.PriceMapper">
+  <resultMap id="BaseResultMap" type="com.newboot.shop.model.Price">
+    <id column="sku" jdbcType="INTEGER" property="sku" />
+    <result column="goodsID" jdbcType="INTEGER" property="goodsid" />
+    <result column="spID1" jdbcType="INTEGER" property="spid1" />
+    <result column="spID2" jdbcType="INTEGER" property="spid2" />
+    <result column="spID3" jdbcType="INTEGER" property="spid3" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="stock" jdbcType="INTEGER" property="stock" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    sku, goodsID, spID1, spID2, spID3, price, stock
+  </sql>
+  <select id="selectByExample" parameterType="com.newboot.shop.model.PriceExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from price
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from price
+    where sku = #{sku,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from price
+    where sku = #{sku,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.newboot.shop.model.PriceExample">
+    delete from price
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.newboot.shop.model.Price">
+    insert into price (sku, goodsID, spID1, 
+      spID2, spID3, price, 
+      stock)
+    values (#{sku,jdbcType=INTEGER}, #{goodsid,jdbcType=INTEGER}, #{spid1,jdbcType=INTEGER}, 
+      #{spid2,jdbcType=INTEGER}, #{spid3,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, 
+      #{stock,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.newboot.shop.model.Price">
+    insert into price
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sku != null">
+        sku,
+      </if>
+      <if test="goodsid != null">
+        goodsID,
+      </if>
+      <if test="spid1 != null">
+        spID1,
+      </if>
+      <if test="spid2 != null">
+        spID2,
+      </if>
+      <if test="spid3 != null">
+        spID3,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="stock != null">
+        stock,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sku != null">
+        #{sku,jdbcType=INTEGER},
+      </if>
+      <if test="goodsid != null">
+        #{goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="spid1 != null">
+        #{spid1,jdbcType=INTEGER},
+      </if>
+      <if test="spid2 != null">
+        #{spid2,jdbcType=INTEGER},
+      </if>
+      <if test="spid3 != null">
+        #{spid3,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="stock != null">
+        #{stock,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.newboot.shop.model.PriceExample" resultType="java.lang.Long">
+    select count(*) from price
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update price
+    <set>
+      <if test="row.sku != null">
+        sku = #{row.sku,jdbcType=INTEGER},
+      </if>
+      <if test="row.goodsid != null">
+        goodsID = #{row.goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="row.spid1 != null">
+        spID1 = #{row.spid1,jdbcType=INTEGER},
+      </if>
+      <if test="row.spid2 != null">
+        spID2 = #{row.spid2,jdbcType=INTEGER},
+      </if>
+      <if test="row.spid3 != null">
+        spID3 = #{row.spid3,jdbcType=INTEGER},
+      </if>
+      <if test="row.price != null">
+        price = #{row.price,jdbcType=DECIMAL},
+      </if>
+      <if test="row.stock != null">
+        stock = #{row.stock,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update price
+    set sku = #{row.sku,jdbcType=INTEGER},
+      goodsID = #{row.goodsid,jdbcType=INTEGER},
+      spID1 = #{row.spid1,jdbcType=INTEGER},
+      spID2 = #{row.spid2,jdbcType=INTEGER},
+      spID3 = #{row.spid3,jdbcType=INTEGER},
+      price = #{row.price,jdbcType=DECIMAL},
+      stock = #{row.stock,jdbcType=INTEGER}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.newboot.shop.model.Price">
+    update price
+    <set>
+      <if test="goodsid != null">
+        goodsID = #{goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="spid1 != null">
+        spID1 = #{spid1,jdbcType=INTEGER},
+      </if>
+      <if test="spid2 != null">
+        spID2 = #{spid2,jdbcType=INTEGER},
+      </if>
+      <if test="spid3 != null">
+        spID3 = #{spid3,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="stock != null">
+        stock = #{stock,jdbcType=INTEGER},
+      </if>
+    </set>
+    where sku = #{sku,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.newboot.shop.model.Price">
+    update price
+    set goodsID = #{goodsid,jdbcType=INTEGER},
+      spID1 = #{spid1,jdbcType=INTEGER},
+      spID2 = #{spid2,jdbcType=INTEGER},
+      spID3 = #{spid3,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL},
+      stock = #{stock,jdbcType=INTEGER}
+    where sku = #{sku,jdbcType=INTEGER}
+  </update>
+</mapper>

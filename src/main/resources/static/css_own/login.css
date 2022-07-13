@@ -1,0 +1,85 @@
+/* body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+} */
+body{
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+}
+.body_div{
+  position: relative;
+  width:100%;
+  min-height: 100% !important;
+  /* max-height: auto; */
+  position: absolute;
+  background-image:url('../pic/background.png');
+  background-repeat:no-repeat;
+  background-position:center;
+}
+.div_in{
+  width:auto;
+  height:80px;
+}
+.form_size{
+  position: relative;
+  background-color: white;
+  padding-left: 30px;
+  padding-right: 30px; 
+  border-radius: 6px;
+  box-shadow: 5px 5px 3px #888888;
+}
+.content{
+  position: relative;
+  margin-top: 30px;
+}
+.content input{
+  width: 100%;
+  height: 34px;
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #c3c3c3; 
+  border-radius: 0px !important;
+}
+.content label{
+  position: absolute;
+  bottom: 2px;
+  cursor: text;
+  color: #c3c3c3;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "Microsoft YaHei";
+  transition:bottom .15s ease-in-out,font-size .15s ease-in-out,color .15s ease-in-out;
+  -moz-transition: bottom .15s ease-in-out,font-size .15s ease-in-out,color .15s ease-in-out;	/* Firefox 4 */
+  -webkit-transition: bottom .15s ease-in-out,font-size .15s ease-in-out,color .15s ease-in-out;	/* Safari 和 Chrome */
+  -o-transition: bottom .15s ease-in-out,font-size .15s ease-in-out,color .15s ease-in-out; 
+}
+.div_line{
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -1px;
+  background-color :#1E9FFF; 
+  transition:width .15s ease-in-out;
+  -moz-transition: width .15s ease-in-out;	/* Firefox 4 */
+  -webkit-transition: width .15ss ease-in-out;	/* Safari 和 Chrome */
+  -o-transition: width .15s ease-in-out; 
+}
+.div_padding{
+  padding: 5px;
+}
+.div_help{
+  height: 280px;
+}
+/* .div_animate{
+  height: 0px;
+  width: 0px;
+  transition:height .15s ease-in-out .15s,width .15s ease-in-out .15s,color .15s ease-in-out,font-size .15s ease-in-out;
+  -moz-transition: height .15s ease-in-out .15s,width .15s ease-in-out .15s,color .15s ease-in-out,font-size .15s ease-in-out;
+  -webkit-transition: height .15s ease-in-out .15s,width .15s ease-in-out .15s,color .15s ease-in-out,font-size .15s ease-in-out;
+  -o-transition: height .15s ease-in-out .15s,width .15s ease-in-out .15s,color .15s ease-in-out,font-size .15s ease-in-out; 
+  font-size: 0px;
+} */

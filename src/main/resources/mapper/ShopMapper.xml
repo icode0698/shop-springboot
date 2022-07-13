@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newboot.shop.dao.ShopMapper">
+  <resultMap id="BaseResultMap" type="com.newboot.shop.model.Shop">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <id column="user" jdbcType="VARCHAR" property="user" />
+    <result column="sku" jdbcType="INTEGER" property="sku" />
+    <result column="goodsName" jdbcType="VARCHAR" property="goodsname" />
+    <result column="categoryName" jdbcType="VARCHAR" property="categoryname" />
+    <result column="brandName" jdbcType="VARCHAR" property="brandname" />
+    <result column="storage" jdbcType="VARCHAR" property="storage" />
+    <result column="color" jdbcType="VARCHAR" property="color" />
+    <result column="screen" jdbcType="VARCHAR" property="screen" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+    <result column="unitPrice" jdbcType="DECIMAL" property="unitprice" />
+    <result column="totalPrice" jdbcType="DECIMAL" property="totalprice" />
+    <result column="isPay" jdbcType="TINYINT" property="ispay" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="paymentTime" jdbcType="TIMESTAMP" property="paymenttime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, user, sku, goodsName, categoryName, brandName, storage, color, screen, num, unitPrice, 
+    totalPrice, isPay, createTime, paymentTime
+  </sql>
+  <select id="selectByExample" parameterType="com.newboot.shop.model.ShopExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from shop
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from shop
+    where id = #{id,jdbcType=VARCHAR}
+      and user = #{user,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from shop
+    where id = #{id,jdbcType=VARCHAR}
+      and user = #{user,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.newboot.shop.model.ShopExample">
+    delete from shop
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.newboot.shop.model.Shop">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into shop (user, sku, goodsName, 
+      categoryName, brandName, storage, 
+      color, screen, num, 
+      unitPrice, totalPrice, isPay, 
+      createTime, paymentTime)
+    values (#{user,jdbcType=VARCHAR}, #{sku,jdbcType=INTEGER}, #{goodsname,jdbcType=VARCHAR}, 
+      #{categoryname,jdbcType=VARCHAR}, #{brandname,jdbcType=VARCHAR}, #{storage,jdbcType=VARCHAR}, 
+      #{color,jdbcType=VARCHAR}, #{screen,jdbcType=VARCHAR}, #{num,jdbcType=INTEGER}, 
+      #{unitprice,jdbcType=DECIMAL}, #{totalprice,jdbcType=DECIMAL}, #{ispay,jdbcType=TINYINT}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{paymenttime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.newboot.shop.model.Shop">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into shop
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="user != null">
+        user,
+      </if>
+      <if test="sku != null">
+        sku,
+      </if>
+      <if test="goodsname != null">
+        goodsName,
+      </if>
+      <if test="categoryname != null">
+        categoryName,
+      </if>
+      <if test="brandname != null">
+        brandName,
+      </if>
+      <if test="storage != null">
+        storage,
+      </if>
+      <if test="color != null">
+        color,
+      </if>
+      <if test="screen != null">
+        screen,
+      </if>
+      <if test="num != null">
+        num,
+      </if>
+      <if test="unitprice != null">
+        unitPrice,
+      </if>
+      <if test="totalprice != null">
+        totalPrice,
+      </if>
+      <if test="ispay != null">
+        isPay,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="paymenttime != null">
+        paymentTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="user != null">
+        #{user,jdbcType=VARCHAR},
+      </if>
+      <if test="sku != null">
+        #{sku,jdbcType=INTEGER},
+      </if>
+      <if test="goodsname != null">
+        #{goodsname,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryname != null">
+        #{categoryname,jdbcType=VARCHAR},
+      </if>
+      <if test="brandname != null">
+        #{brandname,jdbcType=VARCHAR},
+      </if>
+      <if test="storage != null">
+        #{storage,jdbcType=VARCHAR},
+      </if>
+      <if test="color != null">
+        #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="screen != null">
+        #{screen,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null">
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="unitprice != null">
+        #{unitprice,jdbcType=DECIMAL},
+      </if>
+      <if test="totalprice != null">
+        #{totalprice,jdbcType=DECIMAL},
+      </if>
+      <if test="ispay != null">
+        #{ispay,jdbcType=TINYINT},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="paymenttime != null">
+        #{paymenttime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.newboot.shop.model.ShopExample" resultType="java.lang.Long">
+    select count(*) from shop
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update shop
+    <set>
+      <if test="row.id != null">
+        id = #{row.id,jdbcType=VARCHAR},
+      </if>
+      <if test="row.user != null">
+        user = #{row.user,jdbcType=VARCHAR},
+      </if>
+      <if test="row.sku != null">
+        sku = #{row.sku,jdbcType=INTEGER},
+      </if>
+      <if test="row.goodsname != null">
+        goodsName = #{row.goodsname,jdbcType=VARCHAR},
+      </if>
+      <if test="row.categoryname != null">
+        categoryName = #{row.categoryname,jdbcType=VARCHAR},
+      </if>
+      <if test="row.brandname != null">
+        brandName = #{row.brandname,jdbcType=VARCHAR},
+      </if>
+      <if test="row.storage != null">
+        storage = #{row.storage,jdbcType=VARCHAR},
+      </if>
+      <if test="row.color != null">
+        color = #{row.color,jdbcType=VARCHAR},
+      </if>
+      <if test="row.screen != null">
+        screen = #{row.screen,jdbcType=VARCHAR},
+      </if>
+      <if test="row.num != null">
+        num = #{row.num,jdbcType=INTEGER},
+      </if>
+      <if test="row.unitprice != null">
+        unitPrice = #{row.unitprice,jdbcType=DECIMAL},
+      </if>
+      <if test="row.totalprice != null">
+        totalPrice = #{row.totalprice,jdbcType=DECIMAL},
+      </if>
+      <if test="row.ispay != null">
+        isPay = #{row.ispay,jdbcType=TINYINT},
+      </if>
+      <if test="row.createtime != null">
+        createTime = #{row.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.paymenttime != null">
+        paymentTime = #{row.paymenttime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update shop
+    set id = #{row.id,jdbcType=VARCHAR},
+      user = #{row.user,jdbcType=VARCHAR},
+      sku = #{row.sku,jdbcType=INTEGER},
+      goodsName = #{row.goodsname,jdbcType=VARCHAR},
+      categoryName = #{row.categoryname,jdbcType=VARCHAR},
+      brandName = #{row.brandname,jdbcType=VARCHAR},
+      storage = #{row.storage,jdbcType=VARCHAR},
+      color = #{row.color,jdbcType=VARCHAR},
+      screen = #{row.screen,jdbcType=VARCHAR},
+      num = #{row.num,jdbcType=INTEGER},
+      unitPrice = #{row.unitprice,jdbcType=DECIMAL},
+      totalPrice = #{row.totalprice,jdbcType=DECIMAL},
+      isPay = #{row.ispay,jdbcType=TINYINT},
+      createTime = #{row.createtime,jdbcType=TIMESTAMP},
+      paymentTime = #{row.paymenttime,jdbcType=TIMESTAMP}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.newboot.shop.model.Shop">
+    update shop
+    <set>
+      <if test="sku != null">
+        sku = #{sku,jdbcType=INTEGER},
+      </if>
+      <if test="goodsname != null">
+        goodsName = #{goodsname,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryname != null">
+        categoryName = #{categoryname,jdbcType=VARCHAR},
+      </if>
+      <if test="brandname != null">
+        brandName = #{brandname,jdbcType=VARCHAR},
+      </if>
+      <if test="storage != null">
+        storage = #{storage,jdbcType=VARCHAR},
+      </if>
+      <if test="color != null">
+        color = #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="screen != null">
+        screen = #{screen,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null">
+        num = #{num,jdbcType=INTEGER},
+      </if>
+      <if test="unitprice != null">
+        unitPrice = #{unitprice,jdbcType=DECIMAL},
+      </if>
+      <if test="totalprice != null">
+        totalPrice = #{totalprice,jdbcType=DECIMAL},
+      </if>
+      <if test="ispay != null">
+        isPay = #{ispay,jdbcType=TINYINT},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="paymenttime != null">
+        paymentTime = #{paymenttime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+      and user = #{user,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.newboot.shop.model.Shop">
+    update shop
+    set sku = #{sku,jdbcType=INTEGER},
+      goodsName = #{goodsname,jdbcType=VARCHAR},
+      categoryName = #{categoryname,jdbcType=VARCHAR},
+      brandName = #{brandname,jdbcType=VARCHAR},
+      storage = #{storage,jdbcType=VARCHAR},
+      color = #{color,jdbcType=VARCHAR},
+      screen = #{screen,jdbcType=VARCHAR},
+      num = #{num,jdbcType=INTEGER},
+      unitPrice = #{unitprice,jdbcType=DECIMAL},
+      totalPrice = #{totalprice,jdbcType=DECIMAL},
+      isPay = #{ispay,jdbcType=TINYINT},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      paymentTime = #{paymenttime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+      and user = #{user,jdbcType=VARCHAR}
+  </update>
+</mapper>
