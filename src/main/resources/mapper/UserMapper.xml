@@ -272,4 +272,8 @@
       online = #{online,jdbcType=TINYINT}
     where user = #{user,jdbcType=VARCHAR}
   </update>
+
+  <update id="updateCurrentTimeByUser" parameterType="com.newboot.shop.model.User">
+        update user set viewCount=#{viewcount} where user=#{user}
+  </update>
 </mapper>

@@ -3,8 +3,11 @@ spring:
   thymeleaf:
     cache: false
     mode: LEGACYHTML5
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
   application:
-    name: mall-admin
+    name: shop-admin
   profiles:
     active: dev #默认为开发环境
   servlet:
@@ -16,7 +19,7 @@ spring:
       matching-strategy: ant_path_matcher
 
 
-# 服务器配置
+#服务器配置
 #server:
 #  port: 28079
 #  undertow:

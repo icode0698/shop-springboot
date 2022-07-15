@@ -69,11 +69,10 @@ $(document).ready(function () {
       else{
         $.ajax({
         type: "post",
-        url: "servlet/Login",
-        dataType: "json",
+        url: "user/login",
         data:{
-          "user": user,
-          "password": $("#password").val(),
+          user: user,
+          password: $("#password").val(),
           type: "ajax_login"
         },
         success:function(data){
