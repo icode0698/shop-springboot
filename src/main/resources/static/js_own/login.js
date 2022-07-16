@@ -82,14 +82,14 @@ $(document).ready(function () {
           //alert("status:"+str.status+"\nuser:"+str.user+"\ntype:"+str.type);
           //$("#id").val(str.user);
           //$("#password").val(str.status);'
-          console.log("json.status:"+data.status);
-          console.log("json.user:"+data.user);
-          if(data.status=="success"){
+          console.log("json.status:"+data.code);
+          console.log("json.user:"+data.data.user);
+          if(data.code==200){
             //sessionStorage.setItem("user",data.user);
             //console.log("sessionStorage_user_login:"+sessionStorage.getItem("user"));
             console.log($("#rememberme").is(":checked"));
             if($("#rememberme").is(":checked")){
-              $.cookie("user",data.user,{expires: 2});
+              $.cookie("user",data.data.user,{expires: 2});
             }
             $("#error_hide").addClass("hidden");
             $("#success_hide").removeClass("hidden");
@@ -100,7 +100,7 @@ $(document).ready(function () {
             //location.href = 'index.html';
             setTimeout("location.href = 'index.html'",500);
           }
-          if(data.status=="error"){
+          else{
             $("#error_hide").removeClass("hidden");
             // $("#error_hide").css("width", "100%");
             // $("#error_hide").css("height", "100%");
@@ -115,7 +115,7 @@ $(document).ready(function () {
           // $("#error_hide").css("width", "100%");
           // $("#error_hide").css("height", "100%");
           // $("#error_hide").css("font-size", "14px");
-          $("#error_tip").text("抱歉，服务器异常。\nXMLResponse_Status:"+data.status);
+          $("#error_tip").text("抱歉，服务器异常"+data.status+"。\n");
           // console.log("error_status:"+data.status);
           return;
         }

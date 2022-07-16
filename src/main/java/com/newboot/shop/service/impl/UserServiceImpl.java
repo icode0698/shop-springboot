@@ -6,6 +6,8 @@ import com.newboot.shop.dao.UserMapper;
 import com.newboot.shop.model.User;
 import com.newboot.shop.service.UserService;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +15,8 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
-    private User user;
+    private User user = new User();
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public String login(JSONObject json) {
@@ -23,6 +26,7 @@ public class UserServiceImpl implements UserService {
         if(StringUtils.isEmpty(json.getString("password"))){
             return ResultMessage.LOGIN_PASSWORD_NULL.getMessage();
         }
+        logger.info(json.getString("user"));
         user = userMapper.selectByPrimaryKey(json.getString("user"));
         if(user==null){
             return ResultMessage.LOGIN_ERROR_PASSWORD.getMessage();
