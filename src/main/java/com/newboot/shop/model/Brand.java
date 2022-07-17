@@ -5,36 +5,36 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Brand implements Serializable {
-    private Integer brandid;
+    private Integer brandID;
 
-    private String brandname;
+    private String brandName;
 
-    private Date inserttime;
+    private Date insertTime;
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getBrandid() {
-        return brandid;
+    public Integer getBrandID() {
+        return brandID;
     }
 
-    public void setBrandid(Integer brandid) {
-        this.brandid = brandid;
+    public void setBrandID(Integer brandID) {
+        this.brandID = brandID;
     }
 
-    public String getBrandname() {
-        return brandname;
+    public String getBrandName() {
+        return brandName;
     }
 
-    public void setBrandname(String brandname) {
-        this.brandname = brandname;
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
     }
 
-    public Date getInserttime() {
-        return inserttime;
+    public Date getInsertTime() {
+        return insertTime;
     }
 
-    public void setInserttime(Date inserttime) {
-        this.inserttime = inserttime;
+    public void setInsertTime(Date insertTime) {
+        this.insertTime = insertTime;
     }
 
     @Override
@@ -43,9 +43,9 @@ public class Brand implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", brandid=").append(brandid);
-        sb.append(", brandname=").append(brandname);
-        sb.append(", inserttime=").append(inserttime);
+        sb.append(", brandID=").append(brandID);
+        sb.append(", brandName=").append(brandName);
+        sb.append(", insertTime=").append(insertTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

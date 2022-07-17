@@ -12,9 +12,9 @@ public interface AdmininfoMapper {
 
     int deleteByPrimaryKey(String type);
 
-    int insert(Admininfo row);
+    int insert(Admininfo record);
 
-    int insertSelective(Admininfo row);
+    int insertSelective(Admininfo record);
 
     List<Admininfo> selectByExampleWithBLOBs(AdmininfoExample example);
 
@@ -22,13 +22,13 @@ public interface AdmininfoMapper {
 
     Admininfo selectByPrimaryKey(String type);
 
-    int updateByExampleSelective(@Param("row") Admininfo row, @Param("example") AdmininfoExample example);
+    int updateByExampleSelective(@Param("record") Admininfo record, @Param("example") AdmininfoExample example);
 
-    int updateByExampleWithBLOBs(@Param("row") Admininfo row, @Param("example") AdmininfoExample example);
+    int updateByExampleWithBLOBs(@Param("record") Admininfo record, @Param("example") AdmininfoExample example);
 
-    int updateByExample(@Param("row") Admininfo row, @Param("example") AdmininfoExample example);
+    int updateByExample(@Param("record") Admininfo record, @Param("example") AdmininfoExample example);
 
-    int updateByPrimaryKeySelective(Admininfo row);
+    int updateByPrimaryKeySelective(Admininfo record);
 
-    int updateByPrimaryKeyWithBLOBs(Admininfo row);
+    int updateByPrimaryKeyWithBLOBs(Admininfo record);
 }

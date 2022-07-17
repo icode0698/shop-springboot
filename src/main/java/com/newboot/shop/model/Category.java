@@ -5,36 +5,36 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Category implements Serializable {
-    private Integer categoryid;
+    private Integer categoryID;
 
-    private String categoryname;
+    private String categoryName;
 
-    private Date inserttime;
+    private Date insertTime;
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getCategoryid() {
-        return categoryid;
+    public Integer getCategoryID() {
+        return categoryID;
     }
 
-    public void setCategoryid(Integer categoryid) {
-        this.categoryid = categoryid;
+    public void setCategoryID(Integer categoryID) {
+        this.categoryID = categoryID;
     }
 
-    public String getCategoryname() {
-        return categoryname;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setCategoryname(String categoryname) {
-        this.categoryname = categoryname;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
-    public Date getInserttime() {
-        return inserttime;
+    public Date getInsertTime() {
+        return insertTime;
     }
 
-    public void setInserttime(Date inserttime) {
-        this.inserttime = inserttime;
+    public void setInsertTime(Date insertTime) {
+        this.insertTime = insertTime;
     }
 
     @Override
@@ -43,9 +43,9 @@ public class Category implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", categoryid=").append(categoryid);
-        sb.append(", categoryname=").append(categoryname);
-        sb.append(", inserttime=").append(inserttime);
+        sb.append(", categoryID=").append(categoryID);
+        sb.append(", categoryName=").append(categoryName);
+        sb.append(", insertTime=").append(insertTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

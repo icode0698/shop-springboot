@@ -11,37 +11,63 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
-    private User user = new User();
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public String login(JSONObject json) {
-        if(StringUtils.isEmpty(json.getString("user"))){
-            return ResultMessage.LOGIN_NAME_NULL.getMessage();
+            User user = new User();
+        try {
+            if(StringUtils.isEmpty(json.getString("user"))){
+                return ResultMessage.LOGIN_NAME_NULL.getMessage();
+            }
+            if(StringUtils.isEmpty(json.getString("password"))){
+                return ResultMessage.LOGIN_PASSWORD_NULL.getMessage();
+            }
+            logger.debug(json.getString("user"));
+            user = userMapper.selectByPrimaryKey(json.getString("user"));
+            if(user==null){
+                return ResultMessage.LOGIN_ERROR_PASSWORD.getMessage();
+            }
+            if(user.getOnline()==1){
+                return ResultMessage.LOGIN_USER_ONLINE.getMessage();
+            }
+            if(StringUtils.equals(json.getString("password"),user.getPassword())){
+                User after = new User();
+                after.setUser(user.getUser());
+                after.setOnline((byte) 1);
+                after.setViewCount(user.getViewCount().intValue()+1);
+                after.setCurrentTime(new Date());
+                userMapper.updateByPrimaryKeySelective(after);
+                return ResultMessage.LOGIN_SUCCESS.getMessage();
+            }
+            else{
+                return ResultMessage.LOGIN_ERROR_PASSWORD.getMessage();
+            }
+        }catch (Exception e){
+            logger.debug(e.getMessage());
+            return ResultMessage.SERVER_ERROR.getMessage();
         }
-        if(StringUtils.isEmpty(json.getString("password"))){
-            return ResultMessage.LOGIN_PASSWORD_NULL.getMessage();
-        }
-        logger.info(json.getString("user"));
-        user = userMapper.selectByPrimaryKey(json.getString("user"));
-        if(user==null){
-            return ResultMessage.LOGIN_ERROR_PASSWORD.getMessage();
-        }
-        if(user.getOnline()==1){
-            return ResultMessage.LOGIN_USER_ONLINE.getMessage();
-        }
-        if(StringUtils.equals(json.getString("password"),user.getPassword())){
-            user.setViewcount(user.getViewcount().intValue()+1);
-            userMapper.updateCurrentTimeByUser(user);
-            return ResultMessage.LOGIN_SUCCESS.getMessage();
-        }
-        else{
-            return ResultMessage.LOGIN_ERROR_PASSWORD.getMessage();
-        }
+    }
+
+    @Override
+    public int logout(JSONObject json) {
+        User user = new User();
+        user.setUser(json.getString("user"));
+        user.setOnline((byte)0);
+        return userMapper.updateOnlineAndLastTime(user);
+    }
+
+    @Override
+    public JSONObject getInfo(String user) {
+        User info = userMapper.selectByPrimaryKey(user);
+        info.setPassword("password");
+        return (JSONObject)JSONObject.toJSON(info);
     }
 
 }

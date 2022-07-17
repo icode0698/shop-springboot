@@ -7,13 +7,13 @@ import java.math.BigDecimal;
 public class Price implements Serializable {
     private Integer sku;
 
-    private Integer goodsid;
+    private Integer goodsID;
 
-    private Integer spid1;
+    private Integer spID1;
 
-    private Integer spid2;
+    private Integer spID2;
 
-    private Integer spid3;
+    private Integer spID3;
 
     private BigDecimal price;
 
@@ -29,36 +29,36 @@ public class Price implements Serializable {
         this.sku = sku;
     }
 
-    public Integer getGoodsid() {
-        return goodsid;
+    public Integer getGoodsID() {
+        return goodsID;
     }
 
-    public void setGoodsid(Integer goodsid) {
-        this.goodsid = goodsid;
+    public void setGoodsID(Integer goodsID) {
+        this.goodsID = goodsID;
     }
 
-    public Integer getSpid1() {
-        return spid1;
+    public Integer getSpID1() {
+        return spID1;
     }
 
-    public void setSpid1(Integer spid1) {
-        this.spid1 = spid1;
+    public void setSpID1(Integer spID1) {
+        this.spID1 = spID1;
     }
 
-    public Integer getSpid2() {
-        return spid2;
+    public Integer getSpID2() {
+        return spID2;
     }
 
-    public void setSpid2(Integer spid2) {
-        this.spid2 = spid2;
+    public void setSpID2(Integer spID2) {
+        this.spID2 = spID2;
     }
 
-    public Integer getSpid3() {
-        return spid3;
+    public Integer getSpID3() {
+        return spID3;
     }
 
-    public void setSpid3(Integer spid3) {
-        this.spid3 = spid3;
+    public void setSpID3(Integer spID3) {
+        this.spID3 = spID3;
     }
 
     public BigDecimal getPrice() {
@@ -84,10 +84,10 @@ public class Price implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", sku=").append(sku);
-        sb.append(", goodsid=").append(goodsid);
-        sb.append(", spid1=").append(spid1);
-        sb.append(", spid2=").append(spid2);
-        sb.append(", spid3=").append(spid3);
+        sb.append(", goodsID=").append(goodsID);
+        sb.append(", spID1=").append(spID1);
+        sb.append(", spID2=").append(spID2);
+        sb.append(", spID3=").append(spID3);
         sb.append(", price=").append(price);
         sb.append(", stock=").append(stock);
         sb.append(", serialVersionUID=").append(serialVersionUID);

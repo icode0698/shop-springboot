@@ -165,243 +165,243 @@ public class PriceExample {
             return (Criteria) this;
         }
 
-        public Criteria andGoodsidIsNull() {
+        public Criteria andGoodsIDIsNull() {
             addCriterion("goodsID is null");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsidIsNotNull() {
+        public Criteria andGoodsIDIsNotNull() {
             addCriterion("goodsID is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsidEqualTo(Integer value) {
-            addCriterion("goodsID =", value, "goodsid");
+        public Criteria andGoodsIDEqualTo(Integer value) {
+            addCriterion("goodsID =", value, "goodsID");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsidNotEqualTo(Integer value) {
-            addCriterion("goodsID <>", value, "goodsid");
+        public Criteria andGoodsIDNotEqualTo(Integer value) {
+            addCriterion("goodsID <>", value, "goodsID");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsidGreaterThan(Integer value) {
-            addCriterion("goodsID >", value, "goodsid");
+        public Criteria andGoodsIDGreaterThan(Integer value) {
+            addCriterion("goodsID >", value, "goodsID");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("goodsID >=", value, "goodsid");
+        public Criteria andGoodsIDGreaterThanOrEqualTo(Integer value) {
+            addCriterion("goodsID >=", value, "goodsID");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsidLessThan(Integer value) {
-            addCriterion("goodsID <", value, "goodsid");
+        public Criteria andGoodsIDLessThan(Integer value) {
+            addCriterion("goodsID <", value, "goodsID");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsidLessThanOrEqualTo(Integer value) {
-            addCriterion("goodsID <=", value, "goodsid");
+        public Criteria andGoodsIDLessThanOrEqualTo(Integer value) {
+            addCriterion("goodsID <=", value, "goodsID");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsidIn(List<Integer> values) {
-            addCriterion("goodsID in", values, "goodsid");
+        public Criteria andGoodsIDIn(List<Integer> values) {
+            addCriterion("goodsID in", values, "goodsID");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsidNotIn(List<Integer> values) {
-            addCriterion("goodsID not in", values, "goodsid");
+        public Criteria andGoodsIDNotIn(List<Integer> values) {
+            addCriterion("goodsID not in", values, "goodsID");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsidBetween(Integer value1, Integer value2) {
-            addCriterion("goodsID between", value1, value2, "goodsid");
+        public Criteria andGoodsIDBetween(Integer value1, Integer value2) {
+            addCriterion("goodsID between", value1, value2, "goodsID");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsidNotBetween(Integer value1, Integer value2) {
-            addCriterion("goodsID not between", value1, value2, "goodsid");
+        public Criteria andGoodsIDNotBetween(Integer value1, Integer value2) {
+            addCriterion("goodsID not between", value1, value2, "goodsID");
             return (Criteria) this;
         }
 
-        public Criteria andSpid1IsNull() {
+        public Criteria andSpID1IsNull() {
             addCriterion("spID1 is null");
             return (Criteria) this;
         }
 
-        public Criteria andSpid1IsNotNull() {
+        public Criteria andSpID1IsNotNull() {
             addCriterion("spID1 is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSpid1EqualTo(Integer value) {
-            addCriterion("spID1 =", value, "spid1");
+        public Criteria andSpID1EqualTo(Integer value) {
+            addCriterion("spID1 =", value, "spID1");
             return (Criteria) this;
         }
 
-        public Criteria andSpid1NotEqualTo(Integer value) {
-            addCriterion("spID1 <>", value, "spid1");
+        public Criteria andSpID1NotEqualTo(Integer value) {
+            addCriterion("spID1 <>", value, "spID1");
             return (Criteria) this;
         }
 
-        public Criteria andSpid1GreaterThan(Integer value) {
-            addCriterion("spID1 >", value, "spid1");
+        public Criteria andSpID1GreaterThan(Integer value) {
+            addCriterion("spID1 >", value, "spID1");
             return (Criteria) this;
         }
 
-        public Criteria andSpid1GreaterThanOrEqualTo(Integer value) {
-            addCriterion("spID1 >=", value, "spid1");
+        public Criteria andSpID1GreaterThanOrEqualTo(Integer value) {
+            addCriterion("spID1 >=", value, "spID1");
             return (Criteria) this;
         }
 
-        public Criteria andSpid1LessThan(Integer value) {
-            addCriterion("spID1 <", value, "spid1");
+        public Criteria andSpID1LessThan(Integer value) {
+            addCriterion("spID1 <", value, "spID1");
             return (Criteria) this;
         }
 
-        public Criteria andSpid1LessThanOrEqualTo(Integer value) {
-            addCriterion("spID1 <=", value, "spid1");
+        public Criteria andSpID1LessThanOrEqualTo(Integer value) {
+            addCriterion("spID1 <=", value, "spID1");
             return (Criteria) this;
         }
 
-        public Criteria andSpid1In(List<Integer> values) {
-            addCriterion("spID1 in", values, "spid1");
+        public Criteria andSpID1In(List<Integer> values) {
+            addCriterion("spID1 in", values, "spID1");
             return (Criteria) this;
         }
 
-        public Criteria andSpid1NotIn(List<Integer> values) {
-            addCriterion("spID1 not in", values, "spid1");
+        public Criteria andSpID1NotIn(List<Integer> values) {
+            addCriterion("spID1 not in", values, "spID1");
             return (Criteria) this;
         }
 
-        public Criteria andSpid1Between(Integer value1, Integer value2) {
-            addCriterion("spID1 between", value1, value2, "spid1");
+        public Criteria andSpID1Between(Integer value1, Integer value2) {
+            addCriterion("spID1 between", value1, value2, "spID1");
             return (Criteria) this;
         }
 
-        public Criteria andSpid1NotBetween(Integer value1, Integer value2) {
-            addCriterion("spID1 not between", value1, value2, "spid1");
+        public Criteria andSpID1NotBetween(Integer value1, Integer value2) {
+            addCriterion("spID1 not between", value1, value2, "spID1");
             return (Criteria) this;
         }
 
-        public Criteria andSpid2IsNull() {
+        public Criteria andSpID2IsNull() {
             addCriterion("spID2 is null");
             return (Criteria) this;
         }
 
-        public Criteria andSpid2IsNotNull() {
+        public Criteria andSpID2IsNotNull() {
             addCriterion("spID2 is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSpid2EqualTo(Integer value) {
-            addCriterion("spID2 =", value, "spid2");
+        public Criteria andSpID2EqualTo(Integer value) {
+            addCriterion("spID2 =", value, "spID2");
             return (Criteria) this;
         }
 
-        public Criteria andSpid2NotEqualTo(Integer value) {
-            addCriterion("spID2 <>", value, "spid2");
+        public Criteria andSpID2NotEqualTo(Integer value) {
+            addCriterion("spID2 <>", value, "spID2");
             return (Criteria) this;
         }
 
-        public Criteria andSpid2GreaterThan(Integer value) {
-            addCriterion("spID2 >", value, "spid2");
+        public Criteria andSpID2GreaterThan(Integer value) {
+            addCriterion("spID2 >", value, "spID2");
             return (Criteria) this;
         }
 
-        public Criteria andSpid2GreaterThanOrEqualTo(Integer value) {
-            addCriterion("spID2 >=", value, "spid2");
+        public Criteria andSpID2GreaterThanOrEqualTo(Integer value) {
+            addCriterion("spID2 >=", value, "spID2");
             return (Criteria) this;
         }
 
-        public Criteria andSpid2LessThan(Integer value) {
-            addCriterion("spID2 <", value, "spid2");
+        public Criteria andSpID2LessThan(Integer value) {
+            addCriterion("spID2 <", value, "spID2");
             return (Criteria) this;
         }
 
-        public Criteria andSpid2LessThanOrEqualTo(Integer value) {
-            addCriterion("spID2 <=", value, "spid2");
+        public Criteria andSpID2LessThanOrEqualTo(Integer value) {
+            addCriterion("spID2 <=", value, "spID2");
             return (Criteria) this;
         }
 
-        public Criteria andSpid2In(List<Integer> values) {
-            addCriterion("spID2 in", values, "spid2");
+        public Criteria andSpID2In(List<Integer> values) {
+            addCriterion("spID2 in", values, "spID2");
             return (Criteria) this;
         }
 
-        public Criteria andSpid2NotIn(List<Integer> values) {
-            addCriterion("spID2 not in", values, "spid2");
+        public Criteria andSpID2NotIn(List<Integer> values) {
+            addCriterion("spID2 not in", values, "spID2");
             return (Criteria) this;
         }
 
-        public Criteria andSpid2Between(Integer value1, Integer value2) {
-            addCriterion("spID2 between", value1, value2, "spid2");
+        public Criteria andSpID2Between(Integer value1, Integer value2) {
+            addCriterion("spID2 between", value1, value2, "spID2");
             return (Criteria) this;
         }
 
-        public Criteria andSpid2NotBetween(Integer value1, Integer value2) {
-            addCriterion("spID2 not between", value1, value2, "spid2");
+        public Criteria andSpID2NotBetween(Integer value1, Integer value2) {
+            addCriterion("spID2 not between", value1, value2, "spID2");
             return (Criteria) this;
         }
 
-        public Criteria andSpid3IsNull() {
+        public Criteria andSpID3IsNull() {
             addCriterion("spID3 is null");
             return (Criteria) this;
         }
 
-        public Criteria andSpid3IsNotNull() {
+        public Criteria andSpID3IsNotNull() {
             addCriterion("spID3 is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSpid3EqualTo(Integer value) {
-            addCriterion("spID3 =", value, "spid3");
+        public Criteria andSpID3EqualTo(Integer value) {
+            addCriterion("spID3 =", value, "spID3");
             return (Criteria) this;
         }
 
-        public Criteria andSpid3NotEqualTo(Integer value) {
-            addCriterion("spID3 <>", value, "spid3");
+        public Criteria andSpID3NotEqualTo(Integer value) {
+            addCriterion("spID3 <>", value, "spID3");
             return (Criteria) this;
         }
 
-        public Criteria andSpid3GreaterThan(Integer value) {
-            addCriterion("spID3 >", value, "spid3");
+        public Criteria andSpID3GreaterThan(Integer value) {
+            addCriterion("spID3 >", value, "spID3");
             return (Criteria) this;
         }
 
-        public Criteria andSpid3GreaterThanOrEqualTo(Integer value) {
-            addCriterion("spID3 >=", value, "spid3");
+        public Criteria andSpID3GreaterThanOrEqualTo(Integer value) {
+            addCriterion("spID3 >=", value, "spID3");
             return (Criteria) this;
         }
 
-        public Criteria andSpid3LessThan(Integer value) {
-            addCriterion("spID3 <", value, "spid3");
+        public Criteria andSpID3LessThan(Integer value) {
+            addCriterion("spID3 <", value, "spID3");
             return (Criteria) this;
         }
 
-        public Criteria andSpid3LessThanOrEqualTo(Integer value) {
-            addCriterion("spID3 <=", value, "spid3");
+        public Criteria andSpID3LessThanOrEqualTo(Integer value) {
+            addCriterion("spID3 <=", value, "spID3");
             return (Criteria) this;
         }
 
-        public Criteria andSpid3In(List<Integer> values) {
-            addCriterion("spID3 in", values, "spid3");
+        public Criteria andSpID3In(List<Integer> values) {
+            addCriterion("spID3 in", values, "spID3");
             return (Criteria) this;
         }
 
-        public Criteria andSpid3NotIn(List<Integer> values) {
-            addCriterion("spID3 not in", values, "spid3");
+        public Criteria andSpID3NotIn(List<Integer> values) {
+            addCriterion("spID3 not in", values, "spID3");
             return (Criteria) this;
         }
 
-        public Criteria andSpid3Between(Integer value1, Integer value2) {
-            addCriterion("spID3 between", value1, value2, "spid3");
+        public Criteria andSpID3Between(Integer value1, Integer value2) {
+            addCriterion("spID3 between", value1, value2, "spID3");
             return (Criteria) this;
         }
 
-        public Criteria andSpid3NotBetween(Integer value1, Integer value2) {
-            addCriterion("spID3 not between", value1, value2, "spid3");
+        public Criteria andSpID3NotBetween(Integer value1, Integer value2) {
+            addCriterion("spID3 not between", value1, value2, "spID3");
             return (Criteria) this;
         }
 

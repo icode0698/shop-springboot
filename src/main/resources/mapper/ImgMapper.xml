@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.newboot.shop.dao.ImgMapper">
   <resultMap id="BaseResultMap" type="com.newboot.shop.model.Img">
-    <id column="imgID" jdbcType="INTEGER" property="imgid" />
-    <result column="goodsID" jdbcType="INTEGER" property="goodsid" />
-    <result column="imgSrc" jdbcType="VARCHAR" property="imgsrc" />
-    <result column="insertTime" jdbcType="TIMESTAMP" property="inserttime" />
+    <id column="imgID" jdbcType="INTEGER" property="imgID" />
+    <result column="goodsID" jdbcType="INTEGER" property="goodsID" />
+    <result column="imgSrc" jdbcType="VARCHAR" property="imgSrc" />
+    <result column="insertTime" jdbcType="TIMESTAMP" property="insertTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -86,11 +86,11 @@
     select 
     <include refid="Base_Column_List" />
     from img
-    where imgID = #{imgid,jdbcType=INTEGER}
+    where imgID = #{imgID,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from img
-    where imgID = #{imgid,jdbcType=INTEGER}
+    where imgID = #{imgID,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.newboot.shop.model.ImgExample">
     delete from img
@@ -101,37 +101,37 @@
   <insert id="insert" parameterType="com.newboot.shop.model.Img">
     insert into img (imgID, goodsID, imgSrc, 
       insertTime)
-    values (#{imgid,jdbcType=INTEGER}, #{goodsid,jdbcType=INTEGER}, #{imgsrc,jdbcType=VARCHAR}, 
-      #{inserttime,jdbcType=TIMESTAMP})
+    values (#{imgID,jdbcType=INTEGER}, #{goodsID,jdbcType=INTEGER}, #{imgSrc,jdbcType=VARCHAR}, 
+      #{insertTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.newboot.shop.model.Img">
     insert into img
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="imgid != null">
+      <if test="imgID != null">
         imgID,
       </if>
-      <if test="goodsid != null">
+      <if test="goodsID != null">
         goodsID,
       </if>
-      <if test="imgsrc != null">
+      <if test="imgSrc != null">
         imgSrc,
       </if>
-      <if test="inserttime != null">
+      <if test="insertTime != null">
         insertTime,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="imgid != null">
-        #{imgid,jdbcType=INTEGER},
+      <if test="imgID != null">
+        #{imgID,jdbcType=INTEGER},
       </if>
-      <if test="goodsid != null">
-        #{goodsid,jdbcType=INTEGER},
+      <if test="goodsID != null">
+        #{goodsID,jdbcType=INTEGER},
       </if>
-      <if test="imgsrc != null">
-        #{imgsrc,jdbcType=VARCHAR},
+      <if test="imgSrc != null">
+        #{imgSrc,jdbcType=VARCHAR},
       </if>
-      <if test="inserttime != null">
-        #{inserttime,jdbcType=TIMESTAMP},
+      <if test="insertTime != null">
+        #{insertTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -144,53 +144,56 @@
   <update id="updateByExampleSelective" parameterType="map">
     update img
     <set>
-      <if test="row.imgid != null">
-        imgID = #{row.imgid,jdbcType=INTEGER},
+      <if test="record.imgID != null">
+        imgID = #{record.imgID,jdbcType=INTEGER},
       </if>
-      <if test="row.goodsid != null">
-        goodsID = #{row.goodsid,jdbcType=INTEGER},
+      <if test="record.goodsID != null">
+        goodsID = #{record.goodsID,jdbcType=INTEGER},
       </if>
-      <if test="row.imgsrc != null">
-        imgSrc = #{row.imgsrc,jdbcType=VARCHAR},
+      <if test="record.imgSrc != null">
+        imgSrc = #{record.imgSrc,jdbcType=VARCHAR},
       </if>
-      <if test="row.inserttime != null">
-        insertTime = #{row.inserttime,jdbcType=TIMESTAMP},
+      <if test="record.insertTime != null">
+        insertTime = #{record.insertTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    <if test="example != null">
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update img
-    set imgID = #{row.imgid,jdbcType=INTEGER},
-      goodsID = #{row.goodsid,jdbcType=INTEGER},
-      imgSrc = #{row.imgsrc,jdbcType=VARCHAR},
-      insertTime = #{row.inserttime,jdbcType=TIMESTAMP}
-    <if test="example != null">
+    set imgID = #{record.imgID,jdbcType=INTEGER},
+      goodsID = #{record.goodsID,jdbcType=INTEGER},
+      imgSrc = #{record.imgSrc,jdbcType=VARCHAR},
+      insertTime = #{record.insertTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.newboot.shop.model.Img">
     update img
     <set>
-      <if test="goodsid != null">
-        goodsID = #{goodsid,jdbcType=INTEGER},
+      <if test="goodsID != null">
+        goodsID = #{goodsID,jdbcType=INTEGER},
       </if>
-      <if test="imgsrc != null">
-        imgSrc = #{imgsrc,jdbcType=VARCHAR},
+      <if test="imgSrc != null">
+        imgSrc = #{imgSrc,jdbcType=VARCHAR},
       </if>
-      <if test="inserttime != null">
-        insertTime = #{inserttime,jdbcType=TIMESTAMP},
+      <if test="insertTime != null">
+        insertTime = #{insertTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where imgID = #{imgid,jdbcType=INTEGER}
+    where imgID = #{imgID,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.newboot.shop.model.Img">
     update img
-    set goodsID = #{goodsid,jdbcType=INTEGER},
-      imgSrc = #{imgsrc,jdbcType=VARCHAR},
-      insertTime = #{inserttime,jdbcType=TIMESTAMP}
-    where imgID = #{imgid,jdbcType=INTEGER}
+    set goodsID = #{goodsID,jdbcType=INTEGER},
+      imgSrc = #{imgSrc,jdbcType=VARCHAR},
+      insertTime = #{insertTime,jdbcType=TIMESTAMP}
+    where imgID = #{imgID,jdbcType=INTEGER}
   </update>
+  <select id="getImgList" parameterType="integer" resultType="string">
+    select imgSrc from img where goodsID=#{goodsID}
+  </select>
 </mapper>

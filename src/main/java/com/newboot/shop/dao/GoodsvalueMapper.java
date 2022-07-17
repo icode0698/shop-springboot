@@ -10,21 +10,21 @@ public interface GoodsvalueMapper {
 
     int deleteByExample(GoodsvalueExample example);
 
-    int deleteByPrimaryKey(Integer spid);
+    int deleteByPrimaryKey(Integer spID);
 
-    int insert(Goodsvalue row);
+    int insert(Goodsvalue record);
 
-    int insertSelective(Goodsvalue row);
+    int insertSelective(Goodsvalue record);
 
     List<Goodsvalue> selectByExample(GoodsvalueExample example);
 
-    Goodsvalue selectByPrimaryKey(Integer spid);
+    Goodsvalue selectByPrimaryKey(Integer spID);
 
-    int updateByExampleSelective(@Param("row") Goodsvalue row, @Param("example") GoodsvalueExample example);
+    int updateByExampleSelective(@Param("record") Goodsvalue record, @Param("example") GoodsvalueExample example);
 
-    int updateByExample(@Param("row") Goodsvalue row, @Param("example") GoodsvalueExample example);
+    int updateByExample(@Param("record") Goodsvalue record, @Param("example") GoodsvalueExample example);
 
-    int updateByPrimaryKeySelective(Goodsvalue row);
+    int updateByPrimaryKeySelective(Goodsvalue record);
 
-    int updateByPrimaryKey(Goodsvalue row);
+    int updateByPrimaryKey(Goodsvalue record);
 }

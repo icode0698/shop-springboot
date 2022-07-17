@@ -1,7 +1,10 @@
 package com.newboot.shop.dao;
 
+import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.model.Goods;
 import com.newboot.shop.model.GoodsExample;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -10,21 +13,23 @@ public interface GoodsMapper {
 
     int deleteByExample(GoodsExample example);
 
-    int deleteByPrimaryKey(Integer goodsid);
+    int deleteByPrimaryKey(Integer goodsID);
 
-    int insert(Goods row);
+    int insert(Goods record);
 
-    int insertSelective(Goods row);
+    int insertSelective(Goods record);
 
     List<Goods> selectByExample(GoodsExample example);
 
-    Goods selectByPrimaryKey(Integer goodsid);
+    Goods selectByPrimaryKey(Integer goodsID);
 
-    int updateByExampleSelective(@Param("row") Goods row, @Param("example") GoodsExample example);
+    int updateByExampleSelective(@Param("record") Goods record, @Param("example") GoodsExample example);
 
-    int updateByExample(@Param("row") Goods row, @Param("example") GoodsExample example);
+    int updateByExample(@Param("record") Goods record, @Param("example") GoodsExample example);
 
-    int updateByPrimaryKeySelective(Goods row);
+    int updateByPrimaryKeySelective(Goods record);
 
-    int updateByPrimaryKey(Goods row);
+    int updateByPrimaryKey(Goods record);
+
+    ArrayList<JSONObject> getList(String categoryName);
 }

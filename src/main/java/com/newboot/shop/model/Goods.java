@@ -5,58 +5,58 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Goods implements Serializable {
-    private Integer goodsid;
+    private Integer goodsID;
 
-    private Integer categoryid;
+    private Integer categoryID;
 
-    private Integer brandid;
+    private Integer brandID;
 
-    private String goodsname;
+    private String goodsName;
 
-    private Date inserttime;
+    private Date insertTime;
 
     private Integer stock;
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getGoodsid() {
-        return goodsid;
+    public Integer getGoodsID() {
+        return goodsID;
     }
 
-    public void setGoodsid(Integer goodsid) {
-        this.goodsid = goodsid;
+    public void setGoodsID(Integer goodsID) {
+        this.goodsID = goodsID;
     }
 
-    public Integer getCategoryid() {
-        return categoryid;
+    public Integer getCategoryID() {
+        return categoryID;
     }
 
-    public void setCategoryid(Integer categoryid) {
-        this.categoryid = categoryid;
+    public void setCategoryID(Integer categoryID) {
+        this.categoryID = categoryID;
     }
 
-    public Integer getBrandid() {
-        return brandid;
+    public Integer getBrandID() {
+        return brandID;
     }
 
-    public void setBrandid(Integer brandid) {
-        this.brandid = brandid;
+    public void setBrandID(Integer brandID) {
+        this.brandID = brandID;
     }
 
-    public String getGoodsname() {
-        return goodsname;
+    public String getGoodsName() {
+        return goodsName;
     }
 
-    public void setGoodsname(String goodsname) {
-        this.goodsname = goodsname;
+    public void setGoodsName(String goodsName) {
+        this.goodsName = goodsName;
     }
 
-    public Date getInserttime() {
-        return inserttime;
+    public Date getInsertTime() {
+        return insertTime;
     }
 
-    public void setInserttime(Date inserttime) {
-        this.inserttime = inserttime;
+    public void setInsertTime(Date insertTime) {
+        this.insertTime = insertTime;
     }
 
     public Integer getStock() {
@@ -73,11 +73,11 @@ public class Goods implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", goodsid=").append(goodsid);
-        sb.append(", categoryid=").append(categoryid);
-        sb.append(", brandid=").append(brandid);
-        sb.append(", goodsname=").append(goodsname);
-        sb.append(", inserttime=").append(inserttime);
+        sb.append(", goodsID=").append(goodsID);
+        sb.append(", categoryID=").append(categoryID);
+        sb.append(", brandID=").append(brandID);
+        sb.append(", goodsName=").append(goodsName);
+        sb.append(", insertTime=").append(insertTime);
         sb.append(", stock=").append(stock);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

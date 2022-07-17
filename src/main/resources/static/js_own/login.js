@@ -83,10 +83,10 @@ $(document).ready(function () {
           //$("#id").val(str.user);
           //$("#password").val(str.status);'
           console.log("json.status:"+data.code);
-          console.log("json.user:"+data.data.user);
           if(data.code==200){
             //sessionStorage.setItem("user",data.user);
             //console.log("sessionStorage_user_login:"+sessionStorage.getItem("user"));
+            console.log("json.user:"+data.data.user);
             console.log($("#rememberme").is(":checked"));
             if($("#rememberme").is(":checked")){
               $.cookie("user",data.data.user,{expires: 2});

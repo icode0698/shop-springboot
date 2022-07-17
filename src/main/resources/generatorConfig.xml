@@ -38,6 +38,8 @@
                              targetProject="src\main\java"/>
         <!--生成全部表tableName设为%-->
         <table tableName="%">
+            <!--原样输出数据库字段的值-->
+            <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
     </context>

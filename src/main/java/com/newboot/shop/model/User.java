@@ -9,17 +9,17 @@ public class User implements Serializable {
 
     private String password;
 
-    private String nickname;
+    private String nickName;
 
-    private String headpic;
+    private String headPic;
 
-    private Date regtime;
+    private Date regTime;
 
-    private Date currenttime;
+    private Date currentTime;
 
-    private Date lasttime;
+    private Date lastTime;
 
-    private Integer viewcount;
+    private Integer viewCount;
 
     private Byte online;
 
@@ -41,52 +41,52 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
-    public String getHeadpic() {
-        return headpic;
+    public String getHeadPic() {
+        return headPic;
     }
 
-    public void setHeadpic(String headpic) {
-        this.headpic = headpic;
+    public void setHeadPic(String headPic) {
+        this.headPic = headPic;
     }
 
-    public Date getRegtime() {
-        return regtime;
+    public Date getRegTime() {
+        return regTime;
     }
 
-    public void setRegtime(Date regtime) {
-        this.regtime = regtime;
+    public void setRegTime(Date regTime) {
+        this.regTime = regTime;
     }
 
-    public Date getCurrenttime() {
-        return currenttime;
+    public Date getCurrentTime() {
+        return currentTime;
     }
 
-    public void setCurrenttime(Date currenttime) {
-        this.currenttime = currenttime;
+    public void setCurrentTime(Date currentTime) {
+        this.currentTime = currentTime;
     }
 
-    public Date getLasttime() {
-        return lasttime;
+    public Date getLastTime() {
+        return lastTime;
     }
 
-    public void setLasttime(Date lasttime) {
-        this.lasttime = lasttime;
+    public void setLastTime(Date lastTime) {
+        this.lastTime = lastTime;
     }
 
-    public Integer getViewcount() {
-        return viewcount;
+    public Integer getViewCount() {
+        return viewCount;
     }
 
-    public void setViewcount(Integer viewcount) {
-        this.viewcount = viewcount;
+    public void setViewCount(Integer viewCount) {
+        this.viewCount = viewCount;
     }
 
     public Byte getOnline() {
@@ -105,12 +105,12 @@ public class User implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", user=").append(user);
         sb.append(", password=").append(password);
-        sb.append(", nickname=").append(nickname);
-        sb.append(", headpic=").append(headpic);
-        sb.append(", regtime=").append(regtime);
-        sb.append(", currenttime=").append(currenttime);
-        sb.append(", lasttime=").append(lasttime);
-        sb.append(", viewcount=").append(viewcount);
+        sb.append(", nickName=").append(nickName);
+        sb.append(", headPic=").append(headPic);
+        sb.append(", regTime=").append(regTime);
+        sb.append(", currentTime=").append(currentTime);
+        sb.append(", lastTime=").append(lastTime);
+        sb.append(", viewCount=").append(viewCount);
         sb.append(", online=").append(online);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

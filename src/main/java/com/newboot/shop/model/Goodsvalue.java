@@ -4,46 +4,46 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
 public class Goodsvalue implements Serializable {
-    private Integer spid;
+    private Integer spID;
 
-    private Integer goodsid;
+    private Integer goodsID;
 
-    private Integer valueid;
+    private Integer valueID;
 
-    private Integer parameterid;
+    private Integer parameterID;
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getSpid() {
-        return spid;
+    public Integer getSpID() {
+        return spID;
     }
 
-    public void setSpid(Integer spid) {
-        this.spid = spid;
+    public void setSpID(Integer spID) {
+        this.spID = spID;
     }
 
-    public Integer getGoodsid() {
-        return goodsid;
+    public Integer getGoodsID() {
+        return goodsID;
     }
 
-    public void setGoodsid(Integer goodsid) {
-        this.goodsid = goodsid;
+    public void setGoodsID(Integer goodsID) {
+        this.goodsID = goodsID;
     }
 
-    public Integer getValueid() {
-        return valueid;
+    public Integer getValueID() {
+        return valueID;
     }
 
-    public void setValueid(Integer valueid) {
-        this.valueid = valueid;
+    public void setValueID(Integer valueID) {
+        this.valueID = valueID;
     }
 
-    public Integer getParameterid() {
-        return parameterid;
+    public Integer getParameterID() {
+        return parameterID;
     }
 
-    public void setParameterid(Integer parameterid) {
-        this.parameterid = parameterid;
+    public void setParameterID(Integer parameterID) {
+        this.parameterID = parameterID;
     }
 
     @Override
@@ -52,10 +52,10 @@ public class Goodsvalue implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", spid=").append(spid);
-        sb.append(", goodsid=").append(goodsid);
-        sb.append(", valueid=").append(valueid);
-        sb.append(", parameterid=").append(parameterid);
+        sb.append(", spID=").append(spID);
+        sb.append(", goodsID=").append(goodsID);
+        sb.append(", valueID=").append(valueID);
+        sb.append(", parameterID=").append(parameterID);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

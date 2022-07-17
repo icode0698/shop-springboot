@@ -10,21 +10,21 @@ public interface ParameterMapper {
 
     int deleteByExample(ParameterExample example);
 
-    int deleteByPrimaryKey(Integer parameterid);
+    int deleteByPrimaryKey(Integer parameterID);
 
-    int insert(Parameter row);
+    int insert(Parameter record);
 
-    int insertSelective(Parameter row);
+    int insertSelective(Parameter record);
 
     List<Parameter> selectByExample(ParameterExample example);
 
-    Parameter selectByPrimaryKey(Integer parameterid);
+    Parameter selectByPrimaryKey(Integer parameterID);
 
-    int updateByExampleSelective(@Param("row") Parameter row, @Param("example") ParameterExample example);
+    int updateByExampleSelective(@Param("record") Parameter record, @Param("example") ParameterExample example);
 
-    int updateByExample(@Param("row") Parameter row, @Param("example") ParameterExample example);
+    int updateByExample(@Param("record") Parameter record, @Param("example") ParameterExample example);
 
-    int updateByPrimaryKeySelective(Parameter row);
+    int updateByPrimaryKeySelective(Parameter record);
 
-    int updateByPrimaryKey(Parameter row);
+    int updateByPrimaryKey(Parameter record);
 }

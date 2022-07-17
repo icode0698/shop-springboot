@@ -4,28 +4,28 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
 public class Parametervalue implements Serializable {
-    private Integer valueid;
+    private Integer valueID;
 
-    private Integer parameterid;
+    private Integer parameterID;
 
     private String value;
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getValueid() {
-        return valueid;
+    public Integer getValueID() {
+        return valueID;
     }
 
-    public void setValueid(Integer valueid) {
-        this.valueid = valueid;
+    public void setValueID(Integer valueID) {
+        this.valueID = valueID;
     }
 
-    public Integer getParameterid() {
-        return parameterid;
+    public Integer getParameterID() {
+        return parameterID;
     }
 
-    public void setParameterid(Integer parameterid) {
-        this.parameterid = parameterid;
+    public void setParameterID(Integer parameterID) {
+        this.parameterID = parameterID;
     }
 
     public String getValue() {
@@ -42,8 +42,8 @@ public class Parametervalue implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", valueid=").append(valueid);
-        sb.append(", parameterid=").append(parameterid);
+        sb.append(", valueID=").append(valueID);
+        sb.append(", parameterID=").append(parameterID);
         sb.append(", value=").append(value);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

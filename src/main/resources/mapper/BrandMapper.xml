@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.newboot.shop.dao.BrandMapper">
   <resultMap id="BaseResultMap" type="com.newboot.shop.model.Brand">
-    <id column="brandID" jdbcType="INTEGER" property="brandid" />
-    <result column="brandName" jdbcType="VARCHAR" property="brandname" />
-    <result column="insertTime" jdbcType="TIMESTAMP" property="inserttime" />
+    <id column="brandID" jdbcType="INTEGER" property="brandID" />
+    <result column="brandName" jdbcType="VARCHAR" property="brandName" />
+    <result column="insertTime" jdbcType="TIMESTAMP" property="insertTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -85,11 +85,11 @@
     select 
     <include refid="Base_Column_List" />
     from brand
-    where brandID = #{brandid,jdbcType=INTEGER}
+    where brandID = #{brandID,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from brand
-    where brandID = #{brandid,jdbcType=INTEGER}
+    where brandID = #{brandID,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.newboot.shop.model.BrandExample">
     delete from brand
@@ -100,31 +100,31 @@
   <insert id="insert" parameterType="com.newboot.shop.model.Brand">
     insert into brand (brandID, brandName, insertTime
       )
-    values (#{brandid,jdbcType=INTEGER}, #{brandname,jdbcType=VARCHAR}, #{inserttime,jdbcType=TIMESTAMP}
+    values (#{brandID,jdbcType=INTEGER}, #{brandName,jdbcType=VARCHAR}, #{insertTime,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.newboot.shop.model.Brand">
     insert into brand
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="brandid != null">
+      <if test="brandID != null">
         brandID,
       </if>
-      <if test="brandname != null">
+      <if test="brandName != null">
         brandName,
       </if>
-      <if test="inserttime != null">
+      <if test="insertTime != null">
         insertTime,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="brandid != null">
-        #{brandid,jdbcType=INTEGER},
+      <if test="brandID != null">
+        #{brandID,jdbcType=INTEGER},
       </if>
-      <if test="brandname != null">
-        #{brandname,jdbcType=VARCHAR},
+      <if test="brandName != null">
+        #{brandName,jdbcType=VARCHAR},
       </if>
-      <if test="inserttime != null">
-        #{inserttime,jdbcType=TIMESTAMP},
+      <if test="insertTime != null">
+        #{insertTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -137,45 +137,45 @@
   <update id="updateByExampleSelective" parameterType="map">
     update brand
     <set>
-      <if test="row.brandid != null">
-        brandID = #{row.brandid,jdbcType=INTEGER},
+      <if test="record.brandID != null">
+        brandID = #{record.brandID,jdbcType=INTEGER},
       </if>
-      <if test="row.brandname != null">
-        brandName = #{row.brandname,jdbcType=VARCHAR},
+      <if test="record.brandName != null">
+        brandName = #{record.brandName,jdbcType=VARCHAR},
       </if>
-      <if test="row.inserttime != null">
-        insertTime = #{row.inserttime,jdbcType=TIMESTAMP},
+      <if test="record.insertTime != null">
+        insertTime = #{record.insertTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    <if test="example != null">
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update brand
-    set brandID = #{row.brandid,jdbcType=INTEGER},
-      brandName = #{row.brandname,jdbcType=VARCHAR},
-      insertTime = #{row.inserttime,jdbcType=TIMESTAMP}
-    <if test="example != null">
+    set brandID = #{record.brandID,jdbcType=INTEGER},
+      brandName = #{record.brandName,jdbcType=VARCHAR},
+      insertTime = #{record.insertTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.newboot.shop.model.Brand">
     update brand
     <set>
-      <if test="brandname != null">
-        brandName = #{brandname,jdbcType=VARCHAR},
+      <if test="brandName != null">
+        brandName = #{brandName,jdbcType=VARCHAR},
       </if>
-      <if test="inserttime != null">
-        insertTime = #{inserttime,jdbcType=TIMESTAMP},
+      <if test="insertTime != null">
+        insertTime = #{insertTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where brandID = #{brandid,jdbcType=INTEGER}
+    where brandID = #{brandID,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.newboot.shop.model.Brand">
     update brand
-    set brandName = #{brandname,jdbcType=VARCHAR},
-      insertTime = #{inserttime,jdbcType=TIMESTAMP}
-    where brandID = #{brandid,jdbcType=INTEGER}
+    set brandName = #{brandName,jdbcType=VARCHAR},
+      insertTime = #{insertTime,jdbcType=TIMESTAMP}
+    where brandID = #{brandID,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.newboot.shop.model.Message">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="user" jdbcType="VARCHAR" property="user" />
-    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.newboot.shop.model.Message">
     <result column="message" jdbcType="LONGVARCHAR" property="message" />
@@ -127,7 +127,7 @@
     </selectKey>
     insert into message (user, createTime, message
       )
-    values (#{user,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{message,jdbcType=LONGVARCHAR}
+    values (#{user,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{message,jdbcType=LONGVARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.newboot.shop.model.Message">
@@ -139,7 +139,7 @@
       <if test="user != null">
         user,
       </if>
-      <if test="createtime != null">
+      <if test="createTime != null">
         createTime,
       </if>
       <if test="message != null">
@@ -150,8 +150,8 @@
       <if test="user != null">
         #{user,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="message != null">
         #{message,jdbcType=LONGVARCHAR},
@@ -167,39 +167,39 @@
   <update id="updateByExampleSelective" parameterType="map">
     update message
     <set>
-      <if test="row.id != null">
-        id = #{row.id,jdbcType=INTEGER},
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="row.user != null">
-        user = #{row.user,jdbcType=VARCHAR},
+      <if test="record.user != null">
+        user = #{record.user,jdbcType=VARCHAR},
       </if>
-      <if test="row.createtime != null">
-        createTime = #{row.createtime,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null">
+        createTime = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="row.message != null">
-        message = #{row.message,jdbcType=LONGVARCHAR},
+      <if test="record.message != null">
+        message = #{record.message,jdbcType=LONGVARCHAR},
       </if>
     </set>
-    <if test="example != null">
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExampleWithBLOBs" parameterType="map">
     update message
-    set id = #{row.id,jdbcType=INTEGER},
-      user = #{row.user,jdbcType=VARCHAR},
-      createTime = #{row.createtime,jdbcType=TIMESTAMP},
-      message = #{row.message,jdbcType=LONGVARCHAR}
-    <if test="example != null">
+    set id = #{record.id,jdbcType=INTEGER},
+      user = #{record.user,jdbcType=VARCHAR},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      message = #{record.message,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update message
-    set id = #{row.id,jdbcType=INTEGER},
-      user = #{row.user,jdbcType=VARCHAR},
-      createTime = #{row.createtime,jdbcType=TIMESTAMP}
-    <if test="example != null">
+    set id = #{record.id,jdbcType=INTEGER},
+      user = #{record.user,jdbcType=VARCHAR},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
@@ -209,8 +209,8 @@
       <if test="user != null">
         user = #{user,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null">
-        createTime = #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="message != null">
         message = #{message,jdbcType=LONGVARCHAR},
@@ -221,14 +221,14 @@
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.newboot.shop.model.Message">
     update message
     set user = #{user,jdbcType=VARCHAR},
-      createTime = #{createtime,jdbcType=TIMESTAMP},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
       message = #{message,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.newboot.shop.model.Message">
     update message
     set user = #{user,jdbcType=VARCHAR},
-      createTime = #{createtime,jdbcType=TIMESTAMP}
+      createTime = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

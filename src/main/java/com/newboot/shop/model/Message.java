@@ -9,7 +9,7 @@ public class Message implements Serializable {
 
     private String user;
 
-    private Date createtime;
+    private Date createTime;
 
     private String message;
 
@@ -31,12 +31,12 @@ public class Message implements Serializable {
         this.user = user;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public String getMessage() {
@@ -55,7 +55,7 @@ public class Message implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", user=").append(user);
-        sb.append(", createtime=").append(createtime);
+        sb.append(", createTime=").append(createTime);
         sb.append(", message=").append(message);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

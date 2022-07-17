@@ -4,12 +4,12 @@
   <resultMap id="BaseResultMap" type="com.newboot.shop.model.User">
     <id column="user" jdbcType="VARCHAR" property="user" />
     <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="nickName" jdbcType="VARCHAR" property="nickname" />
-    <result column="headPic" jdbcType="VARCHAR" property="headpic" />
-    <result column="regTime" jdbcType="TIMESTAMP" property="regtime" />
-    <result column="currentTime" jdbcType="TIMESTAMP" property="currenttime" />
-    <result column="lastTime" jdbcType="TIMESTAMP" property="lasttime" />
-    <result column="viewCount" jdbcType="INTEGER" property="viewcount" />
+    <result column="nickName" jdbcType="VARCHAR" property="nickName" />
+    <result column="headPic" jdbcType="VARCHAR" property="headPic" />
+    <result column="regTime" jdbcType="TIMESTAMP" property="regTime" />
+    <result column="currentTime" jdbcType="TIMESTAMP" property="currentTime" />
+    <result column="lastTime" jdbcType="TIMESTAMP" property="lastTime" />
+    <result column="viewCount" jdbcType="INTEGER" property="viewCount" />
     <result column="online" jdbcType="TINYINT" property="online" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -108,9 +108,9 @@
       headPic, regTime, currentTime, 
       lastTime, viewCount, online
       )
-    values (#{user,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
-      #{headpic,jdbcType=VARCHAR}, #{regtime,jdbcType=TIMESTAMP}, #{currenttime,jdbcType=TIMESTAMP}, 
-      #{lasttime,jdbcType=TIMESTAMP}, #{viewcount,jdbcType=INTEGER}, #{online,jdbcType=TINYINT}
+    values (#{user,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, 
+      #{headPic,jdbcType=VARCHAR}, #{regTime,jdbcType=TIMESTAMP}, #{currentTime,jdbcType=TIMESTAMP}, 
+      #{lastTime,jdbcType=TIMESTAMP}, #{viewCount,jdbcType=INTEGER}, #{online,jdbcType=TINYINT}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.newboot.shop.model.User">
@@ -122,22 +122,22 @@
       <if test="password != null">
         password,
       </if>
-      <if test="nickname != null">
+      <if test="nickName != null">
         nickName,
       </if>
-      <if test="headpic != null">
+      <if test="headPic != null">
         headPic,
       </if>
-      <if test="regtime != null">
+      <if test="regTime != null">
         regTime,
       </if>
-      <if test="currenttime != null">
+      <if test="currentTime != null">
         currentTime,
       </if>
-      <if test="lasttime != null">
+      <if test="lastTime != null">
         lastTime,
       </if>
-      <if test="viewcount != null">
+      <if test="viewCount != null">
         viewCount,
       </if>
       <if test="online != null">
@@ -151,23 +151,23 @@
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="nickname != null">
-        #{nickname,jdbcType=VARCHAR},
+      <if test="nickName != null">
+        #{nickName,jdbcType=VARCHAR},
       </if>
-      <if test="headpic != null">
-        #{headpic,jdbcType=VARCHAR},
+      <if test="headPic != null">
+        #{headPic,jdbcType=VARCHAR},
       </if>
-      <if test="regtime != null">
-        #{regtime,jdbcType=TIMESTAMP},
+      <if test="regTime != null">
+        #{regTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="currenttime != null">
-        #{currenttime,jdbcType=TIMESTAMP},
+      <if test="currentTime != null">
+        #{currentTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="lasttime != null">
-        #{lasttime,jdbcType=TIMESTAMP},
+      <if test="lastTime != null">
+        #{lastTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="viewcount != null">
-        #{viewcount,jdbcType=INTEGER},
+      <if test="viewCount != null">
+        #{viewCount,jdbcType=INTEGER},
       </if>
       <if test="online != null">
         #{online,jdbcType=TINYINT},
@@ -183,76 +183,76 @@
   <update id="updateByExampleSelective" parameterType="map">
     update user
     <set>
-      <if test="row.user != null">
-        user = #{row.user,jdbcType=VARCHAR},
+      <if test="record.user != null">
+        user = #{record.user,jdbcType=VARCHAR},
       </if>
-      <if test="row.password != null">
-        password = #{row.password,jdbcType=VARCHAR},
+      <if test="record.password != null">
+        password = #{record.password,jdbcType=VARCHAR},
       </if>
-      <if test="row.nickname != null">
-        nickName = #{row.nickname,jdbcType=VARCHAR},
+      <if test="record.nickName != null">
+        nickName = #{record.nickName,jdbcType=VARCHAR},
       </if>
-      <if test="row.headpic != null">
-        headPic = #{row.headpic,jdbcType=VARCHAR},
+      <if test="record.headPic != null">
+        headPic = #{record.headPic,jdbcType=VARCHAR},
       </if>
-      <if test="row.regtime != null">
-        regTime = #{row.regtime,jdbcType=TIMESTAMP},
+      <if test="record.regTime != null">
+        regTime = #{record.regTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="row.currenttime != null">
-        currentTime = #{row.currenttime,jdbcType=TIMESTAMP},
+      <if test="record.currentTime != null">
+        currentTime = #{record.currentTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="row.lasttime != null">
-        lastTime = #{row.lasttime,jdbcType=TIMESTAMP},
+      <if test="record.lastTime != null">
+        lastTime = #{record.lastTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="row.viewcount != null">
-        viewCount = #{row.viewcount,jdbcType=INTEGER},
+      <if test="record.viewCount != null">
+        viewCount = #{record.viewCount,jdbcType=INTEGER},
       </if>
-      <if test="row.online != null">
-        online = #{row.online,jdbcType=TINYINT},
+      <if test="record.online != null">
+        online = #{record.online,jdbcType=TINYINT},
       </if>
     </set>
-    <if test="example != null">
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update user
-    set user = #{row.user,jdbcType=VARCHAR},
-      password = #{row.password,jdbcType=VARCHAR},
-      nickName = #{row.nickname,jdbcType=VARCHAR},
-      headPic = #{row.headpic,jdbcType=VARCHAR},
-      regTime = #{row.regtime,jdbcType=TIMESTAMP},
-      currentTime = #{row.currenttime,jdbcType=TIMESTAMP},
-      lastTime = #{row.lasttime,jdbcType=TIMESTAMP},
-      viewCount = #{row.viewcount,jdbcType=INTEGER},
-      online = #{row.online,jdbcType=TINYINT}
-    <if test="example != null">
+    set user = #{record.user,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      nickName = #{record.nickName,jdbcType=VARCHAR},
+      headPic = #{record.headPic,jdbcType=VARCHAR},
+      regTime = #{record.regTime,jdbcType=TIMESTAMP},
+      currentTime = #{record.currentTime,jdbcType=TIMESTAMP},
+      lastTime = #{record.lastTime,jdbcType=TIMESTAMP},
+      viewCount = #{record.viewCount,jdbcType=INTEGER},
+      online = #{record.online,jdbcType=TINYINT}
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.newboot.shop.model.User">
     update user
     <set>
-      <if test="password != null">
+      <if test='password != null and password !=""'>
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="nickname != null">
-        nickName = #{nickname,jdbcType=VARCHAR},
+      <if test='nickName != null and nickName !=""'>
+        nickName = #{nickName,jdbcType=VARCHAR},
       </if>
-      <if test="headpic != null">
-        headPic = #{headpic,jdbcType=VARCHAR},
+      <if test='headPic != null and headPic !=""'>
+        headPic = #{headPic,jdbcType=VARCHAR},
       </if>
-      <if test="regtime != null">
-        regTime = #{regtime,jdbcType=TIMESTAMP},
+      <if test="regTime != null">
+        regTime = #{regTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="currenttime != null">
-        currentTime = #{currenttime,jdbcType=TIMESTAMP},
+      <if test="currentTime != null">
+        currentTime = #{currentTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="lasttime != null">
-        lastTime = #{lasttime,jdbcType=TIMESTAMP},
+      <if test="lastTime != null">
+        lastTime = #{lastTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="viewcount != null">
-        viewCount = #{viewcount,jdbcType=INTEGER},
+      <if test="viewCount != null">
+        viewCount = #{viewCount,jdbcType=INTEGER},
       </if>
       <if test="online != null">
         online = #{online,jdbcType=TINYINT},
@@ -263,17 +263,16 @@
   <update id="updateByPrimaryKey" parameterType="com.newboot.shop.model.User">
     update user
     set password = #{password,jdbcType=VARCHAR},
-      nickName = #{nickname,jdbcType=VARCHAR},
-      headPic = #{headpic,jdbcType=VARCHAR},
-      regTime = #{regtime,jdbcType=TIMESTAMP},
-      currentTime = #{currenttime,jdbcType=TIMESTAMP},
-      lastTime = #{lasttime,jdbcType=TIMESTAMP},
-      viewCount = #{viewcount,jdbcType=INTEGER},
+      nickName = #{nickName,jdbcType=VARCHAR},
+      headPic = #{headPic,jdbcType=VARCHAR},
+      regTime = #{regTime,jdbcType=TIMESTAMP},
+      currentTime = #{currentTime,jdbcType=TIMESTAMP},
+      lastTime = #{lastTime,jdbcType=TIMESTAMP},
+      viewCount = #{viewCount,jdbcType=INTEGER},
       online = #{online,jdbcType=TINYINT}
     where user = #{user,jdbcType=VARCHAR}
   </update>
-
-  <update id="updateCurrentTimeByUser" parameterType="com.newboot.shop.model.User">
-        update user set viewCount=#{viewcount} where user=#{user}
+  <update id="updateOnlineAndLastTime" parameterType="com.newboot.shop.model.User">
+    update user set update user set lastTime=currentTime,online=#{online} where user=#{user}
   </update>
 </mapper>

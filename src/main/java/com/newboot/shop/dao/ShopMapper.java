@@ -12,19 +12,19 @@ public interface ShopMapper {
 
     int deleteByPrimaryKey(@Param("id") String id, @Param("user") String user);
 
-    int insert(Shop row);
+    int insert(Shop record);
 
-    int insertSelective(Shop row);
+    int insertSelective(Shop record);
 
     List<Shop> selectByExample(ShopExample example);
 
     Shop selectByPrimaryKey(@Param("id") String id, @Param("user") String user);
 
-    int updateByExampleSelective(@Param("row") Shop row, @Param("example") ShopExample example);
+    int updateByExampleSelective(@Param("record") Shop record, @Param("example") ShopExample example);
 
-    int updateByExample(@Param("row") Shop row, @Param("example") ShopExample example);
+    int updateByExample(@Param("record") Shop record, @Param("example") ShopExample example);
 
-    int updateByPrimaryKeySelective(Shop row);
+    int updateByPrimaryKeySelective(Shop record);
 
-    int updateByPrimaryKey(Shop row);
+    int updateByPrimaryKey(Shop record);
 }

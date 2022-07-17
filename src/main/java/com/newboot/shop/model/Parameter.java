@@ -4,26 +4,26 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
 public class Parameter implements Serializable {
-    private Integer parameterid;
+    private Integer parameterID;
 
-    private String parametername;
+    private String parameterName;
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getParameterid() {
-        return parameterid;
+    public Integer getParameterID() {
+        return parameterID;
     }
 
-    public void setParameterid(Integer parameterid) {
-        this.parameterid = parameterid;
+    public void setParameterID(Integer parameterID) {
+        this.parameterID = parameterID;
     }
 
-    public String getParametername() {
-        return parametername;
+    public String getParameterName() {
+        return parameterName;
     }
 
-    public void setParametername(String parametername) {
-        this.parametername = parametername;
+    public void setParameterName(String parameterName) {
+        this.parameterName = parameterName;
     }
 
     @Override
@@ -32,8 +32,8 @@ public class Parameter implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", parameterid=").append(parameterid);
-        sb.append(", parametername=").append(parametername);
+        sb.append(", parameterID=").append(parameterID);
+        sb.append(", parameterName=").append(parameterName);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.newboot.shop.dao.GoodsvalueMapper">
   <resultMap id="BaseResultMap" type="com.newboot.shop.model.Goodsvalue">
-    <id column="spID" jdbcType="INTEGER" property="spid" />
-    <result column="goodsID" jdbcType="INTEGER" property="goodsid" />
-    <result column="valueID" jdbcType="INTEGER" property="valueid" />
-    <result column="parameterID" jdbcType="INTEGER" property="parameterid" />
+    <id column="spID" jdbcType="INTEGER" property="spID" />
+    <result column="goodsID" jdbcType="INTEGER" property="goodsID" />
+    <result column="valueID" jdbcType="INTEGER" property="valueID" />
+    <result column="parameterID" jdbcType="INTEGER" property="parameterID" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -86,11 +86,11 @@
     select 
     <include refid="Base_Column_List" />
     from goodsvalue
-    where spID = #{spid,jdbcType=INTEGER}
+    where spID = #{spID,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from goodsvalue
-    where spID = #{spid,jdbcType=INTEGER}
+    where spID = #{spID,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.newboot.shop.model.GoodsvalueExample">
     delete from goodsvalue
@@ -101,37 +101,37 @@
   <insert id="insert" parameterType="com.newboot.shop.model.Goodsvalue">
     insert into goodsvalue (spID, goodsID, valueID, 
       parameterID)
-    values (#{spid,jdbcType=INTEGER}, #{goodsid,jdbcType=INTEGER}, #{valueid,jdbcType=INTEGER}, 
-      #{parameterid,jdbcType=INTEGER})
+    values (#{spID,jdbcType=INTEGER}, #{goodsID,jdbcType=INTEGER}, #{valueID,jdbcType=INTEGER}, 
+      #{parameterID,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.newboot.shop.model.Goodsvalue">
     insert into goodsvalue
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="spid != null">
+      <if test="spID != null">
         spID,
       </if>
-      <if test="goodsid != null">
+      <if test="goodsID != null">
         goodsID,
       </if>
-      <if test="valueid != null">
+      <if test="valueID != null">
         valueID,
       </if>
-      <if test="parameterid != null">
+      <if test="parameterID != null">
         parameterID,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="spid != null">
-        #{spid,jdbcType=INTEGER},
+      <if test="spID != null">
+        #{spID,jdbcType=INTEGER},
       </if>
-      <if test="goodsid != null">
-        #{goodsid,jdbcType=INTEGER},
+      <if test="goodsID != null">
+        #{goodsID,jdbcType=INTEGER},
       </if>
-      <if test="valueid != null">
-        #{valueid,jdbcType=INTEGER},
+      <if test="valueID != null">
+        #{valueID,jdbcType=INTEGER},
       </if>
-      <if test="parameterid != null">
-        #{parameterid,jdbcType=INTEGER},
+      <if test="parameterID != null">
+        #{parameterID,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -144,53 +144,53 @@
   <update id="updateByExampleSelective" parameterType="map">
     update goodsvalue
     <set>
-      <if test="row.spid != null">
-        spID = #{row.spid,jdbcType=INTEGER},
+      <if test="record.spID != null">
+        spID = #{record.spID,jdbcType=INTEGER},
       </if>
-      <if test="row.goodsid != null">
-        goodsID = #{row.goodsid,jdbcType=INTEGER},
+      <if test="record.goodsID != null">
+        goodsID = #{record.goodsID,jdbcType=INTEGER},
       </if>
-      <if test="row.valueid != null">
-        valueID = #{row.valueid,jdbcType=INTEGER},
+      <if test="record.valueID != null">
+        valueID = #{record.valueID,jdbcType=INTEGER},
       </if>
-      <if test="row.parameterid != null">
-        parameterID = #{row.parameterid,jdbcType=INTEGER},
+      <if test="record.parameterID != null">
+        parameterID = #{record.parameterID,jdbcType=INTEGER},
       </if>
     </set>
-    <if test="example != null">
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update goodsvalue
-    set spID = #{row.spid,jdbcType=INTEGER},
-      goodsID = #{row.goodsid,jdbcType=INTEGER},
-      valueID = #{row.valueid,jdbcType=INTEGER},
-      parameterID = #{row.parameterid,jdbcType=INTEGER}
-    <if test="example != null">
+    set spID = #{record.spID,jdbcType=INTEGER},
+      goodsID = #{record.goodsID,jdbcType=INTEGER},
+      valueID = #{record.valueID,jdbcType=INTEGER},
+      parameterID = #{record.parameterID,jdbcType=INTEGER}
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.newboot.shop.model.Goodsvalue">
     update goodsvalue
     <set>
-      <if test="goodsid != null">
-        goodsID = #{goodsid,jdbcType=INTEGER},
+      <if test="goodsID != null">
+        goodsID = #{goodsID,jdbcType=INTEGER},
       </if>
-      <if test="valueid != null">
-        valueID = #{valueid,jdbcType=INTEGER},
+      <if test="valueID != null">
+        valueID = #{valueID,jdbcType=INTEGER},
       </if>
-      <if test="parameterid != null">
-        parameterID = #{parameterid,jdbcType=INTEGER},
+      <if test="parameterID != null">
+        parameterID = #{parameterID,jdbcType=INTEGER},
       </if>
     </set>
-    where spID = #{spid,jdbcType=INTEGER}
+    where spID = #{spID,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.newboot.shop.model.Goodsvalue">
     update goodsvalue
-    set goodsID = #{goodsid,jdbcType=INTEGER},
-      valueID = #{valueid,jdbcType=INTEGER},
-      parameterID = #{parameterid,jdbcType=INTEGER}
-    where spID = #{spid,jdbcType=INTEGER}
+    set goodsID = #{goodsID,jdbcType=INTEGER},
+      valueID = #{valueID,jdbcType=INTEGER},
+      parameterID = #{parameterID,jdbcType=INTEGER}
+    where spID = #{spID,jdbcType=INTEGER}
   </update>
 </mapper>

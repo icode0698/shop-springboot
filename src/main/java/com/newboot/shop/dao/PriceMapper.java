@@ -12,19 +12,19 @@ public interface PriceMapper {
 
     int deleteByPrimaryKey(Integer sku);
 
-    int insert(Price row);
+    int insert(Price record);
 
-    int insertSelective(Price row);
+    int insertSelective(Price record);
 
     List<Price> selectByExample(PriceExample example);
 
     Price selectByPrimaryKey(Integer sku);
 
-    int updateByExampleSelective(@Param("row") Price row, @Param("example") PriceExample example);
+    int updateByExampleSelective(@Param("record") Price record, @Param("example") PriceExample example);
 
-    int updateByExample(@Param("row") Price row, @Param("example") PriceExample example);
+    int updateByExample(@Param("record") Price record, @Param("example") PriceExample example);
 
-    int updateByPrimaryKeySelective(Price row);
+    int updateByPrimaryKeySelective(Price record);
 
-    int updateByPrimaryKey(Price row);
+    int updateByPrimaryKey(Price record);
 }

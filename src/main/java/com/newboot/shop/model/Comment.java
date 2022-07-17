@@ -14,9 +14,9 @@ public class Comment implements Serializable {
 
     private Integer spu;
 
-    private BigDecimal ratevalue;
+    private BigDecimal rateValue;
 
-    private Date createtime;
+    private Date createTime;
 
     private String comment;
 
@@ -54,20 +54,20 @@ public class Comment implements Serializable {
         this.spu = spu;
     }
 
-    public BigDecimal getRatevalue() {
-        return ratevalue;
+    public BigDecimal getRateValue() {
+        return rateValue;
     }
 
-    public void setRatevalue(BigDecimal ratevalue) {
-        this.ratevalue = ratevalue;
+    public void setRateValue(BigDecimal rateValue) {
+        this.rateValue = rateValue;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public String getComment() {
@@ -88,8 +88,8 @@ public class Comment implements Serializable {
         sb.append(", user=").append(user);
         sb.append(", sku=").append(sku);
         sb.append(", spu=").append(spu);
-        sb.append(", ratevalue=").append(ratevalue);
-        sb.append(", createtime=").append(createtime);
+        sb.append(", rateValue=").append(rateValue);
+        sb.append(", createTime=").append(createTime);
         sb.append(", comment=").append(comment);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

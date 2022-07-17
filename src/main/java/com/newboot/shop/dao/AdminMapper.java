@@ -12,19 +12,19 @@ public interface AdminMapper {
 
     int deleteByPrimaryKey(String admin);
 
-    int insert(Admin row);
+    int insert(Admin record);
 
-    int insertSelective(Admin row);
+    int insertSelective(Admin record);
 
     List<Admin> selectByExample(AdminExample example);
 
     Admin selectByPrimaryKey(String admin);
 
-    int updateByExampleSelective(@Param("row") Admin row, @Param("example") AdminExample example);
+    int updateByExampleSelective(@Param("record") Admin record, @Param("example") AdminExample example);
 
-    int updateByExample(@Param("row") Admin row, @Param("example") AdminExample example);
+    int updateByExample(@Param("record") Admin record, @Param("example") AdminExample example);
 
-    int updateByPrimaryKeySelective(Admin row);
+    int updateByPrimaryKeySelective(Admin record);
 
-    int updateByPrimaryKey(Admin row);
+    int updateByPrimaryKey(Admin record);
 }

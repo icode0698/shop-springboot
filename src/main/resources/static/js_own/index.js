@@ -13,7 +13,7 @@ $(function () {
     // 进页面获取个性推荐
     $.ajax({
         type: "post",
-        url: "servlet/Recommend",
+        url: "content/list",
         dataType: "json",
         data: {
             type: "ajax_category",
@@ -22,16 +22,16 @@ $(function () {
         success: function (data) {
             console.log(data);
             console.log("ajax_item_status:"+data.status);
-            console.log("message.length:"+data.message.length);
+            console.log("message.length:"+data.data.goodsList.length);
             //$("#phone_row").empty();
-            for(var i=0;i<data.message.length;i++){
+            for(var i=0;i<data.data.goodsList.length;i++){
                 var content = '<div class="col-md-6 col_border ">' +
                     '<div class="div_out wow slideInUp">' +
-                    '<img class="img_radius" src="'+data.message[i].imgList[0]+'" alt="item" />' +
+                    '<img class="img_radius" src="'+data.data.goodsList[i].imgList[0]+'" alt="item" />' +
                     '<div id="in'+i+'" class="div_in">' +
                     '<div id="div_text'+i+'" class="div_text">' +
-                    '<h2 class="display_commend" id="h2_item'+i+'">'+data.message[i].goodsName+'</h2>' +
-                    '<a href="details.html?spu='+data.message[i].goodsID+'&goods='+data.message[i].goodsName+'" id="span_item'+i+'" target="_blank" class="btn_shop btn_light">SHOW NOW</a>' +
+                    '<h2 class="display_commend" id="h2_item'+i+'">'+data.data.goodsList[i].goodsName+'</h2>' +
+                    '<a href="details.html?spu='+data.data.goodsList[i].goodsID+'&goods='+data.data.goodsList[i].goodsName+'" id="span_item'+i+'" target="_blank" class="btn_shop btn_light">SHOW NOW</a>' +
                     '</div>' +
                     '</div>' +
                     '</div>' +
@@ -63,7 +63,7 @@ $(function () {
     $("#phone").click(function () {
         $.ajax({
             type: "post",
-            url: "servlet/Recommend",
+            url: "content/list",
             dataType: "json",
             data: {
                 type: "ajax_category",
@@ -72,16 +72,16 @@ $(function () {
             success: function (data) {
                 console.log(data);
                 console.log("ajax_item_status:"+data.status);
-                console.log("message.length:"+data.message.length);
+                console.log("message.length:"+data.data.goodsList.length);
                 $("#phone_row").empty();//先清空div，防止重复添加
-                for(var i=0;i<data.message.length;i++){
+                for(var i=0;i<data.data.goodsList.length;i++){
                     var content = '<div class="col-md-6 col_border">' +
                         '<div class="div_out wow slideInUp">' +
-                        '<img class="img_radius" src="'+data.message[i].imgList[0]+'" alt="item" />' +
+                        '<img class="img_radius" src="'+data.data.goodsList[i].imgList[0]+'" alt="item" />' +
                         '<div id="in'+i+'" class="div_in">' +
                         '<div id="div_text'+i+'" class="div_text">' +
-                        '<h2 class="display_commend" id="h2_item'+i+'">'+data.message[i].goodsName+'</h2>' +
-                        '<a href="details.html?spu='+data.message[i].goodsID+'&goods='+data.message[i].goodsName+'" id="span_item'+i+'" target="_blank" class="btn_shop btn_light">SHOW NOW</a>' +
+                        '<h2 class="display_commend" id="h2_item'+i+'">'+data.data.goodsList[i].goodsName+'</h2>' +
+                        '<a href="details.html?spu='+data.data.goodsList[i].goodsID+'&goods='+data.data.goodsList[i].goodsName+'" id="span_item'+i+'" target="_blank" class="btn_shop btn_light">SHOW NOW</a>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
@@ -97,7 +97,7 @@ $(function () {
     $("#tablet").click(function () {
         $.ajax({
             type: "post",
-            url: "servlet/Recommend",
+            url: "content/list",
             dataType: "json",
             data: {
                 type: "ajax_category",
@@ -106,16 +106,16 @@ $(function () {
             success: function (data) {
                 console.log(data);
                 console.log("ajax_item_status:"+data.status);
-                console.log("message.length:"+data.message.length);
+                console.log("message.length:"+data.data.goodsList.length);
                 $("#tablet_row").empty();
-                for(var i=0;i<data.message.length;i++){
+                for(var i=0;i<data.data.goodsList.length;i++){
                     var content = '<div class="col-md-6 col_border">' +
                         '<div class="div_out wow slideInUp">' +
-                        '<img class="img_radius" src="'+data.message[i].imgList[0]+'" alt="item" />' +
+                        '<img class="img_radius" src="'+data.data.goodsList[i].imgList[0]+'" alt="item" />' +
                         '<div id="in'+i+'" class="div_in">' +
                         '<div id="div_text'+i+'" class="div_text">' +
-                        '<h2 class="display_commend" id="h2_item'+i+'">'+data.message[i].goodsName+'</h2>' +
-                        '<a href="details.html?spu='+data.message[i].goodsID+'&goods='+data.message[i].goodsName+'" id="span_item'+i+'" target="_blank" class="btn_shop btn_light">SHOW NOW</a>' +
+                        '<h2 class="display_commend" id="h2_item'+i+'">'+data.data.goodsList[i].goodsName+'</h2>' +
+                        '<a href="details.html?spu='+data.data.goodsList[i].goodsID+'&goods='+data.data.goodsList[i].goodsName+'" id="span_item'+i+'" target="_blank" class="btn_shop btn_light">SHOW NOW</a>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
@@ -132,7 +132,7 @@ $(function () {
     $("#laptop").click(function () {
         $.ajax({
             type: "post",
-            url: "servlet/Recommend",
+            url: "content/list",
             dataType: "json",
             data: {
                 type: "ajax_category",
@@ -141,16 +141,16 @@ $(function () {
             success: function (data) {
                 console.log(data);
                 console.log("ajax_item_status:"+data.status);
-                console.log("message.length:"+data.message.length);
+                console.log("message.length:"+data.data.goodsList.length);
                 $("#laptop_row").empty();
-                for(var i=0;i<data.message.length;i++){
+                for(var i=0;i<data.data.goodsList.length;i++){
                     var content = '<div class="col-md-6 col_border wow slideInUp">' +
                         '<div class="div_out">' +
-                        '<img class="img_radius" src="'+data.message[i].imgList[0]+'" alt="item" />' +
+                        '<img class="img_radius" src="'+data.data.goodsList[i].imgList[0]+'" alt="item" />' +
                         '<div id="in'+i+'" class="div_in">' +
                         '<div id="div_text'+i+'" class="div_text">' +
-                        '<h2 class="display_commend" id="h2_item'+i+'">'+data.message[i].goodsName+'</h2>' +
-                        '<a href="details.html?spu='+data.message[i].goodsID+'&goods='+data.message[i].goodsName+'" id="span_item'+i+'" target="_blank" class="btn_shop btn_light">SHOW NOW</a>' +
+                        '<h2 class="display_commend" id="h2_item'+i+'">'+data.data.goodsList[i].goodsName+'</h2>' +
+                        '<a href="details.html?spu='+data.data.goodsList[i].goodsID+'&goods='+data.data.goodsList[i].goodsName+'" id="span_item'+i+'" target="_blank" class="btn_shop btn_light">SHOW NOW</a>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +

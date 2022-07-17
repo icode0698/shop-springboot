@@ -137,26 +137,26 @@
   <update id="updateByExampleSelective" parameterType="map">
     update admin
     <set>
-      <if test="row.admin != null">
-        admin = #{row.admin,jdbcType=VARCHAR},
+      <if test="record.admin != null">
+        admin = #{record.admin,jdbcType=VARCHAR},
       </if>
-      <if test="row.password != null">
-        password = #{row.password,jdbcType=VARCHAR},
+      <if test="record.password != null">
+        password = #{record.password,jdbcType=VARCHAR},
       </if>
-      <if test="row.info != null">
-        info = #{row.info,jdbcType=VARCHAR},
+      <if test="record.info != null">
+        info = #{record.info,jdbcType=VARCHAR},
       </if>
     </set>
-    <if test="example != null">
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update admin
-    set admin = #{row.admin,jdbcType=VARCHAR},
-      password = #{row.password,jdbcType=VARCHAR},
-      info = #{row.info,jdbcType=VARCHAR}
-    <if test="example != null">
+    set admin = #{record.admin,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      info = #{record.info,jdbcType=VARCHAR}
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>

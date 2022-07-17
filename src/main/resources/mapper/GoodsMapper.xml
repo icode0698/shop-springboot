@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.newboot.shop.dao.GoodsMapper">
   <resultMap id="BaseResultMap" type="com.newboot.shop.model.Goods">
-    <id column="goodsID" jdbcType="INTEGER" property="goodsid" />
-    <result column="categoryID" jdbcType="INTEGER" property="categoryid" />
-    <result column="brandID" jdbcType="INTEGER" property="brandid" />
-    <result column="goodsName" jdbcType="VARCHAR" property="goodsname" />
-    <result column="insertTime" jdbcType="TIMESTAMP" property="inserttime" />
+    <id column="goodsID" jdbcType="INTEGER" property="goodsID" />
+    <result column="categoryID" jdbcType="INTEGER" property="categoryID" />
+    <result column="brandID" jdbcType="INTEGER" property="brandID" />
+    <result column="goodsName" jdbcType="VARCHAR" property="goodsName" />
+    <result column="insertTime" jdbcType="TIMESTAMP" property="insertTime" />
     <result column="stock" jdbcType="INTEGER" property="stock" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -88,11 +88,11 @@
     select 
     <include refid="Base_Column_List" />
     from goods
-    where goodsID = #{goodsid,jdbcType=INTEGER}
+    where goodsID = #{goodsID,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from goods
-    where goodsID = #{goodsid,jdbcType=INTEGER}
+    where goodsID = #{goodsID,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.newboot.shop.model.GoodsExample">
     delete from goods
@@ -104,26 +104,26 @@
     insert into goods (goodsID, categoryID, brandID, 
       goodsName, insertTime, stock
       )
-    values (#{goodsid,jdbcType=INTEGER}, #{categoryid,jdbcType=INTEGER}, #{brandid,jdbcType=INTEGER}, 
-      #{goodsname,jdbcType=VARCHAR}, #{inserttime,jdbcType=TIMESTAMP}, #{stock,jdbcType=INTEGER}
+    values (#{goodsID,jdbcType=INTEGER}, #{categoryID,jdbcType=INTEGER}, #{brandID,jdbcType=INTEGER}, 
+      #{goodsName,jdbcType=VARCHAR}, #{insertTime,jdbcType=TIMESTAMP}, #{stock,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.newboot.shop.model.Goods">
     insert into goods
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="goodsid != null">
+      <if test="goodsID != null">
         goodsID,
       </if>
-      <if test="categoryid != null">
+      <if test="categoryID != null">
         categoryID,
       </if>
-      <if test="brandid != null">
+      <if test="brandID != null">
         brandID,
       </if>
-      <if test="goodsname != null">
+      <if test="goodsName != null">
         goodsName,
       </if>
-      <if test="inserttime != null">
+      <if test="insertTime != null">
         insertTime,
       </if>
       <if test="stock != null">
@@ -131,20 +131,20 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="goodsid != null">
-        #{goodsid,jdbcType=INTEGER},
+      <if test="goodsID != null">
+        #{goodsID,jdbcType=INTEGER},
       </if>
-      <if test="categoryid != null">
-        #{categoryid,jdbcType=INTEGER},
+      <if test="categoryID != null">
+        #{categoryID,jdbcType=INTEGER},
       </if>
-      <if test="brandid != null">
-        #{brandid,jdbcType=INTEGER},
+      <if test="brandID != null">
+        #{brandID,jdbcType=INTEGER},
       </if>
-      <if test="goodsname != null">
-        #{goodsname,jdbcType=VARCHAR},
+      <if test="goodsName != null">
+        #{goodsName,jdbcType=VARCHAR},
       </if>
-      <if test="inserttime != null">
-        #{inserttime,jdbcType=TIMESTAMP},
+      <if test="insertTime != null">
+        #{insertTime,jdbcType=TIMESTAMP},
       </if>
       <if test="stock != null">
         #{stock,jdbcType=INTEGER},
@@ -160,69 +160,74 @@
   <update id="updateByExampleSelective" parameterType="map">
     update goods
     <set>
-      <if test="row.goodsid != null">
-        goodsID = #{row.goodsid,jdbcType=INTEGER},
+      <if test="record.goodsID != null">
+        goodsID = #{record.goodsID,jdbcType=INTEGER},
       </if>
-      <if test="row.categoryid != null">
-        categoryID = #{row.categoryid,jdbcType=INTEGER},
+      <if test="record.categoryID != null">
+        categoryID = #{record.categoryID,jdbcType=INTEGER},
       </if>
-      <if test="row.brandid != null">
-        brandID = #{row.brandid,jdbcType=INTEGER},
+      <if test="record.brandID != null">
+        brandID = #{record.brandID,jdbcType=INTEGER},
       </if>
-      <if test="row.goodsname != null">
-        goodsName = #{row.goodsname,jdbcType=VARCHAR},
+      <if test="record.goodsName != null">
+        goodsName = #{record.goodsName,jdbcType=VARCHAR},
       </if>
-      <if test="row.inserttime != null">
-        insertTime = #{row.inserttime,jdbcType=TIMESTAMP},
+      <if test="record.insertTime != null">
+        insertTime = #{record.insertTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="row.stock != null">
-        stock = #{row.stock,jdbcType=INTEGER},
+      <if test="record.stock != null">
+        stock = #{record.stock,jdbcType=INTEGER},
       </if>
     </set>
-    <if test="example != null">
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update goods
-    set goodsID = #{row.goodsid,jdbcType=INTEGER},
-      categoryID = #{row.categoryid,jdbcType=INTEGER},
-      brandID = #{row.brandid,jdbcType=INTEGER},
-      goodsName = #{row.goodsname,jdbcType=VARCHAR},
-      insertTime = #{row.inserttime,jdbcType=TIMESTAMP},
-      stock = #{row.stock,jdbcType=INTEGER}
-    <if test="example != null">
+    set goodsID = #{record.goodsID,jdbcType=INTEGER},
+      categoryID = #{record.categoryID,jdbcType=INTEGER},
+      brandID = #{record.brandID,jdbcType=INTEGER},
+      goodsName = #{record.goodsName,jdbcType=VARCHAR},
+      insertTime = #{record.insertTime,jdbcType=TIMESTAMP},
+      stock = #{record.stock,jdbcType=INTEGER}
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.newboot.shop.model.Goods">
     update goods
     <set>
-      <if test="categoryid != null">
-        categoryID = #{categoryid,jdbcType=INTEGER},
+      <if test="categoryID != null">
+        categoryID = #{categoryID,jdbcType=INTEGER},
       </if>
-      <if test="brandid != null">
-        brandID = #{brandid,jdbcType=INTEGER},
+      <if test="brandID != null">
+        brandID = #{brandID,jdbcType=INTEGER},
       </if>
-      <if test="goodsname != null">
-        goodsName = #{goodsname,jdbcType=VARCHAR},
+      <if test="goodsName != null">
+        goodsName = #{goodsName,jdbcType=VARCHAR},
       </if>
-      <if test="inserttime != null">
-        insertTime = #{inserttime,jdbcType=TIMESTAMP},
+      <if test="insertTime != null">
+        insertTime = #{insertTime,jdbcType=TIMESTAMP},
       </if>
       <if test="stock != null">
         stock = #{stock,jdbcType=INTEGER},
       </if>
     </set>
-    where goodsID = #{goodsid,jdbcType=INTEGER}
+    where goodsID = #{goodsID,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.newboot.shop.model.Goods">
     update goods
-    set categoryID = #{categoryid,jdbcType=INTEGER},
-      brandID = #{brandid,jdbcType=INTEGER},
-      goodsName = #{goodsname,jdbcType=VARCHAR},
-      insertTime = #{inserttime,jdbcType=TIMESTAMP},
+    set categoryID = #{categoryID,jdbcType=INTEGER},
+      brandID = #{brandID,jdbcType=INTEGER},
+      goodsName = #{goodsName,jdbcType=VARCHAR},
+      insertTime = #{insertTime,jdbcType=TIMESTAMP},
       stock = #{stock,jdbcType=INTEGER}
-    where goodsID = #{goodsid,jdbcType=INTEGER}
+    where goodsID = #{goodsID,jdbcType=INTEGER}
   </update>
+  <select id="getList" parameterType="string">
+    select goodsID, goodsName from goods where categoryID =
+        (select categoryID from category WHERE categoryName=#{category})
+    order by insertTime desc
+  </select>
 </mapper>

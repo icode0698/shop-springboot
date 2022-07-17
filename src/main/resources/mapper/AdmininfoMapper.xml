@@ -151,29 +151,29 @@
   <update id="updateByExampleSelective" parameterType="map">
     update admininfo
     <set>
-      <if test="row.type != null">
-        type = #{row.type,jdbcType=VARCHAR},
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=VARCHAR},
       </if>
-      <if test="row.info != null">
-        info = #{row.info,jdbcType=LONGVARCHAR},
+      <if test="record.info != null">
+        info = #{record.info,jdbcType=LONGVARCHAR},
       </if>
     </set>
-    <if test="example != null">
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExampleWithBLOBs" parameterType="map">
     update admininfo
-    set type = #{row.type,jdbcType=VARCHAR},
-      info = #{row.info,jdbcType=LONGVARCHAR}
-    <if test="example != null">
+    set type = #{record.type,jdbcType=VARCHAR},
+      info = #{record.info,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update admininfo
-    set type = #{row.type,jdbcType=VARCHAR}
-    <if test="example != null">
+    set type = #{record.type,jdbcType=VARCHAR}
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>

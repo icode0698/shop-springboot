@@ -12,11 +12,11 @@ public class Shop implements Serializable {
 
     private Integer sku;
 
-    private String goodsname;
+    private String goodsName;
 
-    private String categoryname;
+    private String categoryName;
 
-    private String brandname;
+    private String brandName;
 
     private String storage;
 
@@ -26,15 +26,15 @@ public class Shop implements Serializable {
 
     private Integer num;
 
-    private BigDecimal unitprice;
+    private BigDecimal unitPrice;
 
-    private BigDecimal totalprice;
+    private BigDecimal totalPrice;
 
-    private Byte ispay;
+    private Byte isPay;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date paymenttime;
+    private Date paymentTime;
 
     private static final long serialVersionUID = 1L;
 
@@ -62,28 +62,28 @@ public class Shop implements Serializable {
         this.sku = sku;
     }
 
-    public String getGoodsname() {
-        return goodsname;
+    public String getGoodsName() {
+        return goodsName;
     }
 
-    public void setGoodsname(String goodsname) {
-        this.goodsname = goodsname;
+    public void setGoodsName(String goodsName) {
+        this.goodsName = goodsName;
     }
 
-    public String getCategoryname() {
-        return categoryname;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setCategoryname(String categoryname) {
-        this.categoryname = categoryname;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
-    public String getBrandname() {
-        return brandname;
+    public String getBrandName() {
+        return brandName;
     }
 
-    public void setBrandname(String brandname) {
-        this.brandname = brandname;
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
     }
 
     public String getStorage() {
@@ -118,44 +118,44 @@ public class Shop implements Serializable {
         this.num = num;
     }
 
-    public BigDecimal getUnitprice() {
-        return unitprice;
+    public BigDecimal getUnitPrice() {
+        return unitPrice;
     }
 
-    public void setUnitprice(BigDecimal unitprice) {
-        this.unitprice = unitprice;
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
-    public BigDecimal getTotalprice() {
-        return totalprice;
+    public BigDecimal getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setTotalprice(BigDecimal totalprice) {
-        this.totalprice = totalprice;
+    public void setTotalPrice(BigDecimal totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
-    public Byte getIspay() {
-        return ispay;
+    public Byte getIsPay() {
+        return isPay;
     }
 
-    public void setIspay(Byte ispay) {
-        this.ispay = ispay;
+    public void setIsPay(Byte isPay) {
+        this.isPay = isPay;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getPaymenttime() {
-        return paymenttime;
+    public Date getPaymentTime() {
+        return paymentTime;
     }
 
-    public void setPaymenttime(Date paymenttime) {
-        this.paymenttime = paymenttime;
+    public void setPaymentTime(Date paymentTime) {
+        this.paymentTime = paymentTime;
     }
 
     @Override
@@ -167,18 +167,18 @@ public class Shop implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", user=").append(user);
         sb.append(", sku=").append(sku);
-        sb.append(", goodsname=").append(goodsname);
-        sb.append(", categoryname=").append(categoryname);
-        sb.append(", brandname=").append(brandname);
+        sb.append(", goodsName=").append(goodsName);
+        sb.append(", categoryName=").append(categoryName);
+        sb.append(", brandName=").append(brandName);
         sb.append(", storage=").append(storage);
         sb.append(", color=").append(color);
         sb.append(", screen=").append(screen);
         sb.append(", num=").append(num);
-        sb.append(", unitprice=").append(unitprice);
-        sb.append(", totalprice=").append(totalprice);
-        sb.append(", ispay=").append(ispay);
-        sb.append(", createtime=").append(createtime);
-        sb.append(", paymenttime=").append(paymenttime);
+        sb.append(", unitPrice=").append(unitPrice);
+        sb.append(", totalPrice=").append(totalPrice);
+        sb.append(", isPay=").append(isPay);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", paymentTime=").append(paymentTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

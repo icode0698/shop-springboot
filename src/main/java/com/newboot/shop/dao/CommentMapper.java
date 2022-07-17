@@ -12,9 +12,9 @@ public interface CommentMapper {
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(Comment row);
+    int insert(Comment record);
 
-    int insertSelective(Comment row);
+    int insertSelective(Comment record);
 
     List<Comment> selectByExampleWithBLOBs(CommentExample example);
 
@@ -22,15 +22,15 @@ public interface CommentMapper {
 
     Comment selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("row") Comment row, @Param("example") CommentExample example);
+    int updateByExampleSelective(@Param("record") Comment record, @Param("example") CommentExample example);
 
-    int updateByExampleWithBLOBs(@Param("row") Comment row, @Param("example") CommentExample example);
+    int updateByExampleWithBLOBs(@Param("record") Comment record, @Param("example") CommentExample example);
 
-    int updateByExample(@Param("row") Comment row, @Param("example") CommentExample example);
+    int updateByExample(@Param("record") Comment record, @Param("example") CommentExample example);
 
-    int updateByPrimaryKeySelective(Comment row);
+    int updateByPrimaryKeySelective(Comment record);
 
-    int updateByPrimaryKeyWithBLOBs(Comment row);
+    int updateByPrimaryKeyWithBLOBs(Comment record);
 
-    int updateByPrimaryKey(Comment row);
+    int updateByPrimaryKey(Comment record);
 }

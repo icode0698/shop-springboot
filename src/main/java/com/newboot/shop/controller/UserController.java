@@ -1,6 +1,5 @@
 package com.newboot.shop.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.common.CommonResult;
 import com.newboot.shop.common.ResultMessage;
@@ -12,8 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/user")
@@ -24,15 +24,39 @@ public class UserController {
 
     @RequestMapping("/login")
     @ResponseBody
-    public CommonResult userLogin(@RequestParam Map map){
+    public CommonResult login(@RequestParam HashMap map, HttpServletRequest request){
         JSONObject json = new JSONObject(map);
-        logger.info(map.toString());
+        logger.debug(json.toString());
         String message = userService.login(json);
-        if(StringUtils.equals(ResultMessage.LOGIN_SUCCESS.getMessage(),message)){
-            return CommonResult.success(message);
+        if(StringUtils.equals(ResultMessage.LOGIN_SUCCESS.getMessage(), message)){
+            HttpSession session = request.getSession();
+            session.setAttribute("user", json.getString("user"));
+            return CommonResult.success(message, json);
         }
         else{
             return CommonResult.failed(message);
+        }
+    }
+
+    @RequestMapping("/logout")
+    @ResponseBody
+    public CommonResult logout(@RequestParam HashMap map, HttpServletRequest request){
+        JSONObject json = new JSONObject(map);
+        json.put("user",request.getSession().getAttribute("user"));
+        int index = userService.logout(json);
+        request.getSession().removeAttribute("user");
+        return CommonResult.success();
+    }
+
+    @RequestMapping("/status")
+    @ResponseBody
+    public CommonResult status(HttpServletRequest request){
+        String user = request.getSession().getAttribute("user").toString();
+        if(StringUtils.isEmpty(user)){
+            return CommonResult.failed(ResultMessage.UNAUTHORIZED.getMessage());
+        }
+        else{
+            return CommonResult.success(ResultMessage.LOGIN_USER_ONLINE.getMessage(), userService.getInfo(user));
         }
     }
 }

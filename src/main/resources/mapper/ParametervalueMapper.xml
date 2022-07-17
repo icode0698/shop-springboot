@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.newboot.shop.dao.ParametervalueMapper">
   <resultMap id="BaseResultMap" type="com.newboot.shop.model.Parametervalue">
-    <id column="valueID" jdbcType="INTEGER" property="valueid" />
-    <result column="parameterID" jdbcType="INTEGER" property="parameterid" />
+    <id column="valueID" jdbcType="INTEGER" property="valueID" />
+    <result column="parameterID" jdbcType="INTEGER" property="parameterID" />
     <result column="value" jdbcType="VARCHAR" property="value" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -85,11 +85,11 @@
     select 
     <include refid="Base_Column_List" />
     from parametervalue
-    where valueID = #{valueid,jdbcType=INTEGER}
+    where valueID = #{valueID,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from parametervalue
-    where valueID = #{valueid,jdbcType=INTEGER}
+    where valueID = #{valueID,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.newboot.shop.model.ParametervalueExample">
     delete from parametervalue
@@ -100,16 +100,16 @@
   <insert id="insert" parameterType="com.newboot.shop.model.Parametervalue">
     insert into parametervalue (valueID, parameterID, value
       )
-    values (#{valueid,jdbcType=INTEGER}, #{parameterid,jdbcType=INTEGER}, #{value,jdbcType=VARCHAR}
+    values (#{valueID,jdbcType=INTEGER}, #{parameterID,jdbcType=INTEGER}, #{value,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.newboot.shop.model.Parametervalue">
     insert into parametervalue
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="valueid != null">
+      <if test="valueID != null">
         valueID,
       </if>
-      <if test="parameterid != null">
+      <if test="parameterID != null">
         parameterID,
       </if>
       <if test="value != null">
@@ -117,11 +117,11 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="valueid != null">
-        #{valueid,jdbcType=INTEGER},
+      <if test="valueID != null">
+        #{valueID,jdbcType=INTEGER},
       </if>
-      <if test="parameterid != null">
-        #{parameterid,jdbcType=INTEGER},
+      <if test="parameterID != null">
+        #{parameterID,jdbcType=INTEGER},
       </if>
       <if test="value != null">
         #{value,jdbcType=VARCHAR},
@@ -137,45 +137,45 @@
   <update id="updateByExampleSelective" parameterType="map">
     update parametervalue
     <set>
-      <if test="row.valueid != null">
-        valueID = #{row.valueid,jdbcType=INTEGER},
+      <if test="record.valueID != null">
+        valueID = #{record.valueID,jdbcType=INTEGER},
       </if>
-      <if test="row.parameterid != null">
-        parameterID = #{row.parameterid,jdbcType=INTEGER},
+      <if test="record.parameterID != null">
+        parameterID = #{record.parameterID,jdbcType=INTEGER},
       </if>
-      <if test="row.value != null">
-        value = #{row.value,jdbcType=VARCHAR},
+      <if test="record.value != null">
+        value = #{record.value,jdbcType=VARCHAR},
       </if>
     </set>
-    <if test="example != null">
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update parametervalue
-    set valueID = #{row.valueid,jdbcType=INTEGER},
-      parameterID = #{row.parameterid,jdbcType=INTEGER},
-      value = #{row.value,jdbcType=VARCHAR}
-    <if test="example != null">
+    set valueID = #{record.valueID,jdbcType=INTEGER},
+      parameterID = #{record.parameterID,jdbcType=INTEGER},
+      value = #{record.value,jdbcType=VARCHAR}
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.newboot.shop.model.Parametervalue">
     update parametervalue
     <set>
-      <if test="parameterid != null">
-        parameterID = #{parameterid,jdbcType=INTEGER},
+      <if test="parameterID != null">
+        parameterID = #{parameterID,jdbcType=INTEGER},
       </if>
       <if test="value != null">
         value = #{value,jdbcType=VARCHAR},
       </if>
     </set>
-    where valueID = #{valueid,jdbcType=INTEGER}
+    where valueID = #{valueID,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.newboot.shop.model.Parametervalue">
     update parametervalue
-    set parameterID = #{parameterid,jdbcType=INTEGER},
+    set parameterID = #{parameterID,jdbcType=INTEGER},
       value = #{value,jdbcType=VARCHAR}
-    where valueID = #{valueid,jdbcType=INTEGER}
+    where valueID = #{valueID,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -10,21 +10,21 @@ public interface CategoryMapper {
 
     int deleteByExample(CategoryExample example);
 
-    int deleteByPrimaryKey(Integer categoryid);
+    int deleteByPrimaryKey(Integer categoryID);
 
-    int insert(Category row);
+    int insert(Category record);
 
-    int insertSelective(Category row);
+    int insertSelective(Category record);
 
     List<Category> selectByExample(CategoryExample example);
 
-    Category selectByPrimaryKey(Integer categoryid);
+    Category selectByPrimaryKey(Integer categoryID);
 
-    int updateByExampleSelective(@Param("row") Category row, @Param("example") CategoryExample example);
+    int updateByExampleSelective(@Param("record") Category record, @Param("example") CategoryExample example);
 
-    int updateByExample(@Param("row") Category row, @Param("example") CategoryExample example);
+    int updateByExample(@Param("record") Category record, @Param("example") CategoryExample example);
 
-    int updateByPrimaryKeySelective(Category row);
+    int updateByPrimaryKeySelective(Category record);
 
-    int updateByPrimaryKey(Category row);
+    int updateByPrimaryKey(Category record);
 }

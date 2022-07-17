@@ -6,8 +6,8 @@
     <result column="user" jdbcType="VARCHAR" property="user" />
     <result column="sku" jdbcType="INTEGER" property="sku" />
     <result column="spu" jdbcType="INTEGER" property="spu" />
-    <result column="rateValue" jdbcType="DECIMAL" property="ratevalue" />
-    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="rateValue" jdbcType="DECIMAL" property="rateValue" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.newboot.shop.model.Comment">
     <result column="comment" jdbcType="LONGVARCHAR" property="comment" />
@@ -132,7 +132,7 @@
       rateValue, createTime, comment
       )
     values (#{user,jdbcType=VARCHAR}, #{sku,jdbcType=INTEGER}, #{spu,jdbcType=INTEGER}, 
-      #{ratevalue,jdbcType=DECIMAL}, #{createtime,jdbcType=TIMESTAMP}, #{comment,jdbcType=LONGVARCHAR}
+      #{rateValue,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP}, #{comment,jdbcType=LONGVARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.newboot.shop.model.Comment">
@@ -150,10 +150,10 @@
       <if test="spu != null">
         spu,
       </if>
-      <if test="ratevalue != null">
+      <if test="rateValue != null">
         rateValue,
       </if>
-      <if test="createtime != null">
+      <if test="createTime != null">
         createTime,
       </if>
       <if test="comment != null">
@@ -170,11 +170,11 @@
       <if test="spu != null">
         #{spu,jdbcType=INTEGER},
       </if>
-      <if test="ratevalue != null">
-        #{ratevalue,jdbcType=DECIMAL},
+      <if test="rateValue != null">
+        #{rateValue,jdbcType=DECIMAL},
       </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="comment != null">
         #{comment,jdbcType=LONGVARCHAR},
@@ -190,54 +190,54 @@
   <update id="updateByExampleSelective" parameterType="map">
     update comment
     <set>
-      <if test="row.id != null">
-        id = #{row.id,jdbcType=INTEGER},
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="row.user != null">
-        user = #{row.user,jdbcType=VARCHAR},
+      <if test="record.user != null">
+        user = #{record.user,jdbcType=VARCHAR},
       </if>
-      <if test="row.sku != null">
-        sku = #{row.sku,jdbcType=INTEGER},
+      <if test="record.sku != null">
+        sku = #{record.sku,jdbcType=INTEGER},
       </if>
-      <if test="row.spu != null">
-        spu = #{row.spu,jdbcType=INTEGER},
+      <if test="record.spu != null">
+        spu = #{record.spu,jdbcType=INTEGER},
       </if>
-      <if test="row.ratevalue != null">
-        rateValue = #{row.ratevalue,jdbcType=DECIMAL},
+      <if test="record.rateValue != null">
+        rateValue = #{record.rateValue,jdbcType=DECIMAL},
       </if>
-      <if test="row.createtime != null">
-        createTime = #{row.createtime,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null">
+        createTime = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="row.comment != null">
-        comment = #{row.comment,jdbcType=LONGVARCHAR},
+      <if test="record.comment != null">
+        comment = #{record.comment,jdbcType=LONGVARCHAR},
       </if>
     </set>
-    <if test="example != null">
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExampleWithBLOBs" parameterType="map">
     update comment
-    set id = #{row.id,jdbcType=INTEGER},
-      user = #{row.user,jdbcType=VARCHAR},
-      sku = #{row.sku,jdbcType=INTEGER},
-      spu = #{row.spu,jdbcType=INTEGER},
-      rateValue = #{row.ratevalue,jdbcType=DECIMAL},
-      createTime = #{row.createtime,jdbcType=TIMESTAMP},
-      comment = #{row.comment,jdbcType=LONGVARCHAR}
-    <if test="example != null">
+    set id = #{record.id,jdbcType=INTEGER},
+      user = #{record.user,jdbcType=VARCHAR},
+      sku = #{record.sku,jdbcType=INTEGER},
+      spu = #{record.spu,jdbcType=INTEGER},
+      rateValue = #{record.rateValue,jdbcType=DECIMAL},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      comment = #{record.comment,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update comment
-    set id = #{row.id,jdbcType=INTEGER},
-      user = #{row.user,jdbcType=VARCHAR},
-      sku = #{row.sku,jdbcType=INTEGER},
-      spu = #{row.spu,jdbcType=INTEGER},
-      rateValue = #{row.ratevalue,jdbcType=DECIMAL},
-      createTime = #{row.createtime,jdbcType=TIMESTAMP}
-    <if test="example != null">
+    set id = #{record.id,jdbcType=INTEGER},
+      user = #{record.user,jdbcType=VARCHAR},
+      sku = #{record.sku,jdbcType=INTEGER},
+      spu = #{record.spu,jdbcType=INTEGER},
+      rateValue = #{record.rateValue,jdbcType=DECIMAL},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
@@ -253,11 +253,11 @@
       <if test="spu != null">
         spu = #{spu,jdbcType=INTEGER},
       </if>
-      <if test="ratevalue != null">
-        rateValue = #{ratevalue,jdbcType=DECIMAL},
+      <if test="rateValue != null">
+        rateValue = #{rateValue,jdbcType=DECIMAL},
       </if>
-      <if test="createtime != null">
-        createTime = #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="comment != null">
         comment = #{comment,jdbcType=LONGVARCHAR},
@@ -270,8 +270,8 @@
     set user = #{user,jdbcType=VARCHAR},
       sku = #{sku,jdbcType=INTEGER},
       spu = #{spu,jdbcType=INTEGER},
-      rateValue = #{ratevalue,jdbcType=DECIMAL},
-      createTime = #{createtime,jdbcType=TIMESTAMP},
+      rateValue = #{rateValue,jdbcType=DECIMAL},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
       comment = #{comment,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -280,8 +280,8 @@
     set user = #{user,jdbcType=VARCHAR},
       sku = #{sku,jdbcType=INTEGER},
       spu = #{spu,jdbcType=INTEGER},
-      rateValue = #{ratevalue,jdbcType=DECIMAL},
-      createTime = #{createtime,jdbcType=TIMESTAMP}
+      rateValue = #{rateValue,jdbcType=DECIMAL},
+      createTime = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

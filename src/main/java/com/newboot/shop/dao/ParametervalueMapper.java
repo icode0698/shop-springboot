@@ -10,21 +10,21 @@ public interface ParametervalueMapper {
 
     int deleteByExample(ParametervalueExample example);
 
-    int deleteByPrimaryKey(Integer valueid);
+    int deleteByPrimaryKey(Integer valueID);
 
-    int insert(Parametervalue row);
+    int insert(Parametervalue record);
 
-    int insertSelective(Parametervalue row);
+    int insertSelective(Parametervalue record);
 
     List<Parametervalue> selectByExample(ParametervalueExample example);
 
-    Parametervalue selectByPrimaryKey(Integer valueid);
+    Parametervalue selectByPrimaryKey(Integer valueID);
 
-    int updateByExampleSelective(@Param("row") Parametervalue row, @Param("example") ParametervalueExample example);
+    int updateByExampleSelective(@Param("record") Parametervalue record, @Param("example") ParametervalueExample example);
 
-    int updateByExample(@Param("row") Parametervalue row, @Param("example") ParametervalueExample example);
+    int updateByExample(@Param("record") Parametervalue record, @Param("example") ParametervalueExample example);
 
-    int updateByPrimaryKeySelective(Parametervalue row);
+    int updateByPrimaryKeySelective(Parametervalue record);
 
-    int updateByPrimaryKey(Parametervalue row);
+    int updateByPrimaryKey(Parametervalue record);
 }

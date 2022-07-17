@@ -5,46 +5,46 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Img implements Serializable {
-    private Integer imgid;
+    private Integer imgID;
 
-    private Integer goodsid;
+    private Integer goodsID;
 
-    private String imgsrc;
+    private String imgSrc;
 
-    private Date inserttime;
+    private Date insertTime;
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getImgid() {
-        return imgid;
+    public Integer getImgID() {
+        return imgID;
     }
 
-    public void setImgid(Integer imgid) {
-        this.imgid = imgid;
+    public void setImgID(Integer imgID) {
+        this.imgID = imgID;
     }
 
-    public Integer getGoodsid() {
-        return goodsid;
+    public Integer getGoodsID() {
+        return goodsID;
     }
 
-    public void setGoodsid(Integer goodsid) {
-        this.goodsid = goodsid;
+    public void setGoodsID(Integer goodsID) {
+        this.goodsID = goodsID;
     }
 
-    public String getImgsrc() {
-        return imgsrc;
+    public String getImgSrc() {
+        return imgSrc;
     }
 
-    public void setImgsrc(String imgsrc) {
-        this.imgsrc = imgsrc;
+    public void setImgSrc(String imgSrc) {
+        this.imgSrc = imgSrc;
     }
 
-    public Date getInserttime() {
-        return inserttime;
+    public Date getInsertTime() {
+        return insertTime;
     }
 
-    public void setInserttime(Date inserttime) {
-        this.inserttime = inserttime;
+    public void setInsertTime(Date insertTime) {
+        this.insertTime = insertTime;
     }
 
     @Override
@@ -53,10 +53,10 @@ public class Img implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", imgid=").append(imgid);
-        sb.append(", goodsid=").append(goodsid);
-        sb.append(", imgsrc=").append(imgsrc);
-        sb.append(", inserttime=").append(inserttime);
+        sb.append(", imgID=").append(imgID);
+        sb.append(", goodsID=").append(goodsID);
+        sb.append(", imgSrc=").append(imgSrc);
+        sb.append(", insertTime=").append(insertTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

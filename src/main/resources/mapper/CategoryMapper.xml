@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.newboot.shop.dao.CategoryMapper">
   <resultMap id="BaseResultMap" type="com.newboot.shop.model.Category">
-    <id column="categoryID" jdbcType="INTEGER" property="categoryid" />
-    <result column="categoryName" jdbcType="VARCHAR" property="categoryname" />
-    <result column="insertTime" jdbcType="TIMESTAMP" property="inserttime" />
+    <id column="categoryID" jdbcType="INTEGER" property="categoryID" />
+    <result column="categoryName" jdbcType="VARCHAR" property="categoryName" />
+    <result column="insertTime" jdbcType="TIMESTAMP" property="insertTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -85,11 +85,11 @@
     select 
     <include refid="Base_Column_List" />
     from category
-    where categoryID = #{categoryid,jdbcType=INTEGER}
+    where categoryID = #{categoryID,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from category
-    where categoryID = #{categoryid,jdbcType=INTEGER}
+    where categoryID = #{categoryID,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.newboot.shop.model.CategoryExample">
     delete from category
@@ -100,31 +100,31 @@
   <insert id="insert" parameterType="com.newboot.shop.model.Category">
     insert into category (categoryID, categoryName, insertTime
       )
-    values (#{categoryid,jdbcType=INTEGER}, #{categoryname,jdbcType=VARCHAR}, #{inserttime,jdbcType=TIMESTAMP}
+    values (#{categoryID,jdbcType=INTEGER}, #{categoryName,jdbcType=VARCHAR}, #{insertTime,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.newboot.shop.model.Category">
     insert into category
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="categoryid != null">
+      <if test="categoryID != null">
         categoryID,
       </if>
-      <if test="categoryname != null">
+      <if test="categoryName != null">
         categoryName,
       </if>
-      <if test="inserttime != null">
+      <if test="insertTime != null">
         insertTime,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="categoryid != null">
-        #{categoryid,jdbcType=INTEGER},
+      <if test="categoryID != null">
+        #{categoryID,jdbcType=INTEGER},
       </if>
-      <if test="categoryname != null">
-        #{categoryname,jdbcType=VARCHAR},
+      <if test="categoryName != null">
+        #{categoryName,jdbcType=VARCHAR},
       </if>
-      <if test="inserttime != null">
-        #{inserttime,jdbcType=TIMESTAMP},
+      <if test="insertTime != null">
+        #{insertTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -137,45 +137,45 @@
   <update id="updateByExampleSelective" parameterType="map">
     update category
     <set>
-      <if test="row.categoryid != null">
-        categoryID = #{row.categoryid,jdbcType=INTEGER},
+      <if test="record.categoryID != null">
+        categoryID = #{record.categoryID,jdbcType=INTEGER},
       </if>
-      <if test="row.categoryname != null">
-        categoryName = #{row.categoryname,jdbcType=VARCHAR},
+      <if test="record.categoryName != null">
+        categoryName = #{record.categoryName,jdbcType=VARCHAR},
       </if>
-      <if test="row.inserttime != null">
-        insertTime = #{row.inserttime,jdbcType=TIMESTAMP},
+      <if test="record.insertTime != null">
+        insertTime = #{record.insertTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    <if test="example != null">
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update category
-    set categoryID = #{row.categoryid,jdbcType=INTEGER},
-      categoryName = #{row.categoryname,jdbcType=VARCHAR},
-      insertTime = #{row.inserttime,jdbcType=TIMESTAMP}
-    <if test="example != null">
+    set categoryID = #{record.categoryID,jdbcType=INTEGER},
+      categoryName = #{record.categoryName,jdbcType=VARCHAR},
+      insertTime = #{record.insertTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.newboot.shop.model.Category">
     update category
     <set>
-      <if test="categoryname != null">
-        categoryName = #{categoryname,jdbcType=VARCHAR},
+      <if test="categoryName != null">
+        categoryName = #{categoryName,jdbcType=VARCHAR},
       </if>
-      <if test="inserttime != null">
-        insertTime = #{inserttime,jdbcType=TIMESTAMP},
+      <if test="insertTime != null">
+        insertTime = #{insertTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where categoryID = #{categoryid,jdbcType=INTEGER}
+    where categoryID = #{categoryID,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.newboot.shop.model.Category">
     update category
-    set categoryName = #{categoryname,jdbcType=VARCHAR},
-      insertTime = #{inserttime,jdbcType=TIMESTAMP}
-    where categoryID = #{categoryid,jdbcType=INTEGER}
+    set categoryName = #{categoryName,jdbcType=VARCHAR},
+      insertTime = #{insertTime,jdbcType=TIMESTAMP}
+    where categoryID = #{categoryID,jdbcType=INTEGER}
   </update>
 </mapper>
