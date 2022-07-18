@@ -10,7 +10,7 @@ $(function () {
                 message: "selectValue"
             }, success: function (data) {
                 console.log(data);
-                if (data.status == "success") {
+                if (data.code == 200) {
                     $("#storagetrs").empty();
                     for (let i = 0; i < data.storageList.length; i++) {
                         let content = '<tr><td>'+data.storageList[i].id+'</td><td>'+data.storageList[i].name+'</td></tr>';
@@ -33,10 +33,10 @@ $(function () {
                                 value: value  
                             }, success: function (data) {
                                 console.log(data);
-                                if (data.status == "success") {
+                                if (data.code == 200) {
                                     layer.msg(data.message);
                                 }
-                                if (data.status == "fail") {
+                                if (data.code == 500) {
                                     layer.alert(data.message);
                                 }
                             }, error: function (data) {
@@ -68,10 +68,10 @@ $(function () {
                                 value: value  
                             }, success: function (data) {
                                 console.log(data);
-                                if (data.status == "success") {
+                                if (data.code == 200) {
                                     layer.msg(data.message);
                                 }
-                                if (data.status == "fail") {
+                                if (data.code == 500) {
                                     layer.alert(data.message);
                                 }
                             }, error: function (data) {
@@ -103,10 +103,10 @@ $(function () {
                                 value: value  
                             }, success: function (data) {
                                 console.log(data);
-                                if (data.status == "success") {
+                                if (data.code == 200) {
                                     layer.msg(data.message);
                                 }
-                                if (data.status == "fail") {
+                                if (data.code == 500) {
                                     layer.alert(data.message);
                                 }
                             }, error: function (data) {
@@ -117,7 +117,7 @@ $(function () {
                         });
                     });
                 }
-                if (data.status == "fail") {
+                if (data.code == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function (data) {

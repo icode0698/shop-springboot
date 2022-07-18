@@ -1,140 +1,112 @@
-2022-07-17 16:39:06.658 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 14172 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
-2022-07-17 16:39:06.663 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
-2022-07-17 16:39:10.816 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
-2022-07-17 16:39:10.816 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
-2022-07-17 16:39:10.817 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-07-17 16:39:11.096 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
-2022-07-17 16:39:11.259 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
-2022-07-17 16:39:11.698 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
-2022-07-17 16:39:14.246 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
-2022-07-17 16:39:14.286 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 8.686 seconds (JVM running for 9.884)
-2022-07-17 16:39:24.874 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-07-17 16:39:30.748 [http-nio-8080-exec-8] INFO  com.newboot.shop.controller.UserController - [userLogin,29] - {user=1, password=2, type=ajax_login}
-2022-07-17 16:39:30.793 [http-nio-8080-exec-8] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,29] - 1
-2022-07-17 16:39:39.775 [http-nio-8080-exec-1] INFO  com.newboot.shop.controller.UserController - [userLogin,29] - {user=1, password=2, type=ajax_login}
-2022-07-17 16:39:39.776 [http-nio-8080-exec-1] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,29] - 1
-2022-07-17 16:40:50.874 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 14632 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
-2022-07-17 16:40:50.878 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
-2022-07-17 16:40:51.885 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
-2022-07-17 16:40:51.886 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
-2022-07-17 16:40:51.886 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-07-17 16:40:52.033 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
-2022-07-17 16:40:52.102 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
-2022-07-17 16:40:52.323 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
-2022-07-17 16:40:53.213 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
-2022-07-17 16:40:53.233 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 2.851 seconds (JVM running for 3.543)
-2022-07-17 16:40:57.396 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-07-17 16:41:10.558 [http-nio-8080-exec-3] INFO  com.newboot.shop.controller.UserController - [userLogin,29] - {user=1, password=2, type=ajax_login}
-2022-07-17 16:41:10.563 [http-nio-8080-exec-3] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,29] - 1
-2022-07-17 16:41:23.002 [http-nio-8080-exec-9] INFO  com.newboot.shop.controller.UserController - [userLogin,29] - {user=SystemTest, password=123456, type=ajax_login}
-2022-07-17 16:41:23.002 [http-nio-8080-exec-9] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,29] - SystemTest
-2022-07-17 16:45:16.121 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 2000 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
-2022-07-17 16:45:16.123 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
-2022-07-17 16:45:17.054 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
-2022-07-17 16:45:17.054 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
-2022-07-17 16:45:17.054 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-07-17 16:45:17.188 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
-2022-07-17 16:45:17.256 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
-2022-07-17 16:45:17.508 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
-2022-07-17 16:45:18.364 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
-2022-07-17 16:45:18.384 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 2.684 seconds (JVM running for 3.406)
-2022-07-17 16:45:25.576 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-07-17 16:45:38.853 [http-nio-8080-exec-2] INFO  com.newboot.shop.controller.UserController - [userLogin,29] - {user=SystemTest, password=123456, type=ajax_login}
-2022-07-17 16:45:38.858 [http-nio-8080-exec-2] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,29] - SystemTest
-2022-07-17 20:09:05.436 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 3112 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
-2022-07-17 20:09:05.462 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
-2022-07-17 20:09:08.543 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
-2022-07-17 20:09:08.543 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
-2022-07-17 20:09:08.544 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-07-17 20:09:08.701 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
-2022-07-17 20:09:08.802 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
-2022-07-17 20:09:09.160 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
-2022-07-17 20:09:11.052 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
-2022-07-17 20:09:11.096 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 6.405 seconds (JVM running for 7.07)
-2022-07-17 20:09:24.959 [http-nio-28079-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-07-17 20:10:24.399 [http-nio-28079-exec-2] INFO  com.newboot.shop.controller.UserController - [userLogin,28] - {user=SystemTest, password=123456, type=ajax_login}
-2022-07-17 20:10:24.405 [http-nio-28079-exec-2] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,32] - SystemTest
-2022-07-17 20:10:24.595 [http-nio-28079-exec-2] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,53] - nested exception is org.apache.ibatis.exceptions.PersistenceException: 
-### Error updating database.  Cause: java.lang.IllegalArgumentException: invalid comparison: java.util.Date and java.lang.String
-### The error may exist in file [D:\Git\Gitee\shop-springboot\target\classes\mapper\UserMapper.xml]
-### The error may involve com.newboot.shop.dao.UserMapper.updateByPrimaryKeySelective
-### The error occurred while executing an update
-### Cause: java.lang.IllegalArgumentException: invalid comparison: java.util.Date and java.lang.String
-2022-07-17 20:10:54.972 [http-nio-28079-exec-6] INFO  com.newboot.shop.controller.UserController - [userLogin,28] - {user=SystemTest, password=123456, type=ajax_login}
-2022-07-17 20:10:54.973 [http-nio-28079-exec-6] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,32] - SystemTest
-2022-07-17 20:10:54.975 [http-nio-28079-exec-6] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,53] - nested exception is org.apache.ibatis.exceptions.PersistenceException: 
-### Error updating database.  Cause: java.lang.IllegalArgumentException: invalid comparison: java.util.Date and java.lang.String
-### The error may exist in file [D:\Git\Gitee\shop-springboot\target\classes\mapper\UserMapper.xml]
-### The error may involve com.newboot.shop.dao.UserMapper.updateByPrimaryKeySelective
-### The error occurred while executing an update
-### Cause: java.lang.IllegalArgumentException: invalid comparison: java.util.Date and java.lang.String
-2022-07-17 20:22:05.661 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 13964 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
-2022-07-17 20:22:05.665 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
-2022-07-17 20:22:06.759 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
-2022-07-17 20:22:06.759 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
-2022-07-17 20:22:06.759 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-07-17 20:22:06.894 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
-2022-07-17 20:22:06.960 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
-2022-07-17 20:22:07.201 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
-2022-07-17 20:22:08.133 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
-2022-07-17 20:22:08.154 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 3.027 seconds (JVM running for 3.892)
-2022-07-17 20:22:13.176 [http-nio-28079-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-07-17 20:22:13.194 [http-nio-28079-exec-1] INFO  com.newboot.shop.controller.UserController - [userLogin,28] - {user=SystemTest, password=123456, type=ajax_login}
-2022-07-17 20:22:13.198 [http-nio-28079-exec-1] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,32] - SystemTest
-2022-07-17 20:29:47.575 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 12520 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
-2022-07-17 20:29:47.577 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
-2022-07-17 20:29:48.503 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
-2022-07-17 20:29:48.504 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
-2022-07-17 20:29:48.504 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-07-17 20:29:48.637 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
-2022-07-17 20:29:48.702 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
-2022-07-17 20:29:48.934 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
-2022-07-17 20:29:49.776 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
-2022-07-17 20:29:49.797 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 2.651 seconds (JVM running for 3.324)
-2022-07-17 20:29:55.294 [http-nio-28079-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-07-17 20:30:10.565 [http-nio-28079-exec-3] INFO  com.newboot.shop.controller.UserController - [userLogin,28] - {user=SytemTest, password=123456, type=ajax_login}
-2022-07-17 20:30:10.570 [http-nio-28079-exec-3] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,32] - SytemTest
-2022-07-17 20:30:31.026 [http-nio-28079-exec-7] INFO  com.newboot.shop.controller.UserController - [userLogin,28] - {user=SystemTest, password=123456, type=ajax_login}
-2022-07-17 20:30:31.027 [http-nio-28079-exec-7] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,32] - SystemTest
-2022-07-17 20:39:15.544 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 7152 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
-2022-07-17 20:39:15.546 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
-2022-07-17 20:39:16.465 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
-2022-07-17 20:39:16.465 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
-2022-07-17 20:39:16.466 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-07-17 20:39:16.598 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
-2022-07-17 20:39:16.658 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
-2022-07-17 20:39:16.876 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
-2022-07-17 20:39:17.701 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
-2022-07-17 20:39:17.721 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 2.597 seconds (JVM running for 3.358)
-2022-07-17 20:39:21.035 [http-nio-28079-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-07-17 20:39:22.741 [http-nio-28079-exec-7] INFO  com.newboot.shop.controller.UserController - [userLogin,28] - {user=SystemTest, password=123456, type=ajax_login}
-2022-07-17 20:39:22.745 [http-nio-28079-exec-7] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,32] - SystemTest
-2022-07-17 20:44:16.730 [http-nio-28079-exec-1] INFO  com.newboot.shop.controller.UserController - [userLogin,28] - {user=SystemTest, password=123456, type=ajax_login}
-2022-07-17 20:44:16.731 [http-nio-28079-exec-1] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,32] - SystemTest
-2022-07-17 21:20:08.124 [http-nio-28079-exec-4] INFO  com.newboot.shop.controller.UserController - [userLogin,28] - {user=SystemTest, password=123456, type=ajax_login}
-2022-07-17 21:20:08.125 [http-nio-28079-exec-4] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,32] - SystemTest
-2022-07-17 21:20:13.487 [http-nio-28079-exec-3] INFO  com.newboot.shop.controller.UserController - [userLogin,28] - {user=SystemTest, password=123456, type=ajax_login}
-2022-07-17 21:20:13.487 [http-nio-28079-exec-3] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,32] - SystemTest
-2022-07-17 21:20:52.971 [http-nio-28079-exec-6] INFO  com.newboot.shop.controller.UserController - [userLogin,28] - {user=SystemTest, password=123456, type=ajax_login}
-2022-07-17 21:20:52.972 [http-nio-28079-exec-6] INFO  com.newboot.shop.service.impl.UserServiceImpl - [login,32] - SystemTest
-2022-07-17 23:05:19.098 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 14624 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
-2022-07-17 23:05:19.100 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
-2022-07-17 23:05:20.034 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
-2022-07-17 23:05:20.035 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
-2022-07-17 23:05:20.035 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-07-17 23:05:20.173 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
-2022-07-17 23:05:20.230 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
-2022-07-17 23:05:20.447 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
-2022-07-17 23:05:21.286 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
-2022-07-17 23:05:21.307 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 2.709 seconds (JVM running for 3.44)
-2022-07-17 23:05:45.177 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 9544 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
-2022-07-17 23:05:45.180 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
-2022-07-17 23:05:46.084 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
-2022-07-17 23:05:46.084 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
-2022-07-17 23:05:46.084 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-07-17 23:05:46.220 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
-2022-07-17 23:05:46.280 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
-2022-07-17 23:05:46.501 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
-2022-07-17 23:05:47.361 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
-2022-07-17 23:05:47.382 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 2.649 seconds (JVM running for 3.37)
-2022-07-17 23:05:49.967 [http-nio-28079-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-18 21:49:01.543 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 14460 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-07-18 21:49:01.548 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-07-18 21:49:06.033 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-07-18 21:49:06.034 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-07-18 21:49:06.034 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-18 21:49:06.193 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-07-18 21:49:06.376 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-07-18 21:49:06.804 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-07-18 21:49:11.637 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
+2022-07-18 21:49:11.679 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 11.244 seconds (JVM running for 12.48)
+2022-07-18 21:49:47.841 [http-nio-28079-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-18 22:08:59.790 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 4748 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-07-18 22:08:59.794 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-07-18 22:09:00.738 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:09:00.739 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-07-18 22:09:00.739 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-18 22:09:00.869 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-07-18 22:09:00.938 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-07-18 22:09:01.152 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-07-18 22:09:01.972 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:09:01.992 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 2.644 seconds (JVM running for 3.338)
+2022-07-18 22:09:06.599 [http-nio-28079-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-18 22:18:57.470 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 1512 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-07-18 22:18:57.478 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-07-18 22:18:58.799 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:18:58.799 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-07-18 22:18:58.800 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-18 22:18:58.990 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-07-18 22:18:59.103 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-07-18 22:18:59.423 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-07-18 22:19:00.466 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:19:00.492 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 3.531 seconds (JVM running for 4.804)
+2022-07-18 22:19:02.159 [http-nio-28079-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-18 22:23:09.688 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2073] - {dataSource-1} closing ...
+2022-07-18 22:23:09.694 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2146] - {dataSource-1} closed
+2022-07-18 22:25:01.853 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 13280 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-07-18 22:25:01.856 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-07-18 22:25:02.795 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:25:02.796 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-07-18 22:25:02.796 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-18 22:25:02.932 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-07-18 22:25:02.988 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-07-18 22:25:03.204 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-07-18 22:25:04.057 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:25:04.078 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 2.646 seconds (JVM running for 3.453)
+2022-07-18 22:25:09.595 [http-nio-28079-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-18 22:33:11.865 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 13652 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-07-18 22:33:11.868 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-07-18 22:33:13.045 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:33:13.045 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-07-18 22:33:13.045 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-18 22:33:13.185 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-07-18 22:33:13.260 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-07-18 22:33:13.496 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-07-18 22:33:14.400 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:33:14.421 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 2.983 seconds (JVM running for 3.788)
+2022-07-18 22:33:18.836 [http-nio-28079-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-18 22:41:11.254 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 14892 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-07-18 22:41:11.256 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-07-18 22:41:12.217 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:41:12.217 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-07-18 22:41:12.217 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-18 22:41:12.350 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-07-18 22:41:12.408 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-07-18 22:41:12.632 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-07-18 22:41:13.468 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:41:13.488 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 2.699 seconds (JVM running for 3.436)
+2022-07-18 22:41:16.622 [http-nio-28079-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-18 22:43:53.400 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 4024 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-07-18 22:43:53.403 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-07-18 22:43:54.410 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:43:54.410 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-07-18 22:43:54.410 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-18 22:43:54.544 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-07-18 22:43:54.601 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-07-18 22:43:54.823 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-07-18 22:43:55.766 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:43:55.789 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 2.853 seconds (JVM running for 3.553)
+2022-07-18 22:44:11.214 [http-nio-28079-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-18 22:45:07.772 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 8168 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-07-18 22:45:07.774 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-07-18 22:45:08.743 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:45:08.743 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-07-18 22:45:08.744 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-18 22:45:08.876 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-07-18 22:45:08.936 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-07-18 22:45:09.167 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-07-18 22:45:10.071 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:45:10.092 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 2.819 seconds (JVM running for 3.59)
+2022-07-18 22:45:13.037 [http-nio-28079-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-18 22:49:46.446 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 12572 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-07-18 22:49:46.449 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-07-18 22:49:47.423 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:49:47.423 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-07-18 22:49:47.424 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-18 22:49:47.562 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-07-18 22:49:47.639 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-07-18 22:49:47.873 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-07-18 22:49:48.740 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:49:48.763 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 2.728 seconds (JVM running for 3.452)
+2022-07-18 22:49:51.372 [http-nio-28079-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-18 22:50:57.012 [main] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 15264 (D:\Git\Gitee\shop-springboot\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-07-18 22:50:57.017 [main] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-07-18 22:50:58.126 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:50:58.126 [main] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-07-18 22:50:58.126 [main] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-18 22:50:58.263 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-07-18 22:50:58.332 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-07-18 22:50:58.612 [main] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-07-18 22:50:59.457 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
+2022-07-18 22:50:59.477 [main] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 2.989 seconds (JVM running for 3.763)
+2022-07-18 22:51:08.900 [http-nio-28079-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'

@@ -19,11 +19,12 @@ public class ContentServiceImpl implements ContentService {
     @Override
     public JSONObject getList(String categoryName) {
         ArrayList<JSONObject> goodsList = goodsMapper.getList(categoryName);
-        JSONObject json = new JSONObject();
+        JSONObject json;
         for(int i = 0; i < goodsList.size(); i++){
             json = goodsList.get(i);
             json.put("imgList",imgMapper.getImgList(Integer.parseInt(json.getString("goodsID"))));
         }
+        json = new JSONObject();
         json.put("categoryName", categoryName);
         json.put("goodsList", goodsList);
         return json;

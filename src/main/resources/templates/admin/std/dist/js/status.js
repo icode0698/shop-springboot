@@ -7,7 +7,7 @@ $(function () {
             dataType: "json",
             success: function (data) {
                 console.log(data);
-                if (data.status == "success") {
+                if (data.code == 200) {
                     console.log(data);
                     $("#admin").text(data.admin);
                 }

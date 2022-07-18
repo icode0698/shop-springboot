@@ -6,7 +6,7 @@ $(function(){
             dataType: "json",
             success: function (data) {
                 console.log(data);
-                if(data.status=="success"){
+                if(data.code == 200){
                     location.href = 'login.html';
                 }
                 if (data.status == "error") {

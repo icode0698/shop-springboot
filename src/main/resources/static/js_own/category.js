@@ -87,7 +87,7 @@ $(function () {
                 brand: $("input:radio[name='brand']:checked").val(),
             }, success: function (data) {
                 console.log(data);
-                if (data.status == "success") {
+                if (data.code == 200) {
                     if(data.message.length==0){
                         $("#tip").append("没有找到相关产品");
                     }
@@ -108,7 +108,7 @@ $(function () {
                 }
             }, error: function () {
                 $("#tip").append("服务器异常");
-                console.log("服务器异常\najax_whether:" + XMLResponse.status);
+                console.log("服务器异常\n");
             }
         });
     }

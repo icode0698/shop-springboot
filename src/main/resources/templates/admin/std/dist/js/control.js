@@ -23,7 +23,7 @@ $(function () {
             dataType: "json",
             success: function (data) {
                 console.log(data);
-                if (data.status == "success") {
+                if (data.code == 200) {
                     $("#infotrs").empty();
                     if (data.message.length == 0) {
                         $("#infotrs").append("没有找到相关数据");
@@ -47,7 +47,7 @@ $(function () {
             },
             error: function (XMLResponse) {
                 layer.alert("服务器异常，请稍后再试");
-                console.log("error_status:" + XMLResponse.status);
+                console.log("error_status:");
                 return;
             }
         });
@@ -62,7 +62,7 @@ $(function () {
                 },
                 success: function (data) {
                     console.log(data);
-                    if (data.status == "success") {
+                    if (data.code == 200) {
                         $("#messagetrs").empty();
                         if (data.message.length == 0) {
                             table.init('message', {
@@ -90,7 +90,7 @@ $(function () {
                 },
                 error: function (XMLResponse) {
                     layer.alert("服务器异常，请稍后再试");
-                    console.log("error_status:" + XMLResponse.status);
+                    console.log("error_status:");
                     return;
                 }
             });
@@ -107,7 +107,7 @@ $(function () {
                 },
                 success: function (data) {
                     console.log(data);
-                    if (data.status == "success") {
+                    if (data.code == 200) {
                         if (data.message.length == 0) {
                             table.init('user', {
                                 page: true
@@ -146,7 +146,7 @@ $(function () {
                                         },
                                         success: function (data) {
                                             console.log(data);
-                                            if (data.status == "success") {
+                                            if (data.code == 200) {
                                                 $("#usertrs").empty();
                                                 getData("user", $("#usertime").val());
                                                 layer.alert(data.message);
@@ -157,7 +157,7 @@ $(function () {
                                         },
                                         error: function (XMLResponse) {
                                             layer.alert("服务器异常，请稍后再试");
-                                            console.log("error_status:" + XMLResponse.status);
+                                            console.log("error_status:");
                                             return;
                                         }
                                     });
@@ -171,8 +171,8 @@ $(function () {
                 },
                 error: function (XMLResponse) {
                     $("#error_hide").removeClass("hidden");
-                    $("#error_tip").text("抱歉，服务器异常。\nXMLResponse_Status:" + XMLResponse.status);
-                    console.log("error_status:" + XMLResponse.status);
+                    $("#error_tip").text("抱歉，服务器异常。\nXMLResponse_Status:");
+                    console.log("error_status:");
                     return;
                 }
             });

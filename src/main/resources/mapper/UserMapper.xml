@@ -273,6 +273,6 @@
     where user = #{user,jdbcType=VARCHAR}
   </update>
   <update id="updateOnlineAndLastTime" parameterType="com.newboot.shop.model.User">
-    update user set update user set lastTime=currentTime,online=#{online} where user=#{user}
+    update user set lastTime=currentTime,online=#{online} where user=#{user}
   </update>
 </mapper>

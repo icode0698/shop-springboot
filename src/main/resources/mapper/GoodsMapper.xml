@@ -225,7 +225,7 @@
       stock = #{stock,jdbcType=INTEGER}
     where goodsID = #{goodsID,jdbcType=INTEGER}
   </update>
-  <select id="getList" parameterType="string">
+  <select id="getList" parameterType="string" resultType="com.alibaba.fastjson.JSONObject">
     select goodsID, goodsName from goods where categoryID =
         (select categoryID from category WHERE categoryName=#{category})
     order by insertTime desc

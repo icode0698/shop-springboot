@@ -8,11 +8,11 @@ $(function () {
             url: "../../../../../servlet/NowBrand",
             success: function (data) {
                 console.log(data);
-                if (data.status == "success") {
+                if (data.code == 200) {
                     $("#now").text(data.message);
                     $("#brandID").val(parseInt(data.message)+1);
                 }
-                if (data.status == "fail") {
+                if (data.code == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function (data) {
@@ -32,11 +32,11 @@ $(function () {
                     brandName: $("#brandName").val(),
                 }, success: function (data) {
                     console.log(data);
-                    if (data.status == "success") {
+                    if (data.code == 200) {
                         layer.alert(data.message, {icon:1}, function () { location.href="";});
                         return false;
                     }
-                    if (data.status == "fail") {
+                    if (data.code == 500) {
                         layer.alert(data.message, {icon:2});
                         return false;
                     }

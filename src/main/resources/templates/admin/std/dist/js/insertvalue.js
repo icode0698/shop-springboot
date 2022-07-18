@@ -8,7 +8,7 @@ $(function () {
             url: "../../../../../servlet/NowValue",
             success: function (data) {
                 console.log(data);
-                if (data.status == "success") {
+                if (data.code == 200) {
                     $("#storagenow").text(data.storageNowID);
                     $("#storageID").val(parseInt(data.storageNowID)+1);
                     $("#colornow").text(data.colorNowID);
@@ -16,7 +16,7 @@ $(function () {
                     $("#screennow").text(data.screenNowID);
                     $("#screenID").val(parseInt(data.screenNowID)+1);
                 }
-                if (data.status == "fail") {
+                if (data.code == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function (data) {
@@ -37,11 +37,11 @@ $(function () {
                     storageName: $("#storageName").val(),
                 }, success: function (data) {
                     console.log(data);
-                    if (data.status == "success") {
+                    if (data.code == 200) {
                         layer.alert(data.message, {icon:1}, function () { location.href="";});
                         return false;
                     }
-                    if (data.status == "fail") {
+                    if (data.code == 500) {
                         layer.alert(data.message, {icon:2});
                         return false;
                     }
@@ -65,11 +65,11 @@ $(function () {
                     colorName: $("#colorName").val(),
                 }, success: function (data) {
                     console.log(data);
-                    if (data.status == "success") {
+                    if (data.code == 200) {
                         layer.alert(data.message, {icon:1}, function () { location.href="";});
                         return false;
                     }
-                    if (data.status == "fail") {
+                    if (data.code == 500) {
                         layer.alert(data.message, {icon:2});
                         return false;
                     }
@@ -93,11 +93,11 @@ $(function () {
                     screenName: $("#screenName").val(),
                 }, success: function (data) {
                     console.log(data);
-                    if (data.status == "success") {
+                    if (data.code == 200) {
                         layer.alert(data.message, {icon:1}, function () { location.href="";});
                         return false;
                     }
-                    if (data.status == "fail") {
+                    if (data.code == 500) {
                         layer.alert(data.message, {icon:2});
                         return false;
                     }

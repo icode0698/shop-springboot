@@ -11,26 +11,25 @@ $(function () {
         $.ajax({
             type: "post",
             dataType: "json",
-            url: "servlet/Whether",
+            url: "user/status",
             data: {
                 type: "ajax_whether",
                 message: "getStatus"
             }, success: function (data) {
                 console.log(data);
-                if (data.status == "success") {
-                    if (data.online == false) {
+                if (data.code == 200) {
+                    if (data.data.online == false) {
                         $.ajax({
                             type: "post",
                             dataType: "json",
-                            url: "servlet/Whether",
+                            url: "user/logout",
                             data: {
                                 type: "ajax_whether",
                                 message: "logout"
                             }, success: function () {
                                 layer.alert('管理员强制用户下线', { icon: 2 });
-                                console.log("管理员强制用户下线");
                             }, error: function () {
-                                console.log("服务器异常\najax_whether:" + XMLResponse.status);
+                                console.log("服务器异常\n");
                                 return;
                             }
                         });
@@ -38,12 +37,12 @@ $(function () {
                     else{
                         $("#login_no").addClass("hidden");
                         $("#login_yes").removeClass("hidden");
-                        $("#span_user").text(data.nickName);
-                        $("#headPic").attr("src", data.headPic);
+                        $("#span_user").text(data.data.nickName);
+                        $("#headPic").attr("src", data.data.headPic);
                     }
                 }
             }, error: function () {
-                console.log("服务器异常\najax_whether:" + XMLResponse.status);
+                console.log("服务器异常\n");
                 return;
             }
         });
@@ -52,14 +51,14 @@ $(function () {
             $.ajax({
                 type: "post",
                 dataType: "json",
-                url: "servlet/Whether",
+                url: "user/logout",
                 data: {
                     type: "ajax_whether",
                     message: "logout"
                 }, success: function () {
                     location.href = "index.html";
                 }, error: function () {
-                    console.log("服务器异常\najax_whether:" + XMLResponse.status);
+                    console.log("服务器异常\n");
                     return;
                 }
             });

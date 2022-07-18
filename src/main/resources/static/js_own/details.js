@@ -181,7 +181,7 @@ $(function () {
                 success: function (data) {
                     console.log(data);
                     stock = data.stock;
-                    if (data.status == "success") {
+                    if (data.code == 200) {
                         $("#price").text(data.price);
                         $("#stock").text(data.stock);
                         if (stock < 10) {
@@ -233,7 +233,7 @@ $(function () {
                     success: function (data) {
                         stock = data.stock;
                         console.log(data);
-                        if (data.status == "success") {
+                        if (data.code == 200) {
                             stock = data.stock;
                             $("#price").text(data.price);
                             $("#stock").text(data.stock);
@@ -260,7 +260,7 @@ $(function () {
                         }
                     },
                     error: function (data) {
-                        console.log(data + "&&" + XMLResponse.status);
+                        console.log(data + "&&");
                         $("#price").text("?????");
                         $("#stock").text("????");
                         $("#btn_join").attr("disabled", true);
@@ -282,7 +282,7 @@ $(function () {
                     },
                     success: function (data) {
                         console.log(data);
-                        if (data.status == "success") {
+                        if (data.code == 200) {
                             stock = data.stock;
                             $("#price").text(data.price);
                             $("#stock").text(data.stock);
@@ -309,7 +309,7 @@ $(function () {
                         }
                     },
                     error: function (data) {
-                        console.log(data + "&&" + XMLResponse.status);
+                        console.log(data + "&&");
                         $("#price").text("?????");
                         $("#stock").text("????");
                         $("#btn_join").attr("disabled", true);
@@ -331,7 +331,7 @@ $(function () {
                     },
                     success: function (data) {
                         console.log(data);
-                        if (data.status == "success") {
+                        if (data.code == 200) {
                             stock = data.stock;
                             $("#price").text(data.price);
                             $("#stock").text(data.stock);
@@ -358,7 +358,7 @@ $(function () {
                         }
                     },
                     error: function (data) {
-                        console.log(data + "&&" + XMLResponse.status);
+                        console.log(data + "&&");
                         $("#price").text("?????");
                         $("#stock").text("????");
                         $("#btn_join").attr("disabled", true);
@@ -396,20 +396,13 @@ $(function () {
                 $.ajax({
                     type: "post",
                     dataType: "json",
-                    url: "servlet/Whether",
+                    url: "user/status",
                     data: {
                         type: "ajax_whether",
                         message: "getStatus"
                     }, success: function (data) {
                         console.log(data);
-                        if (data.status == "success") {
-                            // console.log(para.spu);
-                            // console.log($("#goodsName").text()+"&&"+$("#goodsName").val());
-                            // console.log($("#brand").text());
-                            // console.log($("input:radio[name='storage']:checked").val());
-                            // console.log($("input:radio[name='color']:checked").val());
-                            // console.log($("input:radio[name='screen']:checked").val());
-                            // console.log($("#num").val());
+                        if (data.code == 200) {
                             $.ajax({
                                 type: "post",
                                 dataType: "json",
@@ -430,12 +423,12 @@ $(function () {
                                         content: datain.message
                                     });
                                 }, error: function () {
-                                    console.log("服务器异常\najax_whether:" + XMLResponse.status);
+                                    console.log("服务器异常\n");
                                 }
                             });
                         }
                         else {
-                            layer.confirm(data.message, {
+                            layer.confirm(data.data.message, {
                                 icon: 3,
                                 btn: ["前往登录", "继续浏览"]
                             }, function () {
@@ -444,7 +437,7 @@ $(function () {
                             console.log(data.message);
                         }
                     }, error: function () {
-                        console.log("服务器异常\najax_whether:" + XMLResponse.status);
+                        console.log("服务器异常\n");
                     }
                 });
             }
@@ -459,21 +452,13 @@ $(function () {
                 $.ajax({
                     type: "post",
                     dataType: "json",
-                    url: "servlet/Whether",
+                    url: "user/status",
                     data: {
                         type: "ajax_whether",
                         message: "getStatus"
                     }, success: function (data) {
                         console.log(data);
-                        if (data.status == "success") {
-                            // console.log(para.spu);
-                            // console.log($("#goodsName").text()+"&&"+$("#goodsName").val());
-                            // console.log($("#brand").text());
-                            // console.log($("input:radio[name='storage']:checked").val());
-                            // console.log($("input:radio[name='color']:checked").val());
-                            // console.log($("input:radio[name='screen']:checked").val());
-                            // console.log($("#num").val());
-                            // console.log(para.goods);
+                        if (data.code == 200) {
                             var layerContent = "商品名称：" + para.goods + "<br>" + "品牌：" + $("#brand").text() + "<br>" + "存储容量：" + $("input:radio[name='storage']:checked").val() + "<br>"
                                 + "颜色：" + $("input:radio[name='color']:checked").val() + "<br>" + "屏幕尺寸：" + $("input:radio[name='screen']:checked").val() + "<br>"
                                 + "购买数量：" + $("#num").val() + "<br>" + "价格：￥" + $("#price").text() + "<br>" + "小计：￥" + (parseFloat($("#price").text()) * parseFloat($("#num").val())).toFixed(2);
@@ -503,7 +488,7 @@ $(function () {
                                             content: datain.message
                                         });
                                     }, error: function () {
-                                        console.log("服务器异常\najax_whether:" + XMLResponse.status);
+                                        console.log("服务器异常\n");
                                     }
                                 });
                             }, function () { });
@@ -518,7 +503,7 @@ $(function () {
                             console.log(data.message);
                         }
                     }, error: function () {
-                        console.log("服务器异常\najax_whether:" + XMLResponse.status);
+                        console.log("服务器异常\n");
                     }
                 });
             }
@@ -534,7 +519,7 @@ $(function () {
             },
             success: function (data) {
                 console.log(data);
-                if (data.status == "success") {
+                if (data.code == 200) {
                     for(let i=0;i<data.message.length;i++){
                         var content = '<div class="bs-callout bs-callout-info wow slideInUp">'
                         +'<img style="width: 50px;height: 50px;float: left;margin-right: 10px;" class="img-circle" src="'+data.message[i].headPic+'" alt="">'

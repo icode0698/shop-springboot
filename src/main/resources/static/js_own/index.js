@@ -40,7 +40,7 @@ $(function () {
             }
         },
         error: function (data) {
-            console.log("ajax_item_status:"+XMLResponse.status);
+            console.log("ajax_item_status:");
             console.log("servlet_status:"+data.status);
         }
     });
@@ -160,7 +160,7 @@ $(function () {
                 }
             },
             error: function () {
-                console.log("ajax_item_status:"+XMLResponse.status);
+                console.log("ajax_item_status:");
             }
         });
     });

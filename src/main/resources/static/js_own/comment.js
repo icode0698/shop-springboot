@@ -39,7 +39,7 @@ $(function () {
                     id: id
                 },success: function (data) {
                     console.log(data);
-                    if (data.status == "success") {
+                    if (data.code == 200) {
                         $("#goods").text(data.goodsName);
                         $("#sku").text(data.sku);
                         $("#spu").text(data.spu);
@@ -47,7 +47,7 @@ $(function () {
                         $("#color").text(data.color);
                         $("#screen").text(data.screen);
                     }
-                    if (data.status == "fail") {
+                    if (data.code == 500) {
                         layer.alert(data.message, { icon: 2 }, function () { location.href = 'personal.html';});
                     }
                 },
@@ -76,11 +76,11 @@ $(function () {
                         //     layer.closeAll('loading');
                         // }, 2000);
                         layer.closeAll('loading');
-                        if (data.status == "success") {
+                        if (data.code == 200) {
                             layer.alert(data.message, {icon:1}, function () { location.href = '';});
                             return false;
                         }
-                        if (data.status == "fail") {
+                        if (data.code == 500) {
                             layer.alert(data.message, {icon:2});
                             return false;
                         }

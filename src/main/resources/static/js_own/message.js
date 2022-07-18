@@ -17,13 +17,13 @@ $(function () {
         $.ajax({
             type: "post",
             dataType: "json",
-            url: "servlet/Whether",
+            url: "user/status",
             data: {
                 type: "ajax_whether",
                 message: "getStatus"
             }, success: function (data) {
                 console.log(data);
-                if (data.status == "success") {
+                if (data.code == 200) {
                     $.ajax({
                         type: "post",
                         dataType: "json",
@@ -32,7 +32,7 @@ $(function () {
                             type: "ajax_message",
                             message: $("#message").val()
                         }, success: function (data) {
-                            if(data.status=="success"){
+                            if(data.code == 200){
                                 $("#success_tip").text(data.message);
                                 $("#message_div").addClass("hidden");
                                 $("#success_div").removeClass("hidden");
@@ -41,7 +41,7 @@ $(function () {
                                 $("#error_tip").text("抱歉，数据库操作异常");
                             }
                         }, error: function () {
-                            console.log("服务器异常\najax_message:" + XMLResponse.status);
+                            console.log("服务器异常\najax_message:");
                             $("#error_tip").text("抱歉，服务器异常");
                         }
                     });
@@ -57,7 +57,7 @@ $(function () {
                     });
                 }
             }, error: function () {
-                console.log("服务器异常\najax_whether:" + XMLResponse.status);
+                console.log("服务器异常\n");
             }
         });
     }

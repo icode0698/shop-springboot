@@ -9,7 +9,7 @@ $(function () {
             url: "../../../../../servlet/NowSpu",
             success: function (data) {
                 //console.log(data);
-                if (data.status == "success") {
+                if (data.code == 200) {
                     $("#now").text(data.spu);
                     $("#spu").val(parseInt(data.spu)+1);
                     for(let i=0;i<data.brandList.length;i++){
@@ -30,7 +30,7 @@ $(function () {
                     }
                     form.render('checkbox');
                 }
-                if (data.status == "fail") {
+                if (data.code == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function (data) {
@@ -46,7 +46,7 @@ $(function () {
                 url: "../../../../../servlet/NowImg",
                 success: function (data) {
                     console.log(data);
-                    if (data.status == "success") {
+                    if (data.code == 200) {
                         console.log(data);
                         $("#pictipdiv").css("display","");
                         $("#picidtip").text(data.message);
@@ -81,10 +81,10 @@ $(function () {
                 });
             }
             , done: function (data) {
-                if(data.status=="success"){
+                if(data.code == 200){
                     console.log('上传成功');
                 }
-                if (data.status=="fail") {
+                if (data.code == 500) {
                     console.log('上传失败，请稍候再试');
                 }
             }
@@ -126,11 +126,11 @@ $(function () {
                 }, success: function (data) {
                     console.log(data);
                     layer.closeAll('loading');
-                    if (data.status == "success") {
+                    if (data.code == 200) {
                         layer.alert(data.message, {icon:1}, function () { location.href="";});
                         return false;
                     }
-                    if (data.status == "fail") {
+                    if (data.code == 500) {
                         layer.alert(data.message, {icon:2});
                         return false;
                     }

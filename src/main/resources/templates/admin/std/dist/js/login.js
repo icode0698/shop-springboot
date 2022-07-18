@@ -16,7 +16,7 @@ $(function () {
                 },
                 success: function (data) {
                     console.log(data);
-                    if (data.status == "success") {
+                    if (data.code == 200) {
                         $("#error_hide").addClass("hidden");
                         $("#success_hide").removeClass("hidden");
                         $("#success_tip").text(data.message);
@@ -29,8 +29,8 @@ $(function () {
                 },
                 error: function (XMLResponse) {
                     $("#error_hide").removeClass("hidden");
-                    $("#error_tip").text("抱歉，服务器异常。\nXMLResponse_Status:" + XMLResponse.status);
-                    console.log("error_status:" + XMLResponse.status);
+                    $("#error_tip").text("抱歉，服务器异常。\nXMLResponse_Status:");
+                    console.log("error_status:");
                     return;
                 }
             });

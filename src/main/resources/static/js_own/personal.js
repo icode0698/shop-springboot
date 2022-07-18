@@ -11,14 +11,14 @@ $(function () {
     $.ajax({
         type: "post",
         dataType: "json",
-        url: "servlet/Whether",
+        url: "user/status",
         data: {
             type: "ajax_whether",
             message: "getStatus"
         }, success: function (data) {
-            user = data.user;
+            user = data.data.user;
             console.log(data);
-            if (data.status == "success") {
+            if (data.code == 200) {
                 trolleyList();
                 // orderList();
                 $("#li_info").on("click",function(){
@@ -48,7 +48,7 @@ $(function () {
                 });
             }
         }, error: function () {
-            console.log("服务器异常\najax_whether:" + XMLResponse.status);
+            console.log("服务器异常\n");
         }
     });
 });
@@ -276,7 +276,7 @@ $(function () {
                                 data: {
                                     id: $("#moveout" + i).val(),
                                 }, success: function (data) {
-                                    if (data.status == "success") {
+                                    if (data.code == 200) {
                                         layer.msg(data.message, { icon: 1 });
                                         trolleyList();
                                     }
@@ -384,7 +384,7 @@ $(function () {
                                 data: {
                                     idList: JSON.stringify(idList),
                                 },success: function(data){
-                                    if (data.status == "success") {
+                                    if (data.code == 200) {
                                         layer.msg(data.message, { icon: 1 });
                                         trolleyList();
                                     }
@@ -445,7 +445,7 @@ $(function () {
                     orginPass: data.field.orginpass,
                     newPass: data.field.newpass
                 }, success: function (data) {
-                    if(data.status=="success"){
+                    if(data.code == 200){
                         info();
                         $("#userInfo").addClass("hidden");
                         $("#modifyInfo").addClass("hidden");
@@ -455,7 +455,7 @@ $(function () {
                         layer.alert(data.message,{icon:2});
                     }
                 }, error: function () {
-                    console.log("服务器异常\najax_whether:" + XMLResponse.status);
+                    console.log("服务器异常\n");
                     return;
                 }
             });
@@ -488,7 +488,7 @@ $(function () {
             data: {
                 type: "ajax_info"
             }, success: function (data) {
-                if(data.status=="success"){
+                if(data.code == 200){
                     $("#user").text(data.user);
                     $("#nickName").text(data.nickName);
                     $("#lastTime").text(data.lastTime);
@@ -500,7 +500,7 @@ $(function () {
                     layer.msg("服务器异常，请稍候再试。");
                 }
             }, error: function () {
-                console.log("服务器异常\najax_whether:" + XMLResponse.status);
+                console.log("服务器异常\n");
                 return;
             }
         });
@@ -656,7 +656,7 @@ $(function () {
                                     type: "ajax_delete",
                                     id: data.message[i].id
                                 },success:function(data){
-                                    if(data.status=="success"){
+                                    if(data.code == 200){
                                         layer.msg(data.message,{icon:1});
                                         orderList();
                                     }
@@ -694,10 +694,10 @@ $(function () {
                 });
             }
             , done: function (data) {
-                if(data.status=="success"){
+                if(data.code == 200){
                     return layer.msg('上传成功',{icon:1});
                 }
-                if (data.status=="fail") {
+                if (data.code == 500) {
                     return layer.msg('上传失败，请稍候再试',{icon:2});
                 }
             }

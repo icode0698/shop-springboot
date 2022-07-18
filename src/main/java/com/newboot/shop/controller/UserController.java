@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.common.CommonResult;
 import com.newboot.shop.common.ResultMessage;
 import com.newboot.shop.service.UserService;
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -51,12 +52,11 @@ public class UserController {
     @RequestMapping("/status")
     @ResponseBody
     public CommonResult status(HttpServletRequest request){
-        String user = request.getSession().getAttribute("user").toString();
-        if(StringUtils.isEmpty(user)){
+        if(ObjectUtils.isEmpty(request.getSession().getAttribute("user"))){
             return CommonResult.failed(ResultMessage.UNAUTHORIZED.getMessage());
         }
         else{
-            return CommonResult.success(ResultMessage.LOGIN_USER_ONLINE.getMessage(), userService.getInfo(user));
+            return CommonResult.success(ResultMessage.LOGIN_USER_ONLINE.getMessage(), userService.getInfo(request.getSession().getAttribute("user").toString()));
         }
     }
 }

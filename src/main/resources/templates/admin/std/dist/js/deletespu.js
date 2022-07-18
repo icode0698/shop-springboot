@@ -26,7 +26,7 @@ $(function () {
                     }, success: function (data) {
                         $("#deleteinfo").css("display","");
                         console.log(data);
-                        if (data.status == "success") {
+                        if (data.code == 200) {
                             $("#trs").empty();
                             for (let i = 0; i < data.message.length; i++) {
                                 let content = '<tr><td>' + data.message[i].SKU + '</td><td>' + data.message[i].goodsID + '</td><td>' + data.message[i].goodsName + '</td><td>' + data.message[i].categoryName + '</td>'
@@ -39,7 +39,7 @@ $(function () {
                                 , cellMinWidth: 40
                             });
                         }
-                        if (data.status == "fail") {
+                        if (data.code == 500) {
                             layer.alert("查询出现错误");
                         }
                     }, error: function (data) {
@@ -64,10 +64,10 @@ $(function () {
                         spu: $("#spu").val()
                     }, success: function (data) {
                         console.log(data);
-                        if (data.status == "success") {
+                        if (data.code == 200) {
                             layer.alert(data.message, { icon: 1 });
                         }
-                        if (data.status == "fail") {
+                        if (data.code == 500) {
                             layer.alert(data.message,);
                         }
                     }, error: function (data) {

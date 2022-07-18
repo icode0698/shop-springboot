@@ -45,10 +45,10 @@ $(function () {
                     });
                 }
                 , done: function (data) {
-                    if(data.status=="success"){
+                    if(data.code == 200){
                         console.log('上传成功');
                     }
-                    if (data.status=="fail") {
+                    if (data.code == 500) {
                         console.log('上传失败，请稍候再试');
                     }
                 }
@@ -69,7 +69,7 @@ $(function () {
                         pass: data.field.pass,
                         // picIndex: picIndex
                     }, success: function (data) {
-                        if(data.status=="success"){
+                        if(data.code == 200){
                     layer.confirm(data.message, {
                         icon: 1,
                         btn: ["前往登录", "浏览首页"]
@@ -83,7 +83,7 @@ $(function () {
                             layer.alert(data.message,{icon:2});
                         }
                     }, error: function () {
-                        console.log("服务器异常\najax_whether:" + XMLResponse.status);
+                        console.log("服务器异常\n");
                         return;
                     }
                 });
@@ -121,7 +121,7 @@ $(function () {
         //             success: function (data) {
         //                 console.log("json.status:" + data.status);
         //                 console.log("json.user:" + data.user);
-        //                 if (data.status == "success") {
+        //                 if (data.code == 200) {
         //                     $("#error_hide").addClass("hidden");
         //                     $("#div_hide").removeClass("hidden");
         //                     $("#success_hide").removeClass("hidden");
@@ -138,8 +138,8 @@ $(function () {
         //             error: function (XMLResponse) {
         //                 $("#div_hide").removeClass("hidden");
         //                 $("#error_hide").removeClass("hidden");
-        //                 $("#error_tip").text("抱歉，服务器异常\nXMLResponse_status:" + XMLResponse.status);
-        //                 console.log("error_status:" + XMLResponse.status);
+        //                 $("#error_tip").text("抱歉，服务器异常\nXMLResponse_status:");
+        //                 console.log("error_status:");
         //                 //return;
         //             }
         //         });

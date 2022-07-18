@@ -28,7 +28,7 @@ $(function () {
                     user: user
                 }, success: function (data) {
                     console.log(data);
-                    if (data.status == "success") {
+                    if (data.code == 200) {
                         $("#trs").empty();
                         for (let i = 0; i < data.message.length; i++) {
                             var pay;
@@ -53,7 +53,7 @@ $(function () {
                             , cellMinWidth: 40
                         }); 
                     }
-                    if (data.status == "fail") {
+                    if (data.code == 500) {
                         layer.alert("查询出现错误");
                     }
                 }, error: function (data) {

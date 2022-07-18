@@ -10,7 +10,7 @@ $(function () {
                 message: "selectBrand"
             }, success: function (data) {
                 console.log(data);
-                if (data.status == "success") {
+                if (data.code == 200) {
                     $("#trs").empty();
                     for (let i = 0; i < data.message.length; i++) {
                         let content = '<tr><td>'+data.message[i].sku+'</td><td>'+data.message[i].goodsName+'</td>'
@@ -37,10 +37,10 @@ $(function () {
                                     price: price
                                 },success: function (data) {
                                     console.log(data);
-                                    if (data.status == "success") {
+                                    if (data.code == 200) {
                                         layer.msg(data.message);
                                     }
-                                    if (data.status == "fail") {
+                                    if (data.code == 500) {
                                         layer.alert(data.message);
                                     }
                                 }, error: function (data) {
@@ -61,10 +61,10 @@ $(function () {
                                     stock: stock
                                 },success: function (data) {
                                     console.log(data);
-                                    if (data.status == "success") {
+                                    if (data.code == 200) {
                                         layer.msg(data.message);
                                     }
-                                    if (data.status == "fail") {
+                                    if (data.code == 500) {
                                         layer.alert(data.message);
                                     }
                                 }, error: function (data) {
@@ -76,7 +76,7 @@ $(function () {
                         }
                     });
                 }
-                if (data.status == "fail") {
+                if (data.code == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function (data) {
