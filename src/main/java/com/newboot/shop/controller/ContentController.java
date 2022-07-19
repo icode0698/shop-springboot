@@ -21,4 +21,5 @@ public class ContentController {
     public CommonResult list(@RequestParam HashMap map){
         return CommonResult.success(contentService.getList(map.get("category").toString()));
     }
+
 }

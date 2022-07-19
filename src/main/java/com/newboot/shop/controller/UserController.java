@@ -44,7 +44,7 @@ public class UserController {
     public CommonResult logout(@RequestParam HashMap map, HttpServletRequest request){
         JSONObject json = new JSONObject(map);
         json.put("user",request.getSession().getAttribute("user"));
-        int index = userService.logout(json);
+        userService.logout(json);
         request.getSession().removeAttribute("user");
         return CommonResult.success();
     }
@@ -59,4 +59,18 @@ public class UserController {
             return CommonResult.success(ResultMessage.LOGIN_USER_ONLINE.getMessage(), userService.getInfo(request.getSession().getAttribute("user").toString()));
         }
     }
+
+    @RequestMapping("/register")
+    @ResponseBody
+    public CommonResult register(@RequestParam HashMap map){
+        JSONObject json = new JSONObject(map);
+        String message = userService.register(json);
+        if(StringUtils.equals(ResultMessage.REGISTER_SUCCESS.getMessage(), message)){
+            return CommonResult.success(message);
+        }
+        else{
+            return CommonResult.failed(message);
+        }
+    }
+
 }

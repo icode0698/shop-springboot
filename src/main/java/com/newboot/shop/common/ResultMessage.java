@@ -20,6 +20,12 @@ public enum ResultMessage {
 
     SERVER_ERROR("服务器异常"),
 
+    REGISTER_SUCCESS("注册成功"),
+
+    UPLOAD_FILE_SUCCESS("文件上传成功"),
+
+    UPLOAD_FILE_FAIL("文件上传失败"),
+
     DATA_NOT_EXIST("未查询到记录"),
 
     SAME_CATEGORY_EXIST("已存在同级同名的分类"),

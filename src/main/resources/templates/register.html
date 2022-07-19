@@ -21,28 +21,11 @@
 <body>
     <div class="container">
         <blockquote class="layui-elem-quote">用户注册</blockquote>
-        <!-- <form class="form-signin" onsubmit="return false">
-            <h2 class="form-signin-heading wow bounceInDown">Register Your Account</h2>
-            <label>用户名</label>
-            <input type="text" id="user" class="form-control wow bounceInLeft" placeholder="UserID" autofocus>
-            <label>密码</label>
-            <input type="password" id="password" class="form-control wow bounceInRight" placeholder="Password" >
-            <button id="sub" class="btn btn-lg btn-primary btn-block wow bounceInUp" type="submit">Register</button><br>
-            <div id="div_hide" class="hidden">
-            <div id="success_hide" class="alert alert-success hidden" role="alert">
-                <strong id="success_tip"></strong><span id="span_success_tip"></span>
-            </div>
-            <div id="error_hide" class="alert alert-danger hidden" role="alert">
-                <strong id="error_tip"></strong><span id="span_error_tip"></span>
-            </div>
-            </div>
-            </div>
-        </form> -->
         <form class="layui-form layui-form-pane" action="" style="padding-top:20px;">
             <div class="layui-form-item">
                 <label class="layui-form-label">用户名</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="user" lay-verify="required|nickname" lay-verType="tips"
+                    <input id="user" type="text" name="user" lay-verify="required|username" lay-verType="tips"
                         placeholder="请输入用户名" autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-mid layui-word-aux">用户名是用户唯一的ID，注册成功后将不允许更改</div>

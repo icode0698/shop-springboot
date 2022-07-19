@@ -15,14 +15,17 @@ public class ProjectConfig {
      */
     private static String name;
     /**
-     * 上传文件路径
+     * 用户头像上传文件路径
      */
-    private static String fileUploadPath;
+    private static String userFileUploadPath;
+    /**
+     * 商品图片上传文件路径
+     */
+    private static String goodsFileUploadPath;
     /**
      * 订单超期未支付时间，单位秒
      */
     private static Integer orderUnpaidOverTime;
-
     /**
      * 服务端访问路径
      */
@@ -36,12 +39,20 @@ public class ProjectConfig {
         this.name = name;
     }
 
-    public static String getFileUploadPath() {
-        return fileUploadPath;
+    public static String getUserFileUploadPath() {
+        return userFileUploadPath;
     }
 
-    public void setFileUploadPath(String fileUploadPath) {
-        this.fileUploadPath = fileUploadPath;
+    public void setUserFileUploadPath(String userFileUploadPath) {
+        this.userFileUploadPath = userFileUploadPath;
+    }
+
+    public static String getGoodsFileUploadPath() {
+        return goodsFileUploadPath;
+    }
+
+    public void setGoodsFileUploadPath(String goodsFileUploadPath) {
+        this.goodsFileUploadPath = goodsFileUploadPath;
     }
 
     public static Integer getOrderUnpaidOverTime() {

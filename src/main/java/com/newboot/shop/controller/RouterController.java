@@ -14,4 +14,8 @@ public class RouterController {
     public String loginPage(){
         return "login";
     }
+    @GetMapping({"/register","/register.html"})
+    public String registerPage(){
+        return "register";
+    }
 }

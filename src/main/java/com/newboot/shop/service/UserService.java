@@ -8,4 +8,6 @@ public interface UserService {
     int logout(JSONObject json);
 
     JSONObject getInfo(String uesr);
+
+    String register(JSONObject json);
 }

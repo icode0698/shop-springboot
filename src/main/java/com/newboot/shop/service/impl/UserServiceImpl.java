@@ -5,6 +5,7 @@ import com.newboot.shop.common.ResultMessage;
 import com.newboot.shop.dao.UserMapper;
 import com.newboot.shop.model.User;
 import com.newboot.shop.service.UserService;
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -68,6 +69,23 @@ public class UserServiceImpl implements UserService {
         User info = userMapper.selectByPrimaryKey(user);
         info.setPassword("password");
         return (JSONObject)JSONObject.toJSON(info);
+    }
+
+    @Override
+    public String register(JSONObject json) {
+        User user = userMapper.selectByPrimaryKey(json.getString("user"));
+        if(ObjectUtils.isEmpty(user)){
+            user = JSONObject.toJavaObject(json, User.class);
+            if(userMapper.insertSelective(user)>0){
+                return ResultMessage.REGISTER_SUCCESS.getMessage();
+            }
+            else {
+                return ResultMessage.SERVER_ERROR.getMessage();
+            }
+        }
+        else{
+            return ResultMessage.SAME_LOGIN_NAME_EXIST.getMessage();
+        }
     }
 
 }
