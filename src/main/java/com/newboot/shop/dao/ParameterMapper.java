@@ -2,6 +2,8 @@ package com.newboot.shop.dao;
 
 import com.newboot.shop.model.Parameter;
 import com.newboot.shop.model.ParameterExample;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -27,4 +29,6 @@ public interface ParameterMapper {
     int updateByPrimaryKeySelective(Parameter record);
 
     int updateByPrimaryKey(Parameter record);
+
+    ArrayList<String> getValueFromName(@Param("parameterName") String parameterName, @Param("goodsID")int goodsID);
 }

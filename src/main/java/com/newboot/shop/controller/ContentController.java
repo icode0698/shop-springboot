@@ -1,5 +1,6 @@
 package com.newboot.shop.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.common.CommonResult;
 import com.newboot.shop.service.ContentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,4 +23,21 @@ public class ContentController {
         return CommonResult.success(contentService.getList(map.get("category").toString()));
     }
 
+    @RequestMapping("/details")
+    @ResponseBody
+    public CommonResult details(@RequestParam HashMap map){
+        return CommonResult.success(contentService.getDetails(Integer.parseInt(map.get("goodsID").toString())));
+    }
+
+    @RequestMapping("/price")
+    @ResponseBody
+    public CommonResult price(@RequestParam HashMap map){
+        return CommonResult.success(contentService.getPrice(map));
+    }
+
+    @RequestMapping("/showComment")
+    @ResponseBody
+    public CommonResult showComment(@RequestParam HashMap map){
+        return CommonResult.success(contentService.getComment(map));
+    }
 }

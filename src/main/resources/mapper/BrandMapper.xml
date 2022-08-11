@@ -178,4 +178,8 @@
       insertTime = #{insertTime,jdbcType=TIMESTAMP}
     where brandID = #{brandID,jdbcType=INTEGER}
   </update>
+
+  <select id="getBrandNameFromGoods" resultType="string">
+    select brandName from goods,brand where goods.brandID=brand.brandID and goods.goodsID=#{goodsID}
+  </select>
 </mapper>

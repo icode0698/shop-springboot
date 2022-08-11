@@ -1,7 +1,10 @@
 package com.newboot.shop.dao;
 
+import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.model.Price;
 import com.newboot.shop.model.PriceExample;
+
+import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -27,4 +30,8 @@ public interface PriceMapper {
     int updateByPrimaryKeySelective(Price record);
 
     int updateByPrimaryKey(Price record);
+
+    JSONObject getGoodsInfo(HashMap map);
+
+    JSONObject getSpIDFromSku(Integer sku);
 }

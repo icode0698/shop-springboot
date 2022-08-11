@@ -135,7 +135,7 @@
       #{rateValue,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP}, #{comment,jdbcType=LONGVARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.newboot.shop.model.Comment">
+  <insert id="insertSelective">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -284,4 +284,7 @@
       createTime = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="getComment" resultType="com.newboot.shop.model.Comment">
+    select * from comment where spu=#{spu} order by createTime desc
+  </select>
 </mapper>

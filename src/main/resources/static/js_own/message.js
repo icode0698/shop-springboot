@@ -27,7 +27,7 @@ $(function () {
                     $.ajax({
                         type: "post",
                         dataType: "json",
-                        url: "servlet/Message",
+                        url: "user/message",
                         data: {
                             type: "ajax_message",
                             message: $("#message").val()

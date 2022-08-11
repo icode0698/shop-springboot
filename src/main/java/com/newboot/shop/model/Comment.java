@@ -20,6 +20,14 @@ public class Comment implements Serializable {
 
     private String comment;
 
+    String headPic;
+
+    String storage;
+
+    String color;
+
+    String screen;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -78,6 +86,38 @@ public class Comment implements Serializable {
         this.comment = comment;
     }
 
+    public String getHeadPic() {
+        return headPic;
+    }
+
+    public void setHeadPic(String headPic) {
+        this.headPic = headPic;
+    }
+
+    public String getStorage() {
+        return storage;
+    }
+
+    public void setStorage(String storage) {
+        this.storage = storage;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getScreen() {
+        return screen;
+    }
+
+    public void setScreen(String screen) {
+        this.screen = screen;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -91,6 +131,10 @@ public class Comment implements Serializable {
         sb.append(", rateValue=").append(rateValue);
         sb.append(", createTime=").append(createTime);
         sb.append(", comment=").append(comment);
+        sb.append(", headPic=").append(headPic);
+        sb.append(", storage=").append(storage);
+        sb.append(", color=").append(color);
+        sb.append(", screen=").append(screen);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

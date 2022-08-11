@@ -2,6 +2,8 @@ package com.newboot.shop.dao;
 
 import com.newboot.shop.model.Message;
 import com.newboot.shop.model.MessageExample;
+
+import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -14,7 +16,7 @@ public interface MessageMapper {
 
     int insert(Message record);
 
-    int insertSelective(Message record);
+    int insertSelective(HashMap map);
 
     List<Message> selectByExampleWithBLOBs(MessageExample example);
 

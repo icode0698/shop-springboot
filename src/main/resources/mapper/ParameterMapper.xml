@@ -161,4 +161,10 @@
     set parameterName = #{parameterName,jdbcType=VARCHAR}
     where parameterID = #{parameterID,jdbcType=INTEGER}
   </update>
+
+  <select id="getValueFromName" resultType="string">
+    select value from parameter,parametervalue,goodsvalue
+    where parameter.parameterID=parametervalue.parameterID
+    and goodsvalue.valueID=parametervalue.valueID and parameter.parameterName=#{parameterName} and goodsID=#{goodsID}
+  </select>
 </mapper>

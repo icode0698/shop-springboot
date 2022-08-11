@@ -46,7 +46,7 @@ $(function () {
         //ajax获取商品参数信息
         $.ajax({
             type: "post",
-            url: "servlet/Details",
+            url: "content/details",
             dataType: "json",
             data: {
                 type: "ajax_details",
@@ -55,17 +55,17 @@ $(function () {
             success: function (data) {
                 console.log(data);
                 // console.log("data_status:" + data.status);
-                // console.log(data.message[0].goodsName);
-                para.goods = data.message[0].goodsName;
+                // console.log(data.data[0].goodsName);
+                para.goods = data.data[0].goodsName;
                 // console.log(para.goods);
-                $(document).attr("title", data.message[0].goodsName);
-                $("#detailspic").attr("src", data.message[0].imgList[0]);
-                $("#goodsName").text(data.message[0].goodsName);
-                $("#brand").text(" " + data.message[0].brandName);
+                $(document).attr("title", data.data[0].goodsName);
+                $("#detailspic").attr("src", data.data[0].imgList[0]);
+                $("#goodsName").text(data.data[0].goodsName);
+                $("#brand").text(" " + data.data[0].brandName);
                 // 初始化颜色
-                for (var i = 0; i < data.message[0].colorList.length; i++) {
-                    var content = '<label id="label_color' + i + '" for="radio_color' + i + '" class="btn btn-default btn_margin">' + data.message[0].colorList[i] + '</label>' +
-                        '<input type="radio" class="radio_display" name="color" id="radio_color' + i + '" value="' + data.message[0].colorList[i] + '" />';
+                for (var i = 0; i < data.data[0].colorList.length; i++) {
+                    var content = '<label id="label_color' + i + '" for="radio_color' + i + '" class="btn btn-default btn_margin">' + data.data[0].colorList[i] + '</label>' +
+                        '<input type="radio" class="radio_display" name="color" id="radio_color' + i + '" value="' + data.data[0].colorList[i] + '" />';
                     $("#color").append(content);
                     // console.log("i"+i);
                 }
@@ -73,10 +73,10 @@ $(function () {
                 $("#radio_color0").attr("checked", "checked");
                 $("#label_color0").addClass("btn-primary");
                 // 初始化组件完成后为每个radio设置click事件
-                for (var i = 0; i < data.message[0].colorList.length; i++) {
+                for (var i = 0; i < data.data[0].colorList.length; i++) {
                     //console.log("i2" + i);
                     $("#label_color" + i).on("click", function () {
-                        for (var j = 0; j < data.message[0].colorList.length; j++) {
+                        for (var j = 0; j < data.data[0].colorList.length; j++) {
                             //$("#radio_color" + j).attr("checked", false);
                             $("#label_color" + j).removeClass("btn-primary");
                             //console.log("++++++++++++++ij" + i + "&&" + j)
@@ -89,18 +89,18 @@ $(function () {
                     });
                 }
                 // 初始化尺寸
-                for (var i = 0; i < data.message[0].screenList.length; i++) {
-                    var content = '<label id="label_screen' + i + '" for="radio_screen' + i + '" class="btn btn-default btn_margin">' + data.message[0].screenList[i] + '</label>' +
-                        '<input type="radio" class="radio_display" name="screen" id="radio_screen' + i + '" value="' + data.message[0].screenList[i] + '" />';
+                for (var i = 0; i < data.data[0].screenList.length; i++) {
+                    var content = '<label id="label_screen' + i + '" for="radio_screen' + i + '" class="btn btn-default btn_margin">' + data.data[0].screenList[i] + '</label>' +
+                        '<input type="radio" class="radio_display" name="screen" id="radio_screen' + i + '" value="' + data.data[0].screenList[i] + '" />';
                     $("#screen").append(content);
                 }
                 // 默认第一个选中
                 $("#radio_screen0").attr("checked", "checked");
                 $("#label_screen0").addClass("btn-primary");
                 // 初始化组件完成后为每个radio设置click事件
-                for (var i = 0; i < data.message[0].screenList.length; i++) {
+                for (var i = 0; i < data.data[0].screenList.length; i++) {
                     $("#label_screen" + i).on("click", function () {
-                        for (var j = 0; j < data.message[0].screenList.length; j++) {
+                        for (var j = 0; j < data.data[0].screenList.length; j++) {
                             //$("#radio_screen"+j).attr("checked",false);
                             $("#label_screen" + j).removeClass("btn-primary");
                         }
@@ -111,18 +111,18 @@ $(function () {
                     });
                 }
                 // 初始化存储容量
-                for (var i = 0; i < data.message[0].storageList.length; i++) {
-                    var content = '<label id="label_storage' + i + '" for="radio_storage' + i + '" class="btn btn-default btn_margin">' + data.message[0].storageList[i] + '</label>' +
-                        '<input type="radio" class="radio_display" name="storage" id="radio_storage' + i + '" value="' + data.message[0].storageList[i] + '" />';
+                for (var i = 0; i < data.data[0].storageList.length; i++) {
+                    var content = '<label id="label_storage' + i + '" for="radio_storage' + i + '" class="btn btn-default btn_margin">' + data.data[0].storageList[i] + '</label>' +
+                        '<input type="radio" class="radio_display" name="storage" id="radio_storage' + i + '" value="' + data.data[0].storageList[i] + '" />';
                     $("#storage").append(content);
                 }
                 // 默认第一个选中
                 $("#radio_storage0").attr("checked", "checked");
                 $("#label_storage0").addClass("btn-primary");
                 // 初始化组件完成后为每个radio设置click事件
-                for (var i = 0; i < data.message[0].storageList.length; i++) {
+                for (var i = 0; i < data.data[0].storageList.length; i++) {
                     $("#label_storage" + i).on("click", function () {
-                        for (var j = 0; j < data.message[0].storageList.length; j++) {
+                        for (var j = 0; j < data.data[0].storageList.length; j++) {
                             //$("#radio_storage"+j).attr("checked",false);
                             $("#label_storage" + j).removeClass("btn-primary");
                         }
@@ -171,7 +171,7 @@ $(function () {
             $.ajax({
                 type: "post",
                 dataType: "json",
-                url: "servlet/Price",
+                url: "content/price",
                 data: {
                     "goodsID": para.spu,
                     "color": $("input:radio[name='color']:checked").val(),
@@ -180,10 +180,10 @@ $(function () {
                 },
                 success: function (data) {
                     console.log(data);
-                    stock = data.stock;
+                    stock = data.data.stock;
                     if (data.code == 200) {
-                        $("#price").text(data.price);
-                        $("#stock").text(data.stock);
+                        $("#price").text(data.data.price);
+                        $("#stock").text(data.data.stock);
                         if (stock < 10) {
                             $("#stock").removeClass("text-primary");
                             $("#stock").addClass("text-danger");
@@ -223,7 +223,7 @@ $(function () {
                 $.ajax({
                     type: "post",
                     dataType: "json",
-                    url: "servlet/Price",
+                    url: "content/price",
                     data: {
                         goodsID: para.spu,
                         color: $("input:radio[name='color']:checked").val(),
@@ -231,12 +231,12 @@ $(function () {
                         storage: $("input:radio[name='storage']:checked").val()
                     },
                     success: function (data) {
-                        stock = data.stock;
+                        stock = data.data.stock;
                         console.log(data);
                         if (data.code == 200) {
-                            stock = data.stock;
-                            $("#price").text(data.price);
-                            $("#stock").text(data.stock);
+                            stock = data.data.stock;
+                            $("#price").text(data.data.price);
+                            $("#stock").text(data.data.stock);
                             if (stock < 10) {
                                 $("#stock").removeClass("text-primary");
                                 $("#stock").addClass("text-danger");
@@ -273,7 +273,7 @@ $(function () {
                 $.ajax({
                     type: "post",
                     dataType: "json",
-                    url: "servlet/Price",
+                    url: "content/price",
                     data: {
                         goodsID: para.spu,
                         color: $("input:radio[name='color']:checked").val(),
@@ -283,9 +283,9 @@ $(function () {
                     success: function (data) {
                         console.log(data);
                         if (data.code == 200) {
-                            stock = data.stock;
-                            $("#price").text(data.price);
-                            $("#stock").text(data.stock);
+                            stock = data.data.stock;
+                            $("#price").text(data.data.price);
+                            $("#stock").text(data.data.stock);
                             if (stock < 10) {
                                 $("#stock").removeClass("text-primary");
                                 $("#stock").addClass("text-danger");
@@ -303,7 +303,7 @@ $(function () {
                         }
                         else {
                             $("#price").text("0.00");
-                            $("#stock").text(data.stock);
+                            $("#stock").text(data.data.stock);
                             $("#btn_join").attr("disabled", true);
                             $("#btn_purchase").attr("disabled", true);
                         }
@@ -322,7 +322,7 @@ $(function () {
                 $.ajax({
                     type: "post",
                     dataType: "json",
-                    url: "servlet/Price",
+                    url: "content/price",
                     data: {
                         goodsID: para.spu,
                         color: $("input:radio[name='color']:checked").val(),
@@ -332,9 +332,9 @@ $(function () {
                     success: function (data) {
                         console.log(data);
                         if (data.code == 200) {
-                            stock = data.stock;
-                            $("#price").text(data.price);
-                            $("#stock").text(data.stock);
+                            stock = data.data.stock;
+                            $("#price").text(data.data.price);
+                            $("#stock").text(data.data.stock);
                             if (stock < 10) {
                                 $("#stock").removeClass("text-primary");
                                 $("#stock").addClass("text-danger");
@@ -352,7 +352,7 @@ $(function () {
                         }
                         else {
                             $("#price").text("0.00");
-                            $("#stock").text(data.stock);
+                            $("#stock").text(data.data.stock);
                             $("#btn_join").attr("disabled", true);
                             $("#btn_purchase").attr("disabled", true);
                         }
@@ -406,7 +406,7 @@ $(function () {
                             $.ajax({
                                 type: "post",
                                 dataType: "json",
-                                url: "servlet/Join",
+                                url: "order/join",
                                 data: {
                                     //"type": "ajax_join",
                                     "goodsID": para.spu,
@@ -428,7 +428,7 @@ $(function () {
                             });
                         }
                         else {
-                            layer.confirm(data.data.message, {
+                            layer.confirm(data.message, {
                                 icon: 3,
                                 btn: ["前往登录", "继续浏览"]
                             }, function () {
@@ -470,7 +470,7 @@ $(function () {
                                 $.ajax({
                                     type: "post",
                                     dataType: "json",
-                                    url: "servlet/Purchase",
+                                    url: "order/purchase",
                                     data: {
                                         "goodsID": para.spu,
                                         "goodsName": para.goods,
@@ -511,7 +511,7 @@ $(function () {
         // 显示商品的评论
         $.ajax({
             type: "post",
-            url: "servlet/ShowComment",
+            url: "content/showComment",
             dataType: "json",
             data: {
                 type: "ajax_showcomment",
@@ -520,28 +520,28 @@ $(function () {
             success: function (data) {
                 console.log(data);
                 if (data.code == 200) {
-                    for(let i=0;i<data.message.length;i++){
+                    for(let i=0;i<data.data.length;i++){
                         var content = '<div class="bs-callout bs-callout-info wow slideInUp">'
-                        +'<img style="width: 50px;height: 50px;float: left;margin-right: 10px;" class="img-circle" src="'+data.message[i].headPic+'" alt="">'
+                        +'<img style="width: 50px;height: 50px;float: left;margin-right: 10px;" class="img-circle" src="'+data.data[i].headPic+'" alt="">'
                         +'<div class="media-body">'
-                        +'<strong style="font-size:18px;">'+data.message[i].user+'</strong><div id="rate'+i+'" style="margin-left: 10px;"></div>'
-                        +'<div style="margin-bottom:5px;">'+data.message[i].comment+'</div>'
-                        +'<div><small style="margin-right: 10px;" class="text-muted">'+data.message[i].color+'</small>'
-                        +'<small style="margin-right: 10px;" class="text-muted">'+data.message[i].storage+'</small>'
-                        +'<small style="margin-right: 10px;" class="text-muted">'+data.message[i].screen+'</small>'
-                        +'<small class="text-muted">'+data.message[i].createTime+'</small>'
+                        +'<strong style="font-size:18px;">'+data.data[i].user+'</strong><div id="rate'+i+'" style="margin-left: 10px;"></div>'
+                        +'<div style="margin-bottom:5px;">'+data.data[i].comment+'</div>'
+                        +'<div><small style="margin-right: 10px;" class="text-muted">'+data.data[i].color+'</small>'
+                        +'<small style="margin-right: 10px;" class="text-muted">'+data.data[i].storage+'</small>'
+                        +'<small style="margin-right: 10px;" class="text-muted">'+data.data[i].screen+'</small>'
+                        +'<small class="text-muted">'+data.data[i].createTime+'</small>'
                         +'</div></div></div>'
                         $("#comment").append(content);
                         rate.render({
                             elem: '#rate'+i
-                            , value: data.message[i].rateValue
+                            , value: data.data[i].rateValue
                             , half: true
                             , readonly: true
                         });
                     }
                 }
                 if (data.status == "error") {
-                    layer.alert(data.message, { icon: 2 });
+                    layer.alert(data.data, { icon: 2 });
                 }
             },
             error: function (data) {

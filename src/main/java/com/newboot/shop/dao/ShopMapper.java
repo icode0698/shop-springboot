@@ -1,7 +1,10 @@
 package com.newboot.shop.dao;
 
+import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.model.Shop;
 import com.newboot.shop.model.ShopExample;
+
+import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -14,7 +17,7 @@ public interface ShopMapper {
 
     int insert(Shop record);
 
-    int insertSelective(Shop record);
+    int insertSelective(HashMap map);
 
     List<Shop> selectByExample(ShopExample example);
 
@@ -27,4 +30,10 @@ public interface ShopMapper {
     int updateByPrimaryKeySelective(Shop record);
 
     int updateByPrimaryKey(Shop record);
+
+    JSONObject getOrigin(HashMap map);
+
+    int updateJoin(HashMap map);
+
+    int reduceSkuStock(HashMap map);
 }

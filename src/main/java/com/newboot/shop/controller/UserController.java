@@ -73,4 +73,30 @@ public class UserController {
         }
     }
 
+    @RequestMapping("/comment")
+    @ResponseBody
+    public CommonResult comment(@RequestParam HashMap map, HttpServletRequest request){
+        if(ObjectUtils.isEmpty(request.getSession().getAttribute("user"))){
+            return CommonResult.failed(ResultMessage.UNAUTHORIZED.getMessage());
+        }
+        map.put("user",request.getSession().getAttribute("user"));
+        if(userService.comment(map)<1){
+            return CommonResult.failed(ResultMessage.COMMENT_ERROR.getMessage());
+        }
+        return CommonResult.success(ResultMessage.COMMENT_SUCCESS.getMessage());
+    }
+
+    @RequestMapping("/message")
+    @ResponseBody
+    public CommonResult message(@RequestParam HashMap map, HttpServletRequest request){
+        if(ObjectUtils.isEmpty(request.getSession().getAttribute("user"))){
+            return CommonResult.failed(ResultMessage.UNAUTHORIZED.getMessage());
+        }
+        map.put("user", request.getSession().getAttribute("user"));
+        if(userService.message(map)<1){
+            return CommonResult.failed(ResultMessage.MESSAGE_ERROR.getMessage());
+        }
+        return CommonResult.success(ResultMessage.MESSAGE_SUCCESS.getMessage());
+    }
+
 }

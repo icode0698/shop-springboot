@@ -38,6 +38,24 @@ public enum ResultMessage {
 
     LOGIN_PASSWORD_NULL("请输入密码"),
 
+    COMMENT_SUCCESS("商品评价成功"),
+
+    COMMENT_ERROR("商品评价出现错误"),
+
+    MESSAGE_SUCCESS("留言成功"),
+
+    MESSAGE_ERROR("留言出现错误"),
+
+    TROLLEY_JOIN_SUCCESS("加入购物车成功"),
+
+    TROLLEY_JOIN_ERROR("加入购物车出现错误"),
+
+    PURCHASE_SUCCESS("商品购买成功，感谢您的支持"),
+
+    PURCHASE_PAY_ERROR("支付异常，库存数量已回退"),
+
+    PURCHASE_DB_ERROR("支付异常，数据库回退库存数量异常"),
+
     LOGIN_VERIFY_CODE_NULL("请输入验证码"),
 
     LOGIN_VERIFY_CODE_ERROR("验证码错误"),

@@ -13,6 +13,10 @@ public class CommonResult<T> implements Result {
      */
     private String message;
     /**
+     * 版本信息
+     */
+    private String version = "0.1";
+    /**
      * 数据封装
      */
     private T data;
@@ -129,6 +133,14 @@ public class CommonResult<T> implements Result {
 
     public void setCode(long code) {
         this.code = code;
+    }
+
+    public void setVersion(String version){
+        this.version = version;
+    }
+
+    public String getVersion(){
+        return version;
     }
 
     public String getMessage() {

@@ -178,4 +178,8 @@
       insertTime = #{insertTime,jdbcType=TIMESTAMP}
     where categoryID = #{categoryID,jdbcType=INTEGER}
   </update>
+  <select id="getCategoryNameByGoodsID" resultType="string">
+    select categoryName from goods, category
+    where goods.categoryID=category.categoryID and goods.goodsID=#{goodsID}
+  </select>
 </mapper>

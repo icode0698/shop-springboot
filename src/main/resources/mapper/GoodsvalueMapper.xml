@@ -193,4 +193,8 @@
       parameterID = #{parameterID,jdbcType=INTEGER}
     where spID = #{spID,jdbcType=INTEGER}
   </update>
+  <select id="getSpValue" resultType="string">
+    select value from goodsvalue,parametervalue
+    where goodsvalue.valueID=parametervalue.valueID and spID=#{spID}
+  </select>
 </mapper>

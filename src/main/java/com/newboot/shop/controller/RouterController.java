@@ -18,4 +18,12 @@ public class RouterController {
     public String registerPage(){
         return "register";
     }
+    @GetMapping({"/details","/details.html"})
+    public String detailsPage(){
+        return "details";
+    }
+    @GetMapping({"/message","/message.html"})
+    public String messagePage(){
+        return "message";
+    }
 }

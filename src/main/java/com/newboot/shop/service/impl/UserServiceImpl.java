@@ -2,6 +2,8 @@ package com.newboot.shop.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.common.ResultMessage;
+import com.newboot.shop.dao.CommentMapper;
+import com.newboot.shop.dao.MessageMapper;
 import com.newboot.shop.dao.UserMapper;
 import com.newboot.shop.model.User;
 import com.newboot.shop.service.UserService;
@@ -13,12 +15,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.HashMap;
 
 @Service
 public class UserServiceImpl implements UserService {
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     private UserMapper userMapper;
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    @Autowired
+    private CommentMapper commentMapper;
+    @Autowired
+    MessageMapper messageMapper;
 
     @Override
     public String login(JSONObject json) {
@@ -88,4 +96,13 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public int comment(HashMap map) {
+        return commentMapper.insertSelective(map);
+    }
+
+    @Override
+    public int message(HashMap map) {
+        return messageMapper.insertSelective(map);
+    }
 }

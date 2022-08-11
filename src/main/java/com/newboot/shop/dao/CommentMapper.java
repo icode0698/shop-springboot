@@ -1,7 +1,11 @@
 package com.newboot.shop.dao;
 
+import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.model.Comment;
 import com.newboot.shop.model.CommentExample;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -14,7 +18,7 @@ public interface CommentMapper {
 
     int insert(Comment record);
 
-    int insertSelective(Comment record);
+    int insertSelective(HashMap map);
 
     List<Comment> selectByExampleWithBLOBs(CommentExample example);
 
@@ -33,4 +37,7 @@ public interface CommentMapper {
     int updateByPrimaryKeyWithBLOBs(Comment record);
 
     int updateByPrimaryKey(Comment record);
+
+    ArrayList<Comment> getComment(HashMap map);
+
 }

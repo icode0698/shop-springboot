@@ -64,7 +64,7 @@ $(function () {
                 $.ajax({
                     type: "post",
                     dataType: "json",
-                    url: "servlet/Comment",
+                    url: "user/comment",
                     data: {
                         rateValue: rateValue,
                         sku: $("#sku").text(),
