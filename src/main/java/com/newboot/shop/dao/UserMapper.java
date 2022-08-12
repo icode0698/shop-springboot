@@ -2,6 +2,8 @@ package com.newboot.shop.dao;
 
 import com.newboot.shop.model.User;
 import com.newboot.shop.model.UserExample;
+
+import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -26,8 +28,9 @@ public interface UserMapper {
 
     int updateByPrimaryKeySelective(User record);
 
-    int updateByPrimaryKey(User record);
+    int updateByPrimaryKey(HashMap map);
 
     int updateOnlineAndLastTime(User user);
 
+    String getPass(String user);
 }

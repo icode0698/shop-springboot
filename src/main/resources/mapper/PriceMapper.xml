@@ -246,7 +246,7 @@
     and price.spID2 = (select spID from goodsvalue where goodsID=#{goodsID} and valueID = (select valueID from parametervalue where value=#{color}))
     and price.spID3 = (select spID from goodsvalue where goodsID=#{goodsID} and valueID = (select valueID from parametervalue where value=#{screen}))
   </select>
-  <select id="getSpIDFromSku" resultType="com.alibaba.fastjson.JSONObject">
-    select spID1,spID2,spID3 from price where sku=#{sku}
+  <select id="getSkuInfo" resultType="com.alibaba.fastjson.JSONObject">
+    select spID1,spID2,spID3,price,stock,goodsID from price where sku=#{sku}
   </select>
 </mapper>

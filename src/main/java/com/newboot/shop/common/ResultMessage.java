@@ -56,6 +56,14 @@ public enum ResultMessage {
 
     PURCHASE_DB_ERROR("支付异常，数据库回退库存数量异常"),
 
+    PAGE_DATA_ERROR("页面数据异常"),
+
+    ORDER_TROLLEY_DELETE("已将商品移出购物车"),
+
+    ORDER_DELETE("订单删除成功"),
+
+    ORDER_DATA_ERROR("订单数据异常"),
+
     LOGIN_VERIFY_CODE_NULL("请输入验证码"),
 
     LOGIN_VERIFY_CODE_ERROR("验证码错误"),

@@ -230,4 +230,7 @@
         (select categoryID from category WHERE categoryName=#{category})
     order by insertTime desc
   </select>
+  <select id="getImgListBySpu" resultType="string">
+    select imgSrc from img where goodsID = #{spu}
+  </select>
 </mapper>

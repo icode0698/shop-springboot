@@ -101,7 +101,7 @@
     where id = #{id,jdbcType=VARCHAR}
       and user = #{user,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="map">
+  <delete id="deleteByPrimaryKey">
     delete from shop
     where id = #{id,jdbcType=VARCHAR}
       and user = #{user,jdbcType=VARCHAR}
@@ -380,4 +380,20 @@
   <update id="reduceSkuStock">
     update price set stock=stock-#{num} where sku=#{sku}
   </update>
+  <select id="getTrolleyList" resultType="com.newboot.shop.model.Shop">
+    select * from shop where user=#{user} and isPay=0
+  </select>
+  <select id="getOrderList" resultType="com.newboot.shop.model.Shop">
+    select * from shop where user=#{user} and isPay=1
+  </select>
+  <update id="updatePayment" parameterType="com.alibaba.fastjson.JSONObject">
+    update shop set isPay=#{isPay}, num=#{num}, paymentTime=#{paymentTime}
+    where id = #{id}
+  </update>
+  <select id="getOrderCount" resultType="int">
+    select count(*) from shop where id=#{id} and user=#{user}
+  </select>
+  <select id="getOrderInfo" resultType="com.alibaba.fastjson.JSONObject">
+    select * from shop where id=#{id} and user=#{user}
+  </select>
 </mapper>

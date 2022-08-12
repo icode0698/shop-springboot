@@ -3,12 +3,15 @@ package com.newboot.shop.model;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Shop implements Serializable {
     private String id;
 
     private String user;
+
+    private Integer spu;
 
     private Integer sku;
 
@@ -36,6 +39,10 @@ public class Shop implements Serializable {
 
     private Date paymentTime;
 
+    private ArrayList<String> imgList;
+
+    private Integer stock;
+
     private static final long serialVersionUID = 1L;
 
     public String getId() {
@@ -52,6 +59,14 @@ public class Shop implements Serializable {
 
     public void setUser(String user) {
         this.user = user;
+    }
+
+    public Integer getSpu() {
+        return spu;
+    }
+
+    public void setSpu(Integer spu) {
+        this.spu = spu;
     }
 
     public Integer getSku() {
@@ -158,6 +173,22 @@ public class Shop implements Serializable {
         this.paymentTime = paymentTime;
     }
 
+    public ArrayList<String> getImgList() {
+        return imgList;
+    }
+
+    public void setImgList(ArrayList<String> imgList) {
+        this.imgList = imgList;
+    }
+
+    public Integer getStock() {
+        return stock;
+    }
+
+    public void setStock(Integer stock) {
+        this.stock = stock;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -166,6 +197,7 @@ public class Shop implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", user=").append(user);
+        sb.append(", spu=").append(spu);
         sb.append(", sku=").append(sku);
         sb.append(", goodsName=").append(goodsName);
         sb.append(", categoryName=").append(categoryName);
@@ -179,6 +211,8 @@ public class Shop implements Serializable {
         sb.append(", isPay=").append(isPay);
         sb.append(", createTime=").append(createTime);
         sb.append(", paymentTime=").append(paymentTime);
+        sb.append(", imgList=").append(imgList);
+        sb.append(", stock=").append(stock);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

@@ -26,4 +26,12 @@ public class RouterController {
     public String messagePage(){
         return "message";
     }
+    @GetMapping({"/personal", "/personal.html"})
+    public String personPage(){
+        return "personal";
+    }
+    @GetMapping({"/comment","/comment.html"})
+    public String commentPage(){
+        return "comment";
+    }
 }

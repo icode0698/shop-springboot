@@ -16,4 +16,6 @@ public interface UserService {
     int comment(HashMap map);
 
     int message(HashMap map);
+
+    int updateInfo(HashMap map);
 }

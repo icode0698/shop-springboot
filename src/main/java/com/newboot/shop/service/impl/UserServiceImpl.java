@@ -105,4 +105,16 @@ public class UserServiceImpl implements UserService {
     public int message(HashMap map) {
         return messageMapper.insertSelective(map);
     }
+
+    @Override
+    public int updateInfo(HashMap map) {
+        if(ObjectUtils.isEmpty(map.get("originPass"))){
+            return userMapper.updateByPrimaryKey(map);
+        }
+        if(StringUtils.equals(map.get("originPass").toString(),userMapper.getPass(map.get("user").toString()))){
+            map.put("password", map.get("newPass"));
+            return userMapper.updateByPrimaryKey(map);
+        }
+        return -1;
+    }
 }

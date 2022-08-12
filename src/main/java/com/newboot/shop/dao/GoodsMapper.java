@@ -32,4 +32,6 @@ public interface GoodsMapper {
     int updateByPrimaryKey(Goods record);
 
     ArrayList<JSONObject> getList(String categoryName);
+
+    ArrayList<String> getImgListBySpu(Integer spu);
 }

@@ -90,7 +90,7 @@ public class ContentServiceImpl implements ContentService {
         for (Comment comment : commentList) {
             User user = userMapper.selectByPrimaryKey(comment.getUser());
             comment.setHeadPic(user.getHeadPic());
-            JSONObject json = priceMapper.getSpIDFromSku(comment.getSku());
+            JSONObject json = priceMapper.getSkuInfo(comment.getSku());
             comment.setStorage(goodsvalueMapper.getSpValue(json.getInteger("spID1")));
             comment.setColor(goodsvalueMapper.getSpValue(json.getInteger("spID2")));
             comment.setScreen(goodsvalueMapper.getSpValue(json.getInteger("spID3")));

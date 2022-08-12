@@ -33,5 +33,5 @@ public interface PriceMapper {
 
     JSONObject getGoodsInfo(HashMap map);
 
-    JSONObject getSpIDFromSku(Integer sku);
+    JSONObject getSkuInfo(Integer sku);
 }

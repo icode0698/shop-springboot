@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.model.Shop;
 import com.newboot.shop.model.ShopExample;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
@@ -13,7 +14,7 @@ public interface ShopMapper {
 
     int deleteByExample(ShopExample example);
 
-    int deleteByPrimaryKey(@Param("id") String id, @Param("user") String user);
+    int deleteByPrimaryKey(HashMap map);
 
     int insert(Shop record);
 
@@ -36,4 +37,16 @@ public interface ShopMapper {
     int updateJoin(HashMap map);
 
     int reduceSkuStock(HashMap map);
+
+    int reduceSkuStock(JSONObject json);
+
+    ArrayList<Shop> getTrolleyList(HashMap map);
+
+    ArrayList<Shop> getOrderList(HashMap map);
+
+    int updatePayment(JSONObject json);
+
+    int getOrderCount(HashMap map);
+
+    JSONObject getOrderInfo(HashMap map);
 }

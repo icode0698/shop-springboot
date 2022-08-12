@@ -16,9 +16,9 @@ $(function () {
             type: "ajax_whether",
             message: "getStatus"
         }, success: function (data) {
-            user = data.data.user;
             console.log(data);
             if (data.code == 200) {
+                user = data.data.user;
                 trolleyList();
                 // orderList();
                 $("#li_info").on("click",function(){
@@ -48,41 +48,41 @@ $(function () {
                 });
             }
         }, error: function () {
-            console.log("服务器异常\n");
-        }
+                console.log("服务器异常\n");
+            }
+        });
     });
-});
     function trolleyList() {
         $("#trolley_trs").empty();
         $("#allgoods").prop("checked",false);
         $.ajax({
             type: "post",
-            url: "servlet/Trolley",
+            url: "order/trolleyList",
             dataType: "json",
             data: {
                 type: "ajax_trolley"
             }, success: function (data) {
                 console.log(data);
                 // console.log(data.status);
-                // console.log(data.message.length);
+                // console.log(data.data.length);
                 // 生成购物车列表
                 let numOrigin = [];
-                for (var i = 0; i < data.message.length; i++) {
-                    numOrigin[i] = data.message[i].num;
-                    let content = '<tr class="wow slideInRight" data-wow-duration="0.7s" id="trolleytr'+i+'"><td><div class="checkbox checkbox-primary"><input type="checkbox" name="goods" value="' + data.message[i].id + '" id="' + i + '" class="checkbox_goods">'
-                        + '<label for="' + i + '"><img id="img'+i+'" value="'+data.message[i].sku+'"src="' + data.message[i].imgList[0] + '" alt="" class="img_goods"></label></div>'
-                        + '</td><td><strong id="goodsName'+i+'">' + data.message[i].goodsName + '</strong><br>'
-                        + '<p id="p'+i+'"><span id="color' + i + '">' + data.message[i].color + '</span><span id="screen' + i + '">' + data.message[i].screen +'</span><span id="storage' + i + '">'+ data.message[i].storage + '</span></p>'
+                for (var i = 0; i < data.data.length; i++) {
+                    numOrigin[i] = data.data[i].num;
+                    let content = '<tr class="wow slideInRight" data-wow-duration="0.7s" id="trolleytr'+i+'"><td><div class="checkbox checkbox-primary"><input type="checkbox" name="goods" value="' + data.data[i].id + '" id="' + i + '" class="checkbox_goods">'
+                        + '<label for="' + i + '"><img id="img'+i+'" value="'+data.data[i].sku+'"src="' + data.data[i].imgList[0] + '" alt="" class="img_goods"></label></div>'
+                        + '</td><td><strong id="goodsName'+i+'">' + data.data[i].goodsName + '</strong><br>'
+                        + '<p id="p'+i+'"><span id="color' + i + '">' + data.data[i].color + '</span><span id="screen' + i + '">' + data.data[i].screen +'</span><span id="storage' + i + '">'+ data.data[i].storage + '</span></p>'
                         + '</td><td>￥<span id="unit' + i + '"></span>'
                         + '</td><td id="numtd'+i+'"><div class="btn-group"><button id="num_minus' + i + '" type="button" class="btn btn-default"><span class="glyphicon glyphicon-minus"></span></button>'
-                        + '<div class="btn-group"><input id="num' + i + '" type="text" class="form-control input_size text-center" value="' + data.message[i].num + '"></div>'
+                        + '<div class="btn-group"><input id="num' + i + '" type="text" class="form-control input_size text-center" value="' + data.data[i].num + '"></div>'
                         + '<button id="num_plus' + i + '" type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>'
-                        + '</div><p class="p_margin">库存<span class="stock_size text-primary" id="stock' + i + '"> ' + data.message[i].stock + ' </span>件</p>'
+                        + '</div><p class="p_margin">库存<span class="stock_size text-primary" id="stock' + i + '"> ' + data.data[i].stock + ' </span>件</p>'
                         + '</td><td><strong>￥<span id="total' + i + '"></span></strong>'
-                        + '</td><td><button id="moveout' + i + '"type="button" class="btn btn-danger" value="' + data.message[i].id + '">移出购物车</button></td></tr>';
+                        + '</td><td><button id="moveout' + i + '"type="button" class="btn btn-danger" value="' + data.data[i].id + '">移出购物车</button></td></tr>';
                     $("#trolley_trs").append(content);
-                    $("#unit"+i).text(data.message[i].unitPrice.toFixed(2));
-                    $("#total"+i).text(data.message[i].totalPrice.toFixed(2));
+                    $("#unit"+i).text(data.data[i].unitPrice.toFixed(2));
+                    $("#total"+i).text(data.data[i].totalPrice.toFixed(2));
                     $("#trolleytr"+i).attr("data-wow-delay",0.05*(i%11)+"s");
                     // 初始化按钮的disabled
                     if ($("#num" + i).val() <= 1) {
@@ -117,7 +117,7 @@ $(function () {
                 });
                 // console.log("lengthIndex:"+lengthIndex);
                 // 初始化组件控制
-                for (let i = 0; i < data.message.length; i++) {
+                for (let i = 0; i < data.data.length; i++) {
                     // 加减按钮控制input的num
                     $("#num_minus" + i).on("click", function () {
                         var number = $("#num" + i).val();
@@ -271,7 +271,7 @@ $(function () {
                         }, function () {
                             $.ajax({
                                 type: "post",
-                                url: "servlet/MoveOut",
+                                url: "order/trolley/delete",
                                 dataType: "json",
                                 data: {
                                     id: $("#moveout" + i).val(),
@@ -380,16 +380,17 @@ $(function () {
                             $.ajax({
                                 type: "post",
                                 dataType: "json",
-                                url: "servlet/Settlement",
-                                data: {
-                                    idList: JSON.stringify(idList),
-                                },success: function(data){
+                                contentType: "application/json",
+                                url: "order/trolley/settlement",
+                                data: JSON.stringify({
+                                    idList: idList,
+                                }),success: function(data){
                                     if (data.code == 200) {
                                         layer.msg(data.message, { icon: 1 });
                                         trolleyList();
                                     }
                                     else {
-                                        var contentError = '<p>'+data.message+'</p><p class="tips_size text-muted">Tips：'+data.tip+'</p>'
+                                        var contentError = '<p>'+data.message+'</p><p class="tips_size text-muted">Tips：'+data.message+'</p>'
                                         layer.open({
                                             icon: 2,
                                             content: contentError
@@ -422,8 +423,8 @@ $(function () {
                 /^[\S]{6,20}$/
                 , '6到20位字符，不能有空格'
             ]
-            ,orginsame: function(){
-                if($("#orginpass").val()==$("#newpass").val()){
+            ,originsame: function(){
+                if($("#originpass").val()==$("#newpass").val()){
                     return "新密码建议不要和旧密码相同";
                 }
             }
@@ -438,11 +439,11 @@ $(function () {
             $.ajax({
                 type: "post",
                 dataType: "json",
-                url: "servlet/ModifyInfo",
+                url: "user/info/update",
                 data: {
                     type: "ajax_modifyinfo",
                     nickName: data.field.nickname,
-                    orginPass: data.field.orginpass,
+                    originPass: data.field.originpass,
                     newPass: data.field.newpass
                 }, success: function (data) {
                     if(data.code == 200){
@@ -484,17 +485,17 @@ $(function () {
         $.ajax({
             type: "post",
             dataType: "json",
-            url: "servlet/Info",
+            url: "user/info",
             data: {
                 type: "ajax_info"
             }, success: function (data) {
                 if(data.code == 200){
-                    $("#user").text(data.user);
-                    $("#nickName").text(data.nickName);
-                    $("#lastTime").text(data.lastTime);
-                    $("#regTime").text(data.regTime);
-                    $("#viewCount").text(data.viewCount);
-                    $("#demo").attr("src",data.headPic);
+                    $("#user").text(data.data.user);
+                    $("#nickName").text(data.data.nickName);
+                    $("#lastTime").text(data.data.lastTime);
+                    $("#regTime").text(data.data.regTime);
+                    $("#viewCount").text(data.data.viewCount);
+                    $("#demo").attr("src",data.data.headPic);
                 }
                 else{
                     layer.msg("服务器异常，请稍候再试。");
@@ -511,18 +512,18 @@ $(function () {
         $.ajax({
             type: "post",
             dataType: "json",
-            url: "servlet/Order",
+            url: "order/orderList",
             data: {
                 type: "ajax_order",
             },success: function(data){
                 console.log(data);
                 // console.log(data.status);
-                // console.log(data.message.length);
+                // console.log(data.data.length);
                 // 生成订单列表
                 let contentHeader = '';
                 let contentSum = '';
                 let itemNum = 14;
-                let pageNum = Math.ceil(data.message.length/itemNum);
+                let pageNum = Math.ceil(data.data.length/itemNum);
                 let pageNow = 0;
                 let pageTotal = 0;
                 console.log(pageNum);
@@ -545,7 +546,7 @@ $(function () {
                     contentHeader = '<div class="tab-pane fade in" id="orderPage'+j+'"><div class="table-responsive table_border"><table id="orderTable'+j+'" class="table table-hover tab-pane fade in">'
                         +'<thead><tr><th>序号</th><th>图片</th><th>商品</th><th>价格</th><th>数量</th><th>已支付</th><th>操作</th></tr></thead><tbody id="order_trs'+j+'">';
                     contentSum = '';
-                    for (let i = itemNum*j; i < itemNum*(j+1)&&i<data.message.length; i++) {
+                    for (let i = itemNum*j; i < itemNum*(j+1)&&i<data.data.length; i++) {
                         let orderNumber = "";
                         if(i<9){
                             orderNumber = "0"+(i+1);
@@ -553,15 +554,15 @@ $(function () {
                         else{
                             orderNumber = i+1;
                         }
-                        let content = '<tr class="wow slideInRight" data-wow-duration="0.7s" id="order_tr'+i+'"><td>'+orderNumber+'</td><td><img id="order_img'+i+'" value="'+data.message[i].sku+'"src="' + data.message[i].imgList[0] + '" alt="" class="img_goods">'
-                            + '</td><td><strong id="strong'+i+'" value="success"><span value="'+data.message[i].spu+'" id="order_goodsName'+i+'">' + data.message[i].goodsName + '</span></strong><br>'
-                            + '<p id="p'+i+'"><span id="order_color' + i + '">' + data.message[i].color + '</span><span id="order_screen' + i + '">' + data.message[i].screen +'</span><span id="order_storage' + i + '">'+ data.message[i].storage + '</span></p>'
+                        let content = '<tr class="wow slideInRight" data-wow-duration="0.7s" id="order_tr'+i+'"><td>'+orderNumber+'</td><td><img id="order_img'+i+'" value="'+data.data[i].sku+'"src="' + data.data[i].imgList[0] + '" alt="" class="img_goods">'
+                            + '</td><td><strong id="strong'+i+'" value="success"><span value="'+data.data[i].spu+'" id="order_goodsName'+i+'">' + data.data[i].goodsName + '</span></strong><br>'
+                            + '<p id="p'+i+'"><span id="order_color' + i + '">' + data.data[i].color + '</span><span id="order_screen' + i + '">' + data.data[i].screen +'</span><span id="order_storage' + i + '">'+ data.data[i].storage + '</span></p>'
                             + '</td><td>￥<span id="order_unit' + i + '"></span>'
-                            + '</td><td><span id="num'+i+'">'+ data.message[i].num+'</span>'
+                            + '</td><td><span id="num'+i+'">'+ data.data[i].num+'</span>'
                             + '</td><td><strong>￥<span id="order_total' + i + '"></span></strong>'
-                            + '</td><td><button id="delete' + i + '"type="button" class="btn btn-danger btn_margin" value="' + data.message[i].id + '">删除订单</button>'
-                            + '<button id="again' + i + '"type="button" class="btn btn-success btn_margin" value="' + data.message[i].id + '">再次购买</button>'
-                            + '<button id="comment' + i + '"type="button" class="btn btn-info btn_margin" value="' + data.message[i].id + '">评价</button></td></tr>';
+                            + '</td><td><button id="delete' + i + '"type="button" class="btn btn-danger btn_margin" value="' + data.data[i].id + '">删除订单</button>'
+                            + '<button id="again' + i + '"type="button" class="btn btn-success btn_margin" value="' + data.data[i].id + '">再次购买</button>'
+                            + '<button id="comment' + i + '"type="button" class="btn btn-info btn_margin" value="' + data.data[i].id + '">评价</button></td></tr>';
                         contentSum = contentSum + content;
                         // console.log(content);
                         // $("#ordertab").append(content);
@@ -599,15 +600,15 @@ $(function () {
                         window.scrollTo(0, 0);
                     }
                 });
-                for (let i = 0; i < data.message.length; i++) {
-                    $("#order_unit" + i).text(data.message[i].unitPrice.toFixed(2));
-                    $("#order_total" + i).text(data.message[i].totalPrice.toFixed(2));
+                for (let i = 0; i < data.data.length; i++) {
+                    $("#order_unit" + i).text(data.data[i].unitPrice.toFixed(2));
+                    $("#order_total" + i).text(data.data[i].totalPrice.toFixed(2));
                     $("#order_tr" + i).attr("data-wow-delay", 0.05 * (i % itemNum) + "s");
                     $("#order_tr" + i).on("click", function () {
-                        var orderInfo = "订单编号：" + data.message[i].id + "<br>" + "商品名称：" + data.message[i].goodsName + "<br>" + "品牌：" + data.message[i].brandName + "<br>" + "商品SKU：" + data.message[i].sku + "<br>"
-                            + "存储容量：" + data.message[i].storage + "<br>" + "颜色：" + data.message[i].color + "<br>" + "屏幕尺寸：" + data.message[i].screen + "<br>" + "购买数量：" + data.message[i].num + "<br>"
-                            + "价格：￥" + data.message[i].unitPrice.toFixed(2) + "<br>" + "小计：￥" + data.message[i].totalPrice.toFixed(2) + "<br>" + "已支付：￥" + data.message[i].totalPrice.toFixed(2) + "<br>"
-                            + "创建时间：" + data.message[i].createTime + "<br>" + "支付时间：" + data.message[i].paymentTime + "<br>";
+                        var orderInfo = "订单编号：" + data.data[i].id + "<br>" + "商品名称：" + data.data[i].goodsName + "<br>" + "品牌：" + data.data[i].brandName + "<br>" + "商品SKU：" + data.data[i].sku + "<br>"
+                            + "存储容量：" + data.data[i].storage + "<br>" + "颜色：" + data.data[i].color + "<br>" + "屏幕尺寸：" + data.data[i].screen + "<br>" + "购买数量：" + data.data[i].num + "<br>"
+                            + "价格：￥" + data.data[i].unitPrice.toFixed(2) + "<br>" + "小计：￥" + data.data[i].totalPrice.toFixed(2) + "<br>" + "已支付：￥" + data.data[i].totalPrice.toFixed(2) + "<br>"
+                            + "创建时间：" + data.data[i].createTime + "<br>" + "支付时间：" + data.data[i].paymentTime + "<br>";
                         layer.confirm(orderInfo, {
                             title: "订单信息",
                             btn: ["再次购买", "确定"]
@@ -643,7 +644,7 @@ $(function () {
                     // 删除订单
                     $("#delete" + i).on("click", function (e) {
                         e.stopPropagation();
-                        var contentDelte = "订单编号：" + data.message[i].id + "，确定删除订单吗？";
+                        var contentDelte = "订单编号：" + data.data[i].id + "，确定删除订单吗？";
                         layer.confirm(contentDelte, {
                             title: "删除订单",
                             btn: ["确定删除", "再看看"]
@@ -651,10 +652,10 @@ $(function () {
                             $.ajax({
                                 type: "post",
                                 dataType: "json",
-                                url: "servlet/Delete",
+                                url: "order/delete",
                                 data: {
                                     type: "ajax_delete",
-                                    id: data.message[i].id
+                                    id: data.data[i].id
                                 },success:function(data){
                                     if(data.code == 200){
                                         layer.msg(data.message,{icon:1});
@@ -684,7 +685,7 @@ $(function () {
         //普通图片上传
         var uploadInst = upload.render({
             elem: '#uppic'
-            , url: 'servlet/Upload'
+            , url: 'upload/user'
             , before: function (obj) {
                 //预读本地文件示例，不支持ie8
                 obj.preview(function (index, file, result) {
@@ -695,7 +696,24 @@ $(function () {
             }
             , done: function (data) {
                 if(data.code == 200){
-                    return layer.msg('上传成功',{icon:1});
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: "user/info/update",
+                        data: {
+                            headPic: data.data.filePath
+                        }, success: function (data) {
+                            if(data.code == 200){
+                                return layer.msg('上传成功',{icon:1});
+                            }
+                            else{
+                                layer.msg("服务器异常，请稍候再试。");
+                            }
+                        }, error: function () {
+                            console.log("服务器异常\n");
+                            return;
+                        }
+                    });
                 }
                 if (data.code == 500) {
                     return layer.msg('上传失败，请稍候再试',{icon:2});

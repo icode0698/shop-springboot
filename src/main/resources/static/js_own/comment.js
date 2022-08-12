@@ -33,19 +33,19 @@ $(function () {
         else {
             $.ajax({
                 type: "post",
-                url: "servlet/OrderInfo",
+                url: "order/info",
                 dataType: "json",
                 data: {
                     id: id
                 },success: function (data) {
                     console.log(data);
                     if (data.code == 200) {
-                        $("#goods").text(data.goodsName);
-                        $("#sku").text(data.sku);
-                        $("#spu").text(data.spu);
-                        $("#storage").text(data.storage);
-                        $("#color").text(data.color);
-                        $("#screen").text(data.screen);
+                        $("#goods").text(data.data.goodsName);
+                        $("#sku").text(data.data.sku);
+                        $("#spu").text(data.data.spu);
+                        $("#storage").text(data.data.storage);
+                        $("#color").text(data.data.color);
+                        $("#screen").text(data.data.screen);
                     }
                     if (data.code == 500) {
                         layer.alert(data.message, { icon: 2 }, function () { location.href = 'personal.html';});
@@ -69,7 +69,7 @@ $(function () {
                         rateValue: rateValue,
                         sku: $("#sku").text(),
                         spu: $("#spu").text(),
-                        commentContent: $("#commentContent").val()
+                        comment: $("#commentContent").val()
                     }, success: function (data) {
                         console.log(data);
                         // setTimeout(function () {

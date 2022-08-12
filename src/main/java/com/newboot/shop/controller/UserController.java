@@ -52,6 +52,7 @@ public class UserController {
     @RequestMapping("/status")
     @ResponseBody
     public CommonResult status(HttpServletRequest request){
+        logger.info("-----------------get status----------------");
         if(ObjectUtils.isEmpty(request.getSession().getAttribute("user"))){
             return CommonResult.failed(ResultMessage.UNAUTHORIZED.getMessage());
         }
@@ -99,4 +100,19 @@ public class UserController {
         return CommonResult.success(ResultMessage.MESSAGE_SUCCESS.getMessage());
     }
 
+    @RequestMapping("/info")
+    @ResponseBody
+    public CommonResult info(HttpServletRequest request){
+        return CommonResult.success(userService.getInfo(request.getSession().getAttribute("user").toString()));
+    }
+
+    @RequestMapping("/info/update")
+    @ResponseBody
+    public CommonResult updateInfo(@RequestParam HashMap map, HttpServletRequest request){
+        map.put("user", request.getSession().getAttribute("user"));
+        if(userService.updateInfo(map)<1){
+            return CommonResult.failed(ResultMessage.LOGIN_ERROR_PASSWORD.getMessage());
+        }
+        return CommonResult.success();
+    }
 }
