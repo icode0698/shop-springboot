@@ -1,0 +1,95 @@
+#spring配置
+spring:
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  application:
+    name: shop-admin
+  profiles:
+    active: dev #默认为开发环境
+  servlet:
+    multipart:
+      enabled: true #开启文件上传
+      max-file-size: 10MB #限制文件上传大小为10M
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+#mybatis配置
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+
+# 项目全局配置
+project:
+  name: shop-admin # 项目名称 \\
+  #  fileUploadPath: /opt/shop-springboot/upload/  # 上传文件的默认url前缀，根据部署设置自行修改，linux下路径 D:/Git/Gitee/shop-springboot/src/main/resources/static/
+  userFileUploadPath: D:/Git/Gitee/shop-springboot/shop-admin/src/main/resources/static/headpic/ # 用户头像上传文件的默认url前缀，根据部署设置自行修改，windows下路径
+  goodsFileUploadPath: D:/Git/Gitee/shop-springboot/shop-admin/src/main/resources/static/pic/ # 商品图片上传文件的默认url前缀，根据部署设置自行修改，windows下路径
+  orderUnpaidOverTime: 3000 # 订单未支付超期时间，单位秒
+  serverUrl: http://localhost:28079 # 服务器地址
+
+#服务器配置
+server:
+  port: 28078
+#  undertow:
+#    buffer-size: 1024
+#    direct-buffers: true
+#    threads:
+#      io: 16
+#      worker: 256
+#  servlet:
+#    session:
+#      tracking-modes: cookie
+
+##jwt配置
+#jwt:
+#  tokenHeader: Authorization #JWT存储的请求头
+#  secret: mall-admin-secret #JWT加解密使用的密钥
+#  expiration: 604800 #JWT的超期限时间(60*60*24*7)
+#  tokenHead: 'Bearer '  #JWT负载中拿到开头
+
+##redis配置
+#redis:
+#  database: shop
+#  key:
+#    admin: 'ums:admin'
+#    resourceList: 'ums:resourceList'
+#  expire:
+#    common: 86400 # 24小时
+#
+#secure:
+#  ignored:
+#    urls: #安全路径白名单
+#      - /swagger-ui/
+#      - /swagger-resources/**
+#      - /**/v2/api-docs
+#      - /**/*.html
+#      - /**/*.js
+#      - /**/*.css
+#      - /**/*.png
+#      - /**/*.map
+#      - /favicon.ico
+#      - /actuator/**
+#      - /druid/**
+#      - /admin/login
+#      - /admin/register
+#      - /admin/info
+#      - /admin/logout
+#      - /minio/upload
+#
+#aliyun:
+#  oss:
+#    endpoint: oss-cn-shenzhen.aliyuncs.com # oss对外服务的访问域名
+#    accessKeyId: test # 访问身份验证中用到用户标识
+#    accessKeySecret: test # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
+#    bucketName: macro-oss # oss的存储空间
+#    policy:
+#      expire: 300 # 签名有效期(S)
+#    maxSize: 10 # 上传文件大小(M)
+#    callback: http://39.98.190.128:8080/aliyun/oss/callback # 文件上传成功后的回调地址
+#    dir:
+#      prefix: mall/images/ # 上传文件夹路径前缀
