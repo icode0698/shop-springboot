@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public interface ContentService {
-    JSONObject getList(String categoryName);
+    JSONObject getList(HashMap map);
 
     ArrayList<Details> getDetails(int goodsID);
 
@@ -16,5 +16,7 @@ public interface ContentService {
 
     ArrayList<Comment> getComment(HashMap map);
 
+    JSONObject getCategoryAndBrand(HashMap map);
 
+    JSONObject getSearchList(HashMap map);
 }

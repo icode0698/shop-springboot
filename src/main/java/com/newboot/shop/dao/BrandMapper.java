@@ -1,7 +1,10 @@
 package com.newboot.shop.dao;
 
+import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.model.Brand;
 import com.newboot.shop.model.BrandExample;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -29,4 +32,8 @@ public interface BrandMapper {
     int updateByPrimaryKey(Brand record);
 
     String getBrandNameFromGoods(Integer goodsID);
+
+    ArrayList<JSONObject> getBrand();
+
+    JSONObject getBrandID(String brandName);
 }

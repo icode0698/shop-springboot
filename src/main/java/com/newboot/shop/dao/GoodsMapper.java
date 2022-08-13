@@ -5,6 +5,7 @@ import com.newboot.shop.model.Goods;
 import com.newboot.shop.model.GoodsExample;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -31,7 +32,8 @@ public interface GoodsMapper {
 
     int updateByPrimaryKey(Goods record);
 
-    ArrayList<JSONObject> getList(String categoryName);
+    ArrayList<JSONObject> getList(HashMap map);
 
     ArrayList<String> getImgListBySpu(Integer spu);
+
 }

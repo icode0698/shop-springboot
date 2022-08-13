@@ -1,7 +1,10 @@
 package com.newboot.shop.dao;
 
+import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.model.Category;
 import com.newboot.shop.model.CategoryExample;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -29,4 +32,8 @@ public interface CategoryMapper {
     int updateByPrimaryKey(Category record);
 
     String getCategoryNameByGoodsID(Integer goodsID);
+
+    ArrayList<JSONObject> getCategory();
+
+    JSONObject getCategoryID(String categoryName);
 }

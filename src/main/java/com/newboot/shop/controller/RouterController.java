@@ -34,4 +34,12 @@ public class RouterController {
     public String commentPage(){
         return "comment";
     }
+    @GetMapping({"/category","/category.html"})
+    public String categoryPage(){
+        return "category";
+    }
+    @GetMapping({"/search","/search.html"})
+    public String searchPage(){
+        return "search";
+    }
 }

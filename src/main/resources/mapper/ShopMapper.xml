@@ -381,10 +381,10 @@
     update price set stock=stock-#{num} where sku=#{sku}
   </update>
   <select id="getTrolleyList" resultType="com.newboot.shop.model.Shop">
-    select * from shop where user=#{user} and isPay=0
+    select * from shop where user=#{user} and isPay=0 order by createTime desc
   </select>
   <select id="getOrderList" resultType="com.newboot.shop.model.Shop">
-    select * from shop where user=#{user} and isPay=1
+    select * from shop where user=#{user} and isPay=1 order by paymentTime desc
   </select>
   <update id="updatePayment" parameterType="com.alibaba.fastjson.JSONObject">
     update shop set isPay=#{isPay}, num=#{num}, paymentTime=#{paymentTime}

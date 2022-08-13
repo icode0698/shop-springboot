@@ -17,11 +17,11 @@ $(function () {
         dataType: "json",
         data: {
             type: "ajax_category",
-            category: "手机"
+            categoryName: "手机"
         },
         success: function (data) {
             console.log(data);
-            console.log("ajax_item_status:"+data.status);
+            console.log("ajax_item_status:"+data.code);
             console.log("message.length:"+data.data.goodsList.length);
             //$("#phone_row").empty();
             for(var i=0;i<data.data.goodsList.length;i++){

@@ -7,7 +7,8 @@ import com.newboot.shop.model.Details;
 import com.newboot.shop.model.Goods;
 import com.newboot.shop.model.User;
 import com.newboot.shop.service.ContentService;
-import com.newboot.shop.service.UserService;
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,17 +34,18 @@ public class ContentServiceImpl implements ContentService {
     UserMapper userMapper;
     @Autowired
     GoodsvalueMapper goodsvalueMapper;
+    @Autowired
+    CategoryMapper categoryMapper;
 
     @Override
-    public JSONObject getList(String categoryName) {
-        ArrayList<JSONObject> goodsList = goodsMapper.getList(categoryName);
+    public JSONObject getList(HashMap map) {
+        ArrayList<JSONObject> goodsList = goodsMapper.getList(map);
         JSONObject json;
         for(int i = 0; i < goodsList.size(); i++){
             json = goodsList.get(i);
             json.put("imgList",imgMapper.getImgList(Integer.parseInt(json.getString("goodsID"))));
         }
         json = new JSONObject();
-        json.put("categoryName", categoryName);
         json.put("goodsList", goodsList);
         return json;
     }
@@ -96,5 +98,53 @@ public class ContentServiceImpl implements ContentService {
             comment.setScreen(goodsvalueMapper.getSpValue(json.getInteger("spID3")));
         }
         return commentList;
+    }
+
+    @Override
+    public JSONObject getCategoryAndBrand(HashMap map) {
+        JSONObject json = new JSONObject();
+        json.put("categoryList", categoryMapper.getCategory());
+        json.put("brandList", brandMapper.getBrand());
+        return json;
+    }
+
+    @Override
+    public JSONObject getSearchList(HashMap map) {
+        if(ObjectUtils.isNotEmpty(map)&&ObjectUtils.isNotEmpty(map.get("id"))){
+            if(StringUtils.isNotEmpty(map.get("id").toString())){
+                JSONObject goods = priceMapper.getSkuInfo(Integer.parseInt(map.get("id").toString()));
+                if(ObjectUtils.isNotEmpty(goods)){
+                    map.put("spu", goods.getString("goodsID"));
+                }
+                else {
+                    map.put("spu",map.get("id"));
+                }
+            }
+        }
+        else if(ObjectUtils.isNotEmpty(map.get("value"))){
+            String value = map.get("value").toString();
+            if(StringUtils.isNotEmpty(value)){
+                JSONObject categoryID = categoryMapper.getCategoryID(value);
+                JSONObject brandID = brandMapper.getBrandID(value);
+                if(categoryID.getIntValue("count")>0){
+                    map.put("categoryID", categoryID.getIntValue("categoryID"));
+                }
+                else if (brandID.getIntValue("count")>0){
+                    map.put("brandID", brandID.getIntValue("brandID"));
+                }
+                else{
+                    map.put("goodsName", value);
+                }
+            }
+        }
+        ArrayList<JSONObject> goodsList = goodsMapper.getList(map);
+        JSONObject json;
+        for(int i = 0; i < goodsList.size(); i++){
+            json = goodsList.get(i);
+            json.put("imgList",imgMapper.getImgList(Integer.parseInt(json.getString("goodsID"))));
+        }
+        json = new JSONObject();
+        json.put("goodsList", goodsList);
+        return json;
     }
 }

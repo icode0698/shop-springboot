@@ -225,9 +225,30 @@
       stock = #{stock,jdbcType=INTEGER}
     where goodsID = #{goodsID,jdbcType=INTEGER}
   </update>
-  <select id="getList" parameterType="string" resultType="com.alibaba.fastjson.JSONObject">
+  <select id="getListByCategoryName" parameterType="string" resultType="com.alibaba.fastjson.JSONObject">
     select goodsID, goodsName from goods where categoryID =
-        (select categoryID from category WHERE categoryName=#{category})
+        (select categoryID from category WHERE categoryName=#{categoryName})
+    order by insertTime desc
+  </select>
+  <select id="getList" resultType="com.alibaba.fastjson.JSONObject">
+    select goodsID, goodsName from goods
+    <where>
+      <if test='categoryName != null and categoryName != ""'>
+        and categoryID = (select categoryID from category WHERE categoryName = #{categoryName})
+      </if>
+      <if test='categoryID != null and categoryID != "" and categoryID != "0"'>
+        and categoryID = #{categoryID}
+      </if>
+      <if test='brandID != null and brandID != "" and brandID != "0" '>
+        and brandID = #{brandID}
+      </if>
+      <if test='spu != null and spu != ""'>
+        and goodsID = #{spu}
+      </if>
+      <if test='goodsName != null and goodsName != ""'>
+        and upper(goodsName) like upper(concat('%', #{goodsName}, '%'))
+      </if>
+    </where>
     order by insertTime desc
   </select>
   <select id="getImgListBySpu" resultType="string">

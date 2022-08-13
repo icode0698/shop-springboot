@@ -182,4 +182,10 @@
     select categoryName from goods, category
     where goods.categoryID=category.categoryID and goods.goodsID=#{goodsID}
   </select>
+  <select id="getCategory" resultType="com.alibaba.fastjson.JSONObject">
+    select categoryID, categoryName from category
+  </select>
+  <select id="getCategoryID" resultType="com.alibaba.fastjson.JSONObject">
+    select count(categoryID) as count, categoryID from category where categoryName like concat('%',#{categoryName},'%')
+  </select>
 </mapper>

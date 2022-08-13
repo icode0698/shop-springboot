@@ -178,8 +178,13 @@
       insertTime = #{insertTime,jdbcType=TIMESTAMP}
     where brandID = #{brandID,jdbcType=INTEGER}
   </update>
-
   <select id="getBrandNameFromGoods" resultType="string">
     select brandName from goods,brand where goods.brandID=brand.brandID and goods.goodsID=#{goodsID}
+  </select>
+  <select id="getBrand" resultType="com.alibaba.fastjson.JSONObject">
+    select brandID, brandName from brand order by insertTime desc
+  </select>
+  <select id="getBrandID" resultType="com.alibaba.fastjson.JSONObject">
+    select count(brandID) as count, brandID from brand where brandName like concat('%', #{brandName}, '%')
   </select>
 </mapper>
