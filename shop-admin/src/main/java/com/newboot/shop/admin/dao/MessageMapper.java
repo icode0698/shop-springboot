@@ -1,7 +1,11 @@
 package com.newboot.shop.admin.dao;
 
+import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.admin.model.Message;
 import com.newboot.shop.admin.model.MessageExample;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -33,4 +37,6 @@ public interface MessageMapper {
     int updateByPrimaryKeyWithBLOBs(Message record);
 
     int updateByPrimaryKey(Message record);
+
+    ArrayList<JSONObject> getList(HashMap map);
 }

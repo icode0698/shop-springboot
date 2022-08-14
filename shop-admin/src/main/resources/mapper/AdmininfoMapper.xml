@@ -191,4 +191,7 @@
     set info = #{info,jdbcType=LONGVARCHAR}
     where type = #{type,jdbcType=VARCHAR}
   </update>
+  <select id="getInfo" resultType="com.alibaba.fastjson.JSONObject">
+    select * from admininfo
+  </select>
 </mapper>

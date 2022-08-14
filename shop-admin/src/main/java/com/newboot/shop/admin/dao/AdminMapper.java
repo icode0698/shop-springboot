@@ -2,6 +2,8 @@ package com.newboot.shop.admin.dao;
 
 import com.newboot.shop.admin.model.Admin;
 import com.newboot.shop.admin.model.AdminExample;
+
+import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -27,4 +29,6 @@ public interface AdminMapper {
     int updateByPrimaryKeySelective(Admin record);
 
     int updateByPrimaryKey(Admin record);
+
+    String getPassword(HashMap map);
 }

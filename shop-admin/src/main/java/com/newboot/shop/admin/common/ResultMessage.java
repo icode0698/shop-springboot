@@ -18,6 +18,8 @@ public enum ResultMessage {
 
     LOGIN_ERROR_PASSWORD("用户名密码错误"),
 
+    LOGIN_USER_OFFLINE("用户下线成功"),
+
     SERVER_ERROR("服务器异常"),
 
     REGISTER_SUCCESS("注册成功"),

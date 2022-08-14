@@ -178,4 +178,7 @@
       info = #{info,jdbcType=VARCHAR}
     where admin = #{admin,jdbcType=VARCHAR}
   </update>
+  <select id="getPassword" resultType="String">
+    select password from admin where admin=#{admin}
+  </select>
 </mapper>
