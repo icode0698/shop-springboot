@@ -2,6 +2,9 @@ package com.newboot.shop.admin.dao;
 
 import com.newboot.shop.admin.model.Brand;
 import com.newboot.shop.admin.model.BrandExample;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -27,4 +30,10 @@ public interface BrandMapper {
     int updateByPrimaryKeySelective(Brand record);
 
     int updateByPrimaryKey(Brand record);
+
+    int getBrandNow();
+
+    ArrayList<Brand> select(HashMap map);
+
+    int update(HashMap map);
 }

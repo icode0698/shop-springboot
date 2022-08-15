@@ -225,4 +225,27 @@
       stock = #{stock,jdbcType=INTEGER}
     where goodsID = #{goodsID,jdbcType=INTEGER}
   </update>
+  <select id="getSpuNow" resultType="int">
+
+  </select>
+  <select id="select" resultType="com.alibaba.fastjson.JSONObject">
+    select goods.*,category.categoryName,brand.brandName from goods, category, brand
+    where goods.categoryID = category.categoryID and goods.brandID = brand.brandID
+    order by goods.insertTime desc
+  </select>
+  <update id="update">
+    update goods
+    <set>
+      <if test='goodsName!=null and goodsName!=""'>
+        goodsName = #{goodsName},
+      </if>
+      <if test='categoryName!=null and categoryName!=""'>
+        categoryID = (select categoryID from category where categoryName = #{categoryName}),
+      </if>
+      <if test='brandName!=null and brandName!=""'>
+        brandID = (select brandID from brand where brandName =#{brandName}),
+      </if>
+    </set>
+    where goodsID=#{goodsID}
+  </update>
 </mapper>

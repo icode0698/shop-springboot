@@ -30,7 +30,7 @@ $(function () {
                     }
                     form.render('checkbox');
                 }
-                if (data.status == "fail") {
+                if (data.status == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function (data) {
@@ -84,7 +84,7 @@ $(function () {
                 if(data.code==200){
                     console.log('上传成功');
                 }
-                if (data.status=="fail") {
+                if (data.status == 500) {
                     console.log('上传失败，请稍候再试');
                 }
             }
@@ -130,7 +130,7 @@ $(function () {
                         layer.alert(data.message, {icon:1}, function () { location.href="";});
                         return false;
                     }
-                    if (data.status == "fail") {
+                    if (data.status == 500) {
                         layer.alert(data.message, {icon:2});
                         return false;
                     }

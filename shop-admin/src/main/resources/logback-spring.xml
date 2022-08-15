@@ -19,6 +19,11 @@
         </encoder>
     </appender>
 
+    <!-- 配置使用异步方式来输出日志 -->
+    <appender name="FILE_ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="FILE_ASYNC" />
+    </appender>
+
     <!-- 系统日志输出 -->
     <appender name="shop_info" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${log.path}/shop-info.log</file>
@@ -48,7 +53,7 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 日志文件名格式 -->
             <fileNamePattern>${log.path}/shop-error.%d{yyyy-MM-dd}.log</fileNamePattern>
-            <!-- 日志最大的历史 100天 -->
+            <!-- 日志最大的历史 10天 -->
             <maxHistory>10</maxHistory>
         </rollingPolicy>
         <encoder>
@@ -65,7 +70,7 @@
     </appender>
 
     <!-- 系统模块日志级别控制  -->
-    <logger name="com.newboot.shop" level="debug"/>
+    <logger name="com.newboot.shop.admin" level="debug"/>
     <!-- Spring日志级别控制  -->
     <logger name="org.springframework" level="error"/>
 

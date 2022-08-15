@@ -39,7 +39,7 @@ $(function () {
                                 , cellMinWidth: 40
                             });
                         }
-                        if (data.status == "fail") {
+                        if (data.status == 500) {
                             layer.alert("查询出现错误");
                         }
                     }, error: function (data) {
@@ -67,7 +67,7 @@ $(function () {
                         if (data.code == 200) {
                             layer.alert(data.message, { icon: 1 });
                         }
-                        if (data.status == "fail") {
+                        if (data.status == 500) {
                             layer.alert(data.message,);
                         }
                     }, error: function (data) {

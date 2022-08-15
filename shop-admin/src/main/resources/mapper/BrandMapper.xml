@@ -178,4 +178,13 @@
       insertTime = #{insertTime,jdbcType=TIMESTAMP}
     where brandID = #{brandID,jdbcType=INTEGER}
   </update>
+  <select id="getBrandNow" resultType="int">
+    select max(brandID) brandID from brand
+  </select>
+  <select id="select" resultType="com.newboot.shop.admin.model.Brand">
+    select * from brand order by insertTime desc
+  </select>
+  <update id="update">
+    update brand set brandName = #{brandName} where brandID=#{brandID}
+  </update>
 </mapper>

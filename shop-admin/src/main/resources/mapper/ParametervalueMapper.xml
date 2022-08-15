@@ -178,4 +178,13 @@
       value = #{value,jdbcType=VARCHAR}
     where valueID = #{valueID,jdbcType=INTEGER}
   </update>
+  <select id="getParameterValueByID" resultType="com.alibaba.fastjson.JSONObject">
+    select valueID, value from parametervalue where parameterID=#{parameterID}
+  </select>
+  <select id="getValueNow" resultType="string">
+    select max(valueID) from parametervalue where parameterID = #{parameterID}
+  </select>
+  <update id="update">
+    update parametervalue set value = #{value} where valueID = #{valueID}
+  </update>
 </mapper>

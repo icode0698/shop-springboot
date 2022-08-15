@@ -21,30 +21,30 @@ $(function () {
             $.ajax({
                 type: "post",
                 dataType: "json",
-                url: "../../../servlet/SelectOrder",
+                url: "../order/select",
                 data: {
                     message: "selectOrder",
-                    value: value,
+                    id: value,
                     user: user
                 }, success: function (data) {
                     console.log(data);
                     if (data.code == 200) {
                         $("#trs").empty();
-                        for (let i = 0; i < data.message.length; i++) {
+                        for (let i = 0; i < data.data.length; i++) {
                             var pay;
                             var paymentTime;
-                            if(data.message[i].pay==true){
+                            if(data.data[i].isPay==true){
                                 pay="已支付";
-                                paymentTime=data.message[i].paymentTime;
+                                paymentTime=data.data[i].paymentTime;
                             }
                             else{
                                 pay="未支付" ;
                                 paymentTime="暂无";
                             }
-                            let content = '<tr><td>'+data.message[i].id+'</td><td>'+data.message[i].user+'</td><td>'+data.message[i].goodsName+'</td><td>'+data.message[i].sku+'</td>'
-                                +'<td>'+data.message[i].categoryName+'</td><td>'+data.message[i].brandName+'</td><td>'+data.message[i].storage+'</td><td>'+data.message[i].color+'</td><td>'+data.message[i].screen+'</td>'
-                                +'<td><span>￥</span>'+data.message[i].unitPrice.toFixed(2)+'</td><td>'+data.message[i].num+'</td><td><span>￥</span>'+data.message[i].totalPrice.toFixed(2)+'</td>'
-                                +'<td>'+pay+'</td><td>'+data.message[i].createTime+'</td><td>'+paymentTime+'</td></tr>';
+                            let content = '<tr><td>'+data.data[i].id+'</td><td>'+data.data[i].user+'</td><td>'+data.data[i].goodsName+'</td><td>'+data.data[i].sku+'</td>'
+                                +'<td>'+data.data[i].categoryName+'</td><td>'+data.data[i].brandName+'</td><td>'+data.data[i].storage+'</td><td>'+data.data[i].color+'</td><td>'+data.data[i].screen+'</td>'
+                                +'<td><span>￥</span>'+data.data[i].unitPrice.toFixed(2)+'</td><td>'+data.data[i].num+'</td><td><span>￥</span>'+data.data[i].totalPrice.toFixed(2)+'</td>'
+                                +'<td>'+pay+'</td><td>'+data.data[i].createTime+'</td><td>'+paymentTime+'</td></tr>';
                             $("#trs").append(content);
                         }
                         table.init('order', {
@@ -53,7 +53,7 @@ $(function () {
                             , cellMinWidth: 40
                         }); 
                     }
-                    if (data.status == "fail") {
+                    if (data.status == 500) {
                         layer.alert("查询出现错误");
                     }
                 }, error: function (data) {
@@ -63,28 +63,5 @@ $(function () {
                 }
             });
         }
-        
-        //第一个实例
-        // table.render({
-        //     elem: '#demo'
-        //     , url: '../../../servlet/SelectOrder' //数据接口
-        //     , cols: [[ //表头
-        //         { field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left' }
-        //         , { field: 'user', title: '用户名', width: 80 }
-        //         , { field: 'goodsName', title: '性别', width: 80, sort: true }
-        //         , { field: 'sku', title: '城市', width: 80 }
-        //         , { field: 'categoryName', title: '签名', width: 177 }
-        //         , { field: 'brandName', title: '积分', width: 80, sort: true }
-        //         , { field: 'storage', title: '评分', width: 80, sort: true }
-        //         , { field: 'color', title: '职业', width: 80 }
-        //         , { field: 'screen', title: '财富', width: 135, sort: true }
-        //         , { field: 'unitPrice', title: '财富', width: 135, sort: true }
-        //         , { field: 'num', title: '财富', width: 135, sort: true }
-        //         , { field: 'totalPrice', title: '财富', width: 135, sort: true }
-        //         , { field: 'pay', title: '财富', width: 135, sort: true }
-        //         , { field: 'createTime', title: '财富', width: 135, sort: true }
-        //         , { field: 'paymentTime', title: '财富', width: 135, sort: true }
-        //     ]]
-        // });
     });
 });

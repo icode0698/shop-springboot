@@ -2,7 +2,7 @@ $(function(){
     $("#out").on("click",function(){
         $.ajax({
             type: "post",
-            url: "../../servlet/LoginOut",
+            url: "admin/logout",
             dataType: "json",
             success: function (data) {
                 console.log(data);
@@ -14,7 +14,7 @@ $(function(){
                 }
             },
             error: function (XMLResponse) {
-                layer.alert("抱歉，服务器异常。",{icon:2},function(){location.href = 'login.html';return;});
+                layer.alert("抱歉，服务器异常。",{icon:2},function(){});
                 return;
             }
         });

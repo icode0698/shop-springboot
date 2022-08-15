@@ -365,4 +365,16 @@
     where id = #{id,jdbcType=VARCHAR}
       and user = #{user,jdbcType=VARCHAR}
   </update>
+  <select id="select" resultType="com.alibaba.fastjson.JSONObject">
+    select * from shop
+    <where>
+      <if test='user!=null and user!=""'>
+        and user = #{user}
+      </if>
+      <if test='id!=null and id!= ""'>
+        and id = #{id}
+      </if>
+    </where>
+    order by id desc
+  </select>
 </mapper>

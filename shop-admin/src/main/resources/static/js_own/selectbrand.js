@@ -5,15 +5,15 @@ $(function () {
         $.ajax({
             type: "post",
             dataType: "json",
-            url: "../../../servlet/SelectBrand",
+            url: "../brand/select",
             data: {
                 message: "selectBrand"
             }, success: function (data) {
                 console.log(data);
                 if (data.code == 200) {
                     $("#trs").empty();
-                    for (let i = 0; i < data.message.length; i++) {
-                        let content = '<tr><td>' + data.message[i].brandID + '</td><td>' + data.message[i].brandName + '</td><td>' + data.message[i].insertTime + '</td></tr>';
+                    for (let i = 0; i < data.data.length; i++) {
+                        let content = '<tr><td>' + data.data[i].brandID + '</td><td>' + data.data[i].brandName + '</td><td>' + data.data[i].insertTime + '</td></tr>';
                         $("#trs").append(content);
                     }
                     table.init('brand', {
@@ -22,7 +22,7 @@ $(function () {
                         , cellMinWidth: 40
                     });
                 }
-                if (data.status == "fail") {
+                if (data.status == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function () {

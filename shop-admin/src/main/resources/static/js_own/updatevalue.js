@@ -5,15 +5,15 @@ $(function () {
         $.ajax({
             type: "post",
             dataType: "json",
-            url: "../../../servlet/SelectValue",
+            url: "../value/select",
             data: {
                 message: "selectValue"
             }, success: function (data) {
                 console.log(data);
                 if (data.code == 200) {
                     $("#storagetrs").empty();
-                    for (let i = 0; i < data.storageList.length; i++) {
-                        let content = '<tr><td>'+data.storageList[i].id+'</td><td>'+data.storageList[i].name+'</td></tr>';
+                    for (let i = 0; i < data.data.storageList.length; i++) {
+                        let content = '<tr><td>'+data.data.storageList[i].valueID+'</td><td>'+data.data.storageList[i].value+'</td></tr>';
                         $("#storagetrs").append(content);
                     }
                     table.init('storage', {
@@ -27,16 +27,16 @@ $(function () {
                         $.ajax({
                             type: "post",
                             dataType: "json",
-                            url: "../../../servlet/UpdateValue",
+                            url: "../value/update",
                             data: {
-                                id: id,
+                                valueID: id,
                                 value: value  
                             }, success: function (data) {
                                 console.log(data);
                                 if (data.code == 200) {
                                     layer.msg(data.message);
                                 }
-                                if (data.status == "fail") {
+                                if (data.status == 500) {
                                     layer.alert(data.message);
                                 }
                             }, error: function (data) {
@@ -47,8 +47,8 @@ $(function () {
                         });
                     });
                     $("#colortrs").empty();
-                    for (let i = 0; i < data.colorList.length; i++) {
-                        let content = '<tr><td>'+data.colorList[i].id+'</td><td>'+data.colorList[i].name+'</td></tr>';
+                    for (let i = 0; i < data.data.colorList.length; i++) {
+                        let content = '<tr><td>'+data.data.colorList[i].valueID+'</td><td>'+data.data.colorList[i].value+'</td></tr>';
                         $("#colortrs").append(content);
                     }
                     table.init('color', {
@@ -62,16 +62,16 @@ $(function () {
                         $.ajax({
                             type: "post",
                             dataType: "json",
-                            url: "../../../servlet/UpdateValue",
+                            url: "../value/update",
                             data: {
-                                id: id,
+                                valueID: id,
                                 value: value  
                             }, success: function (data) {
                                 console.log(data);
                                 if (data.code == 200) {
                                     layer.msg(data.message);
                                 }
-                                if (data.status == "fail") {
+                                if (data.status == 500) {
                                     layer.alert(data.message);
                                 }
                             }, error: function (data) {
@@ -82,8 +82,8 @@ $(function () {
                         });
                     });
                     $("#screentrs").empty();
-                    for (let i = 0; i < data.screenList.length; i++) {
-                        let content = '<tr><td>'+data.screenList[i].id+'</td><td>'+data.screenList[i].name+'</td></tr>';
+                    for (let i = 0; i < data.data.screenList.length; i++) {
+                        let content = '<tr><td>'+data.data.screenList[i].valueID+'</td><td>'+data.data.screenList[i].value+'</td></tr>';
                         $("#screentrs").append(content);
                     }
                     table.init('screen', {
@@ -97,16 +97,16 @@ $(function () {
                         $.ajax({
                             type: "post",
                             dataType: "json",
-                            url: "../../../servlet/UpdateValue",
+                            url: "../value/update",
                             data: {
-                                id: id,
+                                valueID: id,
                                 value: value  
                             }, success: function (data) {
                                 console.log(data);
                                 if (data.code == 200) {
                                     layer.msg(data.message);
                                 }
-                                if (data.status == "fail") {
+                                if (data.status == 500) {
                                     layer.alert(data.message);
                                 }
                             }, error: function (data) {
@@ -117,7 +117,7 @@ $(function () {
                         });
                     });
                 }
-                if (data.status == "fail") {
+                if (data.status == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function (data) {

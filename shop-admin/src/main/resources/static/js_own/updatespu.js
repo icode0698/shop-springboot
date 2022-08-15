@@ -5,15 +5,15 @@ $(function () {
         $.ajax({
             type: "post",
             dataType: "json",
-            url: "../../../servlet/SelectSpu",
+            url: "../spu/select",
             data: {
                 message: "selectBrand"
             }, success: function (data) {
                 console.log(data);
                 if (data.code == 200) {
                     $("#trs").empty();
-                    for (let i = 0; i < data.message.length; i++) {
-                        let content = '<tr><td>'+data.message[i].goodsID+'</td><td>'+data.message[i].goodsName+'</td><td>'+data.message[i].categoryName+'</td><td>'+data.message[i].brandName+'</td><td>'+data.message[i].insertTime+'</td></tr>';
+                    for (let i = 0; i < data.data.length; i++) {
+                        let content = '<tr><td>'+data.data[i].goodsID+'</td><td>'+data.data[i].goodsName+'</td><td>'+data.data[i].categoryName+'</td><td>'+data.data[i].brandName+'</td><td>'+data.data[i].insertTime+'</td></tr>';
                         $("#trs").append(content);
                     }
                     table.init('spu', {
@@ -25,20 +25,33 @@ $(function () {
                         var id = obj.data.spu;
                         var field = obj.field;
                         var value = obj.value //得到修改后的值
+                        var goodsName = '';
+                        var categoryName = '';
+                        var brandName = '';
+                        if(field == 'name'){
+                            goodsName = value;
+                        }
+                        if(field == 'category'){
+                            categoryName = value;
+                        }
+                        if(field == 'brand'){
+                            brandName = value;
+                        }
                         $.ajax({
                             type: "post",
                             dataType: "json",
-                            url: "../../../servlet/UpdateSpu",
+                            url: "../spu/update",
                             data: {
-                                type: field,
-                                id: id,
-                                data: value  
+                                goodsID: id,
+                                goodsName: goodsName,
+                                categoryName: categoryName,
+                                brandName:brandName
                             }, success: function (data) {
                                 console.log(data);
                                 if (data.code == 200) {
                                     layer.msg(data.message);
                                 }
-                                if (data.status == "fail") {
+                                if (data.code == 500) {
                                     layer.alert(data.message);
                                 }
                             }, error: function (data) {
@@ -49,7 +62,7 @@ $(function () {
                         });
                     });
                 }
-                if (data.status == "fail") {
+                if (data.status == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function (data) {

@@ -27,4 +27,6 @@ public interface ParameterMapper {
     int updateByPrimaryKeySelective(Parameter record);
 
     int updateByPrimaryKey(Parameter record);
+
+
 }

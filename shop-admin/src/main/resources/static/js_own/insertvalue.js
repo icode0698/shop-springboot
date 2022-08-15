@@ -16,7 +16,7 @@ $(function () {
                     $("#screennow").text(data.screenNowID);
                     $("#screenID").val(parseInt(data.screenNowID)+1);
                 }
-                if (data.status == "fail") {
+                if (data.status == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function (data) {
@@ -41,7 +41,7 @@ $(function () {
                         layer.alert(data.message, {icon:1}, function () { location.href="";});
                         return false;
                     }
-                    if (data.status == "fail") {
+                    if (data.status == 500) {
                         layer.alert(data.message, {icon:2});
                         return false;
                     }
@@ -69,7 +69,7 @@ $(function () {
                         layer.alert(data.message, {icon:1}, function () { location.href="";});
                         return false;
                     }
-                    if (data.status == "fail") {
+                    if (data.status == 500) {
                         layer.alert(data.message, {icon:2});
                         return false;
                     }
@@ -97,7 +97,7 @@ $(function () {
                         layer.alert(data.message, {icon:1}, function () { location.href="";});
                         return false;
                     }
-                    if (data.status == "fail") {
+                    if (data.status == 500) {
                         layer.alert(data.message, {icon:2});
                         return false;
                     }

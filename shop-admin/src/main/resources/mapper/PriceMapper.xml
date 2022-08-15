@@ -240,4 +240,36 @@
       stock = #{stock,jdbcType=INTEGER}
     where sku = #{sku,jdbcType=INTEGER}
   </update>
+  <select id="getSkuListByCategoryName" resultType="com.alibaba.fastjson.JSONObject">
+
+  </select>
+  <select id="getSkuList" resultType="com.alibaba.fastjson.JSONObject">
+    select price.*, goods.goodsName, category.categoryName, brand.brandName from category, goods, price, brand
+    <where>
+      <if test='spu!=null and spu!="" and spu!=0'>
+        and goods.goodsID = #{spu}
+      </if>
+      <if test='sku!=null and sku!="" and sku!=0'>
+        and price.sku = #{sku}
+      </if>
+      <if test='categoryName!=null and categoryName!=""'>
+        and category.categoryName = #{categoryName}
+      </if>
+      and goods.goodsID = price.goodsID
+      and goods.categoryID = category.categoryID
+      and goods.brandID = brand.brandID
+    </where>
+  </select>
+  <update id="update">
+    update price
+    <set>
+      <if test='price!=null and price!=""'>
+        price = #{price},
+      </if>
+      <if test='stock!=null and stock!=""'>
+        stock = #{stock},
+      </if>
+    </set>
+    where sku = #{sku}
+  </update>
 </mapper>

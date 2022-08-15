@@ -27,4 +27,6 @@ public interface GoodsvalueMapper {
     int updateByPrimaryKeySelective(Goodsvalue record);
 
     int updateByPrimaryKey(Goodsvalue record);
+
+    String getSpValue(int spID);
 }

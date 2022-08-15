@@ -40,7 +40,7 @@ $(function () {
                                     if (data.code == 200) {
                                         layer.msg(data.message);
                                     }
-                                    if (data.status == "fail") {
+                                    if (data.status == 500) {
                                         layer.alert(data.message);
                                     }
                                 }, error: function (data) {
@@ -64,7 +64,7 @@ $(function () {
                                     if (data.code == 200) {
                                         layer.msg(data.message);
                                     }
-                                    if (data.status == "fail") {
+                                    if (data.status == 500) {
                                         layer.alert(data.message);
                                     }
                                 }, error: function (data) {
@@ -76,7 +76,7 @@ $(function () {
                         }
                     });
                 }
-                if (data.status == "fail") {
+                if (data.status == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function (data) {
