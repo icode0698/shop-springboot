@@ -33,8 +33,8 @@ mybatis:
 project:
   name: shop-admin # 项目名称 \\
   #  fileUploadPath: /opt/shop-springboot/upload/  # 上传文件的默认url前缀，根据部署设置自行修改，linux下路径 D:/Git/Gitee/shop-springboot/src/main/resources/static/
-  userFileUploadPath: D:/Git/Gitee/shop-springboot/shop-admin/src/main/resources/static/headpic/ # 用户头像上传文件的默认url前缀，根据部署设置自行修改，windows下路径
-  goodsFileUploadPath: D:/Git/Gitee/shop-springboot/shop-admin/src/main/resources/static/pic/ # 商品图片上传文件的默认url前缀，根据部署设置自行修改，windows下路径
+  userFileUploadPath: D:/Git/Gitee/shop-springboot/shop-new/src/main/resources/static/headpic/ # 用户头像上传文件的默认url前缀，根据部署设置自行修改，windows下路径
+  goodsFileUploadPath: D:/Git/Gitee/shop-springboot/shop-new/src/main/resources/static/pic/ # 商品图片上传文件的默认url前缀，根据部署设置自行修改，windows下路径
   orderUnpaidOverTime: 3000 # 订单未支付超期时间，单位秒
   serverUrl: http://localhost:28079 # 服务器地址
 

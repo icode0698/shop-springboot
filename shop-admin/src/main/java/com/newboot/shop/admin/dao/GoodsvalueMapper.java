@@ -2,6 +2,8 @@ package com.newboot.shop.admin.dao;
 
 import com.newboot.shop.admin.model.Goodsvalue;
 import com.newboot.shop.admin.model.GoodsvalueExample;
+
+import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -11,8 +13,6 @@ public interface GoodsvalueMapper {
     int deleteByExample(GoodsvalueExample example);
 
     int deleteByPrimaryKey(Integer spID);
-
-    int insert(Goodsvalue record);
 
     int insertSelective(Goodsvalue record);
 
@@ -29,4 +29,10 @@ public interface GoodsvalueMapper {
     int updateByPrimaryKey(Goodsvalue record);
 
     String getSpValue(int spID);
+
+    int getSpIDNow();
+
+    int insert(HashMap map);
+
+    int delete(HashMap map);
 }

@@ -161,4 +161,7 @@
     set parameterName = #{parameterName,jdbcType=VARCHAR}
     where parameterID = #{parameterID,jdbcType=INTEGER}
   </update>
+  <select id="getParameter" resultType="com.newboot.shop.admin.model.Parameter">
+    select * from parameter order by parameterID asc
+  </select>
 </mapper>

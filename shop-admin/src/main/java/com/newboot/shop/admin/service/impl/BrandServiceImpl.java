@@ -22,7 +22,7 @@ public class BrandServiceImpl implements BrandService {
 
     @Override
     public int insert(HashMap map) {
-        return 0;
+        return brandMapper.insert(map);
     }
 
     @Override

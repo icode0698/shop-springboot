@@ -22,7 +22,7 @@ $(function () {
                         , cellMinWidth: 40
                     });
                 }
-                if (data.status == 500) {
+                if (data.code == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function () {

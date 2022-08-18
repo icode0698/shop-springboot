@@ -27,13 +27,19 @@ public class SpuController {
         return CommonResult.success(spuService.getSpuNow());
     }
 
+    @RequestMapping("/now/img")
+    @ResponseBody
+    public CommonResult nowImg(){
+        return CommonResult.success(spuService.getSpuImgNow());
+    }
+
     @RequestMapping("/insert")
     @ResponseBody
     public CommonResult insert(@RequestParam HashMap map){
         if(spuService.insert(map)<1){
-            return CommonResult.failed();
+            return CommonResult.failed(ResultMessage.INSERT_SPU_FAIL.getMessage());
         }
-        return CommonResult.success();
+        return CommonResult.success(ResultMessage.INSERT_SPU_SUCCESS.getMessage());
     }
 
     @RequestMapping("/select")
@@ -52,6 +58,15 @@ public class SpuController {
         }catch (Exception e){
             LOGGER.error(e.toString());
             return CommonResult.failed(ResultMessage.ADMIN_SPU_DATA_ERROR.getMessage());
+        }
+        return CommonResult.success();
+    }
+
+    @RequestMapping("/delete")
+    @ResponseBody
+    public CommonResult delete(@RequestParam HashMap map){
+        if(spuService.delete(map)<1){
+            return CommonResult.failed();
         }
         return CommonResult.success();
     }

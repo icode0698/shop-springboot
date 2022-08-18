@@ -5,18 +5,18 @@ $(function () {
         $.ajax({
             type: "post",
             dataType: "json",
-            url: "../../../servlet/NowValue",
+            url: "../value/now",
             success: function (data) {
                 console.log(data);
                 if (data.code == 200) {
-                    $("#storagenow").text(data.storageNowID);
-                    $("#storageID").val(parseInt(data.storageNowID)+1);
-                    $("#colornow").text(data.colorNowID);
-                    $("#colorID").val(parseInt(data.colorNowID)+1);
-                    $("#screennow").text(data.screenNowID);
-                    $("#screenID").val(parseInt(data.screenNowID)+1);
+                    $("#storagenow").text(data.data.storageNowID);
+                    $("#storageID").val(parseInt(data.data.storageNowID)+1);
+                    $("#colornow").text(data.data.colorNowID);
+                    $("#colorID").val(parseInt(data.data.colorNowID)+1);
+                    $("#screennow").text(data.data.screenNowID);
+                    $("#screenID").val(parseInt(data.data.screenNowID)+1);
                 }
-                if (data.status == 500) {
+                if (data.code == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function (data) {
@@ -30,18 +30,18 @@ $(function () {
             $.ajax({
                 type: "post",
                 dataType: "json",
-                url: "../../../servlet/InsertValue",
+                url: "../value/insert",
                 data: {
                     message: "storage",
-                    storageID: $("#storageID").val(),
-                    storageName: $("#storageName").val(),
+                    valueID: $("#storageID").val(),
+                    value: $("#storageName").val(),
                 }, success: function (data) {
                     console.log(data);
                     if (data.code == 200) {
                         layer.alert(data.message, {icon:1}, function () { location.href="";});
                         return false;
                     }
-                    if (data.status == 500) {
+                    if (data.code == 500) {
                         layer.alert(data.message, {icon:2});
                         return false;
                     }
@@ -58,18 +58,18 @@ $(function () {
             $.ajax({
                 type: "post",
                 dataType: "json",
-                url: "../../../servlet/InsertValue",
+                url: "../value/insert",
                 data: {
                     message: "color",
-                    colorID: $("#colorID").val(),
-                    colorName: $("#colorName").val(),
+                    valueID: $("#colorID").val(),
+                    value: $("#colorName").val(),
                 }, success: function (data) {
                     console.log(data);
                     if (data.code == 200) {
                         layer.alert(data.message, {icon:1}, function () { location.href="";});
                         return false;
                     }
-                    if (data.status == 500) {
+                    if (data.code == 500) {
                         layer.alert(data.message, {icon:2});
                         return false;
                     }
@@ -86,18 +86,18 @@ $(function () {
             $.ajax({
                 type: "post",
                 dataType: "json",
-                url: "../../../servlet/InsertValue",
+                url: "../value/insert",
                 data: {
                     message: "screen",
-                    screenID: $("#screenID").val(),
-                    screenName: $("#screenName").val(),
+                    valueID: $("#screenID").val(),
+                    value: $("#screenName").val(),
                 }, success: function (data) {
                     console.log(data);
                     if (data.code == 200) {
                         layer.alert(data.message, {icon:1}, function () { location.href="";});
                         return false;
                     }
-                    if (data.status == 500) {
+                    if (data.code == 500) {
                         layer.alert(data.message, {icon:2});
                         return false;
                     }

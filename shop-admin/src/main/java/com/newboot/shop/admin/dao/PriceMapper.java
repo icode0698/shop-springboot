@@ -16,8 +16,6 @@ public interface PriceMapper {
 
     int deleteByPrimaryKey(Integer sku);
 
-    int insert(Price record);
-
     int insertSelective(Price record);
 
     List<Price> selectByExample(PriceExample example);
@@ -37,4 +35,10 @@ public interface PriceMapper {
     ArrayList<JSONObject> getSkuList(HashMap map);
 
     int update(HashMap map);
+
+    int getSkuNow();
+
+    int insert(HashMap map);
+
+    int delete(HashMap map);
 }

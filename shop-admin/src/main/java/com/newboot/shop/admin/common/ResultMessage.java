@@ -68,6 +68,10 @@ public enum ResultMessage {
 
     ADMIN_SPU_DATA_ERROR("请输入正确的分类和品牌"),
 
+    INSERT_SPU_SUCCESS("商品SPU添加成功，SKU已同步生成，需要添加价格和库存"),
+
+    INSERT_SPU_FAIL("商品SPU添加错误"),
+
     LOGIN_VERIFY_CODE_NULL("请输入验证码"),
 
     LOGIN_VERIFY_CODE_ERROR("验证码错误"),

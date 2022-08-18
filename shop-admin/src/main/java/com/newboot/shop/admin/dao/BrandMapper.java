@@ -15,8 +15,6 @@ public interface BrandMapper {
 
     int deleteByPrimaryKey(Integer brandID);
 
-    int insert(Brand record);
-
     int insertSelective(Brand record);
 
     List<Brand> selectByExample(BrandExample example);
@@ -35,5 +33,9 @@ public interface BrandMapper {
 
     ArrayList<Brand> select(HashMap map);
 
+    ArrayList<Brand> select();
+
     int update(HashMap map);
+
+    int insert(HashMap map);
 }

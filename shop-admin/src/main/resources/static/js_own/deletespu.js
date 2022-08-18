@@ -16,38 +16,7 @@ $(function () {
                 layer.alert("请先输入信息", { icon: 3 });
             }
             else{
-                $.ajax({
-                    type: "post",
-                    dataType: "json",
-                    url: "../../../servlet/SkuBelong",
-                    data: {
-                        message: "skuBelong",
-                        spu: $("#spu").val()
-                    }, success: function (data) {
-                        $("#deleteinfo").css("display","");
-                        console.log(data);
-                        if (data.code == 200) {
-                            $("#trs").empty();
-                            for (let i = 0; i < data.message.length; i++) {
-                                let content = '<tr><td>' + data.message[i].SKU + '</td><td>' + data.message[i].goodsID + '</td><td>' + data.message[i].goodsName + '</td><td>' + data.message[i].categoryName + '</td>'
-                                    + '<td>' + data.message[i].brandName + '</td><td>' + data.message[i].storage + '</td><td>' + data.message[i].color + '</td><td>' + data.message[i].screen + '</td><td><span>￥</span>' + data.message[i].price.toFixed(2) + '</td><td>' + data.message[i].stock + '</td></tr>';
-                                $("#trs").append(content);
-                            }
-                            table.init('sku', {
-                                page: true
-                                , limit: 20
-                                , cellMinWidth: 40
-                            });
-                        }
-                        if (data.status == 500) {
-                            layer.alert("查询出现错误");
-                        }
-                    }, error: function (data) {
-                        console.log(data);
-                        layer.alert("服务器异常，请稍后再试");
-                        return;
-                    }
-                });
+                getSkuInfo();
             }
         });
         $("#ensure").on("click",function(){
@@ -58,16 +27,17 @@ $(function () {
                 $.ajax({
                     type: "post",
                     dataType: "json",
-                    url: "../../../servlet/DeleteSpu",
+                    url: "../spu/delete",
                     data: {
                         message: "deleteSpu",
                         spu: $("#spu").val()
                     }, success: function (data) {
                         console.log(data);
                         if (data.code == 200) {
+                            getSkuInfo();
                             layer.alert(data.message, { icon: 1 });
                         }
-                        if (data.status == 500) {
+                        if (data.code == 500) {
                             layer.alert(data.message,);
                         }
                     }, error: function (data) {
@@ -78,5 +48,39 @@ $(function () {
                 });
             }, function () {});
         });
+        function getSkuInfo(){
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "../sku/select",
+                data: {
+                    message: "skuBelong",
+                    spu: $("#spu").val()
+                }, success: function (data) {
+                    $("#deleteinfo").css("display","");
+                    console.log(data);
+                    if (data.code == 200) {
+                        $("#trs").empty();
+                        for (let i = 0; i < data.data.length; i++) {
+                            let content = '<tr><td>' + data.data[i].sku + '</td><td>' + data.data[i].goodsID + '</td><td>' + data.data[i].goodsName + '</td><td>' + data.data[i].categoryName + '</td>'
+                                + '<td>' + data.data[i].brandName + '</td><td>' + data.data[i].storage + '</td><td>' + data.data[i].color + '</td><td>' + data.data[i].screen + '</td><td><span>￥</span>' + data.data[i].price.toFixed(2) + '</td><td>' + data.data[i].stock + '</td></tr>';
+                            $("#trs").append(content);
+                        }
+                        table.init('sku', {
+                            page: true
+                            , limit: 20
+                            , cellMinWidth: 40
+                        });
+                    }
+                    if (data.code == 500) {
+                        layer.alert("查询出现错误");
+                    }
+                }, error: function (data) {
+                    console.log(data);
+                    layer.alert("服务器异常，请稍后再试");
+                    return;
+                }
+            });
+        }
     });
 });

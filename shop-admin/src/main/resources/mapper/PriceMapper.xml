@@ -101,14 +101,6 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.newboot.shop.admin.model.Price">
-    insert into price (sku, goodsID, spID1, 
-      spID2, spID3, price, 
-      stock)
-    values (#{sku,jdbcType=INTEGER}, #{goodsID,jdbcType=INTEGER}, #{spID1,jdbcType=INTEGER}, 
-      #{spID2,jdbcType=INTEGER}, #{spID3,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, 
-      #{stock,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" parameterType="com.newboot.shop.admin.model.Price">
     insert into price
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -246,6 +238,9 @@
   <select id="getSkuList" resultType="com.alibaba.fastjson.JSONObject">
     select price.*, goods.goodsName, category.categoryName, brand.brandName from category, goods, price, brand
     <where>
+      <if test='price!=null and price!=""'>
+        and price.price = #{price}
+      </if>
       <if test='spu!=null and spu!="" and spu!=0'>
         and goods.goodsID = #{spu}
       </if>
@@ -272,4 +267,16 @@
     </set>
     where sku = #{sku}
   </update>
+  <select id="getSkuNow" resultType="int">
+    select max(sku) sku from price
+  </select>
+  <insert id="insert">
+    insert into price (sku, goodsID, spID1,
+      spID2, spID3)
+    values (#{sku}, #{goodsID}, #{spID1},
+      #{spID2}, #{spID3})
+  </insert>
+  <delete id="delete">
+    delete from price where goodsID = #{spu}
+  </delete>
 </mapper>

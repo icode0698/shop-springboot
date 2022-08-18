@@ -12,7 +12,7 @@ $(function () {
                     $("#now").text(data.data);
                     $("#brandID").val(parseInt(data.data)+1);
                 }
-                if (data.status == 500) {
+                if (data.code == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function (data) {
@@ -36,7 +36,7 @@ $(function () {
                         layer.alert(data.message, {icon:1}, function () { location.href="";});
                         return false;
                     }
-                    if (data.status == 500) {
+                    if (data.code == 500) {
                         layer.alert(data.message, {icon:2});
                         return false;
                     }

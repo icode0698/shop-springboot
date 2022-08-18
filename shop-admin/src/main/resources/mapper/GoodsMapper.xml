@@ -100,14 +100,6 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.newboot.shop.admin.model.Goods">
-    insert into goods (goodsID, categoryID, brandID, 
-      goodsName, insertTime, stock
-      )
-    values (#{goodsID,jdbcType=INTEGER}, #{categoryID,jdbcType=INTEGER}, #{brandID,jdbcType=INTEGER}, 
-      #{goodsName,jdbcType=VARCHAR}, #{insertTime,jdbcType=TIMESTAMP}, #{stock,jdbcType=INTEGER}
-      )
-  </insert>
   <insert id="insertSelective" parameterType="com.newboot.shop.admin.model.Goods">
     insert into goods
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -226,7 +218,7 @@
     where goodsID = #{goodsID,jdbcType=INTEGER}
   </update>
   <select id="getSpuNow" resultType="int">
-
+    select max(goodsID) goodsID from goods
   </select>
   <select id="select" resultType="com.alibaba.fastjson.JSONObject">
     select goods.*,category.categoryName,brand.brandName from goods, category, brand
@@ -248,4 +240,13 @@
     </set>
     where goodsID=#{goodsID}
   </update>
+  <insert id="insert">
+    insert into goods (goodsID, categoryID, brandID, goodsName)
+    values (#{goodsID}, #{categoryID},
+       #{brandID}, #{goodsName}
+      )
+  </insert>
+  <delete id="delete">
+    delete from goods where goodsID = #{spu}
+  </delete>
 </mapper>

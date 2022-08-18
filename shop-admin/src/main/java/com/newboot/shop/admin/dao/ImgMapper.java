@@ -1,7 +1,10 @@
 package com.newboot.shop.admin.dao;
 
+import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.admin.model.Img;
 import com.newboot.shop.admin.model.ImgExample;
+
+import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -11,8 +14,6 @@ public interface ImgMapper {
     int deleteByExample(ImgExample example);
 
     int deleteByPrimaryKey(Integer imgID);
-
-    int insert(Img record);
 
     int insertSelective(Img record);
 
@@ -27,4 +28,10 @@ public interface ImgMapper {
     int updateByPrimaryKeySelective(Img record);
 
     int updateByPrimaryKey(Img record);
+
+    int getSpuImgNow();
+
+    int insert(HashMap map);
+
+    int delete(HashMap map);
 }

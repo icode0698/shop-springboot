@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public interface SpuService {
-    int getSpuNow();
+    JSONObject getSpuNow();
+
+    int getSpuImgNow();
 
     int insert(HashMap map);
 
@@ -14,4 +16,5 @@ public interface SpuService {
 
     int update(HashMap map);
 
+    int delete(HashMap map);
 }

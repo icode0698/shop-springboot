@@ -2,6 +2,9 @@ package com.newboot.shop.admin.dao;
 
 import com.newboot.shop.admin.model.Category;
 import com.newboot.shop.admin.model.CategoryExample;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -27,4 +30,8 @@ public interface CategoryMapper {
     int updateByPrimaryKeySelective(Category record);
 
     int updateByPrimaryKey(Category record);
+
+    ArrayList<Category> select();
+
+    ArrayList<Category> select(HashMap map);
 }

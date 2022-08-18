@@ -2,6 +2,8 @@ package com.newboot.shop.admin.dao;
 
 import com.newboot.shop.admin.model.Parameter;
 import com.newboot.shop.admin.model.ParameterExample;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -28,5 +30,5 @@ public interface ParameterMapper {
 
     int updateByPrimaryKey(Parameter record);
 
-
+    ArrayList<Parameter> getParameter();
 }

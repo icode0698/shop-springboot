@@ -10,6 +10,8 @@ public class PicConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("headPic/**", "pic/**")
                 .addResourceLocations("file:D:/Git/Gitee/shop-springboot/shop-admin/src/main/resources/static/headpic/")
-                .addResourceLocations("file:D:/Git/Gitee/shop-springboot/shop-admin/src/main/resources/static/pic/");
+                .addResourceLocations("file:D:/Git/Gitee/shop-springboot/shop-admin/src/main/resources/static/pic/")
+                .addResourceLocations("file:D:/Git/Gitee/shop-springboot/shop-new/src/main/resources/static/headpic/")
+                .addResourceLocations("file:D:/Git/Gitee/shop-springboot/shop-new/src/main/resources/static/pic/");
     }
 }

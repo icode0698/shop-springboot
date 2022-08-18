@@ -16,8 +16,6 @@ public interface ParametervalueMapper {
 
     int deleteByPrimaryKey(Integer valueID);
 
-    int insert(Parametervalue record);
-
     int insertSelective(Parametervalue record);
 
     List<Parametervalue> selectByExample(ParametervalueExample example);
@@ -32,9 +30,11 @@ public interface ParametervalueMapper {
 
     int updateByPrimaryKey(Parametervalue record);
 
-    ArrayList<JSONObject> getParameterValueByID(int parameterID);
+    ArrayList<JSONObject> getParameterValueByID(HashMap map);
 
-    String getValueNow(int parameterID);
+    String getValueNow(HashMap map);
 
     int update(HashMap map);
+
+    int insert(HashMap map);
 }

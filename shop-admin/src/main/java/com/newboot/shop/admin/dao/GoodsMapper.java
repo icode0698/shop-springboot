@@ -16,8 +16,6 @@ public interface GoodsMapper {
 
     int deleteByPrimaryKey(Integer goodsID);
 
-    int insert(Goods record);
-
     int insertSelective(Goods record);
 
     List<Goods> selectByExample(GoodsExample example);
@@ -37,4 +35,8 @@ public interface GoodsMapper {
     ArrayList<JSONObject> select(HashMap map);
 
     int update(HashMap map);
+
+    int insert(HashMap map);
+
+    int delete(HashMap map);
 }

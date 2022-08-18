@@ -98,12 +98,6 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.newboot.shop.admin.model.Img">
-    insert into img (imgID, goodsID, imgSrc, 
-      insertTime)
-    values (#{imgID,jdbcType=INTEGER}, #{goodsID,jdbcType=INTEGER}, #{imgSrc,jdbcType=VARCHAR}, 
-      #{insertTime,jdbcType=TIMESTAMP})
-  </insert>
   <insert id="insertSelective" parameterType="com.newboot.shop.admin.model.Img">
     insert into img
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -193,4 +187,14 @@
       insertTime = #{insertTime,jdbcType=TIMESTAMP}
     where imgID = #{imgID,jdbcType=INTEGER}
   </update>
+  <select id="getSpuImgNow" resultType="int">
+    select max(imgID) imgID from img
+  </select>
+  <insert id="insert">
+    insert into img (imgID, goodsID, imgSrc)
+    values (#{imgID}, #{goodsID}, #{imgSrc})
+  </insert>
+  <delete id="delete">
+    delete from img where goodsID = #{spu}
+  </delete>
 </mapper>

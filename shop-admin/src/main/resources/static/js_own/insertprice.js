@@ -5,17 +5,18 @@ $(function () {
         $.ajax({
             type: "post",
             dataType: "json",
-            url: "../../../servlet/InsertPrice",
+            url: "../sku/select",
             data: {
-                message: "selectBrand"
+                message: "selectSkuPrice",
+                price: 0
             }, success: function (data) {
                 console.log(data);
                 if (data.code == 200) {
                     $("#trs").empty();
-                    for (let i = 0; i < data.message.length; i++) {
-                        let content = '<tr><td>'+data.message[i].sku+'</td><td>'+data.message[i].goodsName+'</td>'
-                            +'<td>'+data.message[i].storage+'</td><td>'+data.message[i].color+'</td><td>'+data.message[i].screen+'</td>'
-                            +'<td>'+data.message[i].unitPrice+'</td><td>'+data.message[i].stock+'</td>'
+                    for (let i = 0; i < data.data.length; i++) {
+                        let content = '<tr><td>'+data.data[i].sku+'</td><td>'+data.data[i].goodsID+'</td><td>'+data.data[i].goodsName+'</td>'
+                            +'<td>'+data.data[i].storage+'</td><td>'+data.data[i].color+'</td><td>'+data.data[i].screen+'</td>'
+                            +'<td>'+data.data[i].price+'</td><td>'+data.data[i].stock+'</td>'
                         $("#trs").append(content);
                     }
                     table.init('price', {
@@ -26,57 +27,41 @@ $(function () {
                     table.on('edit(price)', function(obj){
                         var sku = obj.data.sku;
                         var field = obj.field;
-                        if(field=="unitPrice"){
-                            var price = obj.value //得到修改后的值
-                            $.ajax({
-                                type: "post",
-                                dataType: "json",
-                                url: "../../../servlet/UpdatePrice",
-                                data: {
-                                    sku: sku,
-                                    price: price
-                                },success: function (data) {
-                                    console.log(data);
-                                    if (data.code == 200) {
-                                        layer.msg(data.message);
-                                    }
-                                    if (data.status == 500) {
-                                        layer.alert(data.message);
-                                    }
-                                }, error: function (data) {
-                                    console.log(data);
-                                    layer.alert("服务器异常，请稍后再试");
-                                    return;
-                                }
-                            });
+                        let price = '';
+                        let stock = '';
+                        //得到修改后的值
+                        if(field=="price"){
+                            price = obj.value;
+                            
                         }
                         if(field=="stock"){
-                            var stock = obj.value //得到修改后的值
-                            $.ajax({
-                                type: "post",
-                                dataType: "json",
-                                url: "../../../servlet/UpdateStock",
-                                data: {
-                                    sku: sku,
-                                    stock: stock
-                                },success: function (data) {
-                                    console.log(data);
-                                    if (data.code == 200) {
-                                        layer.msg(data.message);
-                                    }
-                                    if (data.status == 500) {
-                                        layer.alert(data.message);
-                                    }
-                                }, error: function (data) {
-                                    console.log(data);
-                                    layer.alert("服务器异常，请稍后再试");
-                                    return;
-                                }
-                            });
+                            stock = obj.value;
                         }
+                        $.ajax({
+                            type: "post",
+                            dataType: "json",
+                            url: "../sku/update",
+                            data: {
+                                sku: sku,
+                                price: price,
+                                stock: stock
+                            },success: function (data) {
+                                console.log(data);
+                                if (data.code == 200) {
+                                    layer.msg(data.message);
+                                }
+                                if (data.code == 500) {
+                                    layer.alert(data.message);
+                                }
+                            }, error: function (data) {
+                                console.log(data);
+                                layer.alert("服务器异常，请稍后再试");
+                                return;
+                            }
+                        });
                     });
                 }
-                if (data.status == 500) {
+                if (data.code == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function (data) {

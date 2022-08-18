@@ -98,12 +98,6 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.newboot.shop.admin.model.Goodsvalue">
-    insert into goodsvalue (spID, goodsID, valueID, 
-      parameterID)
-    values (#{spID,jdbcType=INTEGER}, #{goodsID,jdbcType=INTEGER}, #{valueID,jdbcType=INTEGER}, 
-      #{parameterID,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" parameterType="com.newboot.shop.admin.model.Goodsvalue">
     insert into goodsvalue
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -196,4 +190,16 @@
   <select id="getSpValue" resultType="string">
     select value from goodsvalue,parametervalue where goodsvalue.valueID=parametervalue.valueID and spID=#{spID}
   </select>
+  <select id="getSpIDNow" resultType="int">
+    select max(spID) spID from goodsvalue
+  </select>
+  <insert id="insert">
+    insert into goodsvalue (spID, goodsID, valueID,
+      parameterID)
+    values (#{spID}, #{goodsID}, #{valueID},
+      #{parameterID})
+  </insert>
+  <delete id="delete">
+    delete from goodsvalue where goodsID = #{spu}
+  </delete>
 </mapper>

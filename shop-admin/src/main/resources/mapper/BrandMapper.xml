@@ -97,12 +97,6 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.newboot.shop.admin.model.Brand">
-    insert into brand (brandID, brandName, insertTime
-      )
-    values (#{brandID,jdbcType=INTEGER}, #{brandName,jdbcType=VARCHAR}, #{insertTime,jdbcType=TIMESTAMP}
-      )
-  </insert>
   <insert id="insertSelective" parameterType="com.newboot.shop.admin.model.Brand">
     insert into brand
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -187,4 +181,8 @@
   <update id="update">
     update brand set brandName = #{brandName} where brandID=#{brandID}
   </update>
+  <insert id="insert">
+    insert into brand (brandID, brandName)
+    values (#{brandID}, #{brandName})
+  </insert>
 </mapper>

@@ -97,12 +97,6 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.newboot.shop.admin.model.Parametervalue">
-    insert into parametervalue (valueID, parameterID, value
-      )
-    values (#{valueID,jdbcType=INTEGER}, #{parameterID,jdbcType=INTEGER}, #{value,jdbcType=VARCHAR}
-      )
-  </insert>
   <insert id="insertSelective" parameterType="com.newboot.shop.admin.model.Parametervalue">
     insert into parametervalue
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -187,4 +181,10 @@
   <update id="update">
     update parametervalue set value = #{value} where valueID = #{valueID}
   </update>
+  <insert id="insert">
+    insert into parametervalue (valueID, parameterID, value
+      )
+    values (#{valueID}, #{parameterID}, #{value}
+      )
+  </insert>
 </mapper>

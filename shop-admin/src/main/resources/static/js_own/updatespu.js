@@ -7,7 +7,7 @@ $(function () {
             dataType: "json",
             url: "../spu/select",
             data: {
-                message: "selectBrand"
+                message: "selectSpu"
             }, success: function (data) {
                 console.log(data);
                 if (data.code == 200) {
@@ -62,7 +62,7 @@ $(function () {
                         });
                     });
                 }
-                if (data.status == 500) {
+                if (data.code == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function (data) {

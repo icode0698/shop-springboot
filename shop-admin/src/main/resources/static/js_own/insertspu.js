@@ -1,4 +1,5 @@
 $(function () {
+    let filePath = '';
     layui.use(['layer',  'form', 'upload'], function () {
         var layer = layui.layer
             , form = layui.form
@@ -6,31 +7,30 @@ $(function () {
         $.ajax({
             type: "post",
             dataType: "json",
-            url: "../../../servlet/NowSpu",
+            url: "../spu/now",
             success: function (data) {
-                //console.log(data);
                 if (data.code == 200) {
-                    $("#now").text(data.spu);
-                    $("#spu").val(parseInt(data.spu)+1);
-                    for(let i=0;i<data.brandList.length;i++){
-                        $("#brandlist").append('<option value="'+data.brandList[i].brandID+'">'+data.brandList[i].brandName+'</option>');
+                    $("#now").text(data.data.spuNow);
+                    $("#spu").val(parseInt(data.data.spuNow)+1);
+                    for(let i=0;i<data.data.brandList.length;i++){
+                        $("#brandlist").append('<option value="'+data.data.brandList[i].brandID+'">'+data.data.brandList[i].brandName+'</option>');
                     }
-                    for(let i=0;i<data.categoryList.length;i++){
-                        $("#categorylist").append('<option value="'+data.categoryList[i].categoryID+'">'+data.categoryList[i].categoryName+'</option>');
+                    for(let i=0;i<data.data.categoryList.length;i++){
+                        $("#categorylist").append('<option value="'+data.data.categoryList[i].categoryID+'">'+data.data.categoryList[i].categoryName+'</option>');
                     }
                     form.render('select');
-                    for(let i=0;i<data.storageList.length;i++){
-                        $("#storagediv").append('<input type="checkbox" lay-filter="storage" value="'+data.storageList[i].id+'" name="storage" lay-skin="primary" title="'+data.storageList[i].value+'">');
+                    for(let i=0;i<data.data.storageList.length;i++){
+                        $("#storagediv").append('<input type="checkbox" lay-filter="storage" value="'+data.data.storageList[i].valueID+'" name="storage" lay-skin="primary" title="'+data.data.storageList[i].value+'">');
                     }
-                    for(let i=0;i<data.colorList.length;i++){
-                        $("#colordiv").append('<input type="checkbox" lay-filter="color" value="'+data.colorList[i].id+'" name="color" lay-skin="primary" title="'+data.colorList[i].value+'">');
+                    for(let i=0;i<data.data.colorList.length;i++){
+                        $("#colordiv").append('<input type="checkbox" lay-filter="color" value="'+data.data.colorList[i].valueID+'" name="color" lay-skin="primary" title="'+data.data.colorList[i].value+'">');
                     }
-                    for(let i=0;i<data.screenList.length;i++){
-                        $("#screendiv").append('<input type="checkbox" lay-filter="screen" value="'+data.screenList[i].id+'" name="screen" lay-skin="primary" title="'+data.screenList[i].value+'">');
+                    for(let i=0;i<data.data.screenList.length;i++){
+                        $("#screendiv").append('<input type="checkbox" lay-filter="screen" value="'+data.data.screenList[i].valueID+'" name="screen" lay-skin="primary" title="'+data.data.screenList[i].value+'">');
                     }
                     form.render('checkbox');
                 }
-                if (data.status == 500) {
+                if (data.code == 500) {
                     layer.alert("查询出现错误");
                 }
             }, error: function (data) {
@@ -43,14 +43,14 @@ $(function () {
             $.ajax({
                 type: "post",
                 dataType: "json",
-                url: "../../../servlet/NowImg",
+                url: "../spu/now/img",
                 success: function (data) {
                     console.log(data);
                     if (data.code == 200) {
                         console.log(data);
                         $("#pictipdiv").css("display","");
-                        $("#picidtip").text(data.message);
-                        $("#pic").val(parseInt(data.message)+1);
+                        $("#picidtip").text(data.data);
+                        $("#pic").val(parseInt(data.data)+1);
                     }
                 }, error: function (data) {
                     console.log(data);
@@ -61,7 +61,7 @@ $(function () {
         });
         upload.render({
             elem: '#choose'
-            ,url: '../../../servlet/InsertImg'
+            ,url: '../upload/goods'
             ,data: {
                 id: function(){
                     return $("#pic").val();
@@ -70,8 +70,7 @@ $(function () {
                     return $("#spu").val();
                 }
             }
-            ,auto: false
-            ,bindAction: '#insert'
+            ,auto: true
             , choose: function (obj) {
                 //预读本地文件示例，不支持ie8
                 obj.preview(function (index, file, result) {
@@ -83,8 +82,9 @@ $(function () {
             , done: function (data) {
                 if(data.code==200){
                     console.log('上传成功');
+                    filePath = data.data.filePath;
                 }
-                if (data.status == 500) {
+                if (data.code == 500) {
                     console.log('上传失败，请稍候再试');
                 }
             }
@@ -113,16 +113,17 @@ $(function () {
             $.ajax({
                 type: "post",
                 dataType: "json",
-                url: "../../../servlet/InsertSpu",
+                url: "../spu/insert",
                 data: {
-                    spu: $("#spu").val(),
-                    name: $("#name").val(),
+                    goodsID: $("#spu").val(),
+                    goodsName: $("#name").val(),
                     brandID: ""+res.field.brand,
                     categoryID: ""+res.field.category,
-                    picID: ""+res.field.pic,
+                    imgID: ""+res.field.pic,
                     storageList: JSON.stringify(storageList),
                     colorList: JSON.stringify(colorList),
-                    screenList: JSON.stringify(screenList)
+                    screenList: JSON.stringify(screenList),
+                    imgSrc: filePath
                 }, success: function (data) {
                     console.log(data);
                     layer.closeAll('loading');
@@ -130,7 +131,7 @@ $(function () {
                         layer.alert(data.message, {icon:1}, function () { location.href="";});
                         return false;
                     }
-                    if (data.status == 500) {
+                    if (data.code == 500) {
                         layer.alert(data.message, {icon:2});
                         return false;
                     }

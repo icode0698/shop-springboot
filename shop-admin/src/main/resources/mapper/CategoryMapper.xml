@@ -178,4 +178,7 @@
       insertTime = #{insertTime,jdbcType=TIMESTAMP}
     where categoryID = #{categoryID,jdbcType=INTEGER}
   </update>
+  <select id="select" resultType="com.newboot.shop.admin.model.Category">
+    select * from category order by insertTime desc
+  </select>
 </mapper>
