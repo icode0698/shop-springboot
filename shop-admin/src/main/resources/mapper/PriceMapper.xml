@@ -232,8 +232,25 @@
       stock = #{stock,jdbcType=INTEGER}
     where sku = #{sku,jdbcType=INTEGER}
   </update>
-  <select id="getSkuListByCategoryName" resultType="com.alibaba.fastjson.JSONObject">
-
+  <select id="getSkuListCount" resultType="int">
+    select count(*) from category, goods, price, brand
+    <where>
+      <if test='price!=null and price!=""'>
+        and price.price = #{price}
+      </if>
+      <if test='spu!=null and spu!="" and spu!=0'>
+        and goods.goodsID = #{spu}
+      </if>
+      <if test='sku!=null and sku!="" and sku!=0'>
+        and price.sku = #{sku}
+      </if>
+      <if test='categoryName!=null and categoryName!=""'>
+        and category.categoryName = #{categoryName}
+      </if>
+      and goods.goodsID = price.goodsID
+      and goods.categoryID = category.categoryID
+      and goods.brandID = brand.brandID
+    </where>
   </select>
   <select id="getSkuList" resultType="com.alibaba.fastjson.JSONObject">
     select price.*, goods.goodsName, category.categoryName, brand.brandName from category, goods, price, brand
@@ -254,6 +271,9 @@
       and goods.categoryID = category.categoryID
       and goods.brandID = brand.brandID
     </where>
+    <if test='offset!=null and limit!=null and limit!="" and limit!=0'>
+      limit ${offset},${limit}
+    </if>
   </select>
   <update id="update">
     update price

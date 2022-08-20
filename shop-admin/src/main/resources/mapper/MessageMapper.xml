@@ -232,7 +232,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="getList" resultType="com.alibaba.fastjson.JSONObject">
-    select message.*, user.nickName from message, user
+    select message.*, user.nickName, user.ipRegion from message, user
     <where>
         message.user = user.user
       <if test='value!=0 and value!=""'>

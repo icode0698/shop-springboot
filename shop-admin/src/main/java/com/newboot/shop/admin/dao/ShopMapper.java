@@ -32,5 +32,7 @@ public interface ShopMapper {
 
     int updateByPrimaryKey(Shop record);
 
+    int selectCount(HashMap map);
+
     ArrayList<JSONObject> select(HashMap map);
 }

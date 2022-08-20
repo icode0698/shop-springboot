@@ -232,7 +232,7 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
-    <update id="updateByPrimaryKeySelective">
+    <update id="updateByPrimaryKeySelective" parameterType="com.alibaba.fastjson.JSONObject">
         update user
         <set>
             <if test='password != null and password !=""'>
@@ -258,6 +258,18 @@
             </if>
             <if test="online != null">
                 online = #{online,jdbcType=TINYINT},
+            </if>
+            <if test='ipAddress != null and ipAddress !=""'>
+                ipAddress = #{ipAddress,jdbcType=VARCHAR},
+            </if>
+            <if test='ipRegion != null and ipRegion !=""'>
+                ipRegion = #{ipRegion,jdbcType=VARCHAR},
+            </if>
+            <if test='ipCostTime != null and ipCostTime !=""'>
+                ipCostTime = #{ipCostTime,jdbcType=VARCHAR},
+            </if>
+            <if test='ipIOCount != null'>
+                ipIOCount = #{ipIOCount,jdbcType=VARCHAR},
             </if>
         </set>
         where user = #{user,jdbcType=VARCHAR}
@@ -297,5 +309,10 @@
     </update>
     <select id="getPass" resultType="string">
         select password from user where user=#{user}
+    </select>
+    <select id="getInfo" resultType="com.alibaba.fastjson.JSONObject">
+        select user, nickName, headPic, regTime, lastTime, viewCount, online, ipRegion
+        from user
+        where user = #{user,jdbcType=VARCHAR}
     </select>
 </mapper>

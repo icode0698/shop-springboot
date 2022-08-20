@@ -273,7 +273,7 @@
     where user = #{user,jdbcType=VARCHAR}
   </update>
   <select id="getList" resultType="com.alibaba.fastjson.JSONObject">
-    select user, nickName, regTime, lastTime, online, viewCount from user
+    select user, nickName, regTime, lastTime, online, viewCount, ipRegion from user
     <where>
       <if test='value!=0 and value!=""'>
         and DATE_SUB(CURDATE(), INTERVAL #{value} DAY) &lt;= regTime

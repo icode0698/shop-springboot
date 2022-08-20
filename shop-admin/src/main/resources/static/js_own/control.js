@@ -1,52 +1,69 @@
 $(function () {
     layui.use(['layer', 'form', 'table'], function () {
         var layer = layui.layer
-            , form = layui.form
-            , table = layui.table;
-        getData("user", $("#usertime").val());
-        getMessage("message", $("#messagetime").val());
-        $("#usertime").on("change", function () {
-            console.log($("#usertime").val());
-            getData("user", $("#usertime").val());
-        });
-        $("#messagetime").on("change", function () {
-            console.log($("#messagetime").val());
-            getMessage("message", $("#messagetime").val());
-        });
-        $("#test").on("click", function () {
-            console.log("+++++++++++");
-        });
+        , form = layui.form
+        , table = layui.table;
         $.ajax({
             type: "post",
-            url: "../admin/boinfo",
+            url: "../admin/status",
             dataType: "json",
             success: function (data) {
                 console.log(data);
                 if (data.code == 200) {
-                    $("#infotrs").empty();
-                    if (data.data.length == 0) {
-                        $("#infotrs").append("没有找到相关数据");
-                    }
-                    else {
-                        for (let i = 0; i < data.data.length; i++) {
-                            let content = '';
-                            if (i == 1) {
-                                content = '<tr><td>' + data.data[i].type + '</td><td>' + data.data[i].info + ' <a href="https://layuion.com/" target="_blank" style="padding-left:15px;">官网</a></td></tr>';
+                    console.log(data);
+                    $("#admin").text(data.data);
+                    getData("user", $("#usertime").val());
+                    getMessage("message", $("#messagetime").val());
+                    $("#usertime").on("change", function () {
+                        console.log($("#usertime").val());
+                        getData("user", $("#usertime").val());
+                    });
+                    $("#messagetime").on("change", function () {
+                        console.log($("#messagetime").val());
+                        getMessage("message", $("#messagetime").val());
+                    });
+                    $("#test").on("click", function () {
+                        console.log("+++++++++++");
+                    });
+                    $.ajax({
+                        type: "post",
+                        url: "../admin/boinfo",
+                        dataType: "json",
+                        success: function (data) {
+                            console.log(data);
+                            if (data.code == 200) {
+                                $("#infotrs").empty();
+                                if (data.data.length == 0) {
+                                    $("#infotrs").append("没有找到相关数据");
+                                }
+                                else {
+                                    for (let i = 0; i < data.data.length; i++) {
+                                        let content = '';
+                                        if (i == 1) {
+                                            content = '<tr><td>' + data.data[i].type + '</td><td>' + data.data[i].info + ' <a href="https://layuion.com/" target="_blank" style="padding-left:15px;">官网</a></td></tr>';
+                                        }
+                                        else {
+                                            content = '<tr><td>' + data.data[i].type + '</td><td>' + data.data[i].info + '</td></tr>';
+                                        }
+                                        $("#infotrs").append(content);
+                                    }
+                                }
                             }
                             else {
-                                content = '<tr><td>' + data.data[i].type + '</td><td>' + data.data[i].info + '</td></tr>';
+                                layer.alert("查询出错");
                             }
-                            $("#infotrs").append(content);
+                        },
+                        error: function (XMLResponse) {
+                            return;
                         }
-                    }
+                    });
                 }
                 else {
-                    layer.alert("查询出错");
+                    return;
                 }
             },
             error: function (XMLResponse) {
-                layer.alert("服务器异常，请稍后再试");
-                console.log("error_status:" + XMLResponse.status);
+                layer.alert("抱歉，服务器异常。", { icon: 2 }, function () { location.href = 'login.html'; return; });
                 return;
             }
         });
@@ -72,7 +89,7 @@ $(function () {
                         else {
                             for (let i = 0; i < data.data.length; i++) {
                                 let content = '<tr><td>' + data.data[i].user + '</td><td>' + data.data[i].nickName + '</td><td>' + data.data[i].message + '</td>'
-                                    + '<td>' + data.data[i].createTime + '</td><td>' + data.data[i].lastTime + '</td><td>' + data.data[i].online + '</td></tr>';
+                                    + '<td>' + data.data[i].createTime + '</td><td>' + data.data[i].lastTime + '</td><td>' + data.data[i].ipRegion + '</td></tr>';
                                 $("#messagetrs").append(content);
                             }
                             table.init('message', {
@@ -124,7 +141,7 @@ $(function () {
                                     online = '离线';
                                 }
                                 let content = '<tr><td>' + data.data[i].user + '</td><td>' + data.data[i].nickName + '</td><td>' + data.data[i].regTime + '</td>'
-                                    + '<td>' + data.data[i].lastTime + '</td><td>' + online + '</td><td>' + data.data[i].viewCount + '</td></tr>';
+                                    + '<td>' + data.data[i].lastTime + '</td><td>' + online + '</td><td>' + data.data[i].viewCount + '</td><td>'+ data.data[i].ipRegion +'</td></tr>';
                                 $("#usertrs").append(content);
                             }
                             table.init('user', {

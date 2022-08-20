@@ -31,10 +31,15 @@ project:
   goodsFileUploadPath: D:/Git/Gitee/shop-springboot/shop-new/src/main/resources/static/pic/ # 商品图片上传文件的默认url前缀，根据部署设置自行修改，windows下路径
   orderUnpaidOverTime: 3000 # 订单未支付超期时间，单位秒
   serverUrl: http://localhost:28079 # 服务器地址
+  xdbPath: D:/Git/Gitee/shop-springboot/shop-new/src/main/resources/static/city/ip2region.xdb # xdb文件，windows下路径
 
 #服务器配置
 server:
   port: 28079
+  servlet:
+    session:
+      cookie:
+        name: shop-new
 #  undertow:
 #    buffer-size: 1024
 #    direct-buffers: true

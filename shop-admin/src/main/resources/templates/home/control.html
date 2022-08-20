@@ -20,10 +20,10 @@
         <div class="layui-row layui-col-space15">
           <div class="layui-col-md12">
             <div class="layui-card">
-              <div class="layui-card-header">新增用户</div>
+              <div class="layui-card-header"><i class="layui-icon layui-icon-user"></i>新增用户</div>
               <div class="layui-card-body">
                 <form onsubmit="return false;">
-                  <span id="test">最近</span>  <select id="usertime" class="form-control">
+                  <span>最近</span>  <select id="usertime" class="form-control">
                     <option value="0">所有用户</option>
                     <option value="1">一天</option>
                     <option value="3">三天</option>
@@ -43,6 +43,7 @@
                       <th lay-data="{field: 'lastTime', sort: true}">上次登录时间</th>
                       <th lay-data="{field: 'online', sort: true}">当前在线状态</th>
                       <th lay-data="{field: 'viewCount', sort: true}">访问次数</th>
+                      <th lay-data="{field: 'ipRegion', width:150px}">IP属地</th>
                     </tr>
                   </thead>
                   <tbody id="usertrs">
@@ -54,7 +55,7 @@
           </div>
           <div class="layui-col-md12">
             <div class="layui-card">
-              <div class="layui-card-header">用户留言</div>
+              <div class="layui-card-header"><i class="layui-icon layui-icon-component"></i>用户留言</div>
               <div class="layui-card-body">
                 <form onsubmit="return false;">
                   最近 <select id="messagetime" class="form-control">
@@ -75,6 +76,7 @@
                       <th lay-data="{field: 'nickName'}">昵称</th>
                       <th lay-data="{field: 'message'}">留言内容</th>
                       <th lay-data="{field: 'createTime', sort: true}">留言时间</th>
+                      <th lay-data="{field: 'ipRegion'}">IP属地</th>
                     </tr>
                   </thead>
                   <tbody id="messagetrs">
@@ -89,7 +91,7 @@
 
       <div class="layui-col-md4">
         <div class="layui-card">
-          <div class="layui-card-header">版本信息</div>
+          <div class="layui-card-header"><i class="layui-icon layui-icon-tips"></i>版本信息</div>
           <div class="layui-card-body layui-text">
             <table class="layui-table" lay-filter="info">
               <colgroup>

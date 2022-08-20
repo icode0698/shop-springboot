@@ -3,7 +3,9 @@ package com.newboot.shop.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.common.CommonResult;
 import com.newboot.shop.common.ResultMessage;
+import com.newboot.shop.config.ProjectConfig;
 import com.newboot.shop.service.UserService;
+import com.newboot.shop.util.HttpUtil;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -26,8 +28,8 @@ public class UserController {
     @RequestMapping("/login")
     @ResponseBody
     public CommonResult login(@RequestParam HashMap map, HttpServletRequest request) {
+        map.put("ipAddress", HttpUtil.getIpAddress(request));
         JSONObject json = new JSONObject(map);
-        logger.debug(json.toString());
         String message = userService.login(json);
         if (StringUtils.equals(ResultMessage.LOGIN_SUCCESS.getMessage(), message)) {
             HttpSession session = request.getSession();
@@ -51,7 +53,6 @@ public class UserController {
     @RequestMapping("/status")
     @ResponseBody
     public CommonResult status(HttpServletRequest request) {
-        logger.info("-----------------get status----------------");
         if (ObjectUtils.isEmpty(request.getSession().getAttribute("user"))) {
             return CommonResult.failed(ResultMessage.UNAUTHORIZED.getMessage());
         } else {

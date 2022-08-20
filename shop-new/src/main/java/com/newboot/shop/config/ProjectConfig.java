@@ -1,5 +1,8 @@
 package com.newboot.shop.config;
 
+import org.lionsoul.ip2region.xdb.Searcher;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -9,6 +12,8 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "project")
 public class ProjectConfig {
+
+    private final static Logger LOGGER = LoggerFactory.getLogger(ProjectConfig.class);
 
     /**
      * 项目名称
@@ -30,6 +35,10 @@ public class ProjectConfig {
      * 服务端访问路径
      */
     private static String serverUrl;
+    /**
+     * xdb路径
+     */
+    private static String xdbPath;
 
     public static String getName() {
         return name;
@@ -68,6 +77,14 @@ public class ProjectConfig {
     }
 
     public void setServerUrl(String serverUrl) {
-        ProjectConfig.serverUrl = serverUrl;
+        this.serverUrl = serverUrl;
+    }
+
+    public static String getXdbPath() {
+        return xdbPath;
+    }
+
+    public void setXdbPath(String xdbPath) {
+        this.xdbPath = xdbPath;
     }
 }

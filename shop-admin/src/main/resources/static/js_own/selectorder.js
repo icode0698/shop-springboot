@@ -2,7 +2,7 @@ $(function () {
     layui.use(['layer', 'table'], function () {
         var layer = layui.layer
             , table = layui.table;
-        getOrder($("#orderid").val(),$("#user").val());
+        getOrder();
         let origin = '';
         $("#orderid").bind("input propertychange",function(){
             console.log("orderidout"+origin);
@@ -15,9 +15,69 @@ $(function () {
             }
         });
         $("#order").on("click",function(){
-            getOrder($("#orderid").val(),$("#user").val());
+            reloadOrder($("#orderid").val(),$("#user").val());
         });
-        function getOrder(value,user){
+        function getOrder(){
+            table.render({
+                elem: '#order-select-table'
+                ,url:'../order/select'
+                ,method: 'post'
+                ,cellMinWidth: 80 
+                ,id: 'order-select-table-reload'
+                ,cols: [[
+                  {field:'id', title: '订单编号', width: 150, sort: true}
+                  ,{field:'user', title: '所属用户', sort: true} 
+                  ,{field:'goodsName', title: '所购商品', sort: true}
+                  ,{field:'sku', title: '商品SKU', sort: true}
+                  ,{field:'categoryName', title: '商品分类'}
+                  ,{field:'brandName', title: '品牌名称', width: 120}
+                  ,{field:'storage', title: '存储容量'} 
+                  ,{field:'color', title: '外观颜色'}
+                  ,{field:'screen', title: '屏幕尺寸'}
+                  ,{field:'unitPrice', title: '价格', sort: true}
+                  ,{field:'num', title: '数量', width:80, sort: true}
+                  ,{field:'totalPrice', title: '总计', sort: true}
+                  ,{field:'pay', title: '支付', sort: true}
+                  ,{field:'createTime', title: '创建时间', width: 160, sort: true}
+                  ,{field:'paymentTime', title: '支付时间', width: 160, sort: true}
+                ]]
+                ,parseData: function(res){
+                    for (let i = 0; i < res.data.list.length; i++) {
+                        if(res.data.list[i].isPay == true){
+                            res.data.list[i].pay = '已支付';
+                        }
+                        else{
+                            res.data.list[i].pay = '未支付';
+                        }
+                    }
+                    return {
+                        "code": res.code, //解析接口状态
+                        "msg": res.message, //解析提示文本
+                        "count": res.data.count, //解析数据长度
+                        "data": res.data.list //解析数据列表
+                    };
+                }
+                ,page: {
+                    limit: 20,
+                    limits: [10,20,30,40,50]
+                }
+                ,response:{
+                    statusCode: 200
+                }
+            });
+        }
+        function reloadOrder(id, user){
+            table.reload('sku-select-table-reload',{
+                where: { //设定异步数据接口的额外参数
+                    id: id
+                    ,user: user
+                  }
+                  ,page: {
+                    curr: 1 //重新从第1页开始
+                  }
+            });
+        }
+        function getOrderOrigin(value,user){
             $.ajax({
                 type: "post",
                 dataType: "json",

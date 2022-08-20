@@ -490,6 +490,7 @@ $(function () {
                     $("#lastTime").text(data.data.lastTime);
                     $("#regTime").text(data.data.regTime);
                     $("#viewCount").text(data.data.viewCount);
+                    $("#ipRegion").text(data.data.ipRegion);
                     $("#demo").attr("src", data.data.headPic);
                 } else {
                     layer.msg("服务器异常，请稍候再试。");

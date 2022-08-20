@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public interface SkuService {
-    ArrayList<JSONObject> select(HashMap map);
+    JSONObject select(HashMap map);
 
     int update(HashMap map);
 }

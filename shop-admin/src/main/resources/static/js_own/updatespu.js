@@ -21,46 +21,6 @@ $(function () {
                         , limit: 20
                         , cellMinWidth: 40
                     }); 
-                    table.on('edit(spu)', function (obj) {
-                        var id = obj.data.spu;
-                        var field = obj.field;
-                        var value = obj.value //得到修改后的值
-                        var goodsName = '';
-                        var categoryName = '';
-                        var brandName = '';
-                        if(field == 'name'){
-                            goodsName = value;
-                        }
-                        if(field == 'category'){
-                            categoryName = value;
-                        }
-                        if(field == 'brand'){
-                            brandName = value;
-                        }
-                        $.ajax({
-                            type: "post",
-                            dataType: "json",
-                            url: "../spu/update",
-                            data: {
-                                goodsID: id,
-                                goodsName: goodsName,
-                                categoryName: categoryName,
-                                brandName:brandName
-                            }, success: function (data) {
-                                console.log(data);
-                                if (data.code == 200) {
-                                    layer.msg(data.message);
-                                }
-                                if (data.code == 500) {
-                                    layer.alert(data.message);
-                                }
-                            }, error: function (data) {
-                                console.log(data);
-                                layer.alert("服务器异常，请稍后再试");
-                                return;
-                            }
-                        });
-                    });
                 }
                 if (data.code == 500) {
                     layer.alert("查询出现错误");
@@ -70,6 +30,46 @@ $(function () {
                 layer.alert("服务器异常，请稍后再试");
                 return;
             }
+        });
+        table.on('edit(spu)', function (obj) {
+            var id = obj.data.spu;
+            var field = obj.field;
+            var value = obj.value //得到修改后的值
+            var goodsName = '';
+            var categoryName = '';
+            var brandName = '';
+            if(field == 'name'){
+                goodsName = value;
+            }
+            if(field == 'category'){
+                categoryName = value;
+            }
+            if(field == 'brand'){
+                brandName = value;
+            }
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "../spu/update",
+                data: {
+                    goodsID: id,
+                    goodsName: goodsName,
+                    categoryName: categoryName,
+                    brandName:brandName
+                }, success: function (data) {
+                    console.log(data);
+                    if (data.code == 200) {
+                        layer.msg(data.message);
+                    }
+                    if (data.code == 500) {
+                        layer.alert(data.message);
+                    }
+                }, error: function (data) {
+                    console.log(data);
+                    layer.alert("服务器异常，请稍后再试");
+                    return;
+                }
+            });
         });
     });
 });

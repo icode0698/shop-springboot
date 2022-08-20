@@ -30,7 +30,7 @@ public interface PriceMapper {
 
     int updateByPrimaryKey(Price record);
 
-    ArrayList<JSONObject> getSkuListByCategoryName(HashMap map);
+    int getSkuListCount(HashMap map);
 
     ArrayList<JSONObject> getSkuList(HashMap map);
 

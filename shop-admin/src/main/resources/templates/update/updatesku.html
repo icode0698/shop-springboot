@@ -27,24 +27,8 @@
                     id="sku" type="text">
                 <button id="getsku" type="submit">搜索</button>
             </form>
-            <table class="layui-table" lay-filter="sku">
-                <thead>
-                    <tr>
-                        <th lay-data="{field: 'sku', sort: true}">商品SKU</th>
-                        <th lay-data="{field: 'spu', sort: true}">所属SPU</th>
-                        <th lay-data="{field: 'name', sort: true}">商品名称</th>
-                        <th lay-data="{field: 'categroy', sort: true}">所属分类</th>
-                        <th lay-data="{field: 'brand', sort: true}">所属品牌</th>
-                        <th lay-data="{field: 'storage', sort: true}">存储容量</th>
-                        <th lay-data="{field: 'color', sort: true}">外观颜色</th>
-                        <th lay-data="{field: 'screen', sort: true}">屏幕尺寸</th>
-                        <th lay-data="{field: 'price', edit: 'text', sort: true}">价格￥</th>
-                        <th lay-data="{field: 'stock', edit: 'text', sort: true}">库存量</th>
-                    </tr>
-                </thead>
-                <tbody id="trs">
-
-                </tbody>
+            <table class="layui-table" id="sku-update-table" lay-filter="sku-update">
+                
             </table>
         </div>
     </div>

@@ -24,6 +24,14 @@ public class User implements Serializable {
 
     private Byte online;
 
+    private String ipAddress;
+
+    private String ipRegion;
+
+    private String ipIOCount;
+
+    private String ipCostTime;
+
     private static final long serialVersionUID = 1L;
 
     public String getUser() {
@@ -96,6 +104,38 @@ public class User implements Serializable {
 
     public void setOnline(Byte online) {
         this.online = online;
+    }
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
+
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
+
+    public String getIpRegion() {
+        return ipRegion;
+    }
+
+    public void setIpRegion(String ipRegion) {
+        this.ipRegion = ipRegion;
+    }
+
+    public String getIpIOCount() {
+        return ipIOCount;
+    }
+
+    public void setIpIOCount(String ipIOCount) {
+        this.ipIOCount = ipIOCount;
+    }
+
+    public String getIpCostTime() {
+        return ipCostTime;
+    }
+
+    public void setIpCostTime(String ipCostTime) {
+        this.ipCostTime = ipCostTime;
     }
 
     @Override

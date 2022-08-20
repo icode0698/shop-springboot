@@ -7,6 +7,7 @@ import com.newboot.shop.dao.MessageMapper;
 import com.newboot.shop.dao.UserMapper;
 import com.newboot.shop.model.User;
 import com.newboot.shop.service.UserService;
+import com.newboot.shop.util.HttpUtil;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -38,7 +39,6 @@ public class UserServiceImpl implements UserService {
             if (StringUtils.isEmpty(json.getString("password"))) {
                 return ResultMessage.LOGIN_PASSWORD_NULL.getMessage();
             }
-            logger.debug(json.getString("user"));
             user = userMapper.selectByPrimaryKey(json.getString("user"));
             if (user == null) {
                 return ResultMessage.LOGIN_ERROR_PASSWORD.getMessage();
@@ -47,12 +47,13 @@ public class UserServiceImpl implements UserService {
                 return ResultMessage.LOGIN_USER_ONLINE.getMessage();
             }
             if (StringUtils.equals(json.getString("password"), user.getPassword())) {
-                User after = new User();
-                after.setUser(user.getUser());
-                after.setOnline((byte) 1);
-                after.setViewCount(user.getViewCount().intValue() + 1);
-                after.setCurrentTime(new Date());
-                userMapper.updateByPrimaryKeySelective(after);
+                JSONObject ipJson = HttpUtil.getIpInfo(json.getString("ipAddress"));
+                ipJson.put("ipAddress", json.getString("ipAddress"));
+                ipJson.put("user", user.getUser());
+                ipJson.put("online", (byte)1);
+                ipJson.put("viewCount", user.getViewCount().intValue() + 1);
+                ipJson.put("currentTime", new Date());
+                userMapper.updateByPrimaryKeySelective(ipJson);
                 return ResultMessage.LOGIN_SUCCESS.getMessage();
             } else {
                 return ResultMessage.LOGIN_ERROR_PASSWORD.getMessage();
@@ -73,9 +74,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public JSONObject getInfo(String user) {
-        User info = userMapper.selectByPrimaryKey(user);
-        info.setPassword("password");
-        return (JSONObject) JSONObject.toJSON(info);
+        JSONObject json = userMapper.getInfo(user);
+        json.put("ipRegion", HttpUtil.getIpPossession(json.getString("ipRegion")));
+        return json;
     }
 
     @Override

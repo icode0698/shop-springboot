@@ -1,5 +1,6 @@
 package com.newboot.shop.dao;
 
+import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.model.User;
 import com.newboot.shop.model.UserExample;
 
@@ -27,11 +28,13 @@ public interface UserMapper {
 
     int updateByExample(@Param("record") User record, @Param("example") UserExample example);
 
-    int updateByPrimaryKeySelective(User record);
+    int updateByPrimaryKeySelective(JSONObject json);
 
     int updateByPrimaryKey(HashMap map);
 
     int updateOnlineAndLastTime(User user);
 
     String getPass(String user);
+
+    JSONObject getInfo(String user);
 }

@@ -1,0 +1,24 @@
+2022-08-18 16:46:21.960 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 13168 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-08-18 16:46:21.963 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-08-18 16:46:24.001 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-08-18 16:46:24.002 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-08-18 16:46:24.002 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-08-18 16:46:24.097 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-08-18 16:46:24.154 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-08-18 16:46:24.393 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-08-18 16:46:25.877 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
+2022-08-18 16:46:25.899 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 4.576 seconds (JVM running for 5.411)
+2022-08-18 16:46:37.831 [http-nio-28079-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-18 16:46:38.379 [http-nio-28079-exec-4] INFO  com.newboot.shop.controller.UserController - [status,54] - -----------------get status----------------
+2022-08-18 16:47:57.919 [http-nio-28079-exec-2] INFO  com.newboot.shop.controller.UserController - [status,54] - -----------------get status----------------
+2022-08-18 16:55:59.547 [http-nio-28079-exec-8] INFO  com.newboot.shop.controller.UserController - [status,54] - -----------------get status----------------
+2022-08-18 16:56:15.592 [http-nio-28079-exec-6] INFO  com.newboot.shop.controller.UserController - [status,54] - -----------------get status----------------
+2022-08-18 16:56:23.992 [http-nio-28079-exec-10] INFO  com.newboot.shop.controller.UserController - [status,54] - -----------------get status----------------
+2022-08-18 16:58:00.534 [http-nio-28079-exec-9] INFO  com.newboot.shop.controller.UserController - [status,54] - -----------------get status----------------
+2022-08-18 17:07:50.113 [http-nio-28079-exec-6] INFO  com.newboot.shop.controller.UserController - [status,54] - -----------------get status----------------
+2022-08-18 17:07:51.932 [http-nio-28079-exec-10] INFO  com.newboot.shop.controller.UserController - [status,54] - -----------------get status----------------
+2022-08-18 17:08:34.913 [http-nio-28079-exec-5] INFO  com.newboot.shop.controller.UserController - [status,54] - -----------------get status----------------
+2022-08-18 17:08:42.661 [http-nio-28079-exec-1] INFO  com.newboot.shop.controller.UserController - [status,54] - -----------------get status----------------
+2022-08-18 17:08:46.517 [http-nio-28079-exec-8] INFO  com.newboot.shop.controller.UserController - [status,54] - -----------------get status----------------
+2022-08-18 17:11:59.237 [http-nio-28079-exec-3] INFO  com.newboot.shop.controller.UserController - [status,54] - -----------------get status----------------
+2022-08-18 17:16:03.770 [http-nio-28079-exec-10] INFO  com.newboot.shop.controller.UserController - [status,54] - -----------------get status----------------
