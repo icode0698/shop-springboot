@@ -38,6 +38,22 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">邮箱</label>
+            <div class="layui-input-inline">
+                <input id="email" type="text" name="email" lay-verify="required|email" lay-verType="tips"
+                       placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div id="email-div" class="layui-form-item" style="display: none;">
+            <label class="layui-form-label">邮箱验证码</label>
+            <div class="layui-input-inline">
+              <input type="text" name="emailCode" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid" style="padding: 0!important;"> 
+              <button id="getEamilCode" type="button" class="layui-btn layui-btn-normal" lay-on="" lay-filter="get-vercode">获取验证码</button>
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">密码</label>
             <div class="layui-input-inline">
                 <input id="pass" type="password" name="pass" lay-verify="required|pass" lay-verType="tips"

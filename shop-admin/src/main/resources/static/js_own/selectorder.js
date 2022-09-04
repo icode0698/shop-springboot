@@ -49,6 +49,9 @@ $(function () {
                         else{
                             res.data.list[i].pay = '未支付';
                         }
+                        if(res.data.list[i].paymentTime == undefined){
+                            res.data.list[i].paymentTime = '暂无数据';
+                        }
                     }
                     return {
                         "code": res.code, //解析接口状态

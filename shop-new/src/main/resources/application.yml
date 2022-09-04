@@ -40,6 +40,18 @@ server:
     session:
       cookie:
         name: shop-new
+
+#自定义redis key
+redis:
+  database: shop-new
+  key:
+    authCode: 'ums:authCode'
+    orderId: 'oms:orderId'
+    member: 'ums:member'
+  expire:
+    authCode: 300 # 验证码有效时间
+    common: 86400 # 24小时
+
 #  undertow:
 #    buffer-size: 1024
 #    direct-buffers: true

@@ -279,9 +279,9 @@
         and DATE_SUB(CURDATE(), INTERVAL #{value} DAY) &lt;= regTime
       </if>
     </where>
-    order by regTime desc
+    order by lastTime desc
   </select>
   <update id="offline" >
-    update user set online=0 where user=#{user}
+    update user set lastTime=currentTime, online=0 where user=#{user}
   </update>
 </mapper>

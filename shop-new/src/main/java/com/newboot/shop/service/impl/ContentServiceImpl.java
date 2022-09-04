@@ -33,7 +33,7 @@ public class ContentServiceImpl implements ContentService {
     @Autowired
     UserMapper userMapper;
     @Autowired
-    GoodsvalueMapper goodsvalueMapper;
+    GoodspefMapper goodspefMapper;
     @Autowired
     CategoryMapper categoryMapper;
 
@@ -93,9 +93,9 @@ public class ContentServiceImpl implements ContentService {
             User user = userMapper.selectByPrimaryKey(comment.getUser());
             comment.setHeadPic(user.getHeadPic());
             JSONObject json = priceMapper.getSkuInfo(comment.getSku());
-            comment.setStorage(goodsvalueMapper.getSpValue(json.getInteger("spID1")));
-            comment.setColor(goodsvalueMapper.getSpValue(json.getInteger("spID2")));
-            comment.setScreen(goodsvalueMapper.getSpValue(json.getInteger("spID3")));
+            comment.setStorage(goodspefMapper.getSpValue(json.getInteger("spID1")));
+            comment.setColor(goodspefMapper.getSpValue(json.getInteger("spID2")));
+            comment.setScreen(goodspefMapper.getSpValue(json.getInteger("spID3")));
         }
         return commentList;
     }

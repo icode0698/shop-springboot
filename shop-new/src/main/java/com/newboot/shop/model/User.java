@@ -32,6 +32,8 @@ public class User implements Serializable {
 
     private String ipCostTime;
 
+    private String email;
+
     private static final long serialVersionUID = 1L;
 
     public String getUser() {
@@ -136,6 +138,14 @@ public class User implements Serializable {
 
     public void setIpCostTime(String ipCostTime) {
         this.ipCostTime = ipCostTime;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override

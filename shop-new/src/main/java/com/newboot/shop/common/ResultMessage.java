@@ -64,6 +64,8 @@ public enum ResultMessage {
 
     ORDER_DATA_ERROR("订单数据异常"),
 
+    VERIFY_CODE_INVALID("验证码失效"),
+
     LOGIN_VERIFY_CODE_NULL("请输入验证码"),
 
     LOGIN_VERIFY_CODE_ERROR("验证码错误"),

@@ -165,9 +165,9 @@
     </update>
 
     <select id="getValueFromName" resultType="string">
-        select value from parameter,parametervalue,goodsvalue
-        where parameter.parameterID=parametervalue.parameterID
-        and goodsvalue.valueID=parametervalue.valueID and parameter.parameterName=#{parameterName} and
+        select value from parameter,parameterpef,goodspef
+        where parameter.parameterID=parameterpef.parameterID
+        and goodspef.pefID=parameterpef.valueID and parameter.parameterName=#{parameterName} and
         goodsID=#{goodsID}
     </select>
 </mapper>

@@ -1,11 +1,12 @@
 package com.newboot.shop.admin.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.newboot.shop.admin.dao.GoodsvalueMapper;
+import com.newboot.shop.admin.dao.GoodspefMapper;
 import com.newboot.shop.admin.dao.PriceMapper;
 import com.newboot.shop.admin.service.SkuService;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class SkuServiceImpl implements SkuService {
     @Autowired
     PriceMapper priceMapper;
     @Autowired
-    GoodsvalueMapper goodsvalueMapper;
+    GoodspefMapper goodspefMapper;
 
     @Override
     public JSONObject select(HashMap map) {
@@ -27,9 +28,9 @@ public class SkuServiceImpl implements SkuService {
         }
         ArrayList<JSONObject> list = priceMapper.getSkuList(map);
         for (JSONObject jsonObject : list) {
-            jsonObject.put("storage",goodsvalueMapper.getSpValue(jsonObject.getIntValue("spID1")));
-            jsonObject.put("color",goodsvalueMapper.getSpValue(jsonObject.getIntValue("spID2")));
-            jsonObject.put("screen",goodsvalueMapper.getSpValue(jsonObject.getIntValue("spID3")));
+            jsonObject.put("storage", goodspefMapper.getSpValue(jsonObject.getIntValue("spID1")));
+            jsonObject.put("color", goodspefMapper.getSpValue(jsonObject.getIntValue("spID2")));
+            jsonObject.put("screen", goodspefMapper.getSpValue(jsonObject.getIntValue("spID3")));
         }
         json.put("list", list);
         return json;

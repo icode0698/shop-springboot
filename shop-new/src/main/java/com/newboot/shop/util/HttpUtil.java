@@ -2,7 +2,6 @@ package com.newboot.shop.util;
 
 
 import com.alibaba.fastjson.JSONObject;
-import com.newboot.shop.config.ProjectConfig;
 import org.apache.commons.lang3.StringUtils;
 import org.lionsoul.ip2region.xdb.Searcher;
 import org.slf4j.Logger;
@@ -34,6 +33,7 @@ public class HttpUtil {
      */
     public static String getIpAddress(HttpServletRequest request) {
         String ipAddress = request.getHeader("X-Forwarded-For");
+        String ipIndex = "";
         if (ipAddress == null || ipAddress.length() == 0 || "unknown".equalsIgnoreCase(ipAddress)) {
             ipAddress = request.getHeader("Proxy-Client-IP");
         }
@@ -47,6 +47,7 @@ public class HttpUtil {
                 try {
                     InetAddress inet = InetAddress.getLocalHost();
                     ipAddress = inet.getHostAddress();
+                    ipIndex = inet.getHostAddress();
                 } catch (Exception e) {
                     logger.error("根据网卡获取本机配置的IP异常", e);
                 }
@@ -57,21 +58,17 @@ public class HttpUtil {
             ipAddress = ipAddress.split(",")[0];
         }
         // 对于本地开发验证的IP直接转为本地外网IP
-        try {
-            if (ipAddress != null && ipAddress.equals(InetAddress.getLocalHost().getHostAddress())){
-                ipAddress = "39.128.36.43";
-            }
-        }catch (Exception e){
-            logger.error("根据网卡获取本机配置的IP异常", e);
+        if (ipAddress != null && ipIndex.equals(ipAddress)){
+            ipAddress = "39.128.36.43";
         }
-
+        logger.info("{} get ipAddress {}", HttpUtil.class.toString(), ipAddress);
         return ipAddress;
     }
 
     /**
      * 获取IP地址信息
      * @param ipAddress
-     * @return String
+     * @return JSONObject
      *
      */
     public static JSONObject getIpInfo(String ipAddress){
@@ -87,16 +84,21 @@ public class HttpUtil {
             json.put("ipIOCount", searcher.getIOCount());
             logger.info("{region: {}, ioCount: {}, took: {} μs}", region, searcher.getIOCount(), cost);
         } catch (Exception e) {
-            logger.error("failed to search({}}): {}", ipAddress, e.toString());
+            logger.error("failed to search({}): {}", ipAddress, e.toString());
         }
         return json;
     }
 
+    /**
+     * 转化IP地址信息
+     * @param ipRegion
+     * @return String
+     */
     public static String getIpPossession(String ipRegion) {
         if (StringUtils.isNotEmpty(ipRegion)) {
             String[] cityList = ipRegion.split("\\|");
             if (cityList.length > 0) {
-                // 国内的显示到具体的省
+                // 国内显示到具体的省
                 if (StringUtils.equals("中国", cityList[0])) {
                     if (cityList.length > 3) {
                         return cityList[2];

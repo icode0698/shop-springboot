@@ -11,7 +11,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.concurrent.ListenableFutureCallback;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,6 +27,8 @@ public class UserController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private UserService userService;
+    @Autowired
+    private KafkaTemplate kafkaTemplate;
 
     @RequestMapping("/login")
     @ResponseBody
@@ -112,5 +117,31 @@ public class UserController {
             return CommonResult.failed(ResultMessage.LOGIN_ERROR_PASSWORD.getMessage());
         }
         return CommonResult.success();
+    }
+
+    @RequestMapping("/register/code/email")
+    @ResponseBody
+    public CommonResult codeEmail(@RequestBody JSONObject json){
+        if(userService.userExist(json)){
+            return CommonResult.failed(ResultMessage.SAME_LOGIN_NAME_EXIST.getMessage());
+        }
+        kafkaTemplate.send("emailCode", json.toString());
+        return CommonResult.success();
+    }
+
+    @RequestMapping("/testKafka")
+    @ResponseBody
+    public void testKafka(){
+        kafkaTemplate.send("testtopic", "testMessage").addCallback(new ListenableFutureCallback<SendResult>() {
+            @Override
+            public void onFailure(Throwable ex) {
+                logger.info("发送消息失败：{}", ex.getMessage());
+            }
+
+            @Override
+            public void onSuccess(SendResult result) {
+                logger.info("发送消息成功：{} - {} - {}", result.getRecordMetadata().topic(), result.getRecordMetadata().partition(), result.getRecordMetadata().offset());
+            }
+        });
     }
 }

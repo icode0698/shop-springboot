@@ -145,6 +145,9 @@
             <if test="online != null">
                 online,
             </if>
+            <if test='email!=null and email!=""'>
+                email,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="user != null">
@@ -173,6 +176,9 @@
             </if>
             <if test="online != null">
                 #{online,jdbcType=TINYINT},
+            </if>
+            <if test='email!=null and email!=""'>
+                #{email}
             </if>
         </trim>
     </insert>

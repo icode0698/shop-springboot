@@ -2,7 +2,7 @@ package com.newboot.shop.admin.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.newboot.shop.admin.dao.ParameterMapper;
-import com.newboot.shop.admin.dao.ParametervalueMapper;
+import com.newboot.shop.admin.dao.ParameterpefMapper;
 import com.newboot.shop.admin.model.Parameter;
 import com.newboot.shop.admin.service.ValueService;
 import org.apache.commons.lang3.StringUtils;
@@ -18,7 +18,7 @@ public class ValueServiceImpl implements ValueService {
     @Autowired
     ParameterMapper parameterMapper;
     @Autowired
-    ParametervalueMapper parametervalueMapper;
+    ParameterpefMapper parameterpefMapper;
 
     @Override
     public JSONObject getValueNow() {
@@ -26,11 +26,11 @@ public class ValueServiceImpl implements ValueService {
         ArrayList<Parameter> parameterList =  parameterMapper.getParameter();
         HashMap map = new HashMap();
         map.put("parameterID", parameterList.get(0).getParameterID());
-        json.put("storageNowID", parametervalueMapper.getValueNow(map));
+        json.put("storageNowID", parameterpefMapper.getValueNow(map));
         map.put("parameterID", parameterList.get(1).getParameterID());
-        json.put("colorNowID", parametervalueMapper.getValueNow(map));
+        json.put("colorNowID", parameterpefMapper.getValueNow(map));
         map.put("parameterID", parameterList.get(2).getParameterID());
-        json.put("screenNowID", parametervalueMapper.getValueNow(map));
+        json.put("screenNowID", parameterpefMapper.getValueNow(map));
         return json;
     }
 
@@ -45,7 +45,7 @@ public class ValueServiceImpl implements ValueService {
         if(StringUtils.equals("screen", map.get("message").toString())){
             map.put("parameterID", parameterMapper.getParameter().get(2).getParameterID());
         }
-        return parametervalueMapper.insert(map);
+        return parameterpefMapper.insert(map);
     }
 
     @Override
@@ -53,16 +53,16 @@ public class ValueServiceImpl implements ValueService {
         JSONObject json = new JSONObject();
         ArrayList<Parameter> parameterList = parameterMapper.getParameter();
         map.put("parameterID", parameterList.get(0).getParameterID());
-        json.put("storageList", parametervalueMapper.getParameterValueByID(map));
+        json.put("storageList", parameterpefMapper.getParameterValueByID(map));
         map.put("parameterID", parameterList.get(1).getParameterID());
-        json.put("colorList", parametervalueMapper.getParameterValueByID(map));
+        json.put("colorList", parameterpefMapper.getParameterValueByID(map));
         map.put("parameterID", parameterList.get(2).getParameterID());
-        json.put("screenList", parametervalueMapper.getParameterValueByID(map));
+        json.put("screenList", parameterpefMapper.getParameterValueByID(map));
         return json;
     }
 
     @Override
     public int update(HashMap map) {
-        return parametervalueMapper.update(map);
+        return parameterpefMapper.update(map);
     }
 }

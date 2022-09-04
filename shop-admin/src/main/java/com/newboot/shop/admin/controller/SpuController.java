@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
+import java.util.concurrent.Future;
 
 @Controller
 @RequestMapping("/spu")
@@ -65,9 +66,7 @@ public class SpuController {
     @RequestMapping("/delete")
     @ResponseBody
     public CommonResult delete(@RequestParam HashMap map){
-        if(spuService.delete(map)<1){
-            return CommonResult.failed();
-        }
+        spuService.delete(map);
         return CommonResult.success();
     }
 }

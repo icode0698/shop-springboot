@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.Future;
 
 public interface SpuService {
     JSONObject getSpuNow();

@@ -15,185 +15,150 @@ import java.util.concurrent.TimeUnit;
  **/
 @Component
 public class RedisCache {
-
     @Autowired
-    public RedisTemplate redisTemplate;
+    private RedisTemplate redisTemplate;
 
-    /**
-     * string类型递增
-     *
-     * @param key 缓存的键值
-     * @return 递增后返回值
-     */
-    public Long increment(final String key) {
-        return redisTemplate.opsForValue().increment(key);
+    public void set(String key, Object value, long time) {
+        redisTemplate.opsForValue().set(key, value, time, TimeUnit.SECONDS);
     }
 
-    /**
-     * string类型递减
-     *
-     * @param key redis键
-     * @return 递减后返回值
-     */
-    public Long decrement(final String key) {
-        return redisTemplate.opsForValue().decrement(key);
-
-    }
-
-    /**
-     * string类型原子递减，不小于-1
-     *
-     * @param key redis键
-     * @return 递减后返回值
-     */
-    public Long luaDecrement(final String key) {
-        RedisScript<Long> redisScript = new DefaultRedisScript<>(buildLuaDecrScript(), Long.class);
-        Number execute = (Number) redisTemplate.execute(redisScript, Collections.singletonList(key));
-        if (execute == null) {
-            return -1L;
-        }
-        return execute.longValue();
-    }
-
-    /**
-     * lua原子自减脚本
-     */
-    private String buildLuaDecrScript() {
-        return "local c" +
-                "\nc = redis.call('get',KEYS[1])" +
-                "\nif c and tonumber(c) < 0 then" +
-                "\nreturn c;" +
-                "\nend" +
-                "\nc = redis.call('decr',KEYS[1])" +
-                "\nreturn c;";
-    }
-
-    /**
-     * 设置redis键值对
-     *
-     * @param key   redis键
-     * @param value redis值
-     */
-    public <T> void setCacheObject(final String key, final T value) {
+    public void set(String key, Object value) {
         redisTemplate.opsForValue().set(key, value);
     }
 
-    /**
-     * 设置redis键值对
-     *
-     * @param key      redis键
-     * @param value    redis值
-     * @param timeout  过期时间
-     * @param timeUnit 时间单位
-     */
-    public <T> void setCacheObject(final String key, final T value, final Integer timeout, final TimeUnit timeUnit) {
-        redisTemplate.opsForValue().set(key, value, timeout, timeUnit);
+    public Object get(String key) {
+        return redisTemplate.opsForValue().get(key);
     }
 
-    /**
-     * 设置过期时间
-     *
-     * @param key     redis键
-     * @param timeout 超时时间
-     * @return boolean
-     */
-    public boolean expire(final String key, final long timeout) {
-        return expire(key, timeout, TimeUnit.SECONDS);
-    }
-
-    /**
-     * 设置过期时间
-     *
-     * @param key     redis键
-     * @param timeout 超时时间
-     * @param unit    时间单位
-     * @return true=设置成功；false=设置失败
-     */
-    public boolean expire(final String key, final long timeout, final TimeUnit unit) {
-        return redisTemplate.expire(key, timeout, unit);
-    }
-
-    /**
-     * 获得缓存的基本对象
-     *
-     * @param key redis键
-     * @return redis值
-     */
-    public <T> T getCacheObject(final String key) {
-        ValueOperations<String, T> operation = redisTemplate.opsForValue();
-        return operation.get(key);
-    }
-
-    /**
-     * 删除单个对象
-     *
-     * @param key redis键
-     * @return boolean
-     */
-    public boolean deleteObject(final String key) {
+    public Boolean del(String key) {
         return redisTemplate.delete(key);
     }
 
-    /**
-     * 删除集合对象
-     *
-     * @param collection 多个对象
-     * @return 删除个数
-     */
-    public long deleteObject(final Collection<Object> collection) {
-        return redisTemplate.delete(collection);
+    public Long del(List<String> keys) {
+        return redisTemplate.delete(keys);
     }
 
-    /**
-     * 删除指定前缀的key
-     */
-    public long deleteLikesKeyObject(String prefix) {
-        return redisTemplate.delete(getLikesKeyList(prefix));
+    public Boolean expire(String key, long time) {
+        return redisTemplate.expire(key, time, TimeUnit.SECONDS);
     }
 
-    /**
-     * 获取指定前缀键值对
-     */
-    public <T> List<T> getLikesKeyList(String prefix) {
-        // 获取所有的key
-        Set<String> keys = redisTemplate.keys(prefix);
-        // 批量获取数据
-        return redisTemplate.opsForValue().multiGet(keys);
+    public Long getExpire(String key) {
+        return redisTemplate.getExpire(key, TimeUnit.SECONDS);
     }
 
-    /**
-     * 缓存Set
-     *
-     * @param key   缓存键值
-     * @param value 缓存的数据
-     * @return 缓存数据的对象
-     */
-    public <T> long setCacheSet(final String key, final Object value) {
-        Long count = redisTemplate.opsForSet().add(key, value);
-        return count == null ? 0 : count;
+    public Boolean hasKey(String key) {
+        return redisTemplate.hasKey(key);
     }
 
-    /**
-     * 判断key-set中是否存在value
-     *
-     * @param key   缓存键值
-     * @param value 缓存的数据
-     * @return boolean
-     */
-    public Boolean containsCacheSet(final String key, final Object value) {
+    public Long incr(String key, long delta) {
+        return redisTemplate.opsForValue().increment(key, delta);
+    }
+
+    public Long decr(String key, long delta) {
+        return redisTemplate.opsForValue().increment(key, -delta);
+    }
+
+    public Object hGet(String key, String hashKey) {
+        return redisTemplate.opsForHash().get(key, hashKey);
+    }
+
+    public Boolean hSet(String key, String hashKey, Object value, long time) {
+        redisTemplate.opsForHash().put(key, hashKey, value);
+        return expire(key, time);
+    }
+
+    public void hSet(String key, String hashKey, Object value) {
+        redisTemplate.opsForHash().put(key, hashKey, value);
+    }
+
+    public Map<Object, Object> hGetAll(String key) {
+        return redisTemplate.opsForHash().entries(key);
+    }
+
+    public Boolean hSetAll(String key, Map<String, Object> map, long time) {
+        redisTemplate.opsForHash().putAll(key, map);
+        return expire(key, time);
+    }
+
+    public void hSetAll(String key, Map<String, ?> map) {
+        redisTemplate.opsForHash().putAll(key, map);
+    }
+
+    public void hDel(String key, Object... hashKey) {
+        redisTemplate.opsForHash().delete(key, hashKey);
+    }
+
+    public Boolean hHasKey(String key, String hashKey) {
+        return redisTemplate.opsForHash().hasKey(key, hashKey);
+    }
+
+    public Long hIncr(String key, String hashKey, Long delta) {
+        return redisTemplate.opsForHash().increment(key, hashKey, delta);
+    }
+
+    public Long hDecr(String key, String hashKey, Long delta) {
+        return redisTemplate.opsForHash().increment(key, hashKey, -delta);
+    }
+
+    public Set<Object> sMembers(String key) {
+        return redisTemplate.opsForSet().members(key);
+    }
+
+    public Long sAdd(String key, Object... values) {
+        return redisTemplate.opsForSet().add(key, values);
+    }
+
+    public Long sAdd(String key, long time, Object... values) {
+        Long count = redisTemplate.opsForSet().add(key, values);
+        expire(key, time);
+        return count;
+    }
+
+    public Boolean sIsMember(String key, Object value) {
         return redisTemplate.opsForSet().isMember(key, value);
     }
 
-    /**
-     * 缓存Map
-     *
-     * @param key     redis键
-     * @param dataMap map对象
-     */
-    public <T> void setCacheMap(final String key, final Map<String, T> dataMap) {
-        if (dataMap != null) {
-            redisTemplate.opsForHash().putAll(key, dataMap);
-        }
+    public Long sSize(String key) {
+        return redisTemplate.opsForSet().size(key);
     }
 
+    public Long sRemove(String key, Object... values) {
+        return redisTemplate.opsForSet().remove(key, values);
+    }
+
+    public List<Object> lRange(String key, long start, long end) {
+        return redisTemplate.opsForList().range(key, start, end);
+    }
+
+    public Long lSize(String key) {
+        return redisTemplate.opsForList().size(key);
+    }
+
+    public Object lIndex(String key, long index) {
+        return redisTemplate.opsForList().index(key, index);
+    }
+
+    public Long lPush(String key, Object value) {
+        return redisTemplate.opsForList().rightPush(key, value);
+    }
+
+    public Long lPush(String key, Object value, long time) {
+        Long index = redisTemplate.opsForList().rightPush(key, value);
+        expire(key, time);
+        return index;
+    }
+
+    public Long lPushAll(String key, Object... values) {
+        return redisTemplate.opsForList().rightPushAll(key, values);
+    }
+
+    public Long lPushAll(String key, Long time, Object... values) {
+        Long count = redisTemplate.opsForList().rightPushAll(key, values);
+        expire(key, time);
+        return count;
+    }
+
+    public Long lRemove(String key, long count, Object value) {
+        return redisTemplate.opsForList().remove(key, count, value);
+    }
 }

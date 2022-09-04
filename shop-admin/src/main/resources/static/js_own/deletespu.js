@@ -34,7 +34,7 @@ $(function () {
                     }, success: function (data) {
                         console.log(data);
                         if (data.code == 200) {
-                            getSkuInfo();
+                            reloadSkuInfo();
                             layer.alert(data.message, { icon: 1 });
                         }
                         if (data.code == 500) {
@@ -49,6 +49,71 @@ $(function () {
             }, function () {});
         });
         function getSkuInfo(){
+            table.render({
+                elem: '#sku-delete-table'
+                ,url:'../sku/select'
+                ,method: 'post'
+                ,cellMinWidth: 80 
+                ,id: 'sku-delete-table-reload'
+                ,cols: [[
+                  {field:'sku', title: '商品SKU', sort: true}
+                  ,{field:'goodsID', title: '所属SPU', sort: true} 
+                  ,{field:'goodsName', title: '商品名称', sort: true}
+                  ,{field:'categoryName', title: '所属分类', sort: true}
+                  ,{field:'brandName', title: '所属品牌', sort: true}
+                  ,{field:'storage', title: '存储容量'} 
+                  ,{field:'color', title: '外观颜色'}
+                  ,{field:'screen', title: '屏幕尺寸'}
+                  ,{field:'price', title: '价格', sort: true}
+                  ,{field:'stock', title: '库存量', sort: true}
+                ]]
+                ,where: { //设定异步数据接口的额外参数
+                    spu: $("#spu").val()
+                }
+                ,parseData: function(res){
+                    return {
+                        "code": res.code, //解析接口状态
+                        "msg": res.message, //解析提示文本
+                        "count": res.data.count, //解析数据长度
+                        "data": res.data.list //解析数据列表
+                    };
+                }
+                ,page: {
+                    limit: 20,
+                    limits: [10,20,30,40,50]
+                }
+                ,response:{
+                    statusCode: 200
+                }
+                ,done: function(res){
+                    if(res.count!=undefined&&res.count>0){
+                        $("#ensure").css("display","");
+                    }
+                    else{
+                        $("#ensure").css("display","none");
+                    }
+                }
+            });
+        }
+        function reloadSkuInfo(){
+            table.reload('sku-select-table-reload',{
+                where: { //设定异步数据接口的额外参数
+                    spu: $("#spu").val()
+                }
+                ,page: {
+                    curr: 1 //重新从第1页开始
+                }
+                ,done: function(res){
+                    if(res.count!=undefined&&res.count>0){
+                        $("#ensure").css("display","");
+                    }
+                    else{
+                        $("#ensure").css("display","none");
+                    }
+                }
+            });
+        }
+        function getSkuInfoOrigin(){
             $.ajax({
                 type: "post",
                 dataType: "json",
@@ -61,9 +126,9 @@ $(function () {
                     console.log(data);
                     if (data.code == 200) {
                         $("#trs").empty();
-                        for (let i = 0; i < data.data.length; i++) {
-                            let content = '<tr><td>' + data.data[i].sku + '</td><td>' + data.data[i].goodsID + '</td><td>' + data.data[i].goodsName + '</td><td>' + data.data[i].categoryName + '</td>'
-                                + '<td>' + data.data[i].brandName + '</td><td>' + data.data[i].storage + '</td><td>' + data.data[i].color + '</td><td>' + data.data[i].screen + '</td><td><span>￥</span>' + data.data[i].price.toFixed(2) + '</td><td>' + data.data[i].stock + '</td></tr>';
+                        for (let i = 0; i < data.data.list.length; i++) {
+                            let content = '<tr><td>' + data.data.list[i].sku + '</td><td>' + data.data.list[i].goodsID + '</td><td>' + data.data.list[i].goodsName + '</td><td>' + data.data.list[i].categoryName + '</td>'
+                                + '<td>' + data.data.list[i].brandName + '</td><td>' + data.data.list[i].storage + '</td><td>' + data.data.list[i].color + '</td><td>' + data.data.list[i].screen + '</td><td><span>￥</span>' + data.data.list[i].price.toFixed(2) + '</td><td>' + data.data.list[i].stock + '</td></tr>';
                             $("#trs").append(content);
                         }
                         table.init('sku', {

@@ -244,12 +244,12 @@
     </update>
     <select id="getGoodsInfo" resultType="com.alibaba.fastjson.JSONObject">
         select sku, price, stock from price where
-        price.spID1 = (select spID from goodsvalue where goodsID=#{goodsID} and valueID = (select valueID from
-        parametervalue where value=#{storage}))
-        and price.spID2 = (select spID from goodsvalue where goodsID=#{goodsID} and valueID = (select valueID from
-        parametervalue where value=#{color}))
-        and price.spID3 = (select spID from goodsvalue where goodsID=#{goodsID} and valueID = (select valueID from
-        parametervalue where value=#{screen}))
+        price.spID1 = (select spID from goodspef where goodsID=#{goodsID} and pefID = (select valueID from
+        parameterpef where value=#{storage}))
+        and price.spID2 = (select spID from goodspef where goodsID=#{goodsID} and pefID = (select valueID from
+        parameterpef where value=#{color}))
+        and price.spID3 = (select spID from goodspef where goodsID=#{goodsID} and pefID = (select valueID from
+        parameterpef where value=#{screen}))
     </select>
     <select id="getSkuInfo" resultType="com.alibaba.fastjson.JSONObject">
         select spID1,spID2,spID3,price,stock,goodsID from price where sku=#{sku}

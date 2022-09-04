@@ -88,8 +88,24 @@ $(function () {
                         }
                         else {
                             for (let i = 0; i < data.data.length; i++) {
+                                if(data.data[i].ipRegion==undefined || data.data[i].ipRegion==''){
+                                    data.data[i].ipRegion = '暂无数据';
+                                }
+                                else{
+                                    let arr = data.data[i].ipRegion.split("|");
+                                    // 国内显示到具体的省
+                                    if(arr[0]=='中国'){
+                                        if(arr.length>3){
+                                            data.data[i].ipRegion = arr[2];
+                                        }
+                                    }
+                                    // 国外显示到国家
+                                    else{
+                                        data.data[i].ipRegion = arr[0];
+                                    }
+                                }
                                 let content = '<tr><td>' + data.data[i].user + '</td><td>' + data.data[i].nickName + '</td><td>' + data.data[i].message + '</td>'
-                                    + '<td>' + data.data[i].createTime + '</td><td>' + data.data[i].lastTime + '</td><td>' + data.data[i].ipRegion + '</td></tr>';
+                                    + '<td>' + data.data[i].createTime + '</td><td>' + data.data[i].ipRegion + '</td></tr>';
                                 $("#messagetrs").append(content);
                             }
                             table.init('message', {
@@ -140,6 +156,22 @@ $(function () {
                                 if (data.data[i].online == false) {
                                     online = '离线';
                                 }
+                                if(data.data[i].ipRegion==undefined || data.data[i].ipRegion==''){
+                                    data.data[i].ipRegion = '暂无数据';
+                                }
+                                else{
+                                    let arr = data.data[i].ipRegion.split("|");
+                                    // 国内显示到具体的省
+                                    if(arr[0]=='中国'){
+                                        if(arr.length>3){
+                                            data.data[i].ipRegion = arr[2];
+                                        }
+                                    }
+                                    // 国外显示到国家
+                                    else{
+                                        data.data[i].ipRegion = arr[0];
+                                    }
+                                }
                                 let content = '<tr><td>' + data.data[i].user + '</td><td>' + data.data[i].nickName + '</td><td>' + data.data[i].regTime + '</td>'
                                     + '<td>' + data.data[i].lastTime + '</td><td>' + online + '</td><td>' + data.data[i].viewCount + '</td><td>'+ data.data[i].ipRegion +'</td></tr>';
                                 $("#usertrs").append(content);
@@ -151,7 +183,6 @@ $(function () {
                             });
                             $("#usertrs").empty();
                             for (let i = 0; i < data.data.length; i++) {
-                                console.log(i);
                                 $("#" + data.data[i].user).on("click", function () {
                                     console.log("+++++++++++");
                                     $.ajax({
