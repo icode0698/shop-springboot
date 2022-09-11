@@ -22,12 +22,12 @@ public class MybatisBatchUtil {
     /**
      * 批量处理修改或者插入
      *
-     * @param data     需要被处理的数据
-     * @param mapperClass  Mybatis的Mapper类
-     * @param function 自定义处理逻辑
+     * @param data        需要被处理的数据
+     * @param mapperClass Mybatis的Mapper类
+     * @param function    自定义处理逻辑
      * @return int 影响的总行数
      */
-    public static <T,U,R> int batchUpdateOrInsert(List<T> data, Class<U> mapperClass, BiFunction<T,U,R> function) {
+    public static <T, U, R> int batchUpdateOrInsert(List<T> data, Class<U> mapperClass, BiFunction<T, U, R> function) {
         int i = 1;
         SqlSessionFactory sqlSessionFactory = SpringContextUtil.getBean(SqlSessionFactory.class);
         SqlSession batchSqlSession = sqlSessionFactory.openSession(ExecutorType.BATCH);
@@ -35,7 +35,7 @@ public class MybatisBatchUtil {
             U mapper = batchSqlSession.getMapper(mapperClass);
             int size = data.size();
             for (T element : data) {
-                function.apply(element,mapper);
+                function.apply(element, mapper);
                 if ((i % BATCH_SIZE == 0) || i == size) {
                     batchSqlSession.flushStatements();
                 }

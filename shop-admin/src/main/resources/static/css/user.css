@@ -1,8 +1,9 @@
-.content{
+.content {
     width: 100%;
     height: 188px;
 }
-.user_pic{
+
+.user_pic {
     width: 100%;
     height: 64px;
     background: center/cover no-repeat;

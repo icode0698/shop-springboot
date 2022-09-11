@@ -5,6 +5,11 @@
                  当scan为true时，此属性生效。默认的时间间隔为1分钟。 -->
 <!-- debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 -->
 <configuration>
+    <!--引用默认日志配置-->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <!--使用默认的控制台日志输出实现-->
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
     <!-- 日志存放路径 -->
     <property name="log.path" value="./shop-new/logs"/>
 
@@ -21,7 +26,7 @@
 
     <!-- 配置使用异步方式来输出日志 -->
     <appender name="FILE_ASYNC" class="ch.qos.logback.classic.AsyncAppender">
-        <appender-ref ref="FILE_ASYNC" />
+        <appender-ref ref="FILE_ASYNC"/>
     </appender>
 
     <!-- 系统日志输出 -->
@@ -73,6 +78,8 @@
     <logger name="com.newboot.shop" level="debug"/>
     <!-- Spring日志级别控制  -->
     <logger name="org.springframework" level="error"/>
+    <!--  kafka日志级别(用于未开启本地消息队列，避免kafka日志不断刷影响本地debug)  -->
+    <logger name="org.apache.kafka" level="info"/>
 
     <!--系统操作日志-->
     <root level="info">

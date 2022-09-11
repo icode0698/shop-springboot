@@ -14,11 +14,12 @@ public class BeanConfig {
 
     /**
      * ip信息文件xdb配置
+     *
      * @param xdbPath
      * @return
      */
     @Bean
-    public Searcher getSearcher(@Value("${project.xdbPath}") String xdbPath){
+    public Searcher getSearcher(@Value("${project.xdbPath}") String xdbPath) {
         LOGGER.info("{} is getting xdb Searcher", BeanConfig.class.toString());
         Searcher searcher;
         byte[] cBuff;

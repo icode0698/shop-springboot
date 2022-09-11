@@ -12,7 +12,7 @@ spring:
       stat-view-servlet: #访问监控网页的登录用户名和密码
         login-username: druid
         login-password: druid
-#        enabled: true #启用监控网页
+  #        enabled: true #启用监控网页
   redis:
     host: localhost # Redis服务器地址
     database: 0 # Redis数据库索引（默认为0）
@@ -26,14 +26,21 @@ spring:
 #自定义配置信息
 shop:
   admin:
-  #异步线程池配置
+    #异步线程池配置
     async:
       executor:
         core-pool-size: 8          #配置核心线程数
         max-pool-size: 20          #配置最大线程数
         queue-capacity: 6          #配置队列大小
         keep-alive-seconds: 60     #配置非核心线程失效时间
-        name-prefix: shop-async-   #配置线程池中线程的名称前缀
+        name-prefix: shop-admin-async-   #配置线程池中线程的名称前缀
         core-thread-timeout: false #配置核心线程超时
         task-shutdown: false       #配置长时间无任务销毁线程池
         await-seconds: 60          #配置线程池中线程等待时间
+
+#JWT配置
+jwt:
+  tokenHeader: Authorization #JWT存储的请求头
+  secret: shop-admin-secret #JWT加解密使用的密钥
+  expiration: 604800 #JWT的超期限时间(60*60*24*7)
+  tokenHead: 'Bearer '  #JWT负载中拿到开头

@@ -20,7 +20,7 @@ import java.util.Date;
 public class UploadController {
     @RequestMapping("/goods")
     @ResponseBody
-    public CommonResult uploadGoodsImg(@RequestParam("file")MultipartFile file){
+    public CommonResult uploadGoodsImg(@RequestParam("file") MultipartFile file) {
         String fileName = file.getOriginalFilename();
         String suffixName = fileName.substring(fileName.lastIndexOf("."));
         //命名文件

@@ -30,6 +30,10 @@ public class ProjectConfig {
      * 服务端访问路径
      */
     private static String serverUrl;
+    /**
+     * 密钥
+     */
+    private static String secretKey;
 
     public static String getName() {
         return name;
@@ -69,5 +73,13 @@ public class ProjectConfig {
 
     public void setServerUrl(String serverUrl) {
         ProjectConfig.serverUrl = serverUrl;
+    }
+
+    public static String getSecretKey() {
+        return secretKey;
+    }
+
+    public void setSecretKey(String secretKey) {
+        this.secretKey = secretKey;
     }
 }

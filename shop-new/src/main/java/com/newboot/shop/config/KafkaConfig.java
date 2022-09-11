@@ -23,12 +23,13 @@ public class KafkaConfig {
     short emailCodeFactor;
 
     @Bean
-    public NewTopic initTestTopic(){
+    public NewTopic initTestTopic() {
         log.info("kafka init topic {}, {}, {}", testName, testPartitions, testFactor);
         return new NewTopic(testName, testPartitions, testFactor);
     }
+
     @Bean
-    public NewTopic initEmailCodeTopic(){
+    public NewTopic initEmailCodeTopic() {
         log.info("kafka init topic {}, {}, {}", emailCodeName, emailCodePartitions, emailCodeFactor);
         return new NewTopic(emailCodeName, emailCodePartitions, emailCodeFactor);
     }

@@ -14,12 +14,12 @@ spring:
     multipart:
       enabled: true #开启文件上传
       max-file-size: 10MB #限制文件上传大小为10M
-#  web:
-#    resources:
-#      static-locations: classpath:/templates/, classpath:/static/
-#  mvc:
-#    view:
-#      suffix: .html
+  #  web:
+  #    resources:
+  #      static-locations: classpath:/templates/, classpath:/static/
+  #  mvc:
+  #    view:
+  #      suffix: .html
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
@@ -37,6 +37,7 @@ project:
   goodsFileUploadPath: D:/Git/Gitee/shop-springboot/shop-new/src/main/resources/static/pic/ # 商品图片上传文件的默认url前缀，根据部署设置自行修改，windows下路径
   orderUnpaidOverTime: 3000 # 订单未支付超期时间，单位秒
   serverUrl: http://localhost:28079 # 服务器地址
+  secretKey: 123456
 
 #服务器配置
 server:
@@ -45,6 +46,31 @@ server:
     session:
       cookie:
         name: shop-admin
+#安全路径白名单
+secure:
+  ignored:
+    urls:
+      - /swagger-ui/
+      - /swagger-resources/**
+      - /**/v2/api-docs
+      - /**/*.html
+      - /**/*.js
+      - /**/*.css
+      - /**/*.png
+      - /**/*.map
+      - /favicon.ico
+      - /actuator/**
+      - /druid/**
+      - /admin/login
+      - /admin/register
+      - /admin/logout
+      - /minio/upload
+      - /**/*.woff
+      - /**/*.ttf
+      - /**/*.svg
+      - /login
+      - /
+      - /resources/**
 #  undertow:
 #    buffer-size: 1024
 #    direct-buffers: true
@@ -70,33 +96,12 @@ server:
 #    resourceList: 'ums:resourceList'
 #  expire:
 #    common: 86400 # 24小时
-#
-#secure:
-#  ignored:
-#    urls: #安全路径白名单
-#      - /swagger-ui/
-#      - /swagger-resources/**
-#      - /**/v2/api-docs
-#      - /**/*.html
-#      - /**/*.js
-#      - /**/*.css
-#      - /**/*.png
-#      - /**/*.map
-#      - /favicon.ico
-#      - /actuator/**
-#      - /druid/**
-#      - /admin/login
-#      - /admin/register
-#      - /admin/info
-#      - /admin/logout
-#      - /minio/upload
-#
 #aliyun:
 #  oss:
 #    endpoint: oss-cn-shenzhen.aliyuncs.com # oss对外服务的访问域名
 #    accessKeyId: test # 访问身份验证中用到用户标识
 #    accessKeySecret: test # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
-#    bucketName: macro-oss # oss的存储空间
+#    bucketName: shop-oss # oss的存储空间
 #    policy:
 #      expire: 300 # 签名有效期(S)
 #    maxSize: 10 # 上传文件大小(M)

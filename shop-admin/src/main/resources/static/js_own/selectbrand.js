@@ -4,6 +4,7 @@ $(function () {
             , table = layui.table;
         $.ajax({
             type: "post",
+            headers: {Authorization: $.cookie("token")},
             dataType: "json",
             url: "../brand/select",
             data: {

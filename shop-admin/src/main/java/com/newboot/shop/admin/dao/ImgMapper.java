@@ -6,6 +6,7 @@ import com.newboot.shop.admin.model.ImgExample;
 
 import java.util.HashMap;
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface ImgMapper {

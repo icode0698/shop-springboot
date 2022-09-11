@@ -18,8 +18,8 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public JSONObject select(HashMap map) {
         JSONObject json = new JSONObject();
-        if(ObjectUtils.isNotEmpty(map.get("page"))&&ObjectUtils.isNotEmpty(map.get("limit"))){
-            map.put("offset",(Integer.parseInt(map.get("page").toString())-1)*Integer.parseInt(map.get("limit").toString()));
+        if (ObjectUtils.isNotEmpty(map.get("page")) && ObjectUtils.isNotEmpty(map.get("limit"))) {
+            map.put("offset", (Integer.parseInt(map.get("page").toString()) - 1) * Integer.parseInt(map.get("limit").toString()));
         }
         json.put("count", shopMapper.selectCount(map));
         json.put("list", shopMapper.select(map));

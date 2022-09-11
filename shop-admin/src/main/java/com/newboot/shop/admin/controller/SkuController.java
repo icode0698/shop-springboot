@@ -18,14 +18,14 @@ public class SkuController {
 
     @RequestMapping("/select")
     @ResponseBody
-    public CommonResult select(@RequestParam HashMap map){
+    public CommonResult select(@RequestParam HashMap map) {
         return CommonResult.success(skuService.select(map));
     }
 
     @RequestMapping("/update")
     @ResponseBody
-    public CommonResult update(@RequestParam HashMap map){
-        if(skuService.update(map)<1){
+    public CommonResult update(@RequestParam HashMap map) {
+        if (skuService.update(map) < 1) {
             return CommonResult.failed();
         }
         return CommonResult.success();

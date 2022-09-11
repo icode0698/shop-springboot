@@ -121,8 +121,8 @@ public class UserController {
 
     @RequestMapping("/register/code/email")
     @ResponseBody
-    public CommonResult codeEmail(@RequestBody JSONObject json){
-        if(userService.userExist(json)){
+    public CommonResult codeEmail(@RequestBody JSONObject json) {
+        if (userService.userExist(json)) {
             return CommonResult.failed(ResultMessage.SAME_LOGIN_NAME_EXIST.getMessage());
         }
         kafkaTemplate.send("emailCode", json.toString());
@@ -131,7 +131,7 @@ public class UserController {
 
     @RequestMapping("/testKafka")
     @ResponseBody
-    public void testKafka(){
+    public void testKafka() {
         kafkaTemplate.send("testtopic", "testMessage").addCallback(new ListenableFutureCallback<SendResult>() {
             @Override
             public void onFailure(Throwable ex) {

@@ -6,6 +6,7 @@ import com.newboot.shop.admin.model.AdmininfoExample;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface AdmininfoMapper {

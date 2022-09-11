@@ -1,0 +1,242 @@
+2022-09-09 19:55:50.120 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarting,55] - Starting ShopAdminApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 6904 (D:\Git\Gitee\shop-springboot\shop-admin\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-09 19:55:50.124 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-09 19:55:58.029 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28078"]
+2022-09-09 19:55:58.030 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-09 19:55:58.030 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-09 19:55:58.251 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-09 19:55:58.433 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-09 19:55:58.909 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-09 19:56:00.143 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-09 19:56:00.145 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-09 19:57:17.664 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28078"]
+2022-09-09 19:57:17.719 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarted,61] - Started ShopAdminApplication in 88.826 seconds (JVM running for 91.098)
+2022-09-09 19:57:17.991 [RMI TCP Connection(6)-192.168.2.107] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-09 20:01:42.054 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2073] - {dataSource-1} closing ...
+2022-09-09 20:01:42.062 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2146] - {dataSource-1} closed
+2022-09-09 20:01:52.141 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarting,55] - Starting ShopAdminApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 4092 (D:\Git\Gitee\shop-springboot\shop-admin\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-09 20:01:52.143 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-09 20:01:54.172 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28078"]
+2022-09-09 20:01:54.173 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-09 20:01:54.173 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-09 20:01:54.291 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-09 20:01:54.361 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-09 20:01:54.605 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-09 20:01:55.167 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-09 20:01:55.169 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-09 20:01:59.513 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28078"]
+2022-09-09 20:01:59.550 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarted,61] - Started ShopAdminApplication in 8.01 seconds (JVM running for 9.133)
+2022-09-09 20:01:59.987 [RMI TCP Connection(7)-192.168.2.107] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-09 20:15:29.772 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2073] - {dataSource-1} closing ...
+2022-09-09 20:15:29.777 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2146] - {dataSource-1} closed
+2022-09-09 20:15:37.995 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarting,55] - Starting ShopAdminApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 14416 (D:\Git\Gitee\shop-springboot\shop-admin\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-09 20:15:37.998 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-09 20:15:40.087 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28078"]
+2022-09-09 20:15:40.087 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-09 20:15:40.087 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-09 20:15:40.205 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-09 20:15:40.280 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-09 20:15:40.532 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-09 20:15:41.095 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-09 20:15:41.097 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-09 20:15:42.538 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28078"]
+2022-09-09 20:15:42.574 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarted,61] - Started ShopAdminApplication in 5.17 seconds (JVM running for 6.453)
+2022-09-09 20:15:42.817 [RMI TCP Connection(3)-192.168.2.107] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-09 20:20:03.828 [Thread-17] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2073] - {dataSource-1} closing ...
+2022-09-09 20:20:03.840 [Thread-17] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2146] - {dataSource-1} closed
+2022-09-09 20:20:04.172 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarting,55] - Starting ShopAdminApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 14416 (D:\Git\Gitee\shop-springboot\shop-admin\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-09 20:20:04.172 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-09 20:20:04.912 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28078"]
+2022-09-09 20:20:04.913 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-09 20:20:04.913 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-09 20:20:04.942 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-09 20:20:04.964 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-09 20:20:05.008 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-2} inited
+2022-09-09 20:20:05.253 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-09 20:20:05.254 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-09 20:20:05.591 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28078"]
+2022-09-09 20:20:05.603 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarted,61] - Started ShopAdminApplication in 1.504 seconds (JVM running for 269.482)
+2022-09-09 20:20:10.194 [http-nio-28078-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-09 20:21:50.149 [Thread-27] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2073] - {dataSource-2} closing ...
+2022-09-09 20:21:50.153 [Thread-27] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2146] - {dataSource-2} closed
+2022-09-09 20:21:50.575 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarting,55] - Starting ShopAdminApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 14416 (D:\Git\Gitee\shop-springboot\shop-admin\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-09 20:21:50.575 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-09 20:21:51.241 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28078"]
+2022-09-09 20:21:51.241 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-09 20:21:51.242 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-09 20:21:51.270 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-09 20:21:51.288 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-09 20:21:51.328 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-3} inited
+2022-09-09 20:21:51.552 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-09 20:21:51.553 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-09 20:21:51.847 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28078"]
+2022-09-09 20:21:51.858 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarted,61] - Started ShopAdminApplication in 1.341 seconds (JVM running for 375.736)
+2022-09-09 20:21:58.952 [http-nio-28078-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-09 20:22:04.223 [http-nio-28078-exec-5] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:22:04.223 [http-nio-28078-exec-1] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:22:04.223 [http-nio-28078-exec-6] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:22:04.229 [http-nio-28078-exec-6] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:22:04.229 [http-nio-28078-exec-5] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:22:04.230 [http-nio-28078-exec-1] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:22:12.883 [http-nio-28078-exec-3] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:22:12.886 [http-nio-28078-exec-3] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:22:13.153 [http-nio-28078-exec-7] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:22:13.158 [http-nio-28078-exec-7] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:22:19.806 [http-nio-28078-exec-4] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:22:19.812 [http-nio-28078-exec-4] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:22:26.556 [http-nio-28078-exec-10] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:22:26.560 [http-nio-28078-exec-10] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:22:30.350 [http-nio-28078-exec-3] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:22:30.359 [http-nio-28078-exec-3] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:22:31.462 [http-nio-28078-exec-8] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:22:31.469 [http-nio-28078-exec-8] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:26:56.845 [http-nio-28078-exec-8] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:26:56.850 [http-nio-28078-exec-9] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:26:56.855 [http-nio-28078-exec-6] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:26:56.877 [http-nio-28078-exec-8] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:26:56.878 [http-nio-28078-exec-9] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:26:56.882 [http-nio-28078-exec-6] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:26:58.785 [http-nio-28078-exec-8] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:26:58.791 [http-nio-28078-exec-8] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:27:03.104 [http-nio-28078-exec-5] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:27:03.108 [http-nio-28078-exec-5] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:27:04.234 [http-nio-28078-exec-9] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:27:04.238 [http-nio-28078-exec-9] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:27:18.118 [http-nio-28078-exec-2] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:27:18.119 [http-nio-28078-exec-1] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:27:18.122 [http-nio-28078-exec-10] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:27:18.123 [http-nio-28078-exec-2] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:27:18.125 [http-nio-28078-exec-1] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:27:18.127 [http-nio-28078-exec-10] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:27:34.153 [http-nio-28078-exec-4] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:27:34.155 [http-nio-28078-exec-10] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:27:34.158 [http-nio-28078-exec-2] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:27:34.158 [http-nio-28078-exec-4] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:27:34.161 [http-nio-28078-exec-10] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:27:34.164 [http-nio-28078-exec-2] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:28:10.577 [http-nio-28078-exec-2] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:28:10.577 [http-nio-28078-exec-4] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:28:10.747 [http-nio-28078-exec-1] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:28:52.243 [http-nio-28078-exec-2] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:28:52.243 [http-nio-28078-exec-4] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:28:58.801 [http-nio-28078-exec-1] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:30:02.299 [http-nio-28078-exec-8] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:30:02.298 [http-nio-28078-exec-3] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:30:02.462 [http-nio-28078-exec-10] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:30:02.469 [http-nio-28078-exec-10] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:30:02.469 [http-nio-28078-exec-8] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:30:02.469 [http-nio-28078-exec-3] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:33:01.105 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2073] - {dataSource-3} closing ...
+2022-09-09 20:33:01.107 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2146] - {dataSource-3} closed
+2022-09-09 20:33:05.501 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarting,55] - Starting ShopAdminApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 12772 (D:\Git\Gitee\shop-springboot\shop-admin\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-09 20:33:05.503 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-09 20:33:07.558 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28078"]
+2022-09-09 20:33:07.559 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-09 20:33:07.559 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-09 20:33:07.681 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-09 20:33:07.756 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-09 20:33:08.010 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-09 20:33:08.585 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-09 20:33:08.587 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-09 20:33:12.450 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28078"]
+2022-09-09 20:33:12.486 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarted,61] - Started ShopAdminApplication in 7.611 seconds (JVM running for 8.844)
+2022-09-09 20:33:12.561 [RMI TCP Connection(5)-192.168.2.107] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-09 20:45:45.558 [http-nio-28078-exec-10] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:45:45.558 [http-nio-28078-exec-7] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:45:45.558 [http-nio-28078-exec-3] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:45:45.622 [http-nio-28078-exec-7] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:45:45.622 [http-nio-28078-exec-10] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:45:45.622 [http-nio-28078-exec-3] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:47:42.073 [http-nio-28078-exec-8] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:47:42.075 [http-nio-28078-exec-6] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:47:42.077 [http-nio-28078-exec-5] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 20:47:42.080 [http-nio-28078-exec-8] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:47:42.081 [http-nio-28078-exec-6] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:47:42.082 [http-nio-28078-exec-5] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 20:53:36.412 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2073] - {dataSource-1} closing ...
+2022-09-09 20:53:36.432 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2146] - {dataSource-1} closed
+2022-09-09 20:53:48.350 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarting,55] - Starting ShopAdminApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 15112 (D:\Git\Gitee\shop-springboot\shop-admin\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-09 20:53:48.352 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-09 20:53:50.401 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28078"]
+2022-09-09 20:53:50.402 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-09 20:53:50.402 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-09 20:53:50.517 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-09 20:53:50.587 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-09 20:53:50.832 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-09 20:53:51.432 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-09 20:53:51.435 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-09 20:53:55.994 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28078"]
+2022-09-09 20:53:56.026 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarted,61] - Started ShopAdminApplication in 8.266 seconds (JVM running for 9.364)
+2022-09-09 20:53:56.291 [RMI TCP Connection(7)-192.168.2.107] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-09 20:54:52.405 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2073] - {dataSource-1} closing ...
+2022-09-09 20:54:52.413 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2146] - {dataSource-1} closed
+2022-09-09 20:55:03.060 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarting,55] - Starting ShopAdminApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 15584 (D:\Git\Gitee\shop-springboot\shop-admin\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-09 20:55:03.061 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-09 20:55:05.074 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28078"]
+2022-09-09 20:55:05.075 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-09 20:55:05.075 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-09 20:55:05.193 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-09 20:55:05.263 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-09 20:55:05.513 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-09 20:55:06.075 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-09 20:55:06.077 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-09 20:56:09.555 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28078"]
+2022-09-09 20:56:09.590 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarted,61] - Started ShopAdminApplication in 67.108 seconds (JVM running for 68.262)
+2022-09-09 20:56:10.083 [RMI TCP Connection(7)-192.168.2.107] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-09 21:02:25.283 [http-nio-28078-exec-8] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 21:02:25.332 [http-nio-28078-exec-8] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 21:02:26.311 [http-nio-28078-exec-2] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 21:02:26.313 [http-nio-28078-exec-10] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 21:02:26.315 [http-nio-28078-exec-5] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 21:02:26.318 [http-nio-28078-exec-2] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 21:02:26.321 [http-nio-28078-exec-10] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 21:02:26.325 [http-nio-28078-exec-5] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 21:02:38.379 [http-nio-28078-exec-6] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 21:02:38.384 [http-nio-28078-exec-6] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 21:02:55.594 [http-nio-28078-exec-9] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 21:02:55.600 [http-nio-28078-exec-9] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,49] - authenticated user:admin
+2022-09-09 21:04:13.246 [Thread-22] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2073] - {dataSource-1} closing ...
+2022-09-09 21:04:13.256 [Thread-22] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2146] - {dataSource-1} closed
+2022-09-09 21:04:13.621 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarting,55] - Starting ShopAdminApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 15584 (D:\Git\Gitee\shop-springboot\shop-admin\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-09 21:04:13.622 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-09 21:04:14.783 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28078"]
+2022-09-09 21:04:14.783 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-09 21:04:14.784 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-09 21:04:14.815 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-09 21:04:14.837 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-09 21:04:14.881 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-2} inited
+2022-09-09 21:04:15.129 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-09 21:04:15.129 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-09 21:04:18.290 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28078"]
+2022-09-09 21:04:18.302 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarted,61] - Started ShopAdminApplication in 4.738 seconds (JVM running for 556.973)
+2022-09-09 21:04:20.340 [Thread-32] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2073] - {dataSource-2} closing ...
+2022-09-09 21:04:20.343 [Thread-32] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2146] - {dataSource-2} closed
+2022-09-09 21:04:20.730 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarting,55] - Starting ShopAdminApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 15584 (D:\Git\Gitee\shop-springboot\shop-admin\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-09 21:04:20.731 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-09 21:04:21.304 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28078"]
+2022-09-09 21:04:21.304 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-09 21:04:21.304 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-09 21:04:21.332 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-09 21:04:21.351 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-09 21:04:21.394 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-3} inited
+2022-09-09 21:04:21.631 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-09 21:04:21.632 [restartedMain] INFO  com.newboot.shop.admin.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.admin.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-09 21:04:21.938 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28078"]
+2022-09-09 21:04:21.949 [restartedMain] INFO  com.newboot.shop.admin.ShopAdminApplication - [logStarted,61] - Started ShopAdminApplication in 1.268 seconds (JVM running for 560.621)
+2022-09-09 21:04:37.368 [http-nio-28078-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-09 21:04:57.073 [http-nio-28078-exec-4] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 21:04:57.074 [http-nio-28078-exec-8] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 21:04:57.074 [http-nio-28078-exec-8] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,44] - checking:null
+2022-09-09 21:04:57.074 [http-nio-28078-exec-4] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,44] - checking:null
+2022-09-09 21:04:57.077 [http-nio-28078-exec-1] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 21:04:57.077 [http-nio-28078-exec-1] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,44] - checking:null
+2022-09-09 21:04:57.083 [http-nio-28078-exec-8] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,50] - authenticated user:admin
+2022-09-09 21:04:57.083 [http-nio-28078-exec-4] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,50] - authenticated user:admin
+2022-09-09 21:04:57.088 [http-nio-28078-exec-1] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,50] - authenticated user:admin
+2022-09-09 21:05:02.210 [http-nio-28078-exec-7] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 21:05:02.210 [http-nio-28078-exec-7] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,44] - checking:null
+2022-09-09 21:05:02.218 [http-nio-28078-exec-7] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,50] - authenticated user:admin
+2022-09-09 21:06:21.838 [http-nio-28078-exec-10] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,43] - checking username:admin
+2022-09-09 21:06:23.768 [http-nio-28078-exec-10] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,44] - checking:null
+2022-09-09 21:07:31.378 [http-nio-28078-exec-10] INFO  c.n.s.s.component.JwtAuthenticationTokenFilter - [doFilterInternal,50] - authenticated user:admin
+2022-09-09 21:10:30.195 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2073] - {dataSource-3} closing ...
+2022-09-09 21:10:30.198 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2146] - {dataSource-3} closed

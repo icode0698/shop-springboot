@@ -1,19 +1,15 @@
 package com.newboot.shop.admin.util;
 
+import com.newboot.shop.admin.config.ProjectConfig;
+
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
-/**
- * @author 13
- * @qq交流群 791509631
- * @email 2449207463@qq.com
- * @link https://github.com/newbee-ltd
- */
 public class SystemUtil {
 
     private SystemUtil() {
     }
-
 
     /**
      * 登录或注册成功后,生成保持用户登录状态会话token值
@@ -39,4 +35,37 @@ public class SystemUtil {
         }
     }
 
+    /**
+     * 加密
+     *
+     * @param pass
+     * @return
+     */
+    public static String encrypt(String pass) {
+        byte[] passArray = pass.getBytes(StandardCharsets.UTF_8);
+        byte[] secretArray = "123456".getBytes(StandardCharsets.UTF_8);
+        int p = passArray.length;
+        int s = secretArray.length;
+        for (int i = 0; i < p; i++) {
+            passArray[i] = (byte) (passArray[i] + secretArray[i % s]);
+        }
+        return new String(passArray);
+    }
+
+    /**
+     * 解密
+     *
+     * @param pass
+     * @return
+     */
+    public static String decrypt(String pass) {
+        byte[] passArray = pass.getBytes(StandardCharsets.UTF_8);
+        byte[] secretArray = "123456".getBytes(StandardCharsets.UTF_8);
+        int p = passArray.length;
+        int s = secretArray.length;
+        for (int i = 0; i < p; i++) {
+            passArray[i] = (byte) (passArray[i] - secretArray[i % s]);
+        }
+        return new String(passArray);
+    }
 }

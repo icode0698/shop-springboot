@@ -19,14 +19,14 @@ public class ValueController {
 
     @RequestMapping("/now")
     @ResponseBody
-    public CommonResult now(){
+    public CommonResult now() {
         return CommonResult.success(valueService.getValueNow());
     }
 
     @RequestMapping("/insert")
     @ResponseBody
-    public CommonResult insert(@RequestParam HashMap map){
-        if(valueService.insert(map)<1){
+    public CommonResult insert(@RequestParam HashMap map) {
+        if (valueService.insert(map) < 1) {
             return CommonResult.failed();
         }
         return CommonResult.success();
@@ -34,14 +34,14 @@ public class ValueController {
 
     @RequestMapping("/select")
     @ResponseBody
-    public CommonResult select(@RequestParam HashMap map){
+    public CommonResult select(@RequestParam HashMap map) {
         return CommonResult.success(valueService.select(map));
     }
 
     @RequestMapping("/update")
     @ResponseBody
-    public CommonResult update(@RequestParam HashMap map){
-        if(valueService.update(map)<1){
+    public CommonResult update(@RequestParam HashMap map) {
+        if (valueService.update(map) < 1) {
             return CommonResult.failed();
         }
         return CommonResult.success();

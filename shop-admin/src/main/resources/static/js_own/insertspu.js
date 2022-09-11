@@ -1,107 +1,102 @@
 $(function () {
     let filePath = '';
-    layui.use(['layer',  'form', 'upload'], function () {
+    layui.use(['layer', 'form', 'upload'], function () {
         var layer = layui.layer
             , form = layui.form
             , upload = layui.upload;
         $.ajax({
             type: "post",
+            headers: {Authorization: $.cookie("token")},
             dataType: "json",
             url: "../spu/now",
             success: function (data) {
                 if (data.code == 200) {
                     $("#now").text(data.data.spuNow);
-                    $("#spu").val(parseInt(data.data.spuNow)+1);
-                    for(let i=0;i<data.data.brandList.length;i++){
-                        $("#brandlist").append('<option value="'+data.data.brandList[i].brandID+'">'+data.data.brandList[i].brandName+'</option>');
+                    $("#spu").val(parseInt(data.data.spuNow) + 1);
+                    for (let i = 0; i < data.data.brandList.length; i++) {
+                        $("#brandlist").append('<option value="' + data.data.brandList[i].brandID + '">' + data.data.brandList[i].brandName + '</option>');
                     }
-                    for(let i=0;i<data.data.categoryList.length;i++){
-                        $("#categorylist").append('<option value="'+data.data.categoryList[i].categoryID+'">'+data.data.categoryList[i].categoryName+'</option>');
+                    for (let i = 0; i < data.data.categoryList.length; i++) {
+                        $("#categorylist").append('<option value="' + data.data.categoryList[i].categoryID + '">' + data.data.categoryList[i].categoryName + '</option>');
                     }
                     form.render('select');
                     $("#storagediv").append('<input type="checkbox" lay-filter="storage-all" value="" name="storage-all" lay-skin="primary" title="全选">');
-                    for(let i=0;i<data.data.storageList.length;i++){
-                        $("#storagediv").append('<input type="checkbox" lay-filter="storage" value="'+data.data.storageList[i].valueID+'" name="storage" lay-skin="primary" title="'+data.data.storageList[i].value+'">');
+                    for (let i = 0; i < data.data.storageList.length; i++) {
+                        $("#storagediv").append('<input type="checkbox" lay-filter="storage" value="' + data.data.storageList[i].valueID + '" name="storage" lay-skin="primary" title="' + data.data.storageList[i].value + '">');
                     }
                     $("#colordiv").append('<input type="checkbox" lay-filter="color-all" value="" name="color-all" lay-skin="primary" title="全选">');
-                    for(let i=0;i<data.data.colorList.length;i++){
-                        $("#colordiv").append('<input type="checkbox" lay-filter="color" value="'+data.data.colorList[i].valueID+'" name="color" lay-skin="primary" title="'+data.data.colorList[i].value+'">');
+                    for (let i = 0; i < data.data.colorList.length; i++) {
+                        $("#colordiv").append('<input type="checkbox" lay-filter="color" value="' + data.data.colorList[i].valueID + '" name="color" lay-skin="primary" title="' + data.data.colorList[i].value + '">');
                     }
                     $("#screendiv").append('<input type="checkbox" lay-filter="screen-all" value="" name="screen-all" lay-skin="primary" title="全选">');
-                    for(let i=0;i<data.data.screenList.length;i++){
-                        $("#screendiv").append('<input type="checkbox" lay-filter="screen" value="'+data.data.screenList[i].valueID+'" name="screen" lay-skin="primary" title="'+data.data.screenList[i].value+'">');
+                    for (let i = 0; i < data.data.screenList.length; i++) {
+                        $("#screendiv").append('<input type="checkbox" lay-filter="screen" value="' + data.data.screenList[i].valueID + '" name="screen" lay-skin="primary" title="' + data.data.screenList[i].value + '">');
                     }
                     form.render('checkbox');
                     // 处理全选
-                    form.on('checkbox(storage-all)', function(){
-                        if($(this).prop("checked")==true){
-                            $.each($("input:checkbox[name='storage']"), function(){
-                                $(this).prop("checked",true);
+                    form.on('checkbox(storage-all)', function () {
+                        if ($(this).prop("checked") == true) {
+                            $.each($("input:checkbox[name='storage']"), function () {
+                                $(this).prop("checked", true);
+                            })
+                        } else {
+                            $.each($("input:checkbox[name='storage']"), function () {
+                                $(this).prop("checked", false);
                             })
                         }
-                        else{
-                            $.each($("input:checkbox[name='storage']"), function(){
-                                $(this).prop("checked",false);
-                            })
-                        }
                         form.render('checkbox');
                     });
-                    form.on('checkbox(color-all)', function(){
-                        if($(this).prop("checked")==true){
-                            $.each($("input:checkbox[name='color']"), function(){
-                                $(this).prop("checked",true);
+                    form.on('checkbox(color-all)', function () {
+                        if ($(this).prop("checked") == true) {
+                            $.each($("input:checkbox[name='color']"), function () {
+                                $(this).prop("checked", true);
                             });
-                        }
-                        else{
-                            $.each($("input:checkbox[name='color']"), function(){
-                                $(this).prop("checked",false);
+                        } else {
+                            $.each($("input:checkbox[name='color']"), function () {
+                                $(this).prop("checked", false);
                             });
                         }
                         form.render('checkbox');
                     });
-                    form.on('checkbox(screen-all)', function(){
-                        if($(this).prop("checked")==true){
-                            $.each($("input:checkbox[name='screen']"), function(){
-                                $(this).prop("checked",true);
+                    form.on('checkbox(screen-all)', function () {
+                        if ($(this).prop("checked") == true) {
+                            $.each($("input:checkbox[name='screen']"), function () {
+                                $(this).prop("checked", true);
                             });
-                        }
-                        else{
-                            $.each($("input:checkbox[name='screen']"), function(){
-                                $(this).prop("checked",false);
+                        } else {
+                            $.each($("input:checkbox[name='screen']"), function () {
+                                $(this).prop("checked", false);
                             });
                         }
                         form.render('checkbox');
                     });
-                    form.on('checkbox(storage)', function(){
+                    form.on('checkbox(storage)', function () {
                         let child = $("input:checkbox[name='storage']").length;
                         let childed = $("input:checkbox[name='storage']:checked").length;
-                        if(child == childed){
-                            $("input:checkbox[name='storage-all']").prop("checked",true);
-                        }
-                        else{
-                            $("input:checkbox[name='storage-all']").prop("checked",false);
+                        if (child == childed) {
+                            $("input:checkbox[name='storage-all']").prop("checked", true);
+                        } else {
+                            $("input:checkbox[name='storage-all']").prop("checked", false);
                         }
                         form.render('checkbox');
                     });
-                    form.on('checkbox(color)', function(){
+                    form.on('checkbox(color)', function () {
                         let child = $("input:checkbox[name='color']").length;
                         let childed = $("input:checkbox[name='color']:checked").length;
-                        if(child == childed){
-                            $("input:checkbox[name='color-all']").prop("checked",true);
-                        }
-                        else{
-                            $("input:checkbox[name='color-all']").prop("checked",false);
+                        if (child == childed) {
+                            $("input:checkbox[name='color-all']").prop("checked", true);
+                        } else {
+                            $("input:checkbox[name='color-all']").prop("checked", false);
                         }
                         form.render('checkbox');
                     });
-                    form.on('checkbox(screen)', function(){
+                    form.on('checkbox(screen)', function () {
                         let child = $("input:checkbox[name='screen']").length;
                         let childed = $("input:checkbox[name='screen']:checked").length;
-                        if(child == childed){
-                            $("input:checkbox[name='screen-all']").prop("checked",true);
-                        }
-                        else{
-                            $("input:checkbox[name='screen-all']").prop("checked",false);
+                        if (child == childed) {
+                            $("input:checkbox[name='screen-all']").prop("checked", true);
+                        } else {
+                            $("input:checkbox[name='screen-all']").prop("checked", false);
                         }
                         form.render('checkbox');
                     });
@@ -115,38 +110,39 @@ $(function () {
                 return;
             }
         });
-        $("#pic").focus(function(){
+        $("#pic").focus(function () {
             $.ajax({
                 type: "post",
+                headers: {Authorization: $.cookie("token")},
                 dataType: "json",
                 url: "../spu/now/img",
                 success: function (data) {
                     console.log(data);
                     if (data.code == 200) {
                         console.log(data);
-                        $("#pictipdiv").css("display","");
+                        $("#pictipdiv").css("display", "");
                         $("#picidtip").text(data.data);
-                        $("#pic").val(parseInt(data.data)+1);
+                        $("#pic").val(parseInt(data.data) + 1);
                     }
                 }, error: function (data) {
                     console.log(data);
-                    layer.alert("服务器异常，请稍后再试", {icon:2});
+                    layer.alert("服务器异常，请稍后再试", {icon: 2});
                     return;
                 }
             });
         });
         upload.render({
             elem: '#choose'
-            ,url: '../upload/goods'
-            ,data: {
-                id: function(){
+            , url: '../upload/goods'
+            , data: {
+                id: function () {
                     return $("#pic").val();
                 }
-                ,spu: function(){
+                , spu: function () {
                     return $("#spu").val();
                 }
             }
-            ,auto: true
+            , auto: true
             , choose: function (obj) {
                 //预读本地文件示例，不支持ie8
                 obj.preview(function (index, file, result) {
@@ -156,7 +152,7 @@ $(function () {
                 });
             }
             , done: function (data) {
-                if(data.code==200){
+                if (data.code == 200) {
                     console.log('上传成功');
                     filePath = data.data.filePath;
                 }
@@ -188,14 +184,15 @@ $(function () {
             console.log(screenList);
             $.ajax({
                 type: "post",
+                headers: {Authorization: $.cookie("token")},
                 dataType: "json",
                 url: "../spu/insert",
                 data: {
                     goodsID: $("#spu").val(),
                     goodsName: $("#name").val(),
-                    brandID: ""+res.field.brand,
-                    categoryID: ""+res.field.category,
-                    imgID: ""+res.field.pic,
+                    brandID: "" + res.field.brand,
+                    categoryID: "" + res.field.category,
+                    imgID: "" + res.field.pic,
                     storageList: JSON.stringify(storageList),
                     colorList: JSON.stringify(colorList),
                     screenList: JSON.stringify(screenList),
@@ -204,16 +201,18 @@ $(function () {
                     console.log(data);
                     layer.closeAll('loading');
                     if (data.code == 200) {
-                        layer.alert(data.message, {icon:1}, function () { location.href="";});
+                        layer.alert(data.message, {icon: 1}, function () {
+                            location.href = "";
+                        });
                         return false;
                     }
                     if (data.code == 500) {
-                        layer.alert(data.message, {icon:2});
+                        layer.alert(data.message, {icon: 2});
                         return false;
                     }
                 }, error: function (data) {
                     console.log(data);
-                    layer.alert("服务器异常，请稍后再试", {icon:2});
+                    layer.alert("服务器异常，请稍后再试", {icon: 2});
                     return;
                 }
             });

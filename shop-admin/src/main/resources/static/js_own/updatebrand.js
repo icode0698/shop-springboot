@@ -4,6 +4,7 @@ $(function () {
             , table = layui.table;
         $.ajax({
             type: "post",
+            headers: {Authorization: $.cookie("token")},
             dataType: "json",
             url: "../brand/select",
             data: {
@@ -27,6 +28,7 @@ $(function () {
                         var brandName = obj.value //得到修改后的值
                         $.ajax({
                             type: "post",
+                            headers: {Authorization: $.cookie("token")},
                             dataType: "json",
                             url: "../brand/update",
                             data: {

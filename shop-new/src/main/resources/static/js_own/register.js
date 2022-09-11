@@ -56,16 +56,15 @@ $(function () {
                 console.log('上传失败，请稍候再试');
             }
         });
-        $("#email").on("blur",function(){
-            if(/^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/.test($("#email").val())){
+        $("#email").on("blur", function () {
+            if (/^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/.test($("#email").val())) {
                 $("#email-div").css("display", "block");
-            }
-            else{
+            } else {
                 $("#email-div").css("display", "none");
                 layer.alert('邮箱格式不正确', {icon: 2});
             }
         });
-        $("#getEamilCode").on("click", function(){
+        $("#getEamilCode").on("click", function () {
             $.ajax({
                 type: "post",
                 contentType: "application/json; charset=UTF-8",
@@ -74,9 +73,9 @@ $(function () {
                 data: JSON.stringify({
                     user: $("#user").val(),
                     email: $("input[name='email']").val()
-                }), success:function(res){
-                    if(res.code==200){
-                        layer.msg('验证码已发送', {icon:1});
+                }), success: function (res) {
+                    if (res.code == 200) {
+                        layer.msg('验证码已发送', {icon: 1});
                         // 发送验证码后禁用按钮60s
                         var originText = $("#getEamilCode").text();
                         $("#getEamilCode").removeClass("layui-btn-normal");
@@ -84,7 +83,7 @@ $(function () {
                         var second = 60;
                         var intervalObj = setInterval(function () {
                             $("#getEamilCode").text(originText + "(" + second + ")");
-                            if(second == 0){
+                            if (second == 0) {
                                 $("#getEamilCode").text(originText);
                                 $("#getEamilCode").removeClass("layui-btn-disabled");
                                 $("#getEamilCode").addClass("layui-btn-normal");
@@ -92,13 +91,12 @@ $(function () {
                                 clearInterval(intervalObj);
                             }
                             second--;
-                        }, 1000 );
+                        }, 1000);
+                    } else {
+                        layer.msg(res.message, {icon: 2});
                     }
-                    else{
-                        layer.msg(res.message, {icon:2});
-                    }
-                }, error: function(){
-                    layer.msg(res.message, {icon:2});
+                }, error: function () {
+                    layer.msg(res.message, {icon: 2});
                 }
             });
         });

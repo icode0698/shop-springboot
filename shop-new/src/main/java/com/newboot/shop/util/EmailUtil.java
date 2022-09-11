@@ -11,8 +11,8 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 public class EmailUtil {
     private final static Logger LOGGER = LoggerFactory.getLogger(EmailUtil.class);
 
-    public static boolean sendEmailNormal(String user, String type, String code, String fromEmail, String toEmail){
-        if(StringUtils.isEmpty(code)||StringUtils.isEmpty(toEmail)){
+    public static boolean sendEmailNormal(String user, String type, String code, String fromEmail, String toEmail) {
+        if (StringUtils.isEmpty(code) || StringUtils.isEmpty(toEmail)) {
             return false;
         }
         JavaMailSender javaMailSender = SpringContextUtil.getBean(JavaMailSenderImpl.class);
@@ -24,7 +24,7 @@ public class EmailUtil {
             simpleMailMessage.setTo(toEmail);
             javaMailSender.send(simpleMailMessage);
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             LOGGER.error("{} send Email from {} to {}, Exception is {}", type, fromEmail, toEmail, e.toString());
         }
         return false;

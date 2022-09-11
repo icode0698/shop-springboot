@@ -7,6 +7,7 @@ import com.newboot.shop.admin.model.GoodsExample;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface GoodsMapper {

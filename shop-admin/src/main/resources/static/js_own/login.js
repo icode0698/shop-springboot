@@ -8,6 +8,7 @@ $(function () {
         if (admin != "" && $("#password").val()) {
             $.ajax({
                 type: "post",
+                headers: {Authorization: $.cookie("token")},
                 url: "admin/login",
                 dataType: "json",
                 data: {
@@ -17,12 +18,13 @@ $(function () {
                 success: function (data) {
                     console.log(data);
                     if (data.code == 200) {
+                        $.cookie("token", data.data.tokenHead+data.data.token);
+                        console.log($.cookie("token"));
                         $("#error_hide").addClass("hidden");
                         $("#success_hide").removeClass("hidden");
                         $("#success_tip").text(data.message);
                         setTimeout("location.href = 'admin.html'", 500);
-                    }
-                    else{
+                    } else {
                         $("#error_hide").removeClass("hidden");
                         $("#error_tip").text(data.message);
                     }

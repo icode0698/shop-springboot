@@ -4,6 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.util.HashMap;
 
-public interface OrderService{
+public interface OrderService {
     JSONObject select(HashMap map);
 }

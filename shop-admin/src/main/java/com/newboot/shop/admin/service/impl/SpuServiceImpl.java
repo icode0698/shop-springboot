@@ -69,7 +69,7 @@ public class SpuServiceImpl implements SpuService {
     @Override
     public int insert(HashMap map) {
         long begin = Instant.now().toEpochMilli();
-        if(goodsMapper.insert(map)>0){
+        if (goodsMapper.insert(map) > 0) {
             imgMapper.insert(map);
             JSONObject json = new JSONObject(map);
             int goodsID = json.getInteger("goodsID");
@@ -116,9 +116,9 @@ public class SpuServiceImpl implements SpuService {
             }
             // 批处理插入大量数据
             long sValue = Instant.now().toEpochMilli();
-            threadPoolTaskExecutor.execute(()->
-                    MybatisBatchUtil.batchUpdateOrInsert(pefList, GoodspefMapper.class, (item, goodspefMapper)-> goodspefMapper.insert(item)));
-            log.info("batisTime: {}", (Instant.now().toEpochMilli()-sValue)/1000D);
+            threadPoolTaskExecutor.execute(() ->
+                    MybatisBatchUtil.batchUpdateOrInsert(pefList, GoodspefMapper.class, (item, goodspefMapper) -> goodspefMapper.insert(item)));
+            log.info("batisTime: {}", (Instant.now().toEpochMilli() - sValue) / 1000D);
             for (int i = 0; i < storageIDList.size(); i++) {
                 for (int j = 0; j < colorIDList.size(); j++) {
                     for (int k = 0; k < screenIDList.size(); k++) {
@@ -134,10 +134,10 @@ public class SpuServiceImpl implements SpuService {
             }
             // 批处理插入大量数据
             sValue = Instant.now().toEpochMilli();
-            threadPoolTaskExecutor.execute(()->
-                    MybatisBatchUtil.batchUpdateOrInsert(spuList, PriceMapper.class, (item, priceMapper)->priceMapper.insert(item)));
-            log.info("batisTime: {}", (Instant.now().toEpochMilli()-sValue)/1000D);
-            log.info("totalMybatisTime: {} s", (Instant.now().toEpochMilli()-begin)/1000D);
+            threadPoolTaskExecutor.execute(() ->
+                    MybatisBatchUtil.batchUpdateOrInsert(spuList, PriceMapper.class, (item, priceMapper) -> priceMapper.insert(item)));
+            log.info("batisTime: {}", (Instant.now().toEpochMilli() - sValue) / 1000D);
+            log.info("totalMybatisTime: {} s", (Instant.now().toEpochMilli() - begin) / 1000D);
 //            long sFor = Instant.now().toEpochMilli();
 //            for (int i = 0; i < storageIDList.size(); i++) {
 //                for (int j = 0; j < colorIDList.size(); j++) {
@@ -192,19 +192,23 @@ public class SpuServiceImpl implements SpuService {
     public int delete(HashMap map) {
         long time = Instant.now().toEpochMilli();
         log.info("begin time: {}", Instant.now().toEpochMilli());
-        threadPoolTaskExecutor.execute(()->priceMapper.delete(map));
-        threadPoolTaskExecutor.execute(()->goodspefMapper.delete(map));
-        threadPoolTaskExecutor.execute(()->imgMapper.delete(map));
+        threadPoolTaskExecutor.execute(() -> priceMapper.delete(map));
+        threadPoolTaskExecutor.execute(() -> goodspefMapper.delete(map));
+        threadPoolTaskExecutor.execute(() -> imgMapper.delete(map));
         CompletableFuture.allOf(
-                CompletableFuture.runAsync(()->{priceMapper.delete(map);
+                CompletableFuture.runAsync(() -> {
+                    priceMapper.delete(map);
                 }, threadPoolTaskExecutor),
-                CompletableFuture.runAsync(()->{goodspefMapper.delete(map);;
+                CompletableFuture.runAsync(() -> {
+                    goodspefMapper.delete(map);
+                    ;
                 }, threadPoolTaskExecutor),
-                CompletableFuture.runAsync(()->{imgMapper.delete(map);
+                CompletableFuture.runAsync(() -> {
+                    imgMapper.delete(map);
                 }, threadPoolTaskExecutor)
         );
         log.info("end time: {}", Instant.now().toEpochMilli());
-        log.info("use time: {}", Instant.now().toEpochMilli()-time);
+        log.info("use time: {}", Instant.now().toEpochMilli() - time);
         return goodsMapper.delete(map);
     }
 }

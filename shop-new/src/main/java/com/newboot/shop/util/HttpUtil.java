@@ -27,9 +27,9 @@ public class HttpUtil {
 
     /**
      * 获取当前请求的IP
+     *
      * @param request 请求
      * @return String
-     *
      */
     public static String getIpAddress(HttpServletRequest request) {
         String ipAddress = request.getHeader("X-Forwarded-For");
@@ -58,7 +58,7 @@ public class HttpUtil {
             ipAddress = ipAddress.split(",")[0];
         }
         // 对于本地开发验证的IP直接转为本地外网IP
-        if (ipAddress != null && ipIndex.equals(ipAddress)){
+        if (ipAddress != null && ipIndex.equals(ipAddress)) {
             ipAddress = "39.128.36.43";
         }
         logger.info("{} get ipAddress {}", HttpUtil.class.toString(), ipAddress);
@@ -67,11 +67,11 @@ public class HttpUtil {
 
     /**
      * 获取IP地址信息
+     *
      * @param ipAddress
      * @return JSONObject
-     *
      */
-    public static JSONObject getIpInfo(String ipAddress){
+    public static JSONObject getIpInfo(String ipAddress) {
         JSONObject json = new JSONObject();
         // 并发使用，用整个 xdb 数据缓存创建的查询对象可以安全的用于并发，也就是你可以把这个 searcher 对象做成全局对象去跨线程访问。
         Searcher searcher = SpringContextUtil.getBean("getSearcher");
@@ -91,6 +91,7 @@ public class HttpUtil {
 
     /**
      * 转化IP地址信息
+     *
      * @param ipRegion
      * @return String
      */

@@ -1,7 +1,6 @@
 package com.newboot.shop.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.newboot.shop.common.CommonResult;
 import com.newboot.shop.common.ResultMessage;
 import com.newboot.shop.dao.CommentMapper;
 import com.newboot.shop.dao.MessageMapper;
@@ -9,8 +8,10 @@ import com.newboot.shop.dao.UserMapper;
 import com.newboot.shop.model.User;
 import com.newboot.shop.redis.RedisCache;
 import com.newboot.shop.service.UserService;
+import com.newboot.shop.util.BCryptUtil;
 import com.newboot.shop.util.EmailUtil;
 import com.newboot.shop.util.HttpUtil;
+import com.newboot.shop.util.SystemUtil;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -71,11 +72,11 @@ public class UserServiceImpl implements UserService {
             if (user.getOnline() == 1) {
                 return ResultMessage.LOGIN_USER_ONLINE.getMessage();
             }
-            if (StringUtils.equals(json.getString("password"), user.getPassword())) {
+            if (BCryptUtil.checkpw(json.getString("password"), user.getPassword())) {
                 JSONObject ipJson = HttpUtil.getIpInfo(json.getString("ipAddress"));
                 ipJson.put("ipAddress", json.getString("ipAddress"));
                 ipJson.put("user", user.getUser());
-                ipJson.put("online", (byte)1);
+                ipJson.put("online", (byte) 1);
                 ipJson.put("viewCount", user.getViewCount().intValue() + 1);
                 ipJson.put("currentTime", new Date());
                 userMapper.updateByPrimaryKeySelective(ipJson);
@@ -100,7 +101,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public JSONObject getInfo(String user) {
         JSONObject json = userMapper.getInfo(user);
-        if(StringUtils.isNotEmpty(json.getString("ipRegion"))){
+        if (StringUtils.isNotEmpty(json.getString("ipRegion"))) {
             json.put("ipRegion", HttpUtil.getIpPossession(json.getString("ipRegion")));
         }
         return json;
@@ -108,20 +109,20 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String register(JSONObject json) {
-        if(ObjectUtils.isEmpty(redisCache.get(REDIS_DATABASE+":"+REDIS_KEY_AUTH_CODE+":"+json.getString("user")))){
+        if (ObjectUtils.isEmpty(redisCache.get(REDIS_DATABASE + REDIS_KEY_AUTH_CODE + ":" + json.getString("user")))) {
             return ResultMessage.VERIFY_CODE_INVALID.getMessage();
         }
         User user = userMapper.selectByPrimaryKey(json.getString("user"));
         if (ObjectUtils.isEmpty(user)) {
             user = JSONObject.toJavaObject(json, User.class);
-            if(StringUtils.equals(json.getString("emailCode"), (String)redisCache.get(REDIS_DATABASE+":"+REDIS_KEY_AUTH_CODE+":"+json.getString("user")))){
+            if (StringUtils.equals(json.getString("emailCode"), (String) redisCache.get(REDIS_DATABASE + REDIS_KEY_AUTH_CODE + ":" + json.getString("user")))) {
+                user.setPassword(BCryptUtil.hashpw(user.getPassword()));
                 if (userMapper.insertSelective(user) > 0) {
                     return ResultMessage.REGISTER_SUCCESS.getMessage();
                 } else {
                     return ResultMessage.SERVER_ERROR.getMessage();
                 }
-            }
-            else {
+            } else {
                 return ResultMessage.LOGIN_VERIFY_CODE_ERROR.getMessage();
             }
         } else {
@@ -144,8 +145,8 @@ public class UserServiceImpl implements UserService {
         if (ObjectUtils.isEmpty(map.get("originPass"))) {
             return userMapper.updateByPrimaryKey(map);
         }
-        if (StringUtils.equals(map.get("originPass").toString(), userMapper.getPass(map.get("user").toString()))) {
-            map.put("password", map.get("newPass"));
+        if (BCryptUtil.checkpw(map.get("originPass").toString(), userMapper.getPass(map.get("user").toString()))) {
+            map.put("password", BCryptUtil.hashpw(map.get("newPass").toString()));
             return userMapper.updateByPrimaryKey(map);
         }
         return -1;
@@ -153,7 +154,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean userExist(JSONObject json) {
-        if(ObjectUtils.isNotEmpty(userMapper.selectByPrimaryKey(json.getString("user")))){
+        if (ObjectUtils.isNotEmpty(userMapper.selectByPrimaryKey(json.getString("user")))) {
             return true;
         }
         return false;
@@ -166,12 +167,12 @@ public class UserServiceImpl implements UserService {
         JSONObject json = JSONObject.parseObject(record.value().toString());
         logger.info("json info: {}", json);
         String code = RandomStringUtils.randomNumeric(6);
-        redisCache.set(REDIS_DATABASE+":"+REDIS_KEY_AUTH_CODE+":"+json.getString("user"), code, REDIS_EXPIRE_AUTH_CODE);
+        redisCache.set(REDIS_DATABASE + REDIS_KEY_AUTH_CODE + ":" + json.getString("user"), code, REDIS_EXPIRE_AUTH_CODE);
         EmailUtil.sendEmailNormal(json.getString("user"), "注册验证码", code, fromEmail, json.getString("email"));
     }
 
     @KafkaListener(topics = {"testtopic"})
-    public void test(ConsumerRecord<?, ?> record){
+    public void test(ConsumerRecord<?, ?> record) {
         logger.info("{} {} kafkaListener test ok", UserServiceImpl.class.toString(), new Date().getTime());
         logger.info("简单消费consumer ok：{} - {} - {}", record.topic(), record.partition(), record.value());
     }

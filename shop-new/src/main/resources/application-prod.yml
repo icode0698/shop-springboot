@@ -22,7 +22,7 @@ spring:
     mapper-locations:
       - classpath:mapper/*.xml
   mail:
-    host: smtp.163.com #SMTP服务器
+    host:  #SMTP服务器
     username:  #发送验证码邮箱
     password:  #授权码
     default-encoding: utf-8 #编码

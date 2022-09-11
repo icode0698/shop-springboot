@@ -39,6 +39,10 @@ public class ProjectConfig {
      * xdb路径
      */
     private static String xdbPath;
+    /**
+     * 密钥
+     */
+    private static String secretKey;
 
     public static String getName() {
         return name;
@@ -86,5 +90,13 @@ public class ProjectConfig {
 
     public void setXdbPath(String xdbPath) {
         this.xdbPath = xdbPath;
+    }
+
+    public static String getSecretKey() {
+        return secretKey;
+    }
+
+    public void setSecretKey(String secretKey) {
+        this.secretKey = secretKey;
     }
 }

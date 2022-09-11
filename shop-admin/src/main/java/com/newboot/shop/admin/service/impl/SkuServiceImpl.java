@@ -23,8 +23,8 @@ public class SkuServiceImpl implements SkuService {
     public JSONObject select(HashMap map) {
         JSONObject json = new JSONObject();
         json.put("count", priceMapper.getSkuListCount(map));
-        if(ObjectUtils.isNotEmpty(map.get("page"))&&ObjectUtils.isNotEmpty(map.get("limit"))){
-            map.put("offset", (Integer.parseInt(map.get("page").toString())-1)*Integer.parseInt(map.get("limit").toString()));
+        if (ObjectUtils.isNotEmpty(map.get("page")) && ObjectUtils.isNotEmpty(map.get("limit"))) {
+            map.put("offset", (Integer.parseInt(map.get("page").toString()) - 1) * Integer.parseInt(map.get("limit").toString()));
         }
         ArrayList<JSONObject> list = priceMapper.getSkuList(map);
         for (JSONObject jsonObject : list) {

@@ -18,7 +18,7 @@ public class OrderController {
 
     @RequestMapping("/select")
     @ResponseBody
-    public CommonResult select(@RequestParam HashMap map){
+    public CommonResult select(@RequestParam HashMap map) {
         return CommonResult.success(orderService.select(map));
     }
 }

@@ -12,7 +12,7 @@ spring:
       stat-view-servlet: #访问监控网页的登录用户名和密码
         login-username: druid
         login-password: druid
-#        enabled: true #启用监控网页
+  #        enabled: true #启用监控网页
 
   kafka:
     bootstrap-servers: localhost:9092  #kafka集群
@@ -26,8 +26,8 @@ spring:
           ms: 0  #提交延迟
         #当生产端积累的消息达到batch-size或接收到消息linger.ms后,生产者就会将消息提交给kafka
         #linger-ms为0表示每接收到一条消息就提交给kafka,这时候batch-size其实就没用了
-#        partitioner:
-#          class:   #自定义分区器
+      #        partitioner:
+      #          class:   #自定义分区器
       buffer-memory: 33554432  #生产端缓冲区大小
       key-serializer: org.apache.kafka.common.serialization.StringSerializer  #Kafka提供的序列化和反序列化类
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -45,16 +45,16 @@ spring:
           id: defaultConsumerGroup  #默认的消费组ID
         session:
           timeout:
-              ms: 120000  #消费会话超时时间(超过这个时间consumer没有发送心跳,就会触发rebalance操作)
+            ms: 120000  #消费会话超时时间(超过这个时间consumer没有发送心跳,就会触发rebalance操作)
         request:
           timeout:
-              ms: 180000  #消费请求超时时间
+            ms: 180000  #消费请求超时时间
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer  #Kafka提供的序列化和反序列化类
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       max-poll-records: 50  #批量消费每次最多消费多少条消息
-#    listener:
-#      missing-topics-fatal: false  #消费端监听的topic不存在时，项目启动会报错
-#      type: batch  #设置批量消费
+  #    listener:
+  #      missing-topics-fatal: false  #消费端监听的topic不存在时，项目启动会报错
+  #      type: batch  #设置批量消费
 
   redis:
     host: localhost # Redis服务器地址
@@ -66,7 +66,7 @@ spring:
     mapper-locations:
       - classpath:mapper/*.xml
   mail:
-    host: smtp.163.com #SMTP服务器
+    host:  #SMTP服务器
     username:  #发送验证码邮箱
     password:  #授权码
     default-encoding: utf-8 #编码
@@ -82,4 +82,33 @@ shop:
       email-code-name: emailCode
       email-code-partitions: 1
       email-code-factor: 1
+  #异步线程池配置
+  async:
+    executor:
+      core-pool-size: 8          #配置核心线程数
+      max-pool-size: 20          #配置最大线程数
+      queue-capacity: 6          #配置队列大小
+      keep-alive-seconds: 60     #配置非核心线程失效时间
+      name-prefix: shop-async-   #配置线程池中线程的名称前缀
+      core-thread-timeout: false #配置核心线程超时
+      task-shutdown: false       #配置长时间无任务销毁线程池
+      await-seconds: 60          #配置线程池中线程等待时间
+#自定义redis key
+redis:
+  database: 'shop-new:'
+  key:
+    authCode: 'ums:authCode'
+    orderId: 'oms:orderId'
+    member: 'ums:member'
+    product: 'pms:product'
+  expire:
+    authCode: 300 # 验证码有效时间
+    common: 86400 # 24小时
+
+#JWT配置
+jwt:
+  tokenHeader: Authorization  #JWT存储的请求头
+  secret: shop-admin-secret   #JWT加解密使用的密钥
+  expiration: 604800          #JWT的超期限时间(60*60*24*7)
+  tokenHead: 'Bearer '        #JWT负载中拿到开头
 

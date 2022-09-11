@@ -1,6 +1,7 @@
 package com.newboot.shop.admin.model;
 
 import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 
 public class Goodspef implements Serializable {

@@ -24,20 +24,20 @@ public class SpuController {
 
     @RequestMapping("/now")
     @ResponseBody
-    public CommonResult now(){
+    public CommonResult now() {
         return CommonResult.success(spuService.getSpuNow());
     }
 
     @RequestMapping("/now/img")
     @ResponseBody
-    public CommonResult nowImg(){
+    public CommonResult nowImg() {
         return CommonResult.success(spuService.getSpuImgNow());
     }
 
     @RequestMapping("/insert")
     @ResponseBody
-    public CommonResult insert(@RequestParam HashMap map){
-        if(spuService.insert(map)<1){
+    public CommonResult insert(@RequestParam HashMap map) {
+        if (spuService.insert(map) < 1) {
             return CommonResult.failed(ResultMessage.INSERT_SPU_FAIL.getMessage());
         }
         return CommonResult.success(ResultMessage.INSERT_SPU_SUCCESS.getMessage());
@@ -45,18 +45,18 @@ public class SpuController {
 
     @RequestMapping("/select")
     @ResponseBody
-    public CommonResult select(@RequestParam HashMap map){
+    public CommonResult select(@RequestParam HashMap map) {
         return CommonResult.success(spuService.select(map));
     }
 
     @RequestMapping("/update")
     @ResponseBody
-    public CommonResult update(@RequestParam HashMap map){
+    public CommonResult update(@RequestParam HashMap map) {
         try {
-            if(spuService.update(map)<1){
+            if (spuService.update(map) < 1) {
                 return CommonResult.failed();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             LOGGER.error(e.toString());
             return CommonResult.failed(ResultMessage.ADMIN_SPU_DATA_ERROR.getMessage());
         }
@@ -65,7 +65,7 @@ public class SpuController {
 
     @RequestMapping("/delete")
     @ResponseBody
-    public CommonResult delete(@RequestParam HashMap map){
+    public CommonResult delete(@RequestParam HashMap map) {
         spuService.delete(map);
         return CommonResult.success();
     }

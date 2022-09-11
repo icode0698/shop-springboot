@@ -5,6 +5,7 @@ import com.newboot.shop.admin.model.AdminExample;
 
 import java.util.HashMap;
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface AdminMapper {

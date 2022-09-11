@@ -1,0 +1,1231 @@
+2022-09-07 12:28:11.311 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 8672 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 12:28:11.315 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-07 12:28:14.309 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-09-07 12:28:14.309 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-07 12:28:14.310 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 12:28:14.439 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-07 12:28:14.499 [restartedMain] INFO  com.newboot.shop.config.SpringConfig - [run,18] - Spring init method is RUNNING
+2022-09-07 12:28:14.575 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-07 12:28:15.002 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-07 12:28:16.400 [restartedMain] INFO  com.newboot.shop.config.BeanConfig - [getSearcher,22] - class com.newboot.shop.config.BeanConfig is getting xdb Searcher
+2022-09-07 12:28:16.613 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initTestTopic,27] - kafka init topic testtopic, 1, 1
+2022-09-07 12:28:16.617 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initEmailCodeTopic,32] - kafka init topic emailCode, 1, 1
+2022-09-07 12:28:18.387 [restartedMain] INFO  org.apache.kafka.clients.admin.AdminClientConfig - [logAll,376] - AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2022-09-07 12:28:18.431 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,119] - Kafka version: 3.1.1
+2022-09-07 12:28:18.431 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,120] - Kafka commitId: 97671528ba54a138
+2022-09-07 12:28:18.431 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,121] - Kafka startTimeMs: 1662524898430
+2022-09-07 12:28:19.440 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 12:28:20.545 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:21.633 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 16880 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 20:55:21.647 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-07 20:55:24.118 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-09-07 20:55:24.118 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-07 20:55:24.119 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 20:55:24.271 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-07 20:55:24.333 [restartedMain] INFO  com.newboot.shop.config.SpringConfig - [run,18] - Spring init method is RUNNING
+2022-09-07 20:55:24.429 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-07 20:55:24.687 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-07 20:55:25.663 [restartedMain] INFO  com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-07 20:55:25.666 [restartedMain] INFO  com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-07 20:55:25.671 [restartedMain] INFO  com.newboot.shop.config.BeanConfig - [getSearcher,22] - class com.newboot.shop.config.BeanConfig is getting xdb Searcher
+2022-09-07 20:55:25.838 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initTestTopic,27] - kafka init topic testtopic, 1, 1
+2022-09-07 20:55:25.840 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initEmailCodeTopic,32] - kafka init topic emailCode, 1, 1
+2022-09-07 20:55:27.139 [restartedMain] INFO  org.apache.kafka.clients.admin.AdminClientConfig - [logAll,376] - AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2022-09-07 20:55:27.190 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,119] - Kafka version: 3.1.1
+2022-09-07 20:55:27.191 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,120] - Kafka commitId: 97671528ba54a138
+2022-09-07 20:55:27.191 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,121] - Kafka startTimeMs: 1662555327189
+2022-09-07 20:55:28.206 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:29.310 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:30.514 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:31.715 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:33.220 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:35.125 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:37.333 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:39.543 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:41.548 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:43.450 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:45.570 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:47.576 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:49.482 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:51.389 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:53.602 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:55.811 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:57.196 [kafka-admin-client-thread | adminclient-1] INFO  o.a.k.clients.admin.internals.AdminMetadataManager - [updateFailed,235] - [AdminClient clientId=adminclient-1] Metadata update failed
+org.apache.kafka.common.errors.TimeoutException: Timed out waiting to send the call. Call: fetchMetadata
+2022-09-07 20:55:57.917 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:55:59.924 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:56:02.131 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:56:04.037 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:56:06.251 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:56:07.203 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.admin.KafkaAdminClient - [threadShouldExit,1320] - [AdminClient clientId=adminclient-1] Forcing a hard I/O thread shutdown. Requests in progress will be aborted.
+2022-09-07 20:56:07.203 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.common.utils.AppInfoParser - [unregisterAppInfo,83] - App info kafka.admin.client for adminclient-1 unregistered
+2022-09-07 20:56:07.204 [kafka-admin-client-thread | adminclient-1] INFO  o.a.k.clients.admin.internals.AdminMetadataManager - [updateFailed,235] - [AdminClient clientId=adminclient-1] Metadata update failed
+org.apache.kafka.common.errors.TimeoutException: The AdminClient thread has exited. Call: fetchMetadata
+2022-09-07 20:56:07.204 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.admin.KafkaAdminClient - [run,1346] - [AdminClient clientId=adminclient-1] Timed out 2 remaining operation(s) during close.
+2022-09-07 20:56:07.208 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,659] - Metrics scheduler closed
+2022-09-07 20:56:07.208 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,663] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2022-09-07 20:56:07.208 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,669] - Metrics reporters closed
+2022-09-07 20:56:07.228 [restartedMain] INFO  org.apache.kafka.clients.consumer.ConsumerConfig - [logAll,376] - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 1000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-defaultConsumerGroup-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = defaultConsumerGroup
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 50
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 180000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 120000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2022-09-07 20:56:07.272 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,119] - Kafka version: 3.1.1
+2022-09-07 20:56:07.272 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,120] - Kafka commitId: 97671528ba54a138
+2022-09-07 20:56:07.272 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,121] - Kafka startTimeMs: 1662555367272
+2022-09-07 20:56:07.274 [restartedMain] INFO  org.apache.kafka.clients.consumer.KafkaConsumer - [subscribe,966] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Subscribed to topic(s): testtopic
+2022-09-07 20:56:07.285 [restartedMain] INFO  org.apache.kafka.clients.consumer.ConsumerConfig - [logAll,376] - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 1000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-defaultConsumerGroup-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = defaultConsumerGroup
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 50
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 180000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 120000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2022-09-07 20:56:07.292 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,119] - Kafka version: 3.1.1
+2022-09-07 20:56:07.292 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,120] - Kafka commitId: 97671528ba54a138
+2022-09-07 20:56:07.292 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,121] - Kafka startTimeMs: 1662555367292
+2022-09-07 20:56:07.293 [restartedMain] INFO  org.apache.kafka.clients.consumer.KafkaConsumer - [subscribe,966] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Subscribed to topic(s): emailCode
+2022-09-07 20:56:07.294 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
+2022-09-07 20:56:07.318 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 46.408 seconds (JVM running for 47.744)
+2022-09-07 20:56:07.320 [restartedMain] INFO  com.newboot.shop.task.ProductCache - [run,32] - System handle product cache begin
+2022-09-07 20:56:07.321 [restartedMain] INFO  com.newboot.shop.task.ProductCache - [run,45] - System handle product cache complete
+2022-09-07 20:56:21.433 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleTimedOutConnections,819] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 10020 ms.
+2022-09-07 20:56:21.433 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleTimedOutConnections,819] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 9946 ms.
+2022-09-07 20:56:22.537 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:22.537 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:23.642 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:23.690 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:24.890 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:24.893 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:26.344 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:26.348 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:28.106 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:28.112 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:30.075 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:30.321 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:32.190 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:32.230 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:34.089 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:34.200 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:35.945 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:36.160 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:37.956 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:38.403 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:39.865 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:40.413 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:41.723 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:42.375 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:43.579 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:44.434 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:45.642 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:46.349 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:47.803 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:48.472 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:49.816 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:50.635 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:51.976 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:52.800 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:54.138 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:54.909 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:56.149 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:56.930 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:58.207 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:56:59.145 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:00.418 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:01.203 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:02.504 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:03.254 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:04.362 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:05.214 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:06.222 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:07.431 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:08.363 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:09.423 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:10.330 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:11.304 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:12.506 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:13.206 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:14.364 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:15.268 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:16.480 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:17.428 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:18.505 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:19.289 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:20.567 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:21.308 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:22.556 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:23.463 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:24.667 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:25.577 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:26.862 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:27.436 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:28.821 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:29.296 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:30.987 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:31.523 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:33.110 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:33.737 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:35.272 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:35.564 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:37.186 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:37.757 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:39.350 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:39.921 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:41.261 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:41.781 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:43.165 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:43.641 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:45.276 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:45.498 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 20:57:46.733 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [resetStateAndGeneration,972] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Resetting generation due to: consumer pro-actively leaving the group
+2022-09-07 20:57:46.733 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [resetStateAndGeneration,972] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Resetting generation due to: consumer pro-actively leaving the group
+2022-09-07 20:57:46.734 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [requestRejoin,1000] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Request joining group due to: consumer pro-actively leaving the group
+2022-09-07 20:57:46.734 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [requestRejoin,1000] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Request joining group due to: consumer pro-actively leaving the group
+2022-09-07 20:57:46.734 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.consumer.KafkaConsumer - [unsubscribe,1075] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Unsubscribed all topics or patterns and assigned partitions
+2022-09-07 20:57:46.734 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.consumer.KafkaConsumer - [unsubscribe,1075] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Unsubscribed all topics or patterns and assigned partitions
+2022-09-07 20:57:46.734 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [resetStateAndGeneration,972] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Resetting generation due to: consumer pro-actively leaving the group
+2022-09-07 20:57:46.734 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [resetStateAndGeneration,972] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Resetting generation due to: consumer pro-actively leaving the group
+2022-09-07 20:57:46.734 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [requestRejoin,1000] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Request joining group due to: consumer pro-actively leaving the group
+2022-09-07 20:57:46.734 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [requestRejoin,1000] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Request joining group due to: consumer pro-actively leaving the group
+2022-09-07 20:57:46.735 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,659] - Metrics scheduler closed
+2022-09-07 20:57:46.735 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,659] - Metrics scheduler closed
+2022-09-07 20:57:46.735 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,663] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2022-09-07 20:57:46.735 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,663] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2022-09-07 20:57:46.735 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,669] - Metrics reporters closed
+2022-09-07 20:57:46.735 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,669] - Metrics reporters closed
+2022-09-07 20:57:46.739 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.utils.AppInfoParser - [unregisterAppInfo,83] - App info kafka.consumer for consumer-defaultConsumerGroup-1 unregistered
+2022-09-07 20:57:46.739 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.utils.AppInfoParser - [unregisterAppInfo,83] - App info kafka.consumer for consumer-defaultConsumerGroup-2 unregistered
+2022-09-07 20:57:46.860 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2073] - {dataSource-1} closing ...
+2022-09-07 20:57:46.867 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2146] - {dataSource-1} closed
+2022-09-07 20:58:43.804 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 16268 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 20:58:43.806 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-07 20:58:45.497 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-09-07 20:58:45.497 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-07 20:58:45.497 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 20:58:45.758 [restartedMain] INFO  com.newboot.shop.config.SpringConfig - [run,18] - Spring init method is RUNNING
+2022-09-07 20:58:45.789 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-07 20:58:46.037 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-07 20:58:46.772 [restartedMain] INFO  com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-07 20:58:46.775 [restartedMain] INFO  com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-07 20:58:46.786 [restartedMain] INFO  com.newboot.shop.config.BeanConfig - [getSearcher,22] - class com.newboot.shop.config.BeanConfig is getting xdb Searcher
+2022-09-07 20:58:46.838 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initTestTopic,27] - kafka init topic testtopic, 1, 1
+2022-09-07 20:58:46.841 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initEmailCodeTopic,32] - kafka init topic emailCode, 1, 1
+2022-09-07 20:58:47.863 [restartedMain] INFO  org.apache.kafka.clients.admin.AdminClientConfig - [logAll,376] - AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2022-09-07 20:58:47.915 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,119] - Kafka version: 3.1.1
+2022-09-07 20:58:47.915 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,120] - Kafka commitId: 97671528ba54a138
+2022-09-07 20:58:47.915 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,121] - Kafka startTimeMs: 1662555527914
+2022-09-07 20:58:48.934 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:58:50.041 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:58:51.142 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:58:52.444 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:59:52.408 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 17256 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 20:59:52.410 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-07 20:59:53.925 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-09-07 20:59:53.926 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-07 20:59:53.926 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 20:59:54.089 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-07 20:59:54.148 [restartedMain] INFO  com.newboot.shop.config.SpringConfig - [run,18] - Spring init method is RUNNING
+2022-09-07 20:59:54.177 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-07 20:59:54.420 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-07 20:59:55.146 [restartedMain] INFO  com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-07 20:59:55.147 [restartedMain] INFO  com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-07 20:59:55.152 [restartedMain] INFO  com.newboot.shop.config.BeanConfig - [getSearcher,22] - class com.newboot.shop.config.BeanConfig is getting xdb Searcher
+2022-09-07 20:59:55.179 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initTestTopic,27] - kafka init topic testtopic, 1, 1
+2022-09-07 20:59:55.181 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initEmailCodeTopic,32] - kafka init topic emailCode, 1, 1
+2022-09-07 20:59:56.149 [restartedMain] INFO  org.apache.kafka.clients.admin.AdminClientConfig - [logAll,376] - AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2022-09-07 20:59:56.208 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,119] - Kafka version: 3.1.1
+2022-09-07 20:59:56.208 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,120] - Kafka commitId: 97671528ba54a138
+2022-09-07 20:59:56.209 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,121] - Kafka startTimeMs: 1662555596206
+2022-09-07 20:59:57.225 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:59:58.330 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 20:59:59.533 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:00.734 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:02.236 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:04.143 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:06.050 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:08.161 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:10.370 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:12.478 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:14.684 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:16.692 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:18.800 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:20.708 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:22.614 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:24.721 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:26.214 [kafka-admin-client-thread | adminclient-1] INFO  o.a.k.clients.admin.internals.AdminMetadataManager - [updateFailed,235] - [AdminClient clientId=adminclient-1] Metadata update failed
+org.apache.kafka.common.errors.TimeoutException: Timed out waiting to send the call. Call: fetchMetadata
+2022-09-07 21:00:26.829 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:28.734 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:30.941 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:33.048 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:34.955 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2022-09-07 21:00:36.218 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.admin.KafkaAdminClient - [threadShouldExit,1320] - [AdminClient clientId=adminclient-1] Forcing a hard I/O thread shutdown. Requests in progress will be aborted.
+2022-09-07 21:00:36.218 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.common.utils.AppInfoParser - [unregisterAppInfo,83] - App info kafka.admin.client for adminclient-1 unregistered
+2022-09-07 21:00:36.219 [kafka-admin-client-thread | adminclient-1] INFO  o.a.k.clients.admin.internals.AdminMetadataManager - [updateFailed,235] - [AdminClient clientId=adminclient-1] Metadata update failed
+org.apache.kafka.common.errors.TimeoutException: Timed out waiting to send the call. Call: fetchMetadata
+2022-09-07 21:00:36.219 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.clients.admin.KafkaAdminClient - [run,1346] - [AdminClient clientId=adminclient-1] Timed out 2 remaining operation(s) during close.
+2022-09-07 21:00:36.223 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,659] - Metrics scheduler closed
+2022-09-07 21:00:36.223 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,663] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2022-09-07 21:00:36.223 [kafka-admin-client-thread | adminclient-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,669] - Metrics reporters closed
+2022-09-07 21:00:36.241 [restartedMain] INFO  org.apache.kafka.clients.consumer.ConsumerConfig - [logAll,376] - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 1000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-defaultConsumerGroup-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = defaultConsumerGroup
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 50
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 180000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 120000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2022-09-07 21:00:36.280 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,119] - Kafka version: 3.1.1
+2022-09-07 21:00:36.280 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,120] - Kafka commitId: 97671528ba54a138
+2022-09-07 21:00:36.280 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,121] - Kafka startTimeMs: 1662555636280
+2022-09-07 21:00:36.282 [restartedMain] INFO  org.apache.kafka.clients.consumer.KafkaConsumer - [subscribe,966] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Subscribed to topic(s): testtopic
+2022-09-07 21:00:36.302 [restartedMain] INFO  org.apache.kafka.clients.consumer.ConsumerConfig - [logAll,376] - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 1000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-defaultConsumerGroup-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = defaultConsumerGroup
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 50
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 180000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 120000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2022-09-07 21:00:36.307 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,119] - Kafka version: 3.1.1
+2022-09-07 21:00:36.307 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,120] - Kafka commitId: 97671528ba54a138
+2022-09-07 21:00:36.307 [restartedMain] INFO  org.apache.kafka.common.utils.AppInfoParser - [<init>,121] - Kafka startTimeMs: 1662555636307
+2022-09-07 21:00:36.307 [restartedMain] INFO  org.apache.kafka.clients.consumer.KafkaConsumer - [subscribe,966] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Subscribed to topic(s): emailCode
+2022-09-07 21:00:36.308 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
+2022-09-07 21:00:36.329 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 44.472 seconds (JVM running for 45.555)
+2022-09-07 21:00:36.331 [restartedMain] INFO  com.newboot.shop.task.ProductCache - [run,32] - System handle product cache begin
+2022-09-07 21:00:36.332 [restartedMain] INFO  com.newboot.shop.task.ProductCache - [run,45] - System handle product cache complete
+2022-09-07 21:00:46.274 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleTimedOutConnections,819] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 8140 ms.
+2022-09-07 21:00:46.784 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleTimedOutConnections,819] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 10445 ms.
+2022-09-07 21:00:47.378 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:00:47.886 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:00:48.479 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:00:49.038 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:00:49.732 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:00:50.240 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:00:51.187 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:00:51.748 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:00:53.050 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:00:53.505 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:00:55.263 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:00:55.366 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:00:57.172 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:00:57.583 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:00:59.335 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:00:59.595 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:01.242 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:01.456 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:03.252 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:03.366 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:05.213 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:05.277 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:07.188 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:07.331 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:09.257 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:09.291 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:11.116 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:11.250 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:13.288 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:13.410 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:15.368 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:15.401 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:17.490 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:17.587 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:19.547 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:19.706 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:21.509 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:21.813 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:23.416 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:23.772 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:25.473 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:25.984 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:27.150 [http-nio-28079-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-07 21:01:27.585 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:42.606 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:44.398 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:46.121 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:49.679 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:50.681 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:51.740 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:52.793 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:53.903 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:55.005 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:56.036 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:57.161 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:58.147 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:01:59.020 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:00.160 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:01.190 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:02.021 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:03.048 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:03.980 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:05.259 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:05.884 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:07.224 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:07.795 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:09.344 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:10.005 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:11.390 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:12.066 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:13.604 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:13.928 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:15.516 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:15.938 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:17.729 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:18.150 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:19.792 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:20.259 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:21.863 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:22.070 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:23.975 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:24.284 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:26.195 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:26.444 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:28.303 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:28.356 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:30.320 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:30.368 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:32.380 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:32.532 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:34.596 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:34.596 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:36.503 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:36.606 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:38.361 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:38.668 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:40.423 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:40.527 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:42.335 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:42.688 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:44.297 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:44.803 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:46.502 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:46.766 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:48.511 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:48.878 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:50.673 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:50.791 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:52.532 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:52.646 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:54.439 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:54.505 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:56.399 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:56.651 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:58.520 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:02:58.613 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:00.632 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:00.675 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:02.741 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:02.840 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:04.800 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:05.002 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:06.963 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:07.014 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:08.929 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:09.077 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:10.947 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:11.203 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:13.160 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:13.330 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:15.020 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:15.543 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:17.185 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:17.503 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:19.351 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:19.464 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [handleDisconnections,935] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Node -1 disconnected.
+2022-09-07 21:03:20.519 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [resetStateAndGeneration,972] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Resetting generation due to: consumer pro-actively leaving the group
+2022-09-07 21:03:20.519 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [resetStateAndGeneration,972] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Resetting generation due to: consumer pro-actively leaving the group
+2022-09-07 21:03:20.519 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [requestRejoin,1000] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Request joining group due to: consumer pro-actively leaving the group
+2022-09-07 21:03:20.519 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [requestRejoin,1000] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Request joining group due to: consumer pro-actively leaving the group
+2022-09-07 21:03:20.519 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.consumer.KafkaConsumer - [unsubscribe,1075] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Unsubscribed all topics or patterns and assigned partitions
+2022-09-07 21:03:20.520 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.consumer.KafkaConsumer - [unsubscribe,1075] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Unsubscribed all topics or patterns and assigned partitions
+2022-09-07 21:03:20.520 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [resetStateAndGeneration,972] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Resetting generation due to: consumer pro-actively leaving the group
+2022-09-07 21:03:20.520 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [resetStateAndGeneration,972] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Resetting generation due to: consumer pro-actively leaving the group
+2022-09-07 21:03:20.520 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [requestRejoin,1000] - [Consumer clientId=consumer-defaultConsumerGroup-1, groupId=defaultConsumerGroup] Request joining group due to: consumer pro-actively leaving the group
+2022-09-07 21:03:20.520 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [requestRejoin,1000] - [Consumer clientId=consumer-defaultConsumerGroup-2, groupId=defaultConsumerGroup] Request joining group due to: consumer pro-actively leaving the group
+2022-09-07 21:03:20.521 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,659] - Metrics scheduler closed
+2022-09-07 21:03:20.521 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,659] - Metrics scheduler closed
+2022-09-07 21:03:20.521 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,663] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2022-09-07 21:03:20.521 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,663] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2022-09-07 21:03:20.521 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,669] - Metrics reporters closed
+2022-09-07 21:03:20.521 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - [close,669] - Metrics reporters closed
+2022-09-07 21:03:20.526 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.utils.AppInfoParser - [unregisterAppInfo,83] - App info kafka.consumer for consumer-defaultConsumerGroup-1 unregistered
+2022-09-07 21:03:20.526 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.utils.AppInfoParser - [unregisterAppInfo,83] - App info kafka.consumer for consumer-defaultConsumerGroup-2 unregistered
+2022-09-07 21:03:20.648 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2073] - {dataSource-1} closing ...
+2022-09-07 21:03:20.654 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2146] - {dataSource-1} closed
+2022-09-07 21:08:30.416 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 7096 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 21:08:30.417 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-07 21:08:34.572 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 2412 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 21:08:34.574 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-07 21:08:36.144 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-09-07 21:08:36.145 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-07 21:08:36.145 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 21:08:36.260 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-07 21:08:36.368 [restartedMain] INFO  com.newboot.shop.config.SpringConfig - [run,18] - Spring init method is RUNNING
+2022-09-07 21:08:36.402 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-07 21:08:36.628 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-07 21:08:37.316 [restartedMain] INFO  com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-07 21:08:37.318 [restartedMain] INFO  com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-07 21:08:37.323 [restartedMain] INFO  com.newboot.shop.config.BeanConfig - [getSearcher,22] - class com.newboot.shop.config.BeanConfig is getting xdb Searcher
+2022-09-07 21:08:37.350 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initTestTopic,27] - kafka init topic testtopic, 1, 1
+2022-09-07 21:08:37.353 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initEmailCodeTopic,32] - kafka init topic emailCode, 1, 1
+2022-09-07 21:09:18.408 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-28079"]
+2022-09-07 21:09:18.431 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarted,61] - Started ShopApplication in 44.412 seconds (JVM running for 45.581)
+2022-09-07 21:09:18.433 [restartedMain] INFO  com.newboot.shop.task.ProductCache - [run,32] - System handle product cache begin
+2022-09-07 21:09:18.434 [restartedMain] INFO  com.newboot.shop.task.ProductCache - [run,45] - System handle product cache complete
+2022-09-07 21:10:18.697 [http-nio-28079-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-07 21:11:12.288 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2073] - {dataSource-1} closing ...
+2022-09-07 21:11:12.293 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - [close,2146] - {dataSource-1} closed
+2022-09-07 21:17:40.676 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 15296 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 21:17:40.678 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-07 21:17:41.986 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-07 21:17:41.986 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 21:17:42.095 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-07 21:17:42.146 [restartedMain] INFO  com.newboot.shop.config.SpringConfig - [run,18] - Spring init method is RUNNING
+2022-09-07 21:17:42.214 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-07 21:17:42.407 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-07 21:17:43.014 [restartedMain] INFO  com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-07 21:17:43.016 [restartedMain] INFO  com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-07 21:17:43.020 [restartedMain] INFO  com.newboot.shop.config.BeanConfig - [getSearcher,22] - class com.newboot.shop.config.BeanConfig is getting xdb Searcher
+2022-09-07 21:17:43.050 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initTestTopic,27] - kafka init topic testtopic, 1, 1
+2022-09-07 21:17:43.052 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initEmailCodeTopic,32] - kafka init topic emailCode, 1, 1
+2022-09-07 21:20:29.412 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 8036 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 21:20:29.413 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-07 21:20:30.770 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-28079"]
+2022-09-07 21:20:30.770 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-07 21:20:30.770 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 21:28:11.250 [32m[restartedMain][0;39m [32mINFO [0;39m com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 6184 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 21:28:11.252 [32m[restartedMain][0;39m [32mINFO [0;39m com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-07 21:28:12.736 [32m[restartedMain][0;39m [32mINFO [0;39m org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-07 21:28:12.737 [32m[restartedMain][0;39m [32mINFO [0;39m org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 21:28:12.863 [32m[restartedMain][0;39m [32mINFO [0;39m o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-07 21:28:12.910 [32m[restartedMain][0;39m [32mINFO [0;39m com.newboot.shop.config.SpringConfig - [run,18] - Spring init method is RUNNING
+2022-09-07 21:28:12.979 [32m[restartedMain][0;39m [32mINFO [0;39m c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-07 21:28:13.178 [32m[restartedMain][0;39m [32mINFO [0;39m com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-07 21:28:13.783 [32m[restartedMain][0;39m [32mINFO [0;39m com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-07 21:28:13.785 [32m[restartedMain][0;39m [32mINFO [0;39m com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-07 21:28:13.790 [32m[restartedMain][0;39m [32mINFO [0;39m com.newboot.shop.config.BeanConfig - [getSearcher,22] - class com.newboot.shop.config.BeanConfig is getting xdb Searcher
+2022-09-07 21:28:13.820 [32m[restartedMain][0;39m [32mINFO [0;39m com.newboot.shop.config.KafkaConfig - [initTestTopic,27] - kafka init topic testtopic, 1, 1
+2022-09-07 21:28:13.822 [32m[restartedMain][0;39m [32mINFO [0;39m com.newboot.shop.config.KafkaConfig - [initEmailCodeTopic,32] - kafka init topic emailCode, 1, 1
+2022-09-07 21:28:54.821 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 16268 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 21:28:54.823 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-07 21:28:56.120 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-07 21:28:56.121 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 21:28:56.229 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-07 21:28:56.275 [restartedMain] INFO  com.newboot.shop.config.SpringConfig - [run,18] - Spring init method is RUNNING
+2022-09-07 21:28:56.343 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-07 21:28:56.532 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-07 21:28:57.115 [restartedMain] INFO  com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-07 21:28:57.117 [restartedMain] INFO  com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-07 21:28:57.121 [restartedMain] INFO  com.newboot.shop.config.BeanConfig - [getSearcher,22] - class com.newboot.shop.config.BeanConfig is getting xdb Searcher
+2022-09-07 21:28:57.146 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initTestTopic,27] - kafka init topic testtopic, 1, 1
+2022-09-07 21:28:57.148 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initEmailCodeTopic,32] - kafka init topic emailCode, 1, 1
+log.pattern_IS_UNDEFINEDlog.pattern_IS_UNDEFINEDlog.pattern_IS_UNDEFINEDlog.pattern_IS_UNDEFINEDlog.pattern_IS_UNDEFINEDlog.pattern_IS_UNDEFINEDlog.pattern_IS_UNDEFINEDlog.pattern_IS_UNDEFINEDlog.pattern_IS_UNDEFINEDlog.pattern_IS_UNDEFINEDlog.pattern_IS_UNDEFINEDlog.pattern_IS_UNDEFINEDlog.pattern_IS_UNDEFINEDlog.pattern_IS_UNDEFINEDlog.pattern_IS_UNDEFINEDlog.pattern_IS_UNDEFINED2022-09-07 21:32:18.357 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.ShopApplication - [logStarting,55][0;39m - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 9528 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 21:32:18.359 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.ShopApplication - [logStartupProfileInfo,640][0;39m - The following 1 profile is active: "dev"
+2022-09-07 21:32:19.670 [32m[restartedMain][0;39m [32mINFO [0;39m [32morg.apache.catalina.core.StandardService - [log,173][0;39m - Starting service [Tomcat]
+2022-09-07 21:32:19.670 [32m[restartedMain][0;39m [32mINFO [0;39m [32morg.apache.catalina.core.StandardEngine - [log,173][0;39m - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 21:32:19.777 [32m[restartedMain][0;39m [32mINFO [0;39m [32mo.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173][0;39m - Initializing Spring embedded WebApplicationContext
+2022-09-07 21:32:19.825 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.SpringConfig - [run,18][0;39m - Spring init method is RUNNING
+2022-09-07 21:32:19.895 [32m[restartedMain][0;39m [32mINFO [0;39m [32mc.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56][0;39m - Init DruidDataSource
+2022-09-07 21:32:20.084 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.alibaba.druid.pool.DruidDataSource - [init,995][0;39m - {dataSource-1} inited
+2022-09-07 21:32:20.670 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.ThreadPoolConfig - [taskExecutor,66][0;39m - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-07 21:32:20.672 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.ThreadPoolConfig - [taskExecutor,86][0;39m - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-07 21:32:20.676 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.BeanConfig - [getSearcher,22][0;39m - class com.newboot.shop.config.BeanConfig is getting xdb Searcher
+2022-09-07 21:32:20.708 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.KafkaConfig - [initTestTopic,27][0;39m - kafka init topic testtopic, 1, 1
+2022-09-07 21:32:20.710 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.KafkaConfig - [initEmailCodeTopic,32][0;39m - kafka init topic emailCode, 1, 1
+2022-09-07 21:33:01.698 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.ShopApplication - [logStarted,61][0;39m - Started ShopApplication in 43.855 seconds (JVM running for 44.766)
+2022-09-07 21:33:01.700 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.task.ProductCache - [run,32][0;39m - System handle product cache begin
+2022-09-07 21:33:01.701 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.task.ProductCache - [run,45][0;39m - System handle product cache complete
+2022-09-07 21:42:07.372 [2m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.ShopApplication - [logStarting,55][0;39m - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 14556 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 21:42:07.374 [2m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.ShopApplication - [logStartupProfileInfo,640][0;39m - The following 1 profile is active: "dev"
+2022-09-07 21:42:08.675 [2m[restartedMain][0;39m [32mINFO [0;39m [32morg.apache.catalina.core.StandardService - [log,173][0;39m - Starting service [Tomcat]
+2022-09-07 21:42:08.675 [2m[restartedMain][0;39m [32mINFO [0;39m [32morg.apache.catalina.core.StandardEngine - [log,173][0;39m - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 21:42:08.783 [2m[restartedMain][0;39m [32mINFO [0;39m [32mo.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173][0;39m - Initializing Spring embedded WebApplicationContext
+2022-09-07 21:42:08.828 [2m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.SpringConfig - [run,18][0;39m - Spring init method is RUNNING
+2022-09-07 21:42:08.902 [2m[restartedMain][0;39m [32mINFO [0;39m [32mc.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56][0;39m - Init DruidDataSource
+2022-09-07 21:42:09.094 [2m[restartedMain][0;39m [32mINFO [0;39m [32mcom.alibaba.druid.pool.DruidDataSource - [init,995][0;39m - {dataSource-1} inited
+2022-09-07 21:42:09.677 [2m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.ThreadPoolConfig - [taskExecutor,66][0;39m - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-07 21:42:09.679 [2m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.ThreadPoolConfig - [taskExecutor,86][0;39m - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-07 21:42:09.683 [2m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.BeanConfig - [getSearcher,22][0;39m - class com.newboot.shop.config.BeanConfig is getting xdb Searcher
+2022-09-07 21:42:09.717 [2m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.KafkaConfig - [initTestTopic,27][0;39m - kafka init topic testtopic, 1, 1
+2022-09-07 21:42:09.719 [2m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.KafkaConfig - [initEmailCodeTopic,32][0;39m - kafka init topic emailCode, 1, 1
+2022-09-07 21:42:40.680 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.ShopApplication - [logStarting,55][0;39m - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 11176 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 21:42:40.682 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.ShopApplication - [logStartupProfileInfo,640][0;39m - The following 1 profile is active: "dev"
+2022-09-07 21:42:41.976 [32m[restartedMain][0;39m [32mINFO [0;39m [32morg.apache.catalina.core.StandardService - [log,173][0;39m - Starting service [Tomcat]
+2022-09-07 21:42:41.976 [32m[restartedMain][0;39m [32mINFO [0;39m [32morg.apache.catalina.core.StandardEngine - [log,173][0;39m - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 21:42:42.084 [32m[restartedMain][0;39m [32mINFO [0;39m [32mo.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173][0;39m - Initializing Spring embedded WebApplicationContext
+2022-09-07 21:42:42.131 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.SpringConfig - [run,18][0;39m - Spring init method is RUNNING
+2022-09-07 21:42:42.201 [32m[restartedMain][0;39m [32mINFO [0;39m [32mc.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56][0;39m - Init DruidDataSource
+2022-09-07 21:42:42.390 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.alibaba.druid.pool.DruidDataSource - [init,995][0;39m - {dataSource-1} inited
+2022-09-07 21:42:42.970 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.ThreadPoolConfig - [taskExecutor,66][0;39m - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-07 21:42:42.971 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.ThreadPoolConfig - [taskExecutor,86][0;39m - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-07 21:42:42.976 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.BeanConfig - [getSearcher,22][0;39m - class com.newboot.shop.config.BeanConfig is getting xdb Searcher
+2022-09-07 21:42:43.005 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.KafkaConfig - [initTestTopic,27][0;39m - kafka init topic testtopic, 1, 1
+2022-09-07 21:42:43.007 [32m[restartedMain][0;39m [32mINFO [0;39m [32mcom.newboot.shop.config.KafkaConfig - [initEmailCodeTopic,32][0;39m - kafka init topic emailCode, 1, 1
+2022-09-07 21:43:05.060 [restartedMain] [32mINFO [0;39m com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 8128 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 21:43:05.061 [restartedMain] [32mINFO [0;39m com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-07 21:43:06.376 [restartedMain] [32mINFO [0;39m org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-07 21:43:06.377 [restartedMain] [32mINFO [0;39m org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 21:43:06.485 [restartedMain] [32mINFO [0;39m o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-07 21:43:06.531 [restartedMain] [32mINFO [0;39m com.newboot.shop.config.SpringConfig - [run,18] - Spring init method is RUNNING
+2022-09-07 21:43:06.600 [restartedMain] [32mINFO [0;39m c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-07 21:43:06.790 [restartedMain] [32mINFO [0;39m com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-07 21:43:07.380 [restartedMain] [32mINFO [0;39m com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-07 21:43:07.381 [restartedMain] [32mINFO [0;39m com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-07 21:43:07.386 [restartedMain] [32mINFO [0;39m com.newboot.shop.config.BeanConfig - [getSearcher,22] - class com.newboot.shop.config.BeanConfig is getting xdb Searcher
+2022-09-07 21:43:07.415 [restartedMain] [32mINFO [0;39m com.newboot.shop.config.KafkaConfig - [initTestTopic,27] - kafka init topic testtopic, 1, 1
+2022-09-07 21:43:07.417 [restartedMain] [32mINFO [0;39m com.newboot.shop.config.KafkaConfig - [initEmailCodeTopic,32] - kafka init topic emailCode, 1, 1
+2022-09-07 21:43:24.360 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 16184 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 21:43:24.361 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-07 21:43:25.698 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-07 21:43:25.699 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 21:43:25.811 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-07 21:43:25.866 [restartedMain] INFO  com.newboot.shop.config.SpringConfig - [run,18] - Spring init method is RUNNING
+2022-09-07 21:43:25.940 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-07 21:43:26.141 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-07 21:54:14.278 [restartedMain] INFO com.newboot.shop.ShopApplication Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 2820 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)2022-09-07 21:54:14.279 [restartedMain] INFO com.newboot.shop.ShopApplication The following 1 profile is active: "dev"2022-09-07 21:54:15.642 [restartedMain] INFO org.apache.catalina.core.StandardService Starting service [Tomcat]2022-09-07 21:54:15.642 [restartedMain] INFO org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.64]2022-09-07 21:54:15.754 [restartedMain] INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext2022-09-07 21:54:15.802 [restartedMain] INFO com.newboot.shop.config.SpringConfig Spring init method is RUNNING2022-09-07 21:54:15.876 [restartedMain] INFO com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure Init DruidDataSource2022-09-07 21:54:16.075 [restartedMain] INFO com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited2022-09-07 21:54:16.679 [restartedMain] INFO com.newboot.shop.config.ThreadPoolConfig class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor.2022-09-07 21:54:16.680 [restartedMain] INFO com.newboot.shop.config.ThreadPoolConfig class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.2022-09-07 21:54:16.684 [restartedMain] INFO com.newboot.shop.config.BeanConfig class com.newboot.shop.config.BeanConfig is getting xdb Searcher2022-09-07 21:54:16.713 [restartedMain] INFO com.newboot.shop.config.KafkaConfig kafka init topic testtopic, 1, 12022-09-07 21:54:16.715 [restartedMain] INFO com.newboot.shop.config.KafkaConfig kafka init topic emailCode, 1, 12022-09-07 21:54:30.261 [restartedMain] INFO com.newboot.shop.ShopApplication Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 8020 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 21:54:30.262 [restartedMain] INFO com.newboot.shop.ShopApplication The following 1 profile is active: "dev"
+2022-09-07 21:54:31.587 [restartedMain] INFO org.apache.catalina.core.StandardService Starting service [Tomcat]
+2022-09-07 21:54:31.587 [restartedMain] INFO org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 21:54:31.710 [restartedMain] INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2022-09-07 21:54:31.756 [restartedMain] INFO com.newboot.shop.config.SpringConfig Spring init method is RUNNING
+2022-09-07 21:54:31.824 [restartedMain] INFO com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure Init DruidDataSource
+2022-09-07 21:54:32.014 [restartedMain] INFO com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+2022-09-07 21:54:32.607 [restartedMain] INFO com.newboot.shop.config.ThreadPoolConfig class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-07 21:54:32.608 [restartedMain] INFO com.newboot.shop.config.ThreadPoolConfig class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-07 21:54:32.613 [restartedMain] INFO com.newboot.shop.config.BeanConfig class com.newboot.shop.config.BeanConfig is getting xdb Searcher
+2022-09-07 21:54:32.641 [restartedMain] INFO com.newboot.shop.config.KafkaConfig kafka init topic testtopic, 1, 1
+2022-09-07 21:54:32.643 [restartedMain] INFO com.newboot.shop.config.KafkaConfig kafka init topic emailCode, 1, 1
+2022-09-07 21:55:27.791 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStarting,55] - Starting ShopApplication using Java 1.8.0_251 on DESKTOP-B6JBAVC with PID 236 (D:\Git\Gitee\shop-springboot\shop-new\target\classes started by Afterwards in D:\Git\Gitee\shop-springboot)
+2022-09-07 21:55:27.792 [restartedMain] INFO  com.newboot.shop.ShopApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+2022-09-07 21:55:29.143 [restartedMain] INFO  org.apache.catalina.core.StandardService - [log,173] - Starting service [Tomcat]
+2022-09-07 21:55:29.143 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-07 21:55:29.255 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2022-09-07 21:55:29.304 [restartedMain] INFO  com.newboot.shop.config.SpringConfig - [run,18] - Spring init method is RUNNING
+2022-09-07 21:55:29.373 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+2022-09-07 21:55:29.575 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - [init,995] - {dataSource-1} inited
+2022-09-07 21:55:30.168 [restartedMain] INFO  com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,66] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor.
+2022-09-07 21:55:30.170 [restartedMain] INFO  com.newboot.shop.config.ThreadPoolConfig - [taskExecutor,86] - class com.newboot.shop.config.ThreadPoolConfig set ThreadPoolTaskExecutor completed.
+2022-09-07 21:55:30.174 [restartedMain] INFO  com.newboot.shop.config.BeanConfig - [getSearcher,22] - class com.newboot.shop.config.BeanConfig is getting xdb Searcher
+2022-09-07 21:55:30.205 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initTestTopic,27] - kafka init topic testtopic, 1, 1
+2022-09-07 21:55:30.207 [restartedMain] INFO  com.newboot.shop.config.KafkaConfig - [initEmailCodeTopic,32] - kafka init topic emailCode, 1, 1

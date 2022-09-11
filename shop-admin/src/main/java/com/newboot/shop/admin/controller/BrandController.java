@@ -19,14 +19,14 @@ public class BrandController {
 
     @RequestMapping("/now")
     @ResponseBody
-    public CommonResult now(){
+    public CommonResult now() {
         return CommonResult.success(brandService.getBrandNow());
     }
 
     @RequestMapping("/insert")
     @ResponseBody
-    public CommonResult insert(@RequestParam HashMap map){
-        if(brandService.insert(map)<1){
+    public CommonResult insert(@RequestParam HashMap map) {
+        if (brandService.insert(map) < 1) {
             return CommonResult.failed();
         }
         return CommonResult.success();
@@ -34,14 +34,14 @@ public class BrandController {
 
     @RequestMapping("/select")
     @ResponseBody
-    public CommonResult select(@RequestParam HashMap map){
+    public CommonResult select(@RequestParam HashMap map) {
         return CommonResult.success(brandService.select(map));
     }
 
     @RequestMapping("/update")
     @ResponseBody
-    public CommonResult update(@RequestParam HashMap map){
-        if(brandService.update(map)<1){
+    public CommonResult update(@RequestParam HashMap map) {
+        if (brandService.update(map) < 1) {
             CommonResult.failed();
         }
         return CommonResult.success();

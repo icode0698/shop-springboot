@@ -23,7 +23,7 @@ public class ValueServiceImpl implements ValueService {
     @Override
     public JSONObject getValueNow() {
         JSONObject json = new JSONObject();
-        ArrayList<Parameter> parameterList =  parameterMapper.getParameter();
+        ArrayList<Parameter> parameterList = parameterMapper.getParameter();
         HashMap map = new HashMap();
         map.put("parameterID", parameterList.get(0).getParameterID());
         json.put("storageNowID", parameterpefMapper.getValueNow(map));
@@ -36,13 +36,13 @@ public class ValueServiceImpl implements ValueService {
 
     @Override
     public int insert(HashMap map) {
-        if(StringUtils.equals("storage", map.get("message").toString())){
+        if (StringUtils.equals("storage", map.get("message").toString())) {
             map.put("parameterID", parameterMapper.getParameter().get(0).getParameterID());
         }
-        if(StringUtils.equals("color", map.get("message").toString())){
+        if (StringUtils.equals("color", map.get("message").toString())) {
             map.put("parameterID", parameterMapper.getParameter().get(1).getParameterID());
         }
-        if(StringUtils.equals("screen", map.get("message").toString())){
+        if (StringUtils.equals("screen", map.get("message").toString())) {
             map.put("parameterID", parameterMapper.getParameter().get(2).getParameterID());
         }
         return parameterpefMapper.insert(map);

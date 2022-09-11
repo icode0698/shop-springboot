@@ -387,12 +387,11 @@ $(function () {
             if ($("#num").val() > stock) {
                 layer.msg("购买数量超过库存量");
                 return;
-            } 
-            if($("#price").text()==0){
+            }
+            if ($("#price").text() == 0) {
                 layer.msg("价格为0无法加入购物车");
                 return;
-            }
-            else {
+            } else {
                 $.ajax({
                     type: "post",
                     dataType: "json",
@@ -447,12 +446,11 @@ $(function () {
             if ($("#num").val() > stock) {
                 layer.msg("购买数量超过库存量");
                 return;
-            } 
-            if($("#price").text()==0){
+            }
+            if ($("#price").text() == 0) {
                 layer.msg("价格为0无法购买");
                 return;
-            }
-            else {
+            } else {
                 $.ajax({
                     type: "post",
                     dataType: "json",
